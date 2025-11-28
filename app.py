@@ -3,6 +3,7 @@ GovGrant Assist - Main Streamlit Application
 RAG-powered Government Grant Assistant
 
 Implements PRD specifications for UI, authentication, and workflows
+Version: 1.0.0 - Updated with LangChain v1.x compatibility
 """
 import streamlit as st
 from datetime import datetime
