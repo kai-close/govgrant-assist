@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html><head>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebook</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebook" data-icon="LiNotebook" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 6h4"></path>
+                                    <path d="M2 10h4"></path>
+                                    <path d="M2 14h4"></path>
+                                    <path d="M2 18h4"></path>
+                                    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                                    <path d="M16 2v20"></path>
+                                </svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Deploying Streamlit App as a Containerized App</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Deploying Streamlit App as a Containerized App"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Understanding Container</li>
+<li class="step" data-content="🔧" dir="auto">Deploy App on Container Stack (CStack)</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?q=80&amp;w=1742&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Understanding the Problem: Why Do We Need Docker?" href="#1_Understanding_the_Problem:_Why_Do_We_Need_Docker?" class="internal-link" target="_self" rel="noopener">1 Understanding the Problem: Why Do We Need Docker?</a>
+<ul>
+<li dir="auto"><a data-href="#1.1 Environment Inconsistencies" href="#1.1_Environment_Inconsistencies" class="internal-link" target="_self" rel="noopener">1.1 Environment Inconsistencies</a></li>
+<li dir="auto"><a data-href="#1.2 Dependency Hell" href="#1.2_Dependency_Hell" class="internal-link" target="_self" rel="noopener">1.2 Dependency Hell</a></li>
+<li dir="auto"><a data-href="#1.3 Deployment Challenges" href="#1.3_Deployment_Challenges" class="internal-link" target="_self" rel="noopener">1.3 Deployment Challenges</a></li>
+<li dir="auto"><a data-href="#1.4 Scalability Issues" href="#1.4_Scalability_Issues" class="internal-link" target="_self" rel="noopener">1.4 Scalability Issues</a></li>
+<li dir="auto"><a data-href="#1.5 Reproducibility" href="#1.5_Reproducibility" class="internal-link" target="_self" rel="noopener">1.5 Reproducibility</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#2 What is Docker🐳 ?" href="#2_What_is_Docker%F0%9F%90%B3_?" class="internal-link" target="_self" rel="noopener">2 What is Docker🐳 ?</a></li>
+<li dir="auto"><a data-href="#3 How does Docker🐳 do the magic?" href="#3_How_does_Docker%F0%9F%90%B3_do_the_magic?" class="internal-link" target="_self" rel="noopener">3 How does Docker🐳 do the magic?</a>
+<ul>
+<li dir="auto"><a data-href="#3.1 Images" href="#3.1_Images" class="internal-link" target="_self" rel="noopener">3.1 Images</a></li>
+<li dir="auto"><a data-href="#3.2 Containers 📦" href="#3.2_Containers_%F0%9F%93%A6" class="internal-link" target="_self" rel="noopener">3.2 Containers 📦</a></li>
+<li dir="auto"><a data-href="#3.3 Docker file" href="#3.3_Docker_file" class="internal-link" target="_self" rel="noopener">3.3 Docker file</a></li>
+<li dir="auto"><a data-href="#3.4 Docker Engine" href="#3.4_Docker_Engine" class="internal-link" target="_self" rel="noopener">3.4 Docker Engine</a></li>
+<li dir="auto"><a data-href="#3.5 Docker Hub" href="#3.5_Docker_Hub" class="internal-link" target="_self" rel="noopener">3.5 Docker Hub</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#4 Benefits of Using Docker" href="#4_Benefits_of_Using_Docker" class="internal-link" target="_self" rel="noopener">4 Benefits of Using Docker</a>
+<ul>
+<li dir="auto"><a data-href="#4.1 Streamlined Deployment of Streamlit App" href="#4.1_Streamlined_Deployment_of_Streamlit_App" class="internal-link" target="_self" rel="noopener">4.1 Streamlined Deployment of Streamlit App</a></li>
+<li dir="auto"><a data-href="#4.2 Consistency Across Environments" href="#4.2_Consistency_Across_Environments" class="internal-link" target="_self" rel="noopener">4.2 Consistency Across Environments</a></li>
+<li dir="auto"><a data-href="#4.3 Simplified Dependency Management" href="#4.3_Simplified_Dependency_Management" class="internal-link" target="_self" rel="noopener">4.3 Simplified Dependency Management</a></li>
+<li dir="auto"><a data-href="#4.4 Scalability and Portability" href="#4.4_Scalability_and_Portability" class="internal-link" target="_self" rel="noopener">4.4 Scalability and Portability</a></li>
+<li dir="auto"><a data-href="#4.5 Isolation and Security" href="#4.5_Isolation_and_Security" class="internal-link" target="_self" rel="noopener">4.5 Isolation and Security</a></li>
+<li dir="auto"><a data-href="#4.6 Efficient Collaboration" href="#4.6_Efficient_Collaboration" class="internal-link" target="_self" rel="noopener">4.6 Efficient Collaboration</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#5 🚀 ️Let’s Dockerize!" href="#5_%F0%9F%9A%80_%EF%B8%8FLet%E2%80%99s_Dockerize!" class="internal-link" target="_self" rel="noopener">5 🚀 ️Let’s Dockerize!</a></li>
+<li dir="auto"><a data-href="#6 Video Walkthrough" href="#6_Video_Walkthrough" class="internal-link" target="_self" rel="noopener">6 Video Walkthrough</a>
+<ul>
+<li dir="auto"><a data-href="#6.1 Video 1" href="#6.1_Video_1" class="internal-link" target="_self" rel="noopener">6.1 Video 1</a></li>
+<li dir="auto"><a data-href="#6.2 Video 2 (Continue.)" href="#6.2_Video_2_(Continue.)" class="internal-link" target="_self" rel="noopener">6.2 Video 2 (Continue.)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+<div>
+<p dir="auto">Congratulations on successfully building and deploying Streamlit apps on the Streamlit Community Cloud! As you continue to develop more sophisticated applications, you might encounter challenges related to environment setup, dependency management, scalability, and reproducibility. This is where Docker comes into play. In this article, we'll delve into&nbsp;<strong>why Docker is a game-changer for developers</strong>, especially those working with Streamlit applications.</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 Understanding the Problem: Why Do We Need Docker?" dir="auto" class="heading" id="1_Understanding_the_Problem:_Why_Do_We_Need_Docker?">1 Understanding the Problem: Why Do We Need Docker?</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Before diving into Docker's benefits, it's essential to understand the pain points developers often face without it:</p>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211402904.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211402904.png"></div>
+<p dir="auto"></p>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.1 Environment Inconsistencies" dir="auto" class="heading" id="1.1_Environment_Inconsistencies">1.1 Environment Inconsistencies</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">When developing applications, especially in teams, ensuring that every team member's development environment replicates the production environment can be challenging. Differences in operating systems, installed libraries, or versions can lead to bugs that are hard to trace.</p>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.2 Dependency Hell" dir="auto" class="heading" id="1.2_Dependency_Hell">1.2 Dependency Hell</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Managing dependencies can become cumbersome. Conflicting library versions required by different projects can lead to complex and error-prone setups. Without a containerization tool, isolating these dependencies for each project is tricky.</p>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.3 Deployment Challenges" dir="auto" class="heading" id="1.3_Deployment_Challenges">1.3 Deployment Challenges</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Deploying applications across different environments (development, staging, production) often requires manual configuration, increasing the risk of human error. Ensuring consistency across these environments can be time-consuming.</p>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.4 Scalability Issues" dir="auto" class="heading" id="1.4_Scalability_Issues">1.4 Scalability Issues</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">As your Streamlit app grows or needs d traffic, scaling it across multiple servers or services can be daunting without a standardized deployment method.</p>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.5 Reproducibility" dir="auto" class="heading" id="1.5_Reproducibility">1.5 Reproducibility</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Reproducing bugs or issues in a different environment can be difficult if the setup isn't consistent. This hampers debugging and prolongs development cycles.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">No worries….&nbsp;<strong>Docker</strong>🐳 to the rescue!</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 What is Docker🐳 ?" dir="auto" class="heading" id="2_What_is_Docker🐳_?">2 What is Docker🐳 ?</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Now is a good time to ask, what is docker?</p>
+<ul>
+<li data-line="1" dir="auto">It will help you solve the problem of varying development environments for app shipping and deployment. <img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/1_jFEUrbW5VbWlLfeKwu3jFw.jpg" referrerpolicy="no-referrer"></li>
+<li data-line="2" dir="auto">Docker made simple… Allowing you to run apps anywhere.</li>
+<li data-line="3" dir="auto">Docker🐳 is a technology to create and manage&nbsp;<strong>containers.</strong>
+<ul>
+<li data-line="4" dir="auto"><strong>Wait… what?</strong></li>
+<li data-line="5" dir="auto">A container is nothing but a software unit, i.e. your node app's code, and its dependencies.</li>
+<li data-line="6" dir="auto">Containers allow execution of your app in isolation, anywhere in the world, by anyone, without you worrying about the environment set-up….. Ain’t that just awesome!</li>
+<li data-line="7" dir="auto">It is a tool used to&nbsp;<strong>create, deploy and run applications by using containers</strong>.</li>
+<li data-line="8" dir="auto"><em>Containers</em>&nbsp;allows developers to&nbsp;<strong>package up an application with all the parts it needs</strong>.</li>
+<li data-line="9" dir="auto"><em>Containers</em>&nbsp;are&nbsp;<strong>isolated from one another</strong>&nbsp;and&nbsp;<strong>bundle their own software, libraries and configuration file.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="11" dir="auto">
+<p>✦ Docker is a platform designed to make it easier to create, deploy, and run applications by using containers. Containers allow developers to package an application with all of its dependencies into a standardized unit for software development. This ensures that the application runs seamlessly in any environment, whether it's on your local machine, a colleague's laptop, or a cloud server.</p>
+</li>
+<li data-line="13" dir="auto">
+<p>At its core, Docker addresses the classic "it works on my machine" problem by providing a consistent environment across various stages of development and deployment.</p>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="M12 16v-4"></path>
+                                                <path d="M12 8h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner">Difference between Docker Containers and Virtual Machines</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ <strong>Docker Containers</strong>
+<ul>
+<li data-line="2" dir="auto">Docker Containers contain&nbsp;<strong>binaries, libraries and configuration files along with the application itself</strong>.</li>
+<li data-line="3" dir="auto">They don’t contain a guest OS for each container and rely on the underlying OS kernel, which makes the containers&nbsp;<strong>lightweight</strong>.</li>
+<li data-line="4" dir="auto">Containers&nbsp;<strong>share resources with other containers</strong>&nbsp;in the same host OS&nbsp;and&nbsp;<strong>provide OS level process isolation.</strong></li>
+</ul>
+</li>
+<li data-line="5" dir="auto">✦ <strong>Virtual Machines</strong>
+<ul>
+<li data-line="6" dir="auto">Virtual Machines (VMs) run on&nbsp;<strong>Hypervisors</strong>, which&nbsp;<strong>allow multiple Virtual Machines to run on a single Machine</strong>&nbsp;along with its own operating system.</li>
+<li data-line="7" dir="auto">Each VM has its own copy of an operating system along with the application and necessary binaries, which makes it significantly&nbsp;<strong>larger and it requires more resources</strong>.</li>
+<li data-line="8" dir="auto">They provide&nbsp;<strong>Hardware-level process isolation</strong>&nbsp;and&nbsp;<strong>are slow to boot.</strong> <img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/1_m3Q6wcXPrmKLn1xhvf7F8g.jpg" referrerpolicy="no-referrer"></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 How does Docker🐳 do the magic?" dir="auto" class="heading" id="3_How_does_Docker🐳_do_the_magic?">3 How does Docker🐳 do the magic?</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Docker🐳 is a container management framework, it allows you to create, share and manage images and containers.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ But what are containers and images in the first place and how do they allow us to solve the problem of varying development environments?</p>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/1_ir4CxuWOGyD8KFGGMl_nTQ.png" referrerpolicy="no-referrer"></p>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="3.1 Images" dir="auto" class="heading" id="3.1_Images">3.1 Images</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Of course, images are not framed pictures 😁… Just remember three things:
+<ul>
+<li data-line="1" dir="auto">Images are blueprints/templates for a container.</li>
+<li data-line="2" dir="auto">It contains our code and its dependencies.</li>
+<li data-line="3" dir="auto">We can run a container on top of an image, to run your application.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3.2 Containers 📦" dir="auto" class="heading" id="3.2_Containers_📦">3.2 Containers 📦</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ You see <code>Docker’s</code> logo in the image up there.</p>
+<ul>
+<li data-line="1" dir="auto">It has a whale carrying “Containers” across the sea from one country to another.</li>
+<li data-line="2" dir="auto">That is exactly what a container is….</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ It creates an isolated environment for running your application at the host machine using information (code + dependencies) from the image.</p>
+<ul>
+<li data-line="5" dir="auto">It’s a running unit of our application.</li>
+<li data-line="6" dir="auto">In more technical term, It is a&nbsp;<em>runtime instance of an image</em>.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto">
+<p>✦ With containers and images, we won’t have to worry about installing and uninstalling dependencies on a host / server, before running our application there.</p>
+<ul>
+<li data-line="9" dir="auto">We simply create an image (snapshot of your running app i.e. code+depedencies like Python package or even other backend processes like OCR engined) and share it with our colleague.&nbsp;</li>
+<li data-line="10" dir="auto">Our colleague&nbsp;can now simply spin up a container on top of that image and can run your app, without having to worry about anything.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211402920.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211402920.png"></div>
+<p dir="auto"></p>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3.3 Docker file" dir="auto" class="heading" id="3.3_Docker_file">3.3 Docker file</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ It is a text document that contains necessary commands which on execution helps assemble a Docker Image.</li>
+<li data-line="1" dir="auto">✦ <strong>Docker image is created using a Docker file.</strong></li>
+<li data-line="2" dir="auto">✦ Imagine this as the recipe to make the Docker Image.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3.4 Docker Engine" dir="auto" class="heading" id="3.4_Docker_Engine">3.4 Docker Engine</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The software that hosts the containers is named&nbsp;<strong>Docker Engine</strong>.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3.5 Docker Hub" dir="auto" class="heading" id="3.5_Docker_Hub">3.5 Docker Hub</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ DockerHub is a cloud-based registry service provided by Docker, Inc. It allows developers to store, share, and manage Docker images.
+<ul>
+<li data-line="1" dir="auto">It makes it easy to&nbsp;<strong>find, manage and share container images</strong>&nbsp;with others.</li>
+<li data-line="2" dir="auto">Think of it as a vast library where you can find pre-built images for a wide range of applications, from simple web servers to complex multi-service applications</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">✦ <strong>Key Features of DockerHub</strong>
+<ul>
+<li data-line="5" dir="auto"><strong>Image Repository</strong>:
+<ul>
+<li data-line="6" dir="auto">DockerHub hosts millions of Docker images, both official and community-contributed.</li>
+<li data-line="7" dir="auto">Official images are maintained by Docker and verified for quality and security, making them a reliable choice for production environments.</li>
+</ul>
+</li>
+<li data-line="9" dir="auto"><strong>Private Repositories</strong>:
+<ul>
+<li data-line="10" dir="auto">While DockerHub offers public repositories for free, it also provides private repositories for users who need to keep their images confidential.</li>
+<li data-line="11" dir="auto">This is particularly useful for proprietary software or internal tools.</li>
+</ul>
+</li>
+<li data-line="13" dir="auto"><strong>Teams and Organizations</strong>:
+<ul>
+<li data-line="14" dir="auto">DockerHub supports collaborative workflows by allowing you to create teams and organizations.</li>
+<li data-line="15" dir="auto">This feature helps manage access control and permissions, ensuring that only authorized users can push or pull images.</li>
+</ul>
+</li>
+<li data-line="17" dir="auto"><strong>Search and Discovery</strong>:
+<ul>
+<li data-line="18" dir="auto">The search functionality in DockerHub makes it easy to find the images you need.</li>
+<li data-line="19" dir="auto">Whether you’re looking for a specific version of a database or a particular application framework, DockerHub’s extensive catalog has you covered.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 Benefits of Using Docker" dir="auto" class="heading" id="4_Benefits_of_Using_Docker">4 Benefits of Using Docker</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Docker addresses the aforementioned challenges by providing a robust framework for containerization. Let's explore the key benefits it offers:</p>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="4.1 Streamlined Deployment of Streamlit App" dir="auto" class="heading" id="4.1_Streamlined_Deployment_of_Streamlit_App">4.1 Streamlined Deployment of Streamlit App</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Using Docker, deploying a Streamlit app becomes as simple as building and running a container. Whether deploying to cloud providers like AWS, GCP, or Azure, Docker ensures that your app runs consistently across platforms.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="4.2 Consistency Across Environments" dir="auto" class="heading" id="4.2_Consistency_Across_Environments">4.2 Consistency Across Environments</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Docker containers encapsulate an application and its environment. This means the same container can run on a developer's laptop, a testing server, or a production environment without any modifications. This uniformity eliminates discrepancies that arise from varying system configurations.</p>
+</div>
+<div>
+<p dir="auto"><strong>Example:</strong>&nbsp;Suppose you develop a Streamlit app on a Windows machine, but it needs to run on a Linux-based cloud server. Docker ensures that the app runs identically in both environments, sidestepping issues like file path differences or system-specific dependencies.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="4.3 Simplified Dependency Management" dir="auto" class="heading" id="4.3_Simplified_Dependency_Management">4.3 Simplified Dependency Management</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">With Docker, all dependencies are defined within a&nbsp;<code>Dockerfile</code>. This file specifies the base image, necessary libraries, environment variables, and other configurations required to run the application. The&nbsp;<code>Dockerfile</code>&nbsp;ensures that anyone building the container gets the exact dependencies needed, avoiding the dreaded "dependency hell."</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="4.4 Scalability and Portability" dir="auto" class="heading" id="4.4_Scalability_and_Portability">4.4 Scalability and Portability</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Docker containers are lightweight and can be easily replicated or scaled across multiple servers or services. This makes it easier to handle increased traffic or deploy microservices architectures.</p>
+</div>
+<div>
+<p dir="auto"><strong>Example:</strong>&nbsp;If your Streamlit app gains popularity and needs to handle more users, Docker allows you to spin up multiple container instances effortlessly, balancing the load with orchestration tools like Kubernetes.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="4.5 Isolation and Security" dir="auto" class="heading" id="4.5_Isolation_and_Security">4.5 Isolation and Security</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Containers run in isolated environments, ensuring that applications and their dependencies do not interfere with each other. This isolation enhances security by limiting the application's access to system resources and preventing malicious code from affecting other containers or the host system.</p>
+</div>
+<div>
+<p dir="auto"><strong>Example:</strong>&nbsp;Running multiple Streamlit apps on the same server becomes safer with Docker, as each app operates within its container, reducing the risk of cross-contamination or unauthorized access.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="4.6 Efficient Collaboration" dir="auto" class="heading" id="4.6_Efficient_Collaboration">4.6 Efficient Collaboration</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Docker facilitates collaboration by allowing team members to share containers. This ensures that everyone works with the same environment, minimizing setup times and configuration issues.</p>
+</div>
+<div>
+<p dir="auto"><strong>Example:</strong>&nbsp;A data scientist can share a Docker image of a Streamlit app with all its dependencies, ensuring that collaborators can run and modify the app without wrestling with environment setup</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="5 🚀 ️Let’s Dockerize!" dir="auto" class="heading" id="5_🚀_️Let’s_Dockerize!">5 🚀 ️Let’s Dockerize!</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211402966.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211402966.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<p dir="auto">To dockerize an app, you need to follow the following simple steps.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Prepare a Docker File (the recipe to create the Docker Image)</strong>
+<ul>
+<li data-line="1" dir="auto">Create a file with filename <code>Dockerfile</code> (note: without any extension) at the root of our project folder</li>
+<li data-line="2" dir="auto">Copy the content below to the newly created <code>Dockerfile</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-plain"># Use the official lightweight Python image.
+
+# https://hub.docker.com/_/python
+# This lien pecifies the base image for the Docker container
+# It uses the official Python image from Docker Hub, 
+# specifically the version 3.12 with the "slim" variant
+# which is a smaller, more lightweight version of the full Python image.
+FROM python:3.12-slim
+
+# This ensures that Python output is not buffered, 
+# which is useful for real-time logging and debugging.
+ENV PYTHONUNBUFFERED True
+# This line is needed for the app to work in CStack 
+RUN groupadd --gid 1001 app &amp;amp;&amp;amp; useradd --uid 1001 --gid 1001 -ms /bin/bash app
+
+#  Sets the working directory for the container to `/home/app`. All subsequent commands will be run from this directory.
+WORKDIR /home/app
+# Copies the `requirements.txt` file from the local machine to the current working directory in the container (`/home/app`).
+COPY requirements.txt ./
+
+RUN pip install -r requirements.txt
+# This line is needed for the app to work in CStack 
+USER 1001
+
+# Copy local code to the container image.
+#  Copies all files from the local directory to the current working directory in the container (`/home/app`), and changes the ownership of the copied files
+COPY --chown=app:app . ./
+
+# (Optional) Add any additional commands here
+
+# Run the web service on container startup.
+# Informs Docker that the container will listen on port 8501 at runtime. 
+# This is used for documentation purposes and does not actually publish the port.
+EXPOSE 8501
+# Specifies the command to run when the container starts. In this case, it runs a Streamlit application using the `main.py` script.
+CMD streamlit run main.py</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="important" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                                                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                                                </path>
+                                            </svg></div>
+<div class="callout-title-inner">You don't have to worry about fully understand or writing the Dockerfile from scratch.</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ Firstly, we can reuse this Dockerfile to deploy our Streamlit app in majority of container hosting services (available from major Cloud Service Providers like AWS, Azure, and Google Cloud) with no to minimal changes.</li>
+<li data-line="2" dir="auto">✦ Secondly, if we need to deploy the container image to agency's infra, there are usually some assistance from the engineer or infra person who we will work with to deploy the built image.</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Export the versions of the installed packages from the virtual environment into a <code>requirements.txt</code></strong></p>
+<ul>
+<li data-line="1" dir="auto">Navigate to the project folder</li>
+<li data-line="2" dir="auto">Activate the virtual environment</li>
+<li data-line="3" dir="auto">Run the command <code>pip freeze &gt; requirements</code></li>
+<li data-line="4" dir="auto">This is to allow the same packages to be used to build the image</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ <strong>Create a <code>.dockerignore</code> file at the root of our project folder</strong></p>
+<ul>
+<li data-line="7" dir="auto">This file is to tell Docker which are the files that it should ignore and not to include into the image during the build process</li>
+<li data-line="8" dir="auto">We should include our <code>.env</code> filename in this file that contains our credentials like API Keys</li>
+<li data-line="9" dir="auto">We should also include the folder <code>venv</code> that contains all the files and Python interpreter that allow us to test the app locally.</li>
+<li data-line="10" dir="auto">Here is how the file would looks:</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-plain">.env 
+venv</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Build the image</strong>
+<ul>
+<li data-line="1" dir="auto">Use default&nbsp;<code>docker build</code>&nbsp;for local development</li>
+<li data-line="2" dir="auto">Below is the syntax for building an image
+<ul>
+<li data-line="3" dir="auto">where <code>&lt;image&gt;</code> is the name of the image that we are going to build</li>
+<li data-line="4" dir="auto">We recommend to give the image a meaningful and representative name, so we can quickly tell what the image is for.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="language-shell" tabindex="0"><code class="language-shell is-loaded"><span class="token function">docker</span> build -t <span class="token operator">&lt;</span>image<span class="token operator">&gt;</span> <span class="token builtin class-name">.</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Run container based on build image locally</strong></p>
+<ul>
+<li data-line="1" dir="auto">See the video below on how to run the container from Docker Desktop</li>
+<li data-line="2" dir="auto">Remember to set up the environment variables from our <code>.env</code> file using the the pop-up dialog on Docker Desktop</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Upload the image to DockerHub</strong></p>
+<ul>
+<li data-line="5" dir="auto">This is done when we are sure the containerized app works without issues.</li>
+<li data-line="6" dir="auto"><code>&lt;username&gt;</code> is your unique DockerHub username. We can find it under the pop up after you clicking on the avatar after logging in to DockerHub
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211403003.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211403003.png"></div>
+</li>
+<li data-line="7" dir="auto">Below is the command for building and uploading (more commonly we say "push") the image to DockerHub.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-bash">docker buildx build --push --platform linux/amd64 -t &lt;username&gt;/&lt;image&gt; .</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="M12 16v-4"></path>
+                                                <path d="M12 8h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner">Note that <code>--platform linux/amd64</code> is flag (like a parameter) to allows us to define the target platform for the Docker image.</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ This should be determined by the hosting server where the Streamlit app will be deployed.</li>
+<li data-line="2" dir="auto">✦ <code>linux/amd64</code> specifies two things:
+<ul>
+<li data-line="3" dir="auto">the target platform is <strong>Linux operating system</strong> running on an&nbsp;<code>amd64</code>&nbsp;(x86_64) architecture.</li>
+<li data-line="4" dir="auto">the&nbsp;<code>amd64</code>&nbsp;<strong>processor architecture</strong> is the most common architecture for desktop and server processors, including those from Intel and AMD.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="6 Video Walkthrough" dir="auto" class="heading" id="6_Video_Walkthrough">6 Video Walkthrough</h1>
+<div class="heading-children">
+<div class="heading-wrapper">
+<h2 data-heading="6.1 Video 1" dir="auto" class="heading" id="6.1_Video_1">6.1 Video 1</h2>
+<div class="heading-children">
+<div><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/F4jpwn7iWTE?si=TDzp7weWwcREiiyT" height="420" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                        <path d="M12 16v-4"></path>
+                                                        <path d="M12 8h.01"></path>
+                                                    </svg></div>
+<div class="callout-title-inner">Major Timeline</div>
+</div>
+<div class="callout-content">
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=0s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=0s" target="_blank">00:00</a> - Overview<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=77s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=77s" target="_blank">01:17</a> - Prepare a Docker File (the recipe to create the Docker Image)<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=183s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=183s" target="_blank">03:03</a> - Export the versions of the installed packages from the virtual environment into a requirements.txt<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=432s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=432s" target="_blank">07:12</a> - Create a <code>.dockerignore</code> file at the root of our project folder<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=582s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=F4jpwn7iWTE&amp;t=582s" target="_blank">09:42</a> - Build the image</p>
+</div>
+</div>
+</div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="6.2 Video 2 (Continue.)" dir="auto" class="heading" id="6.2_Video_2_(Continue.)">6.2 Video 2 (Continue.)</h2>
+<div class="heading-children">
+<div><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/iO1vxyiDXdc?si=PyTHr2AYJfWzOJsB" height="420" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                        <path d="M12 16v-4"></path>
+                                                        <path d="M12 8h.01"></path>
+                                                    </svg></div>
+<div class="callout-title-inner">Major Timeline</div>
+</div>
+<div class="callout-content">
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=iO1vxyiDXdc&amp;t=0s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=iO1vxyiDXdc&amp;t=0s" target="_blank">00:00</a> - Running Container from the Image locally<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=iO1vxyiDXdc&amp;t=230s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=iO1vxyiDXdc&amp;t=230s" target="_blank">03:50</a> - Upload the Image to Docker Hub</p>
+</div>
+</div>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

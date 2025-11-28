@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg></span></p>
+</div>
+<ol start="5">
+<li dir="auto" class="page-title heading fix-heading">Title: RAG Evaluation</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: RAG Evaluation"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Deep Dive into RAG</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Pre-Retrieval Processe</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Retrieval Processed</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Post-Retrieval Processed</li>
+<li class="step step-success" data-content="🔧" dir="auto">RAG Evaluation</li>
+<li class="step" data-content="🔧" dir="auto">Further Reading: WOG RAG Playbook</li>
+</ul>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Intro" href="#Intro" class="internal-link" target="_self" rel="noopener">Intro</a></li>
+<li dir="auto"><a data-href="#Evaluation Metrics" href="#Evaluation_Metrics" class="internal-link" target="_self" rel="noopener">Evaluation Metrics</a></li>
+<li dir="auto"><a data-href="#Installation" href="#Installation" class="internal-link" target="_self" rel="noopener">Installation</a></li>
+<li dir="auto"><a data-href="#Quick Start" href="#Quick_Start" class="internal-link" target="_self" rel="noopener">Quick Start</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Intro" dir="auto" class="heading" id="Intro">Intro</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ As there are so many ways to tune our RAG pipelines, how would we know which of the changes actually lead to better performance?</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ Ragas is one of the frameworks designed to assess RAG-based applications.</p>
+<ul>
+<li data-line="3" dir="auto">It is a framework that provides us with the necessary ingredients to help us evaluate our RAG pipeline on a component level.</li>
+<li data-line="4" dir="auto">Ragas provides you with the tools based on the latest research for evaluating LLM-generated text to give you insights about your RAG pipeline.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div class="card bg-base-100 shadow-xl">
+<figure class="px-10 pt-10"><img class="rounded-xl" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/bookmark-ragas.png" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center heading-wrapper">
+<h2 class="card-title heading" dir="auto">Evaluation framework for RAG</h2>
+<div class="badge badge-secondary">NEW</div>
+<h2 class="card-title heading" dir="auto" id="Evaluation_framework_for_RAG_	____NEW____"></h2>
+<div class="card-actions"><a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener"> <button class="btn btn-primary"> Go to GitHub Repository </button> </a></div>
+<div class="heading-children"></div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ What’s interesting about Ragas is that it started out as a framework for “reference-free” evaluation. That means, <strong>instead of having to rely on human-annotated ground truth labels in the evaluation dataset, Ragas leverages LLMs under the hood to conduct the evaluations</strong>.</p>
+<ul>
+<li data-line="1" dir="auto">
+<p>✦ To evaluate the RAG pipeline, Ragas expects the following information:</p>
+<ul>
+<li data-line="2" dir="auto"><code>question</code>: The user query that is the input of the RAG pipeline.</li>
+<li data-line="3" dir="auto"><code>answer</code>: The generated answer from the RAG pipeline.</li>
+<li data-line="4" dir="auto"><code>contexts</code>: The contexts retrieved from the external knowledge source used to answer the&nbsp;<code>question</code>.</li>
+<li data-line="5" dir="auto"><code>ground_truths</code>: The ground truth answer to the&nbsp;<code>question</code>. This is the only human-annotated information. This information is only required for some of the matrices.</li>
+</ul>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ Leveraging LLMs for reference-free evaluation is <strong>an active research topic</strong>.</p>
+<ul>
+<li data-line="8" dir="auto">While using as little human-annotated data as possible makes it a cheaper and faster evaluation method, there is still <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2305.17926" rel="noopener" class="external-link" href="https://arxiv.org/abs/2305.17926" target="_blank">some discussion</a> about its shortcomings, such as bias.</li>
+<li data-line="9" dir="auto">However, <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2303.16634" rel="noopener" class="external-link" href="https://arxiv.org/abs/2303.16634" target="_blank">some papers</a> have already shown promising results. If you are interested, you can read more on the “Related Work” section of this <a data-tooltip-position="top" aria-label="https://arxiv.org/pdf/2309.15217v1" rel="noopener" class="external-link" href="https://arxiv.org/pdf/2309.15217v1" target="_blank">Ragas paper</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="11" dir="auto">
+<p>✦ Note that the framework has expanded to provide metrics and paradigms that require ground truth labels (e.g.,&nbsp;<code>context_recall</code>&nbsp;and&nbsp;<code>answer_correctness</code>)</p>
+</li>
+<li data-line="13" dir="auto">
+<p>✦ Additionally, the framework provides you with tooling for&nbsp;<a data-tooltip-position="top" aria-label="https://docs.ragas.io/en/latest/concepts/testset_generation.html" rel="noopener" class="external-link" href="https://docs.ragas.io/en/latest/concepts/testset_generation.html" target="_blank">automatic test data generation</a>.</p>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Evaluation Metrics" dir="auto" class="heading" id="Evaluation_Metrics">Evaluation Metrics</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Ragas provides you with a few&nbsp;<a data-tooltip-position="top" aria-label="https://docs.ragas.io/en/latest/concepts/metrics/index.html" rel="noopener" class="external-link" href="https://docs.ragas.io/en/latest/concepts/metrics/index.html" target="_blank">metrics</a>&nbsp;to evaluate a RAG pipeline component-wise as well as from end-to-end.</p>
+</div>
+<div>
+<p dir="auto">On a&nbsp;<strong>component level</strong>, Ragas provides you with metrics to evaluate the retrieval component (<code>context_relevancy</code>&nbsp;and&nbsp;<code>context_recall</code>) and the generative component (<code>faithfulness</code>&nbsp;and&nbsp;<code>answer_relevancy</code>) separately.</p>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240428205209916.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240428205209916.png"></div>
+</div>
+<div>
+<p dir="auto">Most (if not all of) metrics are scaled to the range between 0 and 1, with higher values indicating a better performance.</p>
+</div>
+<div>
+<p dir="auto">Ragas also provides you with metrics to evaluate the RAG pipeline&nbsp;<strong>end-to-end,</strong>&nbsp;such as&nbsp;<a data-tooltip-position="top" aria-label="https://docs.ragas.io/en/latest/concepts/metrics/semantic_similarity.html" rel="noopener" class="external-link" href="https://docs.ragas.io/en/latest/concepts/metrics/semantic_similarity.html" target="_blank">answer semantic similarity</a>&nbsp;and&nbsp;<a data-tooltip-position="top" aria-label="https://docs.ragas.io/en/latest/concepts/metrics/answer_correctness.html" rel="noopener" class="external-link" href="https://docs.ragas.io/en/latest/concepts/metrics/answer_correctness.html" target="_blank">answer correctness</a>.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Installation" dir="auto" class="heading" id="Installation">Installation</h1>
+<div class="heading-children">
+<div>
+<pre class="d2l-code"><code class="language-bash">pip install ragas</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Quick Start" dir="auto" class="heading" id="Quick_Start">Quick Start</h1>
+<div class="heading-children">
+<div>
+<pre class="d2l-code"><code class="language-python">from datasets import Dataset 
+import os
+from ragas import evaluate
+from ragas.metrics import faithfulness, answer_correctness
+
+os.environ["OPENAI_API_KEY"] = "your-openai-key"
+
+data_samples = {
+    'question': ['When was the first super bowl?', 'Who won the most super bowls?'],
+    'answer': ['The first superbowl was held on Jan 15, 1967', 'The most super bowls have been won by The New England Patriots'],
+    'contexts' : [['The First AFL–NFL World Championship Game was an American football game played on January 15, 1967, at the Los Angeles Memorial Coliseum in Los Angeles,'], 
+    ['The Green Bay Packers...Green Bay, Wisconsin.','The Packers compete...Football Conference']],
+    'ground_truth': ['The first superbowl was held on January 15, 1967', 'The New England Patriots have won the Super Bowl a record six times']
+}
+
+dataset = Dataset.from_dict(data_samples)
+
+score = evaluate(dataset,metrics=[faithfulness,answer_correctness])
+score.to_pandas()</code></pre>
+</div>
+<div>
+<p dir="auto">Visit the documentation here: <a data-tooltip-position="top" aria-label="https://docs.ragas.io/en/stable/" rel="noopener" class="external-link" href="https://docs.ragas.io/en/stable/" target="_blank">Introduction | Ragas</a></p>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

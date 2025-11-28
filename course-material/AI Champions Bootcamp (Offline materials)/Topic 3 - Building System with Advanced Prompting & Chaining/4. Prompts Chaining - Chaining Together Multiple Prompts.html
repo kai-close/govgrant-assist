@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span></p>
+</div>
+<ol start="4">
+<li dir="auto" class="page-title heading fix-heading" id="Title: Prompt Chaining - Chaining Together Multiple Prompts">Title: Prompt Chaining - Chaining Together Multiple Prompts</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Prompt Chaining - Chaining Together Multiple Prompts "></h1>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">LLMs Do Not Have Memory</li>
+<li class="step step-success" data-content="📒" dir="auto">Prompting Techniques for Better Reasoning</li>
+<li class="step step-success" data-content="🔧" dir="auto">Multi-action within a Prompt</li>
+<li class="step step-success" data-content="🔧" dir="auto">Prompt Chaining</li>
+<li class="step" data-content="🔧" dir="auto">Exception Handling</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421130009091.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421130009091.png"></div>
+<br><br>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Why Bother with Prompts Chaining" href="#Why_Bother_with_Prompts_Chaining" class="internal-link" target="_self" rel="noopener">Why Bother with Prompts Chaining</a>
+<ul>
+<li dir="auto"><a data-href="#Advantages of Prompt Chaining" href="#Advantages_of_Prompt_Chaining" class="internal-link" target="_self" rel="noopener">Advantages of Prompt Chaining</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Major Chain Types" href="#Major_Chain_Types" class="internal-link" target="_self" rel="noopener">Major Chain Types</a>
+<ul>
+<li dir="auto"><a data-href="#Simple Linear Chain" href="#Simple_Linear_Chain" class="internal-link" target="_self" rel="noopener">Simple Linear Chain</a></li>
+<li dir="auto"><a data-href="#Linear Chain with Processed Output from Previous Step" href="#Linear_Chain_with_Processed_Output_from_Previous_Step" class="internal-link" target="_self" rel="noopener">Linear Chain with Processed Output from Previous Step</a>
+<ul>
+<li dir="auto"><a data-href="#Chain 1:" href="#Chain_1:" class="internal-link" target="_self" rel="noopener">Chain 1:</a></li>
+<li dir="auto"><a data-href="#Chain 2:" href="#Chain_2:" class="internal-link" target="_self" rel="noopener">Chain 2:</a></li>
+<li dir="auto"><a data-href="#Running the Pipeline" href="#Running_the_Pipeline" class="internal-link" target="_self" rel="noopener">Running the Pipeline</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Decision Chain" href="#Decision_Chain" class="internal-link" target="_self" rel="noopener">Decision Chain</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Prompts Chaining and Performance" href="#Prompts_Chaining_and_Performance" class="internal-link" target="_self" rel="noopener">Prompts Chaining and Performance</a></li>
+<li dir="auto"><a data-href="#[Extra: ] How about LangChain?" href="#[Extra:_]_How_about_LangChain?" class="internal-link" target="_self" rel="noopener">[Extra: ] How about LangChain?</a>
+<ul>
+<li dir="auto"><a data-href="#Prompt Chaining vs. LangChain" href="#Prompt_Chaining_vs._LangChain" class="internal-link" target="_self" rel="noopener">Prompt Chaining vs. LangChain</a></li>
+<li dir="auto"><a data-href="#Our Two Cents" href="#Our_Two_Cents" class="internal-link" target="_self" rel="noopener">Our Two Cents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Why Bother with Prompts Chaining" dir="auto" class="heading" id="Why_Bother_with_Prompts_Chaining">Why Bother with Prompts Chaining</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Essentially,&nbsp;<strong>prompt chaining</strong>&nbsp;involves taking the result of one prompt and using it as the starting point for the next, forming a sequence of interactions</p>
+<ul>
+<li data-line="1" dir="auto">
+<p>By breaking a complex task into multiple smaller prompts and passing the output of one prompt as the input to the next, prompt chaining simplifies complex tasks and streamlines the interaction with the LLM model.</p>
+</li>
+<li data-line="3" dir="auto">
+<p>Instead of overwhelming the LLM instance with a single detailed prompt, we can guide it through multiple steps, making the process more efficient and effective.</p>
+</li>
+<li data-line="5" dir="auto">
+<p>It allows us to write less complicated instructions, isolate parts of a problem that the LLM might have difficulty with, and check the LLM’s output in stages, rather than waiting until the end.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div></div>
+<div class="heading-wrapper">
+<h2 data-heading="Advantages of Prompt Chaining" dir="auto" class="heading" id="Advantages_of_Prompt_Chaining">Advantages of Prompt Chaining</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">The <strong>advantages of prompt chaining</strong> include:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Simplified Instructions by Providing Specific Context</strong></p>
+<ul>
+<li data-line="1" dir="auto">By focusing on a specific context, instructions become clearer, making it easier for the model to understand and respond accurately.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">
+<p>✦ <strong>Focused Troubleshooting</strong></p>
+<ul>
+<li data-line="4" dir="auto">Helps in isolating specific issues by breaking down the problem into smaller, manageable parts.</li>
+<li data-line="5" dir="auto">Allows for more precise troubleshooting and solution, as the troubleshooting process is focused on a particular aspect of the problem.</li>
+</ul>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ <strong>Incremental Validation</strong></p>
+<ul>
+<li data-line="8" dir="auto">Validates the accuracy and relevance of each step before moving on to the next, ensuring the intermediate outputs are on the right track.</li>
+<li data-line="9" dir="auto">Makes it easier to identify and correct errors at early stages, preventing compounding mistakes.</li>
+</ul>
+</li>
+<li data-line="11" dir="auto">
+<p>✦ <strong>Reduce the Number of Tokens in a Prompt</strong></p>
+<ul>
+<li data-line="12" dir="auto">Using fewer tokens can save computational resources and costs, especially important for large-scale applications.</li>
+<li data-line="13" dir="auto">Shorter prompts can be processed faster, leading to quicker responses.</li>
+</ul>
+</li>
+<li data-line="15" dir="auto">
+<p>✦ <strong>Allow to Skip Some Chains of the Workflow</strong></p>
+<ul>
+<li data-line="16" dir="auto">Provides the ability to bypass certain steps that may not be necessary for every scenario, enhancing efficiency.</li>
+</ul>
+</li>
+<li data-line="19" dir="auto">
+<p>✦ <strong>Have a Human-in-the-Loop as Part of the Workflow</strong></p>
+<ul>
+<li data-line="20" dir="auto">Human oversight ensures that the AI's output meets the desired standards and can intervene when necessary.</li>
+<li data-line="21" dir="auto">Humans can provide feedback and make adjustments in real-time, allowing the system to cope with unexpected situations or new information.</li>
+</ul>
+</li>
+<li data-line="23" dir="auto">
+<p>✦ <strong>Use External Tools (Web Search, Databases)</strong></p>
+<ul>
+<li data-line="24" dir="auto">Incorporating external tools can significantly extend the AI's abilities, allowing it to pull in current data, facts, or figures that it wouldn't otherwise have access to.</li>
+<li data-line="25" dir="auto">Access to up-to-date information from the web or specific databases ensures that the AI's responses are both accurate and relevant to the user's query.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Major Chain Types" dir="auto" class="heading" id="Major_Chain_Types">Major Chain Types</h1>
+<div class="heading-children">
+<div class="heading-wrapper">
+<h2 data-heading="Simple Linear Chain" dir="auto" class="heading" id="Simple_Linear_Chain">Simple Linear Chain</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ We have actually applied the prompts chaining in an earlier example <a class="internal-link" data-href="https://ichatspedu.sharepoint.com.2.%20Prompting%20Techniques%20for%20Better%20Reasoning.md#Technique 4 Least-to-Most Prompting" href="https://abc-notes.data.tech.gov.sg/notes/topic-3-building-system-with-advanced-prompting-and-chaining/2.-prompting-techniques-for-better-reasoning.html#Technique_4_Least-to-Most_Prompting" target="_self" rel="noopener">Technique 4 Least-to-Most Prompting</a>
+<ul>
+<li data-line="1" dir="auto">It was a straightforward example because the output from&nbsp;<code>prompt_1</code>&nbsp;can be taken wholesale into&nbsp;<code>prompt_2</code>.</li>
+<li data-line="2" dir="auto">However, this is often not the case when our prompt get more complex (e.g., using&nbsp;<code>Inner Monologue</code>&nbsp;technique)</li>
+<li data-line="3" dir="auto">Below is the core idea of how a simple linear chain can be implemented:</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-javascript">prompt_1 = " Generate 10 facts about the role of e-learning in the education sector"
+
+response_1 = get_completion(prompt_1)
+
+prompt_2 = f"&lt;fact&gt;{response_1}&lt;/fact&gt; Use the above facts to write a one paragraph report about the benefits and challenges of e-learning in the education sector:"
+
+response_2 = get_completion(prompt_2)</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Here is the example with the output.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Linear Chain with Processed Output from Previous Step" dir="auto" class="heading" id="Linear_Chain_with_Processed_Output_from_Previous_Step">Linear Chain with Processed Output from Previous Step</h2>
+<div class="heading-children">
+<div>
+<pre class="line-numbers d2l-code"><code class="language-javascript">text = f"""
+In a bustling HDB estate, colleagues Tan and Lee set out on \
+a mission to gather feedback from the residents. As they went door-to-door, \
+engaging joyfully, a challenge arose—Tan tripped on a stone and tumbled \
+down the stairs, with Lee rushing to help. \
+Though slightly shaken, the pair returned to their office to \
+comforting colleagues. Despite the mishap, \
+their dedicated spirits remained undimmed, and they \
+continued their public service with commitment.
+"""
+
+# This code is modified from the earlier example in `inner monologue` 
+def step_1(text):
+    step_delimiter = '#####'
+
+    # example 1
+    prompt_1 =  f"""
+    Your task is to perform the following steps: 
+    Step 1 - Summarize the following text delimited by &lt;text&gt; with 1 sentence.
+    Step 2 - Translate the summary into Malay.
+    Step 3 - List each name in the Malay summary.
+    Step 4 - Output a json object that contains the following keys: malay_summary, num_names.
+    
+    The response MUST be in the following format:
+    Step 1:{step_delimiter} &lt;step 1="" output=""&gt;
+    Step 2:{step_delimiter} &lt;step 2="" output=""&gt;
+    Step 3:{step_delimiter} &lt;step 3="" output=""&gt;
+    Step 4:{step_delimiter} &lt;step 4="" output=""&gt;
+    
+    &lt;text&gt;
+    {text}
+    &lt;/text&gt;
+    """
+    response = get_completion(prompt_1)
+
+    # Process the output for next step
+    json_string = response.split('#####')[-1].strip()
+    dict_output = json.loads(json_string)
+    return dict_output
+
+
+def step_2(dict_input_2):
+    prompt_2 = f"""
+    Write a short English news article within 200 words based on the Summary.
+    
+    &lt;summary&gt;
+    {dict_input_2['malay_summary']}
+    &lt;/summary&gt;
+    """
+
+    response = get_completion(prompt_2)
+    return response
+
+
+def run_linear_pipeline(text):
+    # Step 1
+    output_1 = step_1(text)
+    
+    # Step 2
+    output_2 = step_2(output_1)
+
+    # Step N..
+    # output_n = &amp;lt;...&amp;gt;
+
+    # Return final output
+    final_output = output_2
+    return final_output
+
+run_linear_pipeline(text)&lt;/step&gt;&lt;/step&gt;&lt;/step&gt;&lt;/step&gt;&lt;/text&gt;</code></pre>
+</div>
+<div>
+<p dir="auto">The example above demonstrates a two-step linear pipeline where the goal is to first summarize and translate a given text into Malay, and then the second step uses the translated summary to generate a short English news article. Here's a breakdown of the key components and how they work together:</p>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="Chain 1:" dir="auto" class="heading" id="Chain_1:">Chain 1:</h3>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Function <code>step_1</code></strong>:
+<ul>
+<li data-line="1" dir="auto">This function takes a piece of text as input and constructs a prompt that instructs the LLM to perform a series of tasks:
+<ul>
+<li data-line="2" dir="auto"><strong>Summarize</strong> the text in one sentence.</li>
+<li data-line="3" dir="auto"><strong>Translate</strong> the summary into Malay.</li>
+<li data-line="4" dir="auto"><strong>List</strong> each name found in the Malay summary.</li>
+<li data-line="5" dir="auto"><strong>Output</strong> a JSON object containing the Malay summary and the number of names listed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">✦ The prompt is sent to the LLM via the <code>get_completion</code> function (a placeholder for the actual LLM API call), and the response is processed to extract the JSON string, which is then parsed into a dictionary (<code>dict_output</code>) and returned.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="Chain 2:" dir="auto" class="heading" id="Chain_2:">Chain 2:</h3>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Function <code>step_2</code></strong>:
+<ul>
+<li data-line="1" dir="auto">This function receives the dictionary output from <code>step_1</code> as input.</li>
+<li data-line="2" dir="auto">It constructs a new prompt asking the LLM to write a short English news article based on the Malay summary provided in the dictionary.</li>
+<li data-line="3" dir="auto">The function then sends this prompt to the LLM and returns the generated news article as the response.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="Running the Pipeline" dir="auto" class="heading" id="Running_the_Pipeline">Running the Pipeline</h3>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Function <code>run_linear_pipeline</code></strong>:
+<ul>
+<li data-line="1" dir="auto">This function orchestrates the execution of the pipeline.</li>
+<li data-line="2" dir="auto">It first calls <code>step_1</code> with the original text, capturing its output (the dictionary containing the Malay summary and the number of names).</li>
+<li data-line="3" dir="auto">This output is then passed to <code>step_2</code>, which generates the English news article. The final output (the news article) is returned by the function.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">Diagram below shows the relationship of the 3 functions in graphic</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240807101631359.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240807101631359.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="example" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                </svg></div>
+<div class="callout-title-inner">Try out the practical examples in Weekly Tasks - Week <strong>03</strong></div>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Decision Chain" dir="auto" class="heading" id="Decision_Chain">Decision Chain</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Decision chain demonstrates a powerful <code>chaining pattern</code> for building dynamic and adaptable conversational AI systems: <strong>Decision Chaining</strong>.</p>
+<ul>
+<li data-line="2" dir="auto">This approach leverages the inherent flexibility of Large Language Models (LLMs) to create a chain of prompts, where each step's response informs the subsequent decision point in the conversation flow.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ Imagine a traditional program trying to understand a user asking for a "fee waiver," potentially for a late payment. Rigid keyword-based systems might fail if the user doesn't use the exact term "late fee waiver." This is where LLMs, acting as "soft programming logic," shine.</p>
+<ul>
+<li data-line="5" dir="auto">In our example below, the first prompt asks the LLM to analyze the user's message and make a simple decision: Is this about a "Late Fee Waiver" (Yes/No)? This isn't about keyword spotting; the LLM understands the <em>intent</em> behind the user's words.</li>
+<li data-line="6" dir="auto">Based on this initial "soft" decision, the conversation branches. If the LLM detects a request for a waiver, the next prompt is tailored to gather the necessary information for processing. If it's a general question, the LLM receives a different prompt, guiding it to provide a helpful answer.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto">
+<p>✦ Diagram below is a graphical representation of the chain.</p>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/topic-03-chain-decision.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Decision chain pattern, guided by LLM-powered decisions, offers several advantages:
+<ul>
+<li data-line="1" dir="auto"><strong>Robustness to Vague Input:</strong>
+<ul>
+<li data-line="2" dir="auto">Users can express themselves naturally, without needing to use hyper-specific language.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto"><strong>Dynamic Conversation Flow:</strong>
+<ul>
+<li data-line="4" dir="auto">The conversation adapts in real-time to the user's needs, leading to a more natural and engaging experience.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto"><strong>Simplified Development:</strong>
+<ul>
+<li data-line="6" dir="auto">Instead of writing complex rules for every possible user input, we focus on crafting clear prompts that empower the LLM to make the right decisions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="example" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                              <line x1="8" y1="6" x2="21" y2="6"></line>
+                              <line x1="8" y1="12" x2="21" y2="12"></line>
+                              <line x1="8" y1="18" x2="21" y2="18"></line>
+                              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg></div>
+<div class="callout-title-inner">Try out the practical examples in Weekly Tasks - Week <strong>03</strong></div>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Prompts Chaining and Performance" dir="auto" class="heading" id="Prompts_Chaining_and_Performance">Prompts Chaining and Performance</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ While prompt chaining enhances the quality of the conversation, it can also impact the performance or speed of the AI system.</p>
+<ul>
+<li data-line="1" dir="auto">One reason is that as the conversation progresses, the chain of prompts becomes longer.</li>
+<li data-line="2" dir="auto">Processing these longer inputs can take more time and computational resources, potentially slowing down the response time of your application.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ Despite this, the benefits of prompt chaining often outweigh the potential performance costs.</p>
+<ul>
+<li data-line="5" dir="auto">The ability to maintain a coherent, context-aware conversation is crucial for user engagement and satisfaction.</li>
+<li data-line="6" dir="auto">Therefore, it's important for developers to measure the time performance of the chain, in order to balance conversational quality with system performance.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="hint" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                        </svg></div>
+<div class="callout-title-inner">Quick speed test in Jupyter Notebook</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ The&nbsp;<code>%%timeit</code>&nbsp;magic command in Jupyter Notebook (strickly speaking the underlying IPython) is used to measure the execution time of code.
+<ul>
+<li data-line="2" dir="auto">It’s a built-in magic command in IPython, with the double percentage sign %% indicating that it is a “cell magic” command.</li>
+<li data-line="3" dir="auto">Cell magic commands apply to the entire code cell in an IPython environment, such as a Jupyter notebook.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li data-line="6" dir="auto">✦ When we run a cell with&nbsp;<code>%%timeit</code>, IPython will execute the code multiple times and provide a statistical summary of the execution times.
+<ul>
+<li data-line="7" dir="auto">This includes the best, worst, and mean execution times, along with the standard deviation, giving you a comprehensive overview of your code’s performance.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li data-line="10" dir="auto">✦ It’s important to note that&nbsp;<code>%%timeit</code>&nbsp;automatically determines the number of runs and loops for you based on the complexity of your code.
+<ul>
+<li data-line="11" dir="auto">However, you can also manually specify the number of runs (using -r) and loops (using -n) if you want more control over the timing process.</li>
+<li data-line="12" dir="auto">For example,&nbsp;<code>%%timeit -r 5 -n 1000</code>&nbsp;would run the code 1000 times per loop for 5</li>
+</ul>
+<hr></li>
+<li data-line="15" dir="auto">✦ There is a similar command you can try in Jupyter Notebook to test the response time of your pipelline (or any code execution within a cell) is <strong><code>%%time</code></strong>: This magic command is used to time a particular piece of code.
+<ul>
+<li data-line="16" dir="auto">Unlike <code>%%timeit</code>, it does not run the code multiple times, so it provides the time taken for a single run.</li>
+<li data-line="17" dir="auto">This can be useful for longer running pieces of code where running it multiple times (like <code>%%timeit</code> does) would be impractical</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><iframe width="100%" height="165.1875" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/22223fc83c744731b3a4f6790fba2d34/cc825bea70c1457ab7f4177f8088ce77?height=165.1875" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><iframe src="https://f3c61375-11d9-4d38-8999-7e2057e5acf8.outputs.deepnoteworkspace.com/index.html?isDarkMode=false&amp;cache=true#0102758c9f4d47af94bd9a6c92d75f83:1" data-cy="output-iframe" sandbox="allow-same-origin allow-scripts allow-downloads allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox" title="Cell output" class="css-v3c2oc" style="height: 24.1875px; max-height: none; overflow-y: auto;"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="[Extra: ] How about LangChain?" dir="auto" class="heading" id="[Extra:_]_How_about_LangChain?">[Extra: ] How about LangChain?</h1>
+<div class="heading-children">
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M12 16v-4"></path>
+                          <path d="M12 8h.01"></path>
+                        </svg></div>
+<div class="callout-title-inner">This section is for extra reading.</div>
+</div>
+</div>
+</div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.langchain.com/langchain" rel="noopener" class="external-link" href="https://www.langchain.com/langchain" target="_blank">LangChain</a> is a framework to build with LLMs by chaining interoperable components. The framework "abstracts" away many of the complexity, so developers will have to write shorter code to achieve similar outputs. It is useful for projects that involves complex prompt chains where we need to orchestrate multiple LLM calls with different prompts and data dependencies.</p>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Prompt Chaining vs. LangChain" dir="auto" class="heading" id="Prompt_Chaining_vs._LangChain">Prompt Chaining vs. LangChain</h2>
+<div class="heading-children">
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">Aspect</th>
+<th dir="ltr">Native Prompt Chaining</th>
+<th dir="ltr">LangChain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><strong>What is it</strong></td>
+<td dir="ltr">Involves taking the result of one prompt and using it as the starting point for the next, forming a sequence of interactions.</td>
+<td dir="ltr">A framework designed to simplify the creation of applications that use language models, providing tools for chaining prompts, managing state, and integrating external data sources.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Advantages</strong></td>
+<td dir="ltr">- <strong>Simplified Instructions</strong>: By focusing on specific contexts, instructions become clearer. <br>- <strong>Focused Troubleshooting</strong>: Helps isolate specific issues by breaking down the problem into smaller parts. <br>- <strong>Incremental Validation</strong>: Validates each step before moving on, ensuring intermediate outputs are correct. <br>- <strong>Reduced Token Usage</strong>: Using fewer tokens can save computational resources and costs.</td>
+<td dir="ltr">- <strong>Ease of Use</strong>: Provides a higher-level abstraction, making it easier to create complex chains. <br>- <strong>State Management</strong>: Built-in tools for managing state across multiple prompts. <br>- <strong>Integration</strong>: Seamlessly integrates with various data sources and APIs. <br>- <strong>Modularity</strong>: Highly modular, allowing for reusable components. <br>- <strong>Community and Support</strong>: Active community.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Disadvantages</strong></td>
+<td dir="ltr">- <strong>Complexity</strong>: Requires manual handling of each step and its output. <br>- <strong>Performance</strong>: Longer chains can impact performance and response time. <br>- <strong>Error Handling</strong>: Requires explicit handling of exceptions and errors.</td>
+<td dir="ltr">- <strong>Learning Curve</strong>: May require learning the framework and its conventions. <br>- <strong>Overhead</strong>: Additional abstraction layers can introduce overhead. <br>- <strong>Dependency</strong>: Relies on the LangChain framework, which may not be suitable for all use cases. <br>- <strong>Active Development</strong>: Updates are often not backward compatible and may break the app/code. Documentation may not reflect the latest changes and not comprehensive.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Flexibility</strong></td>
+<td dir="ltr">- <strong>High Flexibility</strong>: Can be tailored to specific needs and scenarios. <br>- <strong>Customizable</strong>: Each step can be customized extensively.</td>
+<td dir="ltr">- <strong>Moderate Flexibility</strong>: Provides flexibility but within the constraints of the framework. <br>- <strong>Predefined Patterns</strong>: Encourages the use of predefined patterns and best practices.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Scalability</strong></td>
+<td dir="ltr">- <strong>Manual Scalability</strong>: Requires manual effort to scale and manage larger chains.</td>
+<td dir="ltr">- <strong>Built-in Scalability</strong>: Designed to handle larger chains and more complex workflows efficiently.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Error Handling</strong></td>
+<td dir="ltr">- <strong>Manual Error Handling</strong>: Requires explicit handling of errors at each step.</td>
+<td dir="ltr">- <strong>Automated Error Handling</strong>: Provides built-in mechanisms for error handling and retries.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Human Oversight</strong></td>
+<td dir="ltr">- <strong>Human-in-the-Loop</strong>: Allows for human intervention and oversight at various stages.</td>
+<td dir="ltr">- <strong>Limited Human Oversight</strong>: Primarily automated, but can be configured for human intervention.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Use Cases</strong></td>
+<td dir="ltr">- <strong>Custom Workflows</strong>: Suitable for highly customized workflows and specific tasks. <br>- <strong>Research and Development</strong>: Ideal for experimental setups and iterative development.</td>
+<td dir="ltr">- <strong>Production Applications</strong>: Suitable for production-grade applications with complex workflows. <br>- <strong>Rapid Prototyping</strong>: Ideal for quickly prototyping and deploying language model applications.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Our Two Cents" dir="auto" class="heading" id="Our_Two_Cents">Our Two Cents</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ While LangChain offers a powerful framework for working with language models, we believe that a foundational understanding of prompt chaining is essential for anyone venturing into this field.<br><br></p>
+</li>
+<li data-line="3" dir="auto">
+<p>✦ This training prioritized a direct "Native Prompt Chaining" approach to provide you with that fundamental knowledge and transparency into the underlying mechanisms. It empowers you to build and troubleshoot chains with greater control and flexibility.<br><br></p>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ This is not to say LangChain should be disregarded entirely. As your projects grow in complexity and you require advanced features like state management and external integrations, exploring LangChain's capabilities can be incredibly beneficial.<br><br></p>
+</li>
+<li data-line="9" dir="auto">
+<p>✦ Ultimately, having a strong grasp of the core concepts of prompt chaining will equip you to make informed decisions about the best tools and frameworks for your LLM-powered solutions or applications.</p>
+</li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

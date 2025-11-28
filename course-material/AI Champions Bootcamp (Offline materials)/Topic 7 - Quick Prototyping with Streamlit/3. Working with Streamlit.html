@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg></span></p>
+</div>
+<ol start="3">
+<li dir="auto" class="page-title heading fix-heading">Title: Working with Streamlit</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Working with Streamlit"></h1>
+<div class="el-h1 heading-wrapper">
+<div class="heading-children">
+<div class="el-ul">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Understanding Streamlit</li>
+<li class="step step-success" data-content="🔧" dir="auto">Setting up Streamlit Project with pip and venv</li>
+<li class="step step-success" data-content="🔧" dir="auto">Working with Streamlit</li>
+<li class="step" data-content="🔧" dir="auto">Debugging Streamlit Apps in VS Code</li>
+</ul>
+</div>
+<div class="el-p">
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/iPHTg9j.png" referrerpolicy="no-referrer"></p>
+</div>
+<div class="el-pre">
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Create a Streamlit App" href="#Create_a_Streamlit_App" class="internal-link" target="_self" rel="noopener nofollow">Create a Streamlit App</a>
+<ul>
+<li dir="auto"><a data-href="#Step 1: Get the Sample App Up and Running" href="#Step_1:_Get_the_Sample_App_Up_and_Running" class="internal-link" target="_self" rel="noopener nofollow">Step 1: Get the Sample App Up and Running</a></li>
+<li dir="auto"><a data-href="#Step 2: Understand the Basics by Getting your Hands Dirty" href="#Step_2:_Understand_the_Basics_by_Getting_your_Hands_Dirty" class="internal-link" target="_self" rel="noopener nofollow">Step 2: Understand the Basics by Getting your Hands Dirty</a></li>
+<li dir="auto"><a data-href="#Step 3: Continue to Explore the Other Widgets" href="#Step_3:_Continue_to_Explore_the_Other_Widgets" class="internal-link" target="_self" rel="noopener nofollow">Step 3: Continue to Explore the Other Widgets</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Create a Multi-Page Streamlit App (Simpler)" href="#Create_a_Multi-Page_Streamlit_App_(Simpler)" class="internal-link" target="_self" rel="noopener nofollow">Create a Multi-Page Streamlit App (Simpler)</a>
+<ul>
+<li dir="auto"><a data-href="#Structuring your multipage app" href="#Structuring_your_multipage_app" class="internal-link" target="_self" rel="noopener nofollow">Structuring your multipage app</a></li>
+<li dir="auto"><a data-href="#Naming and Ordering your pages" href="#Naming_and_Ordering_your_pages" class="internal-link" target="_self" rel="noopener nofollow">Naming and Ordering your pages</a>
+<ul>
+<li dir="auto"><a data-href="#Filenames for pages" href="#Filenames_for_pages" class="internal-link" target="_self" rel="noopener nofollow">Filenames for pages</a></li>
+<li dir="auto"><a data-href="#How pages are sorted in the sidebar" href="#How_pages_are_sorted_in_the_sidebar" class="internal-link" target="_self" rel="noopener nofollow">How pages are sorted in the sidebar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Key Takeaways on the working of Streamlit App" href="#Key_Takeaways_on_the_working_of_Streamlit_App" class="internal-link" target="_self" rel="noopener nofollow">Key Takeaways on the working of Streamlit App</a></li>
+</ul>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Create a Streamlit App" dir="auto" class="heading" id="Create_a_Streamlit_App">Create a Streamlit App</h1>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ The best approach to learn Streamlit is through hands-on experience.
+<ul>
+<li data-line="1" dir="auto">As you go through this note, make sure to experiment with each function in your Visual Studio Code.</li>
+<li data-line="2" dir="auto">With your app active, Streamlit's interface will prompt you to rerun the app and display updates every time you introduce a new element to your script and save your changes.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Step 1: Get the Sample App Up and Running" dir="auto" class="heading" id="Step_1:_Get_the_Sample_App_Up_and_Running">Step 1: Get the Sample App Up and Running</h2>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ Streamlit has a wonderful "<em>Getting Started</em>" tutorial.
+<ul>
+<li data-line="1" dir="auto"><strong>Going through the tutorial and understand the explanation in there</strong></li>
+<li data-line="2" dir="auto">It's a carefully crafted, so after you have gone through the tutorial, you will have a good understanding of How Streamlit works and the different key components that you should be paying attention when you are creating your own Streamlit app.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="el-div">
+<div class="card bg-base-100 shadow-xl">
+<figure class="px-10 pt-10"><img class="rounded-xl" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/OJznQfA.png" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                            <path d="M3 8L12 17L21 8"></path>
+                          </svg></div>
+<h2 class="card-title heading" dir="auto">🔥 Create your First Streamlit App</h2>
+<div class="badge badge-secondary">NEW</div>
+<h2 class="card-title heading" dir="auto" id="🔥_Create_your_First_Streamlit_App	____NEW____"></h2>
+<div class="card-actions"><a href="https://docs.streamlit.io/get-started/tutorials/create-an-app" target="_blank" rel="noopener nofollow"> <button class="btn btn-primary"> Open the Tutorial </button> </a></div>
+<div class="heading-children"></div>
+</div>
+</div>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ Next, copy the complete code from the tutorial from below
+<ul>
+<li data-line="1" dir="auto">Then, paste the code to <strong>replace the content in <em>"hello_world.py"</em>.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="el-pre">
+<pre class="d2l-code"><code class="language-python">import streamlit as st
+import pandas as pd
+import numpy as np
+
+
+st.title('Uber pickups in NYC')
+
+  
+DATE_COLUMN = 'date/time'
+DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
+
+            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+
+@st.cache_data
+def load_data(nrows):
+    data = pd.read_csv(DATA_URL, nrows=nrows)
+    lowercase = lambda x: str(x).lower()
+    data.rename(lowercase, axis='columns', inplace=True)
+    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+    return data
+
+data_load_state = st.text('Loading data...')
+data = load_data(10000)
+data_load_state.text("Done! (using st.cache_data)")
+
+if st.checkbox('Show raw data'):
+    st.subheader('Raw data')
+    st.write(data)
+
+st.subheader('Number of pickups by hour')
+hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
+st.bar_chart(hist_values)
+
+# Some number in the range 0-23
+hour_to_filter = st.slider('hour', 0, 23, 17)
+filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
+
+st.subheader('Map of all pickups at %s:00' % hour_to_filter)
+st.map(filtered_data)</code></pre>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ Run the Streamlit App locally from your computer
+<ul>
+<li data-line="1" dir="auto">by running the following line in the Visual Studio Code's terminal</li>
+<li data-line="2" dir="auto"><code>streamlit run hello_world.py</code></li>
+</ul>
+</li>
+<li data-line="3" dir="auto">✦ Your browser will open up and the working Streamlit app will be displayed there!</li>
+</ul>
+</div>
+<div class="el-iframe"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube.com/embed/uapOzFfPmt8" height="400" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Step 2: Understand the Basics by Getting your Hands Dirty" dir="auto" class="heading" id="Step_2:_Understand_the_Basics_by_Getting_your_Hands_Dirty">Step 2: Understand the Basics by Getting your Hands Dirty</h2>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ We are not stopping yet.</li>
+<li data-line="1" dir="auto">✦ Now with the sample Streamlit App display on the browser, any changes that you make to the Streamlit code (from your Visual Studio Code) will reflect on the browser. If it doesn't, just hit the fresh button on the browser.
+<ul>
+<li data-line="2" dir="auto">Next, please go through the official guide on <strong>"Basic Concepts of Streamlit"</strong>.</li>
+<li data-line="3" dir="auto">The guide will provide additional explanation to the sample Streamlit app that you just deployed locally, such as what is <code>magic command</code> and how the interactions between the slider and the data filtering work.</li>
+<li data-line="4" dir="auto">Moreover, there are also <strong>new components being covered in this guide</strong>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="todo" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check-circle-2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                          </svg></div>
+<div class="callout-title-inner">To Do: Copy the Code and Try it on Your Visual Studio Code</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">It's important that while you are going through this guide, copy over the sample code from the guide to your "<em>hello_world.py</em>" and observe the changes on the browser.</li>
+<li data-line="2" dir="auto">We think that there is nothing more effective than learning Streamlit, by actually experimenting with the code yourself!</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="el-div">
+<div class="card bg-base-100 shadow-xl">
+<figure class="px-10 pt-10"><img class="rounded-xl" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/LP0dPJd.png" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                            <path d="M3 8L12 17L21 8"></path>
+                          </svg></div>
+<h2 class="card-title heading" dir="auto">🔥 Experiment new Code on the Fly</h2>
+<div class="badge badge-secondary">NEW</div>
+<h2 class="card-title heading" dir="auto" id="🔥_Experiment_new_Code_on_the_Fly	____NEW____"></h2>
+<div class="card-actions"><a href="https://docs.streamlit.io/get-started/fundamentals/main-concepts" target="_blank" rel="noopener nofollow"> <button class="btn btn-primary"> Open the "Basic Concepts" Guide </button> </a></div>
+<div class="heading-children"></div>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Step 3: Continue to Explore the Other Widgets" dir="auto" class="heading" id="Step_3:_Continue_to_Explore_the_Other_Widgets">Step 3: Continue to Explore the Other Widgets</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">if you have been following up to this point, you would have most the required understanding to get started on building on your own Streamlit app.</p>
+</div>
+<div class="el-p">
+<p dir="auto">Most of the time, it's about <strong>using the right widgets</strong> that allow your applications to:</p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Take in the inputs from users</strong></li>
+<li data-line="1" dir="auto">✦ <strong>Display the outputs to the users</strong></li>
+</ul>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">&nbsp;a&nbsp;<code>widget</code>&nbsp;is an interactive element that can be added to your app, allowing users to input data or adjust parameters in real-time. Widgets can range from simple buttons and text inputs to sliders and selectors, and somethings complex like editable tables or 3D rendering.</div>
+</div>
+</div>
+</div>
+<div class="el-p">
+<p dir="auto">Many of these decisions are specific to your PoC project. As we will be starting to work on the PoC project very soon, it is definitely a good time to <strong>check out the different widgets available on Streamlit and scout for the widgets that are potentially useful for your project</strong>.</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>The best way to find out how the widgets work?</strong></p>
+<ul>
+<li data-line="1" dir="auto">
+<ol>
+<li data-line="1" dir="auto">Understand and see the the widget looks like on the <code>Official API Reference</code> section</li>
+</ol>
+<ul>
+<li data-line="2" dir="auto">This is probably the section on Streamlit documentation page that we would visit most often.</li>
+<li data-line="3" dir="auto">One reason is because each widget is unique. Different widgets take in different inputs (parameters to the relevant functions) and may have specific ways to produce the output.</li>
+<li data-line="4" dir="auto">It is very important for us to know what are the input and output of the widgets that we want to implement them, so that we can implement them correctly, without having to spend too much time on diagnosing the errors later.</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<ol start="2">
+<li data-line="6" dir="auto"><strong>🔥 Copy the code over to your Visual Studio Code and try it out!!!</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="el-div">
+<div class="card bg-base-100 shadow-xl">
+<figure class="px-10 pt-10"><img class="rounded-xl" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/HyEPMtt.png" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                            <path d="M3 8L12 17L21 8"></path>
+                          </svg></div>
+<h2 class="card-title heading" dir="auto">🔥 Experiment new Code on the Fly</h2>
+<div class="badge badge-secondary">NEW</div>
+<h2 class="card-title heading" dir="auto" id="🔥_Experiment_new_Code_on_the_Fly	____NEW____"></h2>
+<div class="card-actions"><a href="https://docs.streamlit.io/develop/api-reference" target="_blank" rel="noopener nofollow"> <button class="btn btn-primary"> Open the "Basic Concepts" Guide </button> </a></div>
+<div class="heading-children"></div>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Create a Multi-Page Streamlit App (Simpler)" dir="auto" class="heading" id="Create_a_Multi-Page_Streamlit_App_(Simpler)">Create a Multi-Page Streamlit App (Simpler)</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">As your app grows large, it becomes useful to organize your script into multiple pages. This makes your app easier to manage as a developer and easier to navigate as a user. Streamlit provides a frictionless way to create multipage apps. Pages are automatically shown in a navigation widget inside your app's sidebar. If a user clicks on a page in the sidebar, Streamlit navigates to that page without reloading the frontend — making app browsing incredibly fast! In this guide, let’s learn how to create multipage apps.</p>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Structuring your multipage app" dir="auto" class="heading" id="Structuring_your_multipage_app">Structuring your multipage app</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Streamlit identifies pages in a multipage app by directory structure and filenames. The file you pass to&nbsp;<code>streamlit run</code>&nbsp;is called your entrypoint file. This is your app's homepage. When you have a&nbsp;<code>pages/</code>&nbsp;directory next to your entrypoint file, Streamlit will identify each Python file within it as a page. The following example has three pages.&nbsp;<code>main.py</code>&nbsp;is the entrypoint file and homepage.</p>
+<pre class="d2l-code"><code class="language-plain">your_working_directory/ 
+├── pages/ 
+│ ├── a_page.py 
+│ └── another_page.py 
+└── main.py</code></pre>
+</div>
+<div class="el-p">
+<p dir="auto">Run your multipage app just like you would for a single-page app.</p>
+</div>
+<div class="el-p">
+<p dir="auto"><code>streamlit run main.py</code></p>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                            <path d="M12 9v4"></path>
+                            <path d="M12 17h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">Only files with .py extensions are identified as Pages</div>
+</div>
+<div class="callout-content">
+<p dir="auto">Only&nbsp;<code>.py</code>&nbsp;files in the&nbsp;<code>pages/</code>&nbsp;directory will be identified as pages. Streamlit ignores all other files in the&nbsp;<code>pages/</code>&nbsp;directory and its subdirectories. Streamlit also ignores Python files in subdirectories of&nbsp;<code>pages/</code>.</p>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Naming and Ordering your pages" dir="auto" class="heading" id="Naming_and_Ordering_your_pages">Naming and Ordering your pages</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">The entrypoint file is your app's homepage and the first page users will see when visiting your app. Once you've added pages to your app, the entrypoint file appears as the topmost page in the sidebar. Streamlit determines the page label and ordering of each page from your filenames.</p>
+</div>
+<div class="el-h3 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div>
+<h3 data-heading="Filenames for pages" dir="auto" class="heading" id="Filenames_for_pages">Filenames for pages</h3>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Filenames are composed of four different parts as follows:</p>
+</div>
+<div class="el-ol">
+<ol>
+<li data-line="0" dir="auto"><code>number</code>. A non-negative integer.</li>
+<li data-line="1" dir="auto"><code>separator</code>. Any combination of underscore (<code>"_"</code>), dash (<code>"-"</code>), and space (<code>" "</code>).</li>
+<li data-line="2" dir="auto"><code>label</code>. Everything up to, but not including,&nbsp;<code>".py"</code>.</li>
+<li data-line="3" dir="auto"><code>".py"</code></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="el-h3 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div>
+<h3 data-heading="How pages are sorted in the sidebar" dir="auto" class="heading" id="How_pages_are_sorted_in_the_sidebar">How pages are sorted in the sidebar</h3>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">The <code>entrypoint file</code> is always displayed first. The remaining pages are sorted as follows:</p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ Files that have a&nbsp;<code>number</code>&nbsp;appear before files without a&nbsp;<code>number</code>.</li>
+<li data-line="1" dir="auto">✦ Files are sorted based on the&nbsp;<code>number</code>&nbsp;(if any), followed by the&nbsp;<code>label</code>&nbsp;(if any).</li>
+<li data-line="2" dir="auto">✦ When files are sorted, Streamlit treats the&nbsp;<code>number</code>&nbsp;as an actual number rather than a string. So&nbsp;<code>03</code>&nbsp;is the same as&nbsp;<code>3</code>.</li>
+</ul>
+</div>
+<div class="el-p">
+<p dir="auto">This table shows examples of filenames and their corresponding labels, sorted by the order in which they appear in the sidebar.</p>
+</div>
+<div class="el-table" dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th align="left" dir="ltr"><strong>Filename</strong></th>
+<th align="left" dir="ltr"><strong>Rendered label</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" dir="ltr"><code>1 - first page.py</code></td>
+<td align="left" dir="ltr">first page</td>
+</tr>
+<tr>
+<td align="left" dir="ltr"><code>12 monkeys.py</code></td>
+<td align="left" dir="ltr">monkeys</td>
+</tr>
+<tr>
+<td align="left" dir="ltr"><code>123.py</code></td>
+<td align="left" dir="auto">123</td>
+</tr>
+<tr>
+<td align="left" dir="ltr"><code>123_hello_dear_world.py</code></td>
+<td align="left" dir="ltr">hello dear world</td>
+</tr>
+<tr>
+<td align="left" dir="ltr"><code>_12 monkeys.py</code></td>
+<td align="left" dir="ltr">12 monkeys</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                                </path>
+                              </svg></div>
+<div class="callout-title-inner">We can also set labels may differ from the page title set in&nbsp;<a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/api-reference/configuration/st.set_page_config" rel="noopener nofollow" class="external-link" href="https://docs.streamlit.io/develop/api-reference/configuration/st.set_page_config" target="_blank"><code>st.set_page_config</code></a>.|</div>
+</div>
+<div class="callout-content">
+<p dir="auto">In the script for the particular page, we can place this line <code>st.set_page_config(page_title="Your Preferred
+                                  Label for the Page")</code> to set the custom label.</p>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Key Takeaways on the working of Streamlit App" dir="auto" class="heading" id="Key_Takeaways_on_the_working_of_Streamlit_App">Key Takeaways on the working of Streamlit App</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Now that you know a little more about all the individual pieces, let's close the loop and review how it works together:</p>
+</div>
+<div class="el-ol">
+<ol>
+<li data-line="0" dir="auto">Streamlit apps are Python scripts that run from top to bottom.</li>
+<li data-line="1" dir="auto">Every time a user opens a browser tab pointing to your app, the script is executed and a new session starts.</li>
+<li data-line="2" dir="auto">As the script executes, Streamlit draws its output live in a browser.</li>
+<li data-line="3" dir="auto">Every time a user interacts with a widget, your script is re-executed and Streamlit redraws its output in the browser.
+<ul>
+<li data-line="4" dir="auto">The output value of that widget matches the new value during that rerun.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">Scripts use the Streamlit cache to avoid recomputing expensive functions, so updates happen very fast.</li>
+<li data-line="6" dir="auto">Session State lets you save information that persists between reruns when you need more than a simple widget. We will look into more of this in next topic.</li>
+<li data-line="7" dir="auto">Streamlit apps can contain multiple pages, which are defined in separate&nbsp;<code>.py</code>&nbsp;files in a&nbsp;<code>pages</code>&nbsp;folder.</li>
+</ol>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+<div class="mod-footer mod-ui"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 819px; top: 618px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> RiMeteorLine</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="RiMeteorLine" data-icon="RiMeteorLine" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px">
+                      <path d="M21 1V13C21 17.9706 16.9706 22 12 22C7.02944 22 3 17.9706 3 13C3 9.72064 4.75393 6.85093 7.37488 5.27777L14 1.453V4.223L21 1ZM19 4.122L12 7.34567V4.916L8.59717 6.88088C6.47212 8.06588 5.10056 10.2673 5.00531 12.7258L5 13C5 16.866 8.13401 20 12 20C15.7855 20 18.8691 16.9952 18.9959 13.2407L19 13V4.122ZM12 8C14.7614 8 17 10.2386 17 13C17 15.7614 14.7614 18 12 18C9.23858 18 7 15.7614 7 13C7 10.2386 9.23858 8 12 8ZM12 10C10.3431 10 9 11.3431 9 13C9 14.6569 10.3431 16 12 16C13.6569 16 15 14.6569 15 13C15 11.3431 13.6569 10 12 10Z"></path></svg></span></p>
+</div>
+<ol start="7">
+<li dir="auto" class="page-title heading fix-heading" id="Extra - AsyncOpenAI - Calling OpenAI APIs Asynchronously with
+                Pandas">Extra - AsyncOpenAI - Calling OpenAI APIs Asynchronously with Pandas</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Extra - AsyncOpenAI - Calling OpenAI APIs Asynchronously with Pandas"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ The&nbsp;<strong>AsyncOpenAI</strong>&nbsp;class is a Python wrapper for the OpenAI API that allows users to perform asynchronous requests to the API. The class inherits from the OpenAI class and overrides some of its methods to use the asyncio library for concurrency. The AsyncOpenAI class provides the following benefits:</p>
+<ul>
+<li data-line="2" dir="auto"><strong>Faster performance</strong>: Users can send multiple requests to the API in parallel and wait for the results without blocking the main thread. This can improve the efficiency and responsiveness of the application.</li>
+<li data-line="3" dir="auto"><strong>Easier error handling</strong>: Users can use the&nbsp;<code>try/except</code>&nbsp;syntax to catch and handle any exceptions raised by the API requests. The class also provides a&nbsp;<code>cancel</code>&nbsp;method to cancel any pending requests.</li>
+<li data-line="4" dir="auto"><strong>Simpler code</strong>: Users can use the&nbsp;<code>async/await</code>&nbsp;syntax to write concise and readable code that works with the API. The class also supports the&nbsp;<code>async with</code>&nbsp;context manager to automatically close the session when done.</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ Here is the brief documentation from the README.md from OpenAI’s official GitHub repository<code>openai-python</code>&nbsp;(<a data-tooltip-position="top" aria-label="https://github.com/openai/openai-python" rel="noopener" class="external-link" href="https://github.com/openai/openai-python" target="_blank">openai/openai-python: The official Python library for the OpenAI API (github.com)</a></p>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import asyncio  
+from openai import AsyncOpenAI  
+  
+client = AsyncOpenAI(  
+# defaults to os.environ.get("OPENAI_API_KEY")  
+api_key="My API Key",  
+)  
+  
+  
+async def main() -&amp;gt; None:  
+chat_completion = await client.chat.completions.create(  
+messages=[  
+		{  
+		"role": "user",  
+		"content": "Say this is a test",  
+		}  
+	],  
+	model="gpt-4o-mini",  
+)  
+  
+  
+asyncio.run(main())</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Integrating with Pandas (with Example)" dir="auto" class="heading" id="Integrating_with_Pandas_(with_Example)">Integrating with Pandas (with Example)</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>Pandas DataFrames</strong>&nbsp;are a staple for data manipulation and analysis. However, when it comes to making API calls for each row in a DataFrame, things can get a bit tricky. Traditional methods of looping through a DataFrame and making synchronous API calls can be time-consuming, especially when dealing with large datasets. This is where&nbsp;<strong>asynchronous operations</strong>&nbsp;come into play.</p>
+</div>
+<div>
+<p dir="auto">Asynchronous operations allow multiple tasks to be executed concurrently, rather than sequentially. This means that while one task is waiting for a response (such as an API call), other tasks can continue to execute. This can significantly reduce the overall time required to process large datasets.</p>
+</div>
+<div>
+<p dir="auto">So now let’s us sum up all these into the working code.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Install the packages</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">!pip install openai  
+!pip install nest_asyncio
+
+Import the packages</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Import the packages</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import pandas as pd 
+import seaborn as sns 
+from openai import AsyncOpenAI 
+import asyncio import nest_asyncio</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Import and Preview the Dataset</li>
+</ul>
+</div>
+<div><iframe width="100%" height="500" src="https://embed.deepnote.com/ea398075-fe38-4b9b-be99-cdff0d4373ee/05db972d84214d2bbb8bd348dbaa1d31/3081dcf8267e42399e74f2b6bd0066b9?height=467" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Set up the “AsyncOpenAI” client object</li>
+</ul>
+</div>
+<div></div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Define the Async Functions</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">nest_asyncio.apply() 
+
+EMBEDDING_ENGINE = 'text-embedding-3-small' 
+
+async def get_embedding(text): 
+		response = await client.embeddings.create(input=text, model=EMBEDDING_ENGINE) 
+		return response.data[0].embedding 
+		
+def apply_async_get_embedding(dfi): 
+	loop = asyncio.get_event_loop() 
+	tasks = [loop.create_task(get_embedding(row['Review'])) for _, row in dfi.iterrows()] 
+	return loop.run_until_complete(asyncio.gather(*tasks))</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Apply the Async Function to the DataFrame (df)
+<ul>
+<li data-line="1" dir="auto">Now we can see the returned embeddings are stored in the last column&nbsp;<code>embedding</code>&nbsp;of the DataFrame&nbsp;<code>df</code>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><iframe width="100%" height="430" src="https://embed.deepnote.com/ea398075-fe38-4b9b-be99-cdff0d4373ee/05db972d84214d2bbb8bd348dbaa1d31/750d9e666e034e2ca03ff2115a524e68?height=430" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

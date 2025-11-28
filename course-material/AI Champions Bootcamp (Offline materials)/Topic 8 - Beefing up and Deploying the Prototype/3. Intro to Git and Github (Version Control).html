@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="
+    color: rgb(32, 33, 34);
+    font-family: verdana, sans-serif;
+    font-size: 12px;
+  " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg></span></p>
+</div>
+<ol start="3">
+<li dir="auto" class="page-title heading fix-heading">Title: Intro to Git and GitHub (Version Control)</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Intro to Git and GitHub (Version Control) "></h1>
+<div class="el-h1 heading-wrapper">
+<div class="heading-children">
+<div class="el-ul">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Streamlit - A Deep Dive</li>
+<li class="step step-success" data-content="🔧" dir="auto">Password Protect Streamlit App</li>
+<li class="step step-success" data-content="🔧" dir="auto">Intro to Git and GitHub (Version Control)</li>
+<li class="step" data-content="🔧" dir="auto">Deploying Streamlit App on Streamlit Community Cloud</li>
+</ul>
+</div>
+<div class="el-p">
+<p dir="auto"></p>
+<div src="lib/media/img-20240919204409496.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919204409496.png"></div>
+<p dir="auto"></p>
+</div>
+<div class="el-pre">
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Intro" href="#Intro" class="internal-link" target="_self" rel="noopener nofollow">Intro</a></li>
+<li dir="auto"><a data-href="#What is GitHub?" href="#What_is_GitHub?" class="internal-link" target="_self" rel="noopener nofollow">What is GitHub?</a></li>
+<li dir="auto"><a data-href="#Setting Up a GitHub Account and GitHub Desktop" href="#Setting_Up_a_GitHub_Account_and_GitHub_Desktop" class="internal-link" target="_self" rel="noopener nofollow">Setting Up a GitHub Account and GitHub Desktop</a>
+<ul>
+<li dir="auto"><a data-href="#GitHub Account" href="#GitHub_Account" class="internal-link" target="_self" rel="noopener nofollow">GitHub Account</a></li>
+<li dir="auto"><a data-href="#Download and Install GitHub Desktop" href="#Download_and_Install_GitHub_Desktop" class="internal-link" target="_self" rel="noopener nofollow">Download and Install GitHub Desktop</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Getting Started with Git (GitHub) in VS Code" href="#Getting_Started_with_Git_(GitHub)_in_VS_Code" class="internal-link" target="_self" rel="noopener nofollow">Getting Started with Git (GitHub) in VS Code</a></li>
+<li dir="auto"><a data-href="#.gitignore" href="#.gitignore" class="internal-link" target="_self" rel="noopener nofollow">.gitignore</a>
+<ul>
+<li dir="auto"><a data-href="#What is `.gitignore`?" href="#What_is_`.gitignore`?" class="internal-link" target="_self" rel="noopener nofollow">What is&nbsp;.gitignore?</a></li>
+<li dir="auto"><a data-href="#Why Use `.gitignore`?" href="#Why_Use_`.gitignore`?" class="internal-link" target="_self" rel="noopener nofollow">Why Use&nbsp;.gitignore?</a></li>
+<li dir="auto"><a data-href="#How to Create `.gitignore`?" href="#How_to_Create_`.gitignore`?" class="internal-link" target="_self" rel="noopener nofollow">How to Create .gitignore?</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#[Extra] Additional Great Videos for VS Code" href="#[Extra]_Additional_Great_Videos_for_VS_Code" class="internal-link" target="_self" rel="noopener nofollow">[Extra] Additional Great Videos for VS Code</a></li>
+</ul>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Intro" dir="auto" class="heading" id="Intro">Intro</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">This guide will walk you through the essential GitHub basics required to upload your Streamlit project to a <code>GitHub</code> repository, enabling you to deploy your application on the&nbsp;<strong>Streamlit Community Cloud</strong>.</p>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="todo" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check-circle-2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="m9 12 2 2 4-4"></path>
+                      </svg></div>
+<div class="callout-title-inner">An Intro to Git and Github</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ Version control is a big technical topic by itself, encompassing a wide range of concepts, commands, and best practices.</li>
+<li data-line="2" dir="auto">✦ The purpose of this note is to provide a high-level introduction to Git and GitHub, focusing on the essential aspects that will help us get started.</li>
+<li data-line="3" dir="auto">✦ As we become more comfortable with these tools, we should to explore more advanced features and workflows to fully leverage the power of version control in your development process.</li>
+<li data-line="4" dir="auto">✦ There is no lack of resources on Internet on Git and GitHub for us to explore and learn!</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="What is GitHub?" dir="auto" class="heading" id="What_is_GitHub?">What is GitHub?</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto"><strong>GitHub</strong>&nbsp;is a web-based platform that uses Git, a version control system, to help developers collaborate on projects. It allows you to store your code in repositories, track changes, manage project versions, and collaborate with others seamlessly.</p>
+</div>
+<div class="el-p">
+<p dir="auto">GitHub is a web-based platform that hosts Git repositories. It provides additional features for collaboration and project management, such as:</p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Remote Repositories</strong>: Store and share code in the cloud, making it accessible from anywhere.</li>
+<li data-line="1" dir="auto">✦ <strong>Pull Requests</strong>: Propose changes to the codebase, review them, and discuss with team members before merging.</li>
+<li data-line="2" dir="auto">✦ <strong>Issues and Project Management</strong>: Track bugs, feature requests, and manage project tasks.</li>
+<li data-line="3" dir="auto">✦ <strong>Continuous Integration/Continuous Deployment (CI/CD)</strong>: Automate testing and deployment processes. Imagine a magical pipeline: every time you save your work, it's automatically tested for errors and if everything looks good, instantly becomes available for users to try or use. That's CI/CD in a nutshell!</li>
+</ul>
+</div>
+<div class="el-p">
+<p dir="auto">For deploying Streamlit applications, GitHub serves as the central repository where your project files reside, which Streamlit Community Cloud can access to run your app.</p>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">What is Git?</div>
+</div>
+<div class="callout-content">
+<p dir="auto">Git is a distributed version control system that allows us to track changes in our codebase over time. It enables us to:</p>
+<ul>
+<li data-line="2" dir="auto"><strong>Track Changes</strong>: Keep a history of all changes made to the code, making it easy to revert to previous versions if needed.</li>
+<li data-line="3" dir="auto"><strong>Collaborate</strong>: Work seamlessly with other developers by merging changes and resolving conflicts.</li>
+<li data-line="4" dir="auto"><strong>Branching and Merging</strong>: Experiment with new features or fixes in isolated branches without affecting the main codebase, and merge them when ready.</li>
+</ul>
+<hr>
+<ul>
+<li data-line="6" dir="auto">In essence, Git is the <strong>version control system that powers GitHub.</strong>
+<ul>
+<li data-line="7" dir="auto">While Git handles the behind-the-scenes tracking of code changes locally on your computer, GitHub provides the user-friendly interface and additional tools that make collaborating and managing projects with Git more accessible.</li>
+<li data-line="8" dir="auto">GitHub adds a layer of social coding, enabling features like pull requests, issue tracking, and project management tools.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Setting Up a GitHub Account and GitHub Desktop" dir="auto" class="heading" id="Setting_Up_a_GitHub_Account_and_GitHub_Desktop">Setting Up a GitHub Account and GitHub Desktop</h1>
+<div class="heading-children">
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="GitHub Account" dir="auto" class="heading" id="GitHub_Account">GitHub Account</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Before you can use GitHub, you need to create an account.<br>✦ Steps to Create an Account:</p>
+</div>
+<div class="el-ol">
+<ol>
+<li data-line="0" dir="auto"><strong>Visit GitHub:</strong>&nbsp;Go to&nbsp;<a data-tooltip-position="top" aria-label="https://github.com/" rel="noopener nofollow" class="external-link" href="https://github.com/" target="_blank">GitHub’s website</a>.</li>
+<li data-line="1" dir="auto"><strong>Sign Up:</strong>&nbsp;
+<ol>
+<li data-line="2" dir="auto">Click on the "Sign up" button typically located at the top-right corner.</li>
+<li data-line="3" dir="auto">You can use your personal or official email for the registration.</li>
+</ol>
+</li>
+<li data-line="4" dir="auto"><strong>Enter Details:</strong>&nbsp;Provide a username, your email address, and a strong password.</li>
+<li data-line="5" dir="auto"><strong>Verify Email:</strong>&nbsp;GitHub will send a verification email. Click the link in the email to verify your account.</li>
+<li data-line="6" dir="auto"><strong>Complete Setup:</strong>&nbsp;Follow the on-screen instructions to complete your profile setup.</li>
+</ol>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">We will cover the details on how to use GitHub Desktop for the purpose of deploying Streamlit App in the next note.</div>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="Download and Install GitHub Desktop" dir="auto" class="heading" id="Download_and_Install_GitHub_Desktop">Download and Install GitHub Desktop</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Download <code>GitHub Desktop</code> from <strong>here</strong> and install the software on your laptop that you are using for this Bootcamp.</p>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">There is no need to install <code>git</code> separately since GitHub comes with its own bundled version of <code>git</code>.</div>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Getting Started with Git (GitHub) in VS Code" dir="auto" class="heading" id="Getting_Started_with_Git_(GitHub)_in_VS_Code">Getting Started with Git (GitHub) in VS Code</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">💪🏼 This is a great tutorial from <strong>Official YouTube channel of Visual Studio Code</strong>. This 7-min video covers all the key steps to use Git within <code>VC Code</code>, allows you to efficiently manage your code repositories, push your code to the remote repository, and track changes, directly from the code editor.</p>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">Since we have installed <code>GitHub Desktop</code>, we can skip the step for installing&nbsp;<code>git</code>. The rest of the video is still applicable.</div>
+</div>
+</div>
+</div>
+<div class="el-iframe"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube.com/embed/i_23KUAEtUM" height="515" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading=".gitignore" dir="auto" class="heading" id=".gitignore">.gitignore</h1>
+<div class="heading-children">
+<div class="el-hr"><hr></div>
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="What is&nbsp;`.gitignore`?" dir="auto" class="heading" id="What_is_`.gitignore`?">What is&nbsp;<code>.gitignore</code>?</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">The&nbsp;<code>.gitignore</code>&nbsp;file is a special file used by Git to determine which files and directories to&nbsp;<strong>ignore</strong>&nbsp;in a project. When you add files to your repository, Git tracks changes to those files. However, some files should not be tracked—for example, temporary files, sensitive information, or dependencies that can be recreated. The&nbsp;<code>.gitignore</code>&nbsp;file tells Git to exclude these files from version control.</p>
+</div>
+<div class="el-p">
+<p dir="auto"><strong>Key Points:</strong></p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Purpose:</strong>&nbsp;Prevents specific files or directories from being tracked by Git.</li>
+<li data-line="1" dir="auto">✦ <strong>Format:</strong>&nbsp;A plain text file named&nbsp;<code>.gitignore</code>&nbsp;placed in the root directory of your project.</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="Why Use&nbsp;`.gitignore`?" dir="auto" class="heading" id="Why_Use_`.gitignore`?">Why Use&nbsp;<code>.gitignore</code>?</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Using a&nbsp;<code>.gitignore</code>&nbsp;file offers several benefits:</p>
+</div>
+<div class="el-ol">
+<ol>
+<li data-line="0" dir="auto"><strong>Security:</strong>&nbsp;
+<ul>
+<li data-line="1" dir="auto">Protect sensitive information like API keys or passwords by excluding them from your repository. (e.g., our <code>.env</code> or <code>secrets.toml</code> files)</li>
+</ul>
+</li>
+<li data-line="2" dir="auto"><strong>Efficiency:</strong>&nbsp;
+<ul>
+<li data-line="3" dir="auto">Avoid cluttering your repository with unnecessary files (e.g., temporary files)</li>
+</ul>
+</li>
+<li data-line="4" dir="auto"><strong>Collaboration:</strong>&nbsp;
+<ul>
+<li data-line="5" dir="auto">Ensure that all collaborators are not burdened with irrelevant files, maintaining a clean project structure. (e.g., our <code>venv</code> folder)</li>
+</ul>
+</li>
+<li data-line="6" dir="auto"><strong>Deployment:</strong>&nbsp;Streamlit Community Cloud and other deployment platforms require a clean repository. Excluding unnecessary files ensures smoother deployments.</li>
+</ol>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="How to Create `.gitignore`?" dir="auto" class="heading" id="How_to_Create_`.gitignore`?">How to Create <code>.gitignore</code>?</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">within <code>VS Code</code>, create a plain text file named <code>.gitignore</code>&nbsp;placed in the root directory of your project. Add the filenames or directories for the file or folders that you want to exclude from being tracked by git or GitHub into the <code>.gitignore</code> file.</p>
+</div>
+<div class="el-p">
+<p dir="auto">Below are some common entries in the <code>.gitignore</code> for a Python project.</p>
+<pre class="d2l-code"><code class="language-plain"># Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# VS Code 
+.vscode/ 
+# PyCharm 
+.idea/
+
+
+# Streamlit
+.streamlit/secrets.toml</code></pre>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">It's okay to include entries in the&nbsp;.gitignore&nbsp;file, even if the files do not exist in the current project. This will not cause any errors.</div>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="[Extra] Additional Great Videos for VS Code" dir="auto" class="heading" id="[Extra]_Additional_Great_Videos_for_VS_Code">[Extra] Additional Great Videos for VS Code</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">💡👨🏻‍💻👩🏻‍💻 If you want to <strong>collaborate in real-time with your team members</strong> in <code>VS Code</code>, this is a great video to get started:</p>
+</div>
+<div class="el-iframe"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube.com/embed/2CTi9THB0b4" height="515" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div class="el-hr"><hr></div>
+<div class="el-p">
+<p dir="auto">🍽️ Wanting more? Here is a series from <strong>GitHub's official YouTube channel</strong> designed to help you <strong>master the basics of GitHub</strong>, whether you're new to coding or looking to enhance your version control skills.</p>
+</div>
+<div class="el-iframe"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/videoseries?si=As-2v0R_bu8El4sY&amp;list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f" height="515" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div class="mod-footer mod-ui"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 883px; top: 618px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

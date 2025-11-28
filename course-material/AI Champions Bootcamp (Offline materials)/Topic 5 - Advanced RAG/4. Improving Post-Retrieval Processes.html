@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html><head>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg></span></p>
+</div>
+<ol start="4">
+<li dir="auto" class="page-title heading fix-heading">Title: Improving Post-Retrieval Processes</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Improving Post-Retrieval Processes"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Deep Dive into RAG</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Pre-Retrieval Processe</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Retrieval Processed</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Post-Retrieval Processed</li>
+<li class="step" data-content="🔧" dir="auto">RAG Evaluation</li>
+<li class="step" data-content="🔧" dir="auto">Further Reading: WOG RAG Playbook</li>
+</ul>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Overview" href="#1_Overview" class="internal-link" target="_self" rel="noopener">1 Overview</a></li>
+<li dir="auto"><a data-href="#2 Re-Ranking of Retrieved chunks/context" href="#2_Re-Ranking_of_Retrieved_chunks/context" class="internal-link" target="_self" rel="noopener">2 Re-Ranking of Retrieved chunks/context</a></li>
+<li dir="auto"><a data-href="#3 Context Compression (Compressing the Retrieved Documents)" href="#3_Context_Compression_(Compressing_the_Retrieved_Documents)" class="internal-link" target="_self" rel="noopener">3 Context Compression (Compressing the Retrieved Documents)</a></li>
+<li dir="auto"><a data-href="#4 Prompt (&amp; Context) Compression" href="#4_Prompt_(&amp;_Context)_Compression" class="internal-link" target="_self" rel="noopener">4 Prompt (&amp; Context) Compression</a></li>
+<li dir="auto"><a data-href="#5 Reference &amp; Further Readings" href="#5_Reference_&amp;_Further_Readings" class="internal-link" target="_self" rel="noopener">5 Reference &amp; Further Readings</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 Overview" dir="auto" class="heading" id="1_Overview">1 Overview</h1>
+<div class="heading-children">
+<div>
+<div src="lib/media/img-20240427234647805.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427234647805.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">Once we have efficiently retrieved the context for a given query, we can further refine and optimize It to improve its relevance for a more optimal generation of the output answer.</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 Re-Ranking of Retrieved chunks/context" dir="auto" class="heading" id="2_Re-Ranking_of_Retrieved_chunks/context">2 Re-Ranking of Retrieved chunks/context</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Re-ranking is a process of ordering the retrieved context chunks in the final prompt based on its score and relevancy.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>✦ This is important as <strong>researchers found better performance when the most relevant context is positioned at the start of the prompt</strong>.</p>
+</li>
+<li data-line="3" dir="auto">
+<p>✦ **The technique consists of two very different steps:</p>
+<ul>
+<li data-line="4" dir="auto"><strong>Step 1</strong>:
+<ul>
+<li data-line="5" dir="auto">Get a good amount of relevant docs based on the input/question. Normally we set the most relevant K.</li>
+<li data-line="6" dir="auto">For the first step, it is nothing more than what we usually use to make a basic RAG.</li>
+<li data-line="7" dir="auto">Vectorize our documents. vectorize the query and calculate the similarity with any metric of our choice.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto"><strong>Step 2</strong>:
+<ul>
+<li data-line="9" dir="auto">Recalculate which of these documents are really relevant.</li>
+<li data-line="10" dir="auto">Discarding the other documents that are not really useful.</li>
+<li data-line="11" dir="auto">Re-order the relevant documents</li>
+<li data-line="12" dir="auto">The second step is something different from what we are used to seeing. This recalculation/reranking is executed by the&nbsp;<strong>reranking model</strong>&nbsp;or&nbsp;<strong>cross-encoder</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div src="lib/media/img-20240427175135553.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427175135553.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ You will have realized that the two methods provide the same result in the end, which is a metric that reflects the similarity between two texts. But there is a very important difference.</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="M12 16v-4"></path>
+                                                <path d="M12 8h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner">The result returned by the <strong>cross encoder</strong> is much <strong>more reliable</strong> than the one returned by the Bi-encoder</div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ You may ask. If it works better, why don’t we just use cross encoder directly with all chunks, instead of just limiting it to the top-K chunks? This is because:
+<ul>
+<li data-line="1" dir="auto">it would be&nbsp;<strong>terribly expensive and causes heavy computation which lead to slowness</strong>.</li>
+<li data-line="2" dir="auto">For this reason, we make a&nbsp;<strong>first filter of the chunks closest in similarity to the query,</strong>&nbsp;<strong>reducing the use of the reranking model to only K times.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="question" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-help-circle">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                                <path d="M12 17h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner">Why is it expensive and slow</div>
+</div>
+<div class="callout-content">
+<p dir="auto">We can notice that each&nbsp;<strong>new query, the similarity of the query with each of the documents needs to be calculated</strong>.</p>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ To better understand the architecture of this method, let’s look at a visual example.<br>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427175210317.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427175210317.png"></div>
+<br>The image shows the steps:</li>
+</ul>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">We obtain the query, which we encode into its vector form with a transformer and we compare it into the vector base.</li>
+<li data-line="1" dir="auto">Collect the documents&nbsp;<strong>most similar to the query from our database</strong>. We can use any retriever method (e.g., cosine similarity).</li>
+<li data-line="2" dir="auto">Next we use the cross-encoder model.
+<ul>
+<li data-line="3" dir="auto">In the example shown in the image, this model will be used a total of 4 times.</li>
+<li data-line="4" dir="auto">Remember that the&nbsp;<strong>input of this model will be the query and a document/chunk, to collect the similarity of these two texts.</strong></li>
+</ul>
+</li>
+<li data-line="5" dir="auto">After the 4 calls have been made to this model in the previous step, 4 new values (between 0 and 1) of the similarity between the query and each of the documents will be obtained.
+<ul>
+<li data-line="6" dir="auto">As can be seen, the chunk number 1 obtained in the Step 1 has dropped out into 4th place after reranking in Step 4.</li>
+</ul>
+</li>
+<li data-line="7" dir="auto">Then, we add the first 3 chunks most relevant to the context.</li>
+</ol>
+</div>
+<div><hr></div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Now, a good question would be <strong>where to find the Cross-Encoder models or how to use</strong>?
+<ul>
+<li data-line="1" dir="auto">One of the most straightforward way to use a powerful cross encoder model is to use the model made available by the company&nbsp;<a data-tooltip-position="top" aria-label="https://cohere.com/" rel="noopener" class="external-link" href="https://cohere.com/" target="_blank">Cohere</a>.</li>
+<li data-line="2" dir="auto">While there are many open-source models that can be used for this purpose, it is beyond the scope of this training to cover them all.</li>
+<li data-line="3" dir="auto">Due to the <strong>LangChain</strong>&nbsp;and its integration with&nbsp;<strong>Cohere</strong>, we only have to import the module that will execute the call to the Cohere cross-encoder model:</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain_cohere import CohereRerank  
+from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
+
+os.environ["COHERE_API_KEY"] = "YOUR API KEY FROM COHERE"  
+
+compressor = CohereRerank(top_n=3)
+
+compression_retriever = ContextualCompressionRetriever(  
+  base_compressor=compressor,  
+  base_retriever=naive_retriever  
+)</code></pre>
+</div>
+<div>
+<p dir="auto">Let’s see a comparison between a&nbsp;<strong>Naive Retriever</strong> (e.g., distance between embeddings) and <strong>a Reranking Retriever</strong></p>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427175337838.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427175337838.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Observations:</strong>
+<ul>
+<li data-line="1" dir="auto">As we see from the result above, <strong>Naive Retriever</strong> returns us the top 10 chunks/documents.</li>
+<li data-line="2" dir="auto">After performing the reranking and obtaining the 3 most relevant documents/chunks, there are noticeable changes.</li>
+<li data-line="3" dir="auto">Notice how document&nbsp;<strong>number 16</strong>, which is in&nbsp;<strong>third position</strong>&nbsp;in relation to its relevance in the first retriever,&nbsp;<strong>becomes first position</strong>&nbsp;when performing the reranking.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 Context Compression (Compressing the Retrieved Documents)" dir="auto" class="heading" id="3_Context_Compression_(Compressing_the_Retrieved_Documents)">3 Context Compression (Compressing the Retrieved Documents)</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ This method focus on improving the quality of retrieved docs.
+<ul>
+<li data-line="1" dir="auto">Information most relevant to a query may be buried in a document with a lot of irrelevant text.</li>
+<li data-line="2" dir="auto">Passing that full document through your application can lead to more expensive LLM calls and poorer responses.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">✦ <strong>Contextual compression</strong> is meant to fix this.
+<ul>
+<li data-line="4" dir="auto">The idea is simple: instead of immediately returning retrieved documents as-is, you can compress them using the context of the given query, so that only the relevant information is returned. “<strong>Compressing</strong>” here refers to both compressing the contents of an individual document and filtering out documents wholesale.</li>
+<li data-line="5" dir="auto">For this, we can use <code>ContextualCompressionRetriever</code> from <code>LangChain</code> library to improve the quality of retrieved documents by compressing them.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_openai import OpenAI
+
+llm = OpenAI(temperature=0)
+compressor = LLMChainExtractor.from_llm(llm)
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=compressor, base_retriever=retriever
+)
+
+compressed_docs = compression_retriever.invoke(
+    "Why do LLMs hallucinate?"
+)
+pretty_print_docs(compressed_docs)</code></pre>
+</div>
+<div>
+<p dir="auto">LangChain Documentation: <a data-tooltip-position="top" aria-label="https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/contextual_compression/" rel="noopener" class="external-link" href="https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/contextual_compression/" target="_blank">Contextual compression | 🦜️🔗 LangChain</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 Prompt (&amp; Context) Compression" dir="auto" class="heading" id="4_Prompt_(&amp;_Context)_Compression">4 Prompt (&amp; Context) Compression</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Prompt Compression</strong> is a method of compressing or shrinking BOTH the retrieved context or final prompt by <strong>removing irrelevant information</strong>.
+<ul>
+<li data-line="1" dir="auto">Its aim is to reduce length of the input prompt to reduce cost, improve latency and efficiency of output generation by allowing the LLM to focus on a more concise context.</li>
+<li data-line="2" dir="auto">The core idea is to <strong>use LLM to generate compressed version of input prompt.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427180047726.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427180047726.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Based on information on the <a data-tooltip-position="top" aria-label="https://github.com/microsoft/LLMLingua" rel="noopener" class="external-link" href="https://github.com/microsoft/LLMLingua" target="_blank">repository</a>, it was claimed that these tools offer an efficient solution to compress prompts by up to&nbsp;<strong>20x</strong>, enhancing the utility of LLMs.
+<ul>
+<li data-line="1" dir="auto">💰&nbsp;<strong>Cost Savings</strong>: Reduces both prompt and generation lengths with minimal overhead.</li>
+<li data-line="2" dir="auto">📝&nbsp;<strong>Extended Context Support</strong>: Enhances support for longer contexts, mitigates the "lost in the middle" issue, and boosts overall performance.</li>
+<li data-line="3" dir="auto">⚖️&nbsp;<strong>Robustness</strong>: No additional training needed for LLMs.</li>
+<li data-line="4" dir="auto">🕵️&nbsp;<strong>Knowledge Retention</strong>: Maintains original prompt information like ICL and reasoning.</li>
+<li data-line="5" dir="auto">📜&nbsp;<strong>KV-Cache Compression</strong>: Accelerates inference process.</li>
+<li data-line="6" dir="auto">🪃&nbsp;<strong>Comprehensive Recovery</strong>: GPT-4 can recover all key information from compressed prompts.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240826104116830.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240826104116830.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Here is a snippet of code to show how to use the package.</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python"># Install the package, this only works in Jupyter Notebook
+!pip install llmlingua
+
+from llmlingua import PromptCompressor
+
+llm_lingua = PromptCompressor()
+compressed_prompt = llm_lingua.compress_prompt(prompt, instruction="", question="", target_token=200)</code></pre>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">&nbsp;                                                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z">
+                                                </path>
+                                                <path d="M12 9v4"></path>
+                                                <path d="M12 17h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner">Warning</div>
+</div>
+<div class="callout-content">
+<p dir="auto">This note is not intended to exhaustively cover all techniques or methods available for improving Retrieval-Augmented Generation (RAG) processes.</p>
+<ul>
+<li data-line="2" dir="auto">RAG is a field under active research and progresses rapidly.</li>
+<li data-line="3" dir="auto">Readers are encouraged to stay informed about other techniques and methods in the field to gain a comprehensive understanding of the advancements and innovations that continue to emerge.</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="5 Reference &amp; Further Readings" dir="auto" class="heading" id="5_Reference_&amp;_Further_Readings">5 Reference &amp; Further Readings</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="https://medium.com/ai-advances/advanced-rag-09-prompt-compression-95a589f7b554" rel="noopener" class="external-link" href="https://medium.com/ai-advances/advanced-rag-09-prompt-compression-95a589f7b554" target="_blank">Advanced RAG 09: Prompt Compression | by Florian June | Apr, 2024 | AI Advances (medium.com)</a></li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

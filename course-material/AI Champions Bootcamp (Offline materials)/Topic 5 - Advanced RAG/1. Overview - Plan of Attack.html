@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">number headings</span><span class="token punctuation">:</span> first<span class="token punctuation">-</span>level 1<span class="token punctuation">,</span> max 6<span class="token punctuation">,</span> <span class="token number">1.1</span>
+<span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebook</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebook" data-icon="LiNotebook" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 6h4"></path>
+                  <path d="M2 10h4"></path>
+                  <path d="M2 14h4"></path>
+                  <path d="M2 18h4"></path>
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <path d="M16 2v20"></path>
+                </svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Overview - Plan of Attack</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Overview - Plan of Attack"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Deep Dive into RAG</li>
+<li class="step" data-content="🔧" dir="auto">Improving Pre-Retrieval Processe</li>
+<li class="step" data-content="🔧" dir="auto">Improving Retrieval Processed</li>
+<li class="step" data-content="🔧" dir="auto">Improving Post-Retrieval Processed</li>
+<li class="step" data-content="🔧" dir="auto">RAG Evaluation</li>
+<li class="step" data-content="🔧" dir="auto">Further Reading: WOG RAG Playbook</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330365.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330365.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Overview" href="#1_Overview" class="internal-link" target="_self" rel="noopener">1 Overview</a>
+<ul>
+<li dir="auto"><a data-href="#1.1 Why RAG" href="#1.1_Why_RAG" class="internal-link" target="_self" rel="noopener">1.1 Why RAG</a></li>
+<li dir="auto"><a data-href="#1.2 Quick Recaps on the Basics of RAG" href="#1.2_Quick_Recaps_on_the_Basics_of_RAG" class="internal-link" target="_self" rel="noopener">1.2 Quick Recaps on the Basics of RAG</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#2 Problems with Naive RAG or Vanilla RAG" href="#2_Problems_with_Naive_RAG_or_Vanilla_RAG" class="internal-link" target="_self" rel="noopener">2 Problems with Naive RAG or Vanilla RAG</a>
+<ul>
+<li dir="auto"><a data-href="#2.1 Contextual Limitations" href="#2.1_Contextual_Limitations" class="internal-link" target="_self" rel="noopener">2.1 Contextual Limitations</a></li>
+<li dir="auto"><a data-href="#2.2 Relevance vs. Similarity" href="#2.2_Relevance_vs._Similarity" class="internal-link" target="_self" rel="noopener">2.2 Relevance vs. Similarity</a></li>
+<li dir="auto"><a data-href="#2.3 Query Complexity" href="#2.3_Query_Complexity" class="internal-link" target="_self" rel="noopener">2.3 Query Complexity</a></li>
+<li dir="auto"><a data-href="#2.4 Impact of Chunk Ordering" href="#2.4_Impact_of_Chunk_Ordering" class="internal-link" target="_self" rel="noopener">2.4 Impact of Chunk Ordering</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#3 Improvements over Naive RAG" href="#3_Improvements_over_Naive_RAG" class="internal-link" target="_self" rel="noopener">3 Improvements over Naive RAG</a></li>
+<li dir="auto"><a data-href="#4 Evaluation of RAG" href="#4_Evaluation_of_RAG" class="internal-link" target="_self" rel="noopener">4 Evaluation of RAG</a></li>
+<li dir="auto"><a data-href="#5 [Extra] Reference &amp; Further Readings" href="#5_[Extra]_Reference_&amp;_Further_Readings" class="internal-link" target="_self" rel="noopener">5 [Extra] Reference &amp; Further Readings</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 Overview" dir="auto" class="heading" id="1_Overview">1 Overview</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Retrieval Augmented Generation (RAG) is emerging as a crucial framework for industries and GenAI practitioners or enthusiasts to develop applications powered by Large Language Models (LLMs).
+<ul>
+<li data-line="1" dir="auto">It offers significant potential to utilize LLMs in an optimal and efficient manner for creating comprehensive GenAI applications, including chatbots, search engines, and more, which we have seen in the previous topic.</li>
+<li data-line="2" dir="auto">RAG enables the dynamic integration of external knowledge sources, enhancing the accuracy and relevance of responses generated by these applications.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.1 Why RAG" dir="auto" class="heading" id="1.1_Why_RAG">1.1 Why RAG</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Pre-trained foundational Large Language Models (LLMs) are developed using general-purpose data, enabling them to produce accurate and relevant responses to broad queries.
+<ul>
+<li data-line="1" dir="auto">However, <strong>when it comes to domain-specific, external, and the most current data, these models may fall short.</strong></li>
+<li data-line="2" dir="auto">In such instances, LLMs <strong>might generate incorrect or misleading information</strong> due to their reliance on <strong>outdated or irrelevant data sources.</strong></li>
+<li data-line="3" dir="auto">To address these challenges, Retrieval Augmented Generation (RAG) techniques have been explored.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.2 Quick Recaps on the Basics of RAG" dir="auto" class="heading" id="1.2_Quick_Recaps_on_the_Basics_of_RAG">1.2 Quick Recaps on the Basics of RAG</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Retrieval Augmented Generation (RAG) is a framework that <strong>enhances the capabilities of LLMs by providing them with additional, relevant contextual information alongside the original query</strong> in the form of a prompt.
+<ul>
+<li data-line="1" dir="auto">RAG involves searching across a vast corpus of private data and <strong>retrieving results that are most similar to the query asked</strong> by the end user so that it can be passed on to the LLM as context.</li>
+<li data-line="2" dir="auto">This approach enables the LLM to better understand the user's query and its context, <strong>leading to more accurate and pertinent responses</strong>.</li>
+<li data-line="3" dir="auto">The process is akin to an open-book exam, where the model first retrieves relevant contextual data before generating an answer based on this information.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421132947558.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421132947558.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ There are 5 main steps in RAG:
+<ul>
+<li data-line="1" dir="auto"><strong>Document Loading</strong>
+<ul>
+<li data-line="2" dir="auto">In this initial step, relevant documents are ingested and prepared for further processing. This process typically occurs offline.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto"><strong>Splitting &amp; Chunking</strong>
+<ul>
+<li data-line="4" dir="auto">The text from the documents is split into smaller chunks or segments.</li>
+<li data-line="5" dir="auto">These chunks serve as the building blocks for subsequent stages.</li>
+</ul>
+</li>
+<li data-line="6" dir="auto"><strong>Storage</strong>
+<ul>
+<li data-line="7" dir="auto">The embeddings (vector representations) of these chunks are created and stored in a vector store.</li>
+<li data-line="8" dir="auto">These embeddings capture the semantic meaning of the text.</li>
+</ul>
+</li>
+<li data-line="9" dir="auto"><strong>Retrieval</strong>
+<ul>
+<li data-line="10" dir="auto">When an online query arrives, the system retrieves relevant chunks from the vector store based on the query.</li>
+<li data-line="11" dir="auto">This retrieval step ensures that the system identifies the most pertinent information.</li>
+</ul>
+</li>
+<li data-line="12" dir="auto"><strong>Generate Output</strong>
+<ul>
+<li data-line="13" dir="auto">Finally, the retrieved chunks are used to generate a coherent response.</li>
+<li data-line="14" dir="auto">This output can be in the form of natural language text, summaries, or other relevant content.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 Problems with Naive RAG or Vanilla RAG" dir="auto" class="heading" id="2_Problems_with_Naive_RAG_or_Vanilla_RAG">2 Problems with Naive RAG or Vanilla RAG</h1>
+<div class="heading-children">
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330411.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330411.png"></div>
+</div>
+<div>
+<p dir="auto">The basic or "Vanilla" RAG, also known as Naive RAG, exhibits several limitations, particularly when applied to complex use cases or in the development of production-ready applications.</p>
+</div>
+<div>
+<p dir="auto">As we saw in the previous topic, building an RAG prototype is relatively easy – investing around 20% of the effort yields an application with 80% performance. However, achieving a further 20% performance improvement requires the remaining 80% of the effort.</p>
+</div>
+<div>
+<p dir="auto">Below are some key reasons why Naive RAG may not always deliver the most effective and optimized outcomes.</p>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="2.1 Contextual Limitations" dir="auto" class="heading" id="2.1_Contextual_Limitations">2.1 Contextual Limitations</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ One of the primary issues with Naive RAG is its handling of context.</li>
+<li data-line="1" dir="auto">✦ In this framework, a single chunk retrieved from a vector store is expected to provide the necessary context for the LLM to generate a response.</li>
+<li data-line="2" dir="auto">✦ However, <strong>these chunks, being mere subunits of a larger document, often contain incomplete context</strong>.</li>
+<li data-line="3" dir="auto">✦ This partial context can result in responses that <strong>lack crucial information</strong> or, conversely, include irrelevant details, thereby diminishing the overall relevance and accuracy of the output.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="2.2 Relevance vs. Similarity" dir="auto" class="heading" id="2.2_Relevance_vs._Similarity">2.2 Relevance vs. Similarity</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Another significant challenge is the distinction between <strong>relevance and similarity</strong>.</li>
+<li data-line="1" dir="auto">✦ Naive RAG <strong>operates on the principle that a high similarity score between a query and a retrieved chunk indicates a high degree of relevance.</strong></li>
+<li data-line="2" dir="auto">✦ Unfortunately, this is not always the case.</li>
+<li data-line="3" dir="auto">✦ A chunk may share many keywords or concepts with the query and still fail to address the user's actual intent, leading to responses that, while technically similar, are practically unhelpful.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="2.3 Query Complexity" dir="auto" class="heading" id="2.3_Query_Complexity">2.3 Query Complexity</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The effectiveness of Naive RAG is also compromised by the complexity and structure of user queries.</li>
+<li data-line="1" dir="auto">✦ <strong>Queries that are poorly phrased, overly complex, or contain multiple questions pose a particular challenge.</strong></li>
+<li data-line="2" dir="auto">✦ In such instances, the LLM may struggle to generate accurate responses on the first attempt, if at all.</li>
+<li data-line="3" dir="auto">✦ The limitation of retrieving a single chunk exacerbates this issue, as it is unlikely to provide sufficient context for all aspects of a multifaceted query.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="2.4 Impact of Chunk Ordering" dir="auto" class="heading" id="2.4_Impact_of_Chunk_Ordering">2.4 Impact of Chunk Ordering</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The order in which chunks are presented to the LLM for response generation plays a critical role in the quality of the output.</li>
+<li data-line="1" dir="auto">✦ Naive RAG does not adequately address the significance of chunk ordering, often leading to suboptimal response generation.</li>
+<li data-line="2" dir="auto">✦ The lack of a sophisticated mechanism for determining the most effective sequence of chunks can result in responses that are disjointed or fail to build coherently on the provided context.</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="abstract" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-clipboard-list">
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                            <path d="M12 11h4"></path>
+                            <path d="M12 16h4"></path>
+                            <path d="M8 11h.01"></path>
+                            <path d="M8 16h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">Keypoints</div>
+</div>
+<div class="callout-content">
+<p dir="auto">To overcome these limitations of naive RAG, there are two aspects that are essential:</p>
+<ul>
+<li data-line="2" dir="auto">
+<ol>
+<li data-line="2" dir="auto">some <strong>improvements</strong> can be done on top of naive <strong>RAG architecture</strong></li>
+</ol>
+</li>
+<li data-line="3" dir="auto">
+<ol start="2">
+<li data-line="3" dir="auto"><strong>evaluation of RAG pipeline</strong> to understand how the modifications affect the performance</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 Improvements over Naive RAG" dir="auto" class="heading" id="3_Improvements_over_Naive_RAG">3 Improvements over Naive RAG</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">&nbsp;RAG is only as good as the retrieved documents’ relevance and quality. Fortunately, an emerging set of techniques can be employed to design and improve RAG systems.</p>
+</div>
+<div>
+<p dir="auto">&nbsp;<br>The improvement of RAG is not just a matter of incremental updates, by installing newer Python package or calling any functions out-of-the-box, but many of them involves a comprehensive rethinking of its architecture and processes.</p>
+</div>
+<div>
+<p dir="auto">We can group the various improvements under 3 major categories:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Pre-Retrieval Processes</strong></li>
+<li data-line="1" dir="auto">✦ <strong>Retrieval Process</strong></li>
+<li data-line="2" dir="auto">✦ <strong>Post-Retrieval Process</strong></li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330556.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330556.png"></div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">&nbsp;                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">Each of these will be discussed in the next 3 notes.</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto"><a class="internal-link" data-href="2. Improving Pre-Retrieval Processes.md" href="/d2l/le/lessons/646723/topics/10344415" target="_top" rel="noopener">2. Improving Pre-Retrieval Processes</a></li>
+<li data-line="2" dir="auto"><a class="internal-link" data-href="3. Improving Retrieval Processes.md" href="/d2l/le/lessons/646723/topics/10344415" target="_parent" rel="noopener">3. Improving Retrieval Processes</a></li>
+<li data-line="3" dir="auto"><a class="internal-link" data-href="4. Improving Post-Retrieval Processes.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-5-advanced-rag/4.-improving-post-retrieval-processes.html" target="_self" rel="noopener">4. Improving Post-Retrieval Processes</a></li>
+</ul>
+<p dir="auto">You might also be interested in the GovTech playbook included in <a class="internal-link" data-href="Topic 5 - Advanced RAG/6. Further Readings - WOG RAG Playbook.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-5-advanced-rag/6.-further-readings-wog-rag-playbook.html" target="_self" rel="noopener">6. Further Readings - WOG RAG Playbook</a>, where the results of different techniques have been experimented on two specific use cases. This playbook can serve as a general reference point for starting your own experiments, particularly for techniques that have shown the greatest improvement in accuracy and the ability of the RAG pipeline.</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 Evaluation of RAG" dir="auto" class="heading" id="4_Evaluation_of_RAG">4 Evaluation of RAG</h1>
+<div class="heading-children">
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330639.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427230330639.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>Evaluation of RAG systems is essential to benchmark the overall performance of RAG output.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>To evaluate RAG we can use metrics like:</p>
+<ul>
+<li data-line="2" dir="auto"><strong>answer relevancy</strong>,</li>
+<li data-line="3" dir="auto"><strong>faithfulness</strong> for generation and context recall,</li>
+<li data-line="4" dir="auto"><strong>precision</strong> for retrieval.</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>These metrics provide a structured way to assess the quality of the generated answers and the relevance of the information retrieved by the system.</p>
+<ul>
+<li data-line="7" dir="auto">However, the complexity and variability of RAG systems necessitate a more comprehensive and nuanced approach to evaluation.</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">
+<p>Enter RAGAS, a framework specifically designed for this purpose.</p>
+<ul>
+<li data-line="10" dir="auto">RAGAS offers a suite of tools and metrics tailored to evaluate RAG-based applications at a component level, providing a clear pathway for developers or enthusiasts to assess and enhance their applications systematically, allowing developers to fine-tune their systems with more confidence.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">We will go into the details of RAG evaluation in <a class="internal-link" data-href="5. RAG Evaluation.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-5-advanced-rag/5.-rag-evaluation.html" target="_self" rel="noopener">5. RAG Evaluation</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="5 [Extra] Reference &amp; Further Readings" dir="auto" class="heading" id="5_[Extra]_Reference_&amp;_Further_Readings">5 [Extra] Reference &amp; Further Readings</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://docs.google.com/presentation/d/1C9IaAwHoWcc4RSTqo-pCoN3h0nCgqV2JEYZUJunv_9Q/edit#slide=id.g2b6714d62f7_0_0" rel="noopener" class="external-link" href="https://docs.google.com/presentation/d/1C9IaAwHoWcc4RSTqo-pCoN3h0nCgqV2JEYZUJunv_9Q/edit#slide=id.g2b6714d62f7_0_0" target="_blank">RAG from scratch: Overview by LangChain - Google Slides</a></p>
+</li>
+<li data-line="2" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://towardsdatascience.com/a-practitioners-guide-to-retrieval-augmented-generation-rag-36fd38786a84" rel="noopener" class="external-link" href="https://towardsdatascience.com/a-practitioners-guide-to-retrieval-augmented-generation-rag-36fd38786a84" target="_blank">A Practitioners Guide to Retrieval Augmented Generation (RAG)</a></p>
+</li>
+<li data-line="4" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://learnwithhasan.com/what-is-semantic-chunking/" rel="noopener" class="external-link" href="https://learnwithhasan.com/what-is-semantic-chunking/" target="_blank">What is Semantic Chunking And How It Works + Full Python Code (learnwithhasan.com)</a></p>
+</li>
+<li data-line="6" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://medium.com/@sthanikamsanthosh1994/enhancing-rag-efficiency-the-power-of-semantic-chunking-844f9cfbdd0b" rel="noopener" class="external-link" href="https://medium.com/@sthanikamsanthosh1994/enhancing-rag-efficiency-the-power-of-semantic-chunking-844f9cfbdd0b" target="_blank">Enhancing RAG Efficiency: The Power of Semantic Chunking | by Sthanikam Santhosh | Mar, 2024 | Medium</a></p>
+</li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

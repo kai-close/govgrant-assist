@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebookTabs</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebookTabs" data-icon="LiNotebookTabs" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 6h4"></path>
+                      <path d="M2 10h4"></path>
+                      <path d="M2 14h4"></path>
+                      <path d="M2 18h4"></path>
+                      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                      <path d="M15 2v20"></path>
+                      <path d="M15 7h5"></path>
+                      <path d="M15 12h5"></path>
+                      <path d="M15 17h5"></path></svg></span></p>
+</div>
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading" id="Title: Prompting Techniques for Improving LLMs' Reasoning
+                Capability">Title: Prompting Techniques for Improving LLMs' Reasoning Capability</li>
+</ol>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">LLMs Do Not Have Memory</li>
+<li class="step step-success" data-content="📒" dir="auto">Prompting Techniques for Better Reasoning</li>
+<li class="step" data-content="🔧" dir="auto">Multi-action within a Prompt</li>
+<li class="step" data-content="🔧" dir="auto">Prompt Chaining</li>
+<li class="step" data-content="🔧" dir="auto">Exception Handling</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="lib/media/img-20240421125913592.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421125913592.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Technique 1: Chain of Thought (CoT) Prompting" href="https://abc-notes.data.tech.gov.sg/notes/#Technique_1:_Chain_of_Thought_(CoT)_Prompting" class="internal-link" target="_self" rel="noopener">Technique 1: Chain of Thought (CoT) Prompting</a></li>
+<li dir="auto"><a data-href="#Technique 2: Zero-Shot Chain of Thoughts" href="https://abc-notes.data.tech.gov.sg/notes/#Technique_2:_Zero-Shot_Chain_of_Thoughts" class="internal-link" target="_self" rel="noopener">Technique 2: Zero-Shot Chain of Thoughts</a></li>
+<li dir="auto"><a data-href="#Technique 3: Contrastive Chain-of-Thought" href="https://abc-notes.data.tech.gov.sg/notes/#Technique_3:_Contrastive_Chain-of-Thought" class="internal-link" target="_self" rel="noopener">Technique 3: Contrastive Chain-of-Thought</a></li>
+<li dir="auto"><a data-href="#Technique 4: Least-to-Most Prompting" href="https://abc-notes.data.tech.gov.sg/notes/#Technique_4:_Least-to-Most_Prompting" class="internal-link" target="_self" rel="noopener">Technique 4: Least-to-Most Prompting</a></li>
+</ul>
+</div>
+</div>
+<div></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="question" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-help-circle">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                          <path d="M12 17h.01"></path>
+                        </svg></div>
+<div class="callout-title-inner"><strong>Considerations for Prompting Techniques in Varying Model Capabilities</strong></div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ The techniques covered in this section are for enhancing the reasoning capability of LLMs, so that the LLMs can produce more accurate and reliable outputs, particularly in complex tasks, by effectively organizing their thought processes and learning from both correct and incorrect reasoning patterns.
+<ul>
+<li data-line="2" dir="auto">They are particularly useful for small or less capable models, or when you want to get the best of out the LLM's reasoning capability.</li>
+<li data-line="3" dir="auto">You may not be able to replicate the output where the LLM generates incorrect or less desirable outputs, as these issues are more often observed in less capable models such as GPT-3.5 (especially those versions prior to Q3 2023).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li data-line="5" dir="auto">✦ In early 2024, the costs for highly capable models like GPT-4 or Claude Opus 3 may lead builders and developers to opt for cheaper models like GPT-3.5-turbo.
+<ul>
+<li data-line="6" dir="auto">However, by the second half of 2024, we may see the emergence of highly price-efficient models with very decent performance, such as GPT-4o-mini, Gemini 1.5 Flash, and Claude 3.5 Sonnet.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li data-line="8" dir="auto">✦ The majority of models nowadays have improved reasoning capabilities and require less elaborate prompts to achieve desired outcomes. Hence, not incorporating these prompting techniques may not necessarily lead to incorrect outputs.</li>
+<li data-line="9" dir="auto">✦ However, learning and incorporating the patterns of these prompting techniques will result in more robust prompts that a) have a lower chance of generating inaccurate outputs, and b) perform better, especially for complex tasks.</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Technique 1: Chain of Thought (CoT) Prompting" dir="auto" class="heading" id="Technique_1:_Chain_of_Thought_(CoT)_Prompting">Technique 1: Chain of Thought (CoT) Prompting</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The Chain-of-Thought (CoT) is a method where a language model lays out its thought process in a step-by-step manner as it tackles a problem.</li>
+<li data-line="1" dir="auto">✦ This approach is particularly effective in tasks that involve arithmetic and complex reasoning.</li>
+<li data-line="2" dir="auto">✦ By organizing its thoughts, the model frequently produces more precise results.</li>
+<li data-line="3" dir="auto">✦ Unlike conventional prompting that merely seeks an answer, this technique stands out by necessitating the model to elucidate the steps it took to reach the solution.</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/cot-prompting.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<blockquote dir="auto">
+<p>Reference: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2201.11903?trk=article-ssr-frontend-pulse_little-text-block" rel="noopener" class="external-link" href="https://arxiv.org/abs/2201.11903?trk=article-ssr-frontend-pulse_little-text-block" target="_blank">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</a></p>
+</blockquote>
+</div>
+<div><iframe width="100%" height="429.9375" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/3c0a1f8b6b0045fa951d349308c4f633?height=429.9375" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><iframe width="100%" height="623.0625" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/afbcecede04846e79502bd71233b2201?height=623.0625" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Technique 2: Zero-Shot Chain of Thoughts" dir="auto" class="heading" id="Technique_2:_Zero-Shot_Chain_of_Thoughts">Technique 2: Zero-Shot Chain of Thoughts</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Zero Shot Chain of Thought (Zero-shot-CoT) prompting is a follow up to CoT prompting, which introduces an incredibly simple zero shot prompt.</li>
+<li data-line="1" dir="auto">✦ Studies have found that by appending the words "<em>Let's think step by step.</em>" to the end of a question, LLMs are able to generate a chain of thought that answers the question.</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/cot-zeroshot-prompting.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<blockquote dir="auto">
+<p>Reference: <a data-tooltip-position="top" aria-label="https://arxiv.org/pdf/2311.11797.pdf" rel="noopener" class="external-link" href="https://arxiv.org/pdf/2311.11797.pdf" target="_blank">Igniting Language Intelligence: The Hitchhiker’s Guide From Chain-of-Thought Reasoning to Language Agents</a></p>
+</blockquote>
+</div>
+<div><iframe width="100%" height="530.875" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/0c3c9a296b0941b399170006b5fec165?height=530.875" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Technique 3: Contrastive Chain-of-Thought" dir="auto" class="heading" id="Technique_3:_Contrastive_Chain-of-Thought">Technique 3: Contrastive Chain-of-Thought</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Contrastive Chain-of-Thought is a strategy that introduces an incorrect explanation alongside the correct reasoning in response to a CoT prompt.
+<ul>
+<li data-line="1" dir="auto">This approach has shown significant advancements over the traditional CoT, particularly in areas like arithmetic reasoning and answering factual questions.</li>
+<li data-line="2" dir="auto">The utilization of this method enables the AI model to comprehend not just the accurate steps of reasoning, but also the mistakes to steer clear of, thereby boosting its overall capacity for reasoning.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/cot-constrastive-prompting.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<blockquote dir="auto">
+<p>Reference: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2311.09277?trk=article-ssr-frontend-pulse_little-text-block" rel="noopener" class="external-link" href="https://arxiv.org/abs/2311.09277?trk=article-ssr-frontend-pulse_little-text-block" target="_blank">Contrastive Chain-of-Thought Prompting</a></p>
+</blockquote>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Technique 4: Least-to-Most Prompting" dir="auto" class="heading" id="Technique_4:_Least-to-Most_Prompting">Technique 4: Least-to-Most Prompting</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Least to Most prompting (LtM)1 takes CoT prompting a step further by first breaking a problem into sub problems then solving each one. It is a technique inspired by real-world educational strategies for children.</li>
+<li data-line="1" dir="auto">✦ As in CoT prompting, the problem to be solved is decomposed in a set of subproblems that build upon each other. In a second step, these subproblems are solved one by one. Contrary to chain of thought, the solution of previous subproblems is fed into the prompt trying to solve the next problem.</li>
+<li data-line="2" dir="auto">✦ This approach has shown to be effective in generalizing to more difficult problems than those seen in the prompts. For instance, when the GPT-3 model or equivalent is used with LtM, it can solve complex tasks with high accuracy using just a few exemplars, compared to lower accuracy with CoT prompting.</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/uCxQA3e.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<blockquote dir="auto">
+<p>Reference: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2205.10625" rel="noopener" class="external-link" href="https://arxiv.org/abs/2205.10625" target="_blank">Least-to-Most Prompting Enables Complex Reasoning in Large Language Models</a></p>
+</blockquote>
+</div>
+<div><iframe width="100%" height="533.9375" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/d7cb22c966f4499f8c0acd74d92db9bf?height=533.9375" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><iframe width="100%" height="545.375" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/9d288bf06a19474b9a3ca510212c2f99?height=545.375" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="example" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                          <line x1="8" y1="6" x2="21" y2="6"></line>
+                          <line x1="8" y1="12" x2="21" y2="12"></line>
+                          <line x1="8" y1="18" x2="21" y2="18"></line>
+                          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        </svg></div>
+<div class="callout-title-inner">Try out the practical examples in Weekly Tasks - Week 03</div>
+</div>
+</div>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

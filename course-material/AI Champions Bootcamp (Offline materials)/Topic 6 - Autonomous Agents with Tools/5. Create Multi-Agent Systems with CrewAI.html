@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html><head>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+										<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+										</path>
+									</svg></span></p>
+</div>
+<ol start="5">
+<li dir="auto" class="page-title heading fix-heading">Title: Create Multi-Agent Systems with CrewAI</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Create Multi-Agent Systems with CrewAI"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Towards AI Agents</li>
+<li class="step step-success" data-content="🔧" dir="auto">More Secure way to Store Credentials</li>
+<li class="step step-success" data-content="🔧" dir="auto">Writing &amp; Running Python Scripts</li>
+<li class="step step-success" data-content="👨🏻‍💻" dir="auto">Hands-on Walkthrough and Tasks</li>
+<li class="step step-success" data-content="📒" dir="auto">Create Multi-Agent Systems with CrewAI</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="lib/media/img-20240907141522110.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240907141522110.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Intro CrewAI" href="#1_Intro_CrewAI" class="internal-link" target="_self" rel="noopener">1 Intro CrewAI</a></li>
+<li dir="auto"><a data-href="#2 Common Use Cases for CrewAI" href="#2_Common_Use_Cases_for_CrewAI" class="internal-link" target="_self" rel="noopener">2 Common Use Cases for CrewAI</a></li>
+<li dir="auto"><a data-href="#3 The CrewAI Workflow Process" href="#3_The_CrewAI_Workflow_Process" class="internal-link" target="_self" rel="noopener">3 The CrewAI Workflow Process</a></li>
+<li dir="auto"><a data-href="#4 Key Elements of CrewAI Agent" href="#4_Key_Elements_of_CrewAI_Agent" class="internal-link" target="_self" rel="noopener">4 Key Elements of CrewAI Agent</a></li>
+<li dir="auto"><a data-href="#5 Equip Agents with Tools" href="#5_Equip_Agents_with_Tools" class="internal-link" target="_self" rel="noopener">5 Equip Agents with Tools</a>
+<ul>
+<li dir="auto"><a data-href="#5.1 Key Differences Between Assigning Tools to an Agent vs. a Task" href="#5.1_Key_Differences_Between_Assigning_Tools_to_an_Agent_vs._a_Task" class="internal-link" target="_self" rel="noopener">5.1 Key Differences Between Assigning Tools to an Agent vs. a Task</a></li>
+<li dir="auto"><a data-href="#5.2 Deterministic vs. Probabilistic Tool Usage" href="#5.2_Deterministic_vs._Probabilistic_Tool_Usage" class="internal-link" target="_self" rel="noopener">5.2 Deterministic vs. Probabilistic Tool Usage</a>
+<ul>
+<li dir="auto"><a data-href="#5.2.1 Why This Difference Matters" href="#5.2.1_Why_This_Difference_Matters" class="internal-link" target="_self" rel="noopener">5.2.1 Why This Difference Matters</a></li>
+<li dir="auto"><a data-href="#5.2.2 Practical Scenario" href="#5.2.2_Practical_Scenario" class="internal-link" target="_self" rel="noopener">5.2.2 Practical Scenario</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#5.3 Incorporating Third-Party Tools" href="#5.3_Incorporating_Third-Party_Tools" class="internal-link" target="_self" rel="noopener">5.3 Incorporating Third-Party Tools</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 Intro CrewAI" dir="auto" class="heading" id="1_Intro_CrewAI">1 Intro CrewAI</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">CrewAI is an open-source framework designed to orchestrate and coordinate teams of autonomous AI agents, similar to Autogen. Think of it as a way to assemble and manage a group of AI assistants that collaborate to achieve a shared objective, much like a crew on a ship or a project team.</p>
+</div>
+<div>
+<p dir="auto">Here are some essential aspects of CrewAI:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Emphasis on Collaboration</strong>: Unlike many AI frameworks that prioritize individual agents, CrewAI is built for seamless teamwork. Agents share information and tasks, leveraging “collaborative intelligence” to tackle complex challenges that would be daunting for a single agent to handle.</li>
+<li data-line="2" dir="auto">✦ <strong>Role-Specific Agents</strong>: Each agent within a CrewAI team can assume a distinct role—be it a data engineer, marketer, or customer service representative. This role-based approach allows you to customize the team according to the specific demands of your project.</li>
+<li data-line="4" dir="auto">✦ <strong>User-Friendly and Adaptable</strong>: CrewAI is designed with simplicity in mind, making it accessible even for those without a deep understanding of AI. Its flexibility means you can easily tailor it to meet your unique requirements, including the ability for each agent to utilize different large language models (LLMs) suited to their specific roles and tasks.</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 Common Use Cases for CrewAI" dir="auto" class="heading" id="2_Common_Use_Cases_for_CrewAI">2 Common Use Cases for CrewAI</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>1. Building a Smart Assistant Platform</strong>: CrewAI can be leveraged to develop a team of agents capable of managing various tasks, such as scheduling appointments, arranging travel, and responding to user inquiries. This creates a comprehensive smart assistant that streamlines everyday activities.</p>
+</div>
+<div>
+<p dir="auto"><strong>2. Creating an Automated Customer Service System</strong>: With CrewAI, you can assemble a team of agents dedicated to handling customer inquiries, resolving issues, and providing support. This automated system enhances customer experience by ensuring timely and efficient responses.</p>
+</div>
+<div>
+<p dir="auto"><strong>3. Developing a Multi-Agent Research Team</strong>: CrewAI can facilitate the formation of a collaborative research team composed of agents that work together on projects. They can analyze data, generate hypotheses, and test ideas, making the research process more efficient and effective.</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 The CrewAI Workflow Process" dir="auto" class="heading" id="3_The_CrewAI_Workflow_Process">3 The CrewAI Workflow Process</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">The CrewAI workflow process typically involves the following steps:</p>
+</div>
+<div>
+<p dir="auto"><strong>1. Agents</strong>: In this initial phase, you define the capabilities of your CrewAI workflow by specifying the agents involved. This includes outlining their roles and the skills they should possess, effectively determining who does what within the team.</p>
+</div>
+<div>
+<p dir="auto"><strong>2. Tasks</strong>: Next, you establish the specific objectives you want your agents to achieve. This step is crucial for guiding the agents toward accomplishing the desired outcomes.</p>
+</div>
+<div>
+<p dir="auto"><strong>3. Process</strong>: Here, you outline how CrewAI will utilize the defined agents and tasks to meet the overarching goals of your project. This involves mapping out the interactions and workflows that will drive the collaboration.</p>
+</div>
+<div>
+<p dir="auto"><strong>4. Run</strong>: Finally, you initiate the execution of your agents and tasks. Once the run is underway, assuming everything goes smoothly, CrewAI will generate results aimed at solving the stated objectives. This step marks the transition from planning to action, bringing your workflow to life.</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 Key Elements of CrewAI Agent" dir="auto" class="heading" id="4_Key_Elements_of_CrewAI_Agent">4 Key Elements of CrewAI Agent</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Focus</strong></p>
+<ul>
+<li data-line="1" dir="auto">When mixing too much information, too many tools, or too much context, the models can lose important information (and also open up opportunities for more hallucination)</li>
+<li data-line="2" dir="auto">Another great advantage of the agent is they are able to focus:
+<ul>
+<li data-line="3" dir="auto">Tools available</li>
+<li data-line="4" dir="auto">Context</li>
+<li data-line="5" dir="auto">Goal to achieve</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ <strong>Tools</strong></p>
+<ul>
+<li data-line="8" dir="auto">Can overload agents with too many tools</li>
+<li data-line="9" dir="auto">Smaller models may not know which is the context, which are the tools</li>
+<li data-line="10" dir="auto">Provide the agents with the key tools to do the job that they need.</li>
+</ul>
+</li>
+<li data-line="12" dir="auto">
+<p>✦ <strong>Memory</strong></p>
+<ul>
+<li data-line="13" dir="auto">Make huge and immense differences for the agents</li>
+<li data-line="14" dir="auto">Recollect what they did in the past, learn from it, and apply their knowledge into future execution</li>
+<li data-line="15" dir="auto">Some frameworks offer different types of memory and different types of implementations for it.</li>
+<li data-line="16" dir="auto">CrewAI Agents have three types of memory:
+<ul>
+<li data-line="17" dir="auto">I) <strong>Long-term memory</strong>
+<ul>
+<li data-line="18" dir="auto">Memory that is remain even after the crew finishes</li>
+<li data-line="19" dir="auto">The memory is stored in a database locally</li>
+<li data-line="20" dir="auto">Everything after an agent completed the tasks, it self critiques itself to learn what it should have done better; or what are the things that should be in there that are not</li>
+<li data-line="21" dir="auto">Leads to self-improving agents</li>
+</ul>
+</li>
+<li data-line="22" dir="auto">II) <strong>Short-term memory</strong>
+<ul>
+<li data-line="23" dir="auto">Use only during the crew execution</li>
+<li data-line="24" dir="auto">When crew kick-off, it starts from the bank</li>
+<li data-line="25" dir="auto">Agents store different things that they learn in this memory
+<ul>
+<li data-line="26" dir="auto"><strong>Allow agents to share knowledge, activities, and learnings with other agents. Agent 1 can tap into learnings from Agent 3.</strong></li>
+<li data-line="27" dir="auto">Allows agents to share intermediate information even before providing “task completion” output.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="28" dir="auto">III) <strong>Entity memory</strong>
+<ul>
+<li data-line="29" dir="auto">Only being store during the execution</li>
+<li data-line="30" dir="auto">It stores what are the subjects that are being discussed<br>
+<div src="lib/media/img-20240907141522164.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240907141522164.png"></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="5 Equip Agents with Tools" dir="auto" class="heading" id="5_Equip_Agents_with_Tools">5 Equip Agents with Tools</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">A tool in CrewAI is a skill or function that agents can utilize to perform various actions.</p>
+</div>
+<div>
+<p dir="auto">Tools are pivotal in extending the capabilities of CrewAI agents, enabling them to undertake a broad spectrum of tasks and collaborate effectively. When building solutions with CrewAI, leverage both custom and existing tools to empower your agents and enhance the AI ecosystem</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Tools are essential for LLM Agents as they significantly enhance their capabilities.</li>
+<li data-line="1" dir="auto">✦ They enable agents to perform a wide range of tasks, from web searching and data analysis to content generation and collaboration.</li>
+<li data-line="2" dir="auto">✦ Tools also provide customizability, allowing developers to create or integrate specific functionalities tailored to their needs.</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+												<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z">
+												</path>
+												<path d="M12 9v4"></path>
+												<path d="M12 17h.01"></path>
+											</svg></div>
+<div class="callout-title-inner"><strong><em>Different Ways to Give Agents Tools</em></strong></div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ <strong>Agent Level:</strong>
+<ul>
+<li data-line="2" dir="auto">The Agent can use the Tool(s) on any Task it performs.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">✦ <strong>Task Level:</strong>
+<ul>
+<li data-line="4" dir="auto">The Agent will only use the Tool(s) when performing that specific Task.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="5.1 Key Differences Between Assigning Tools to an Agent vs. a Task" dir="auto" class="heading" id="5.1_Key_Differences_Between_Assigning_Tools_to_an_Agent_vs._a_Task">5.1 Key Differences Between Assigning Tools to an Agent vs. a Task</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Here are the primary distinctions:</p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">
+<p><strong>Purpose of Tools for Agents vs. Tasks</strong></p>
+<ul>
+<li data-line="1" dir="auto"><strong>Agents</strong>: Tools given to agents are meant to empower the agent throughout its operational lifespan. They are part of the agent’s capabilities and are accessible during any task execution. These tools reflect the agent’s skill set, enhancing the agent’s overall functionality and efficiency.</li>
+<li data-line="2" dir="auto"><strong>Tasks</strong>: Tools assigned to tasks are utilized specifically within the context of that task. The tools here are employed to achieve a specific goal tied to the task, regardless of the agent performing it. The task defines which tools are necessary to complete its assignment and can override the default tools of an agent.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Scope and Context of Tool Usage</strong></p>
+<ul>
+<li data-line="5" dir="auto"><strong>Agents</strong>: The tools assigned to agents are available across all tasks the agent undertakes. For example, if an agent has a web scraping tool, it can use this tool for any task it is assigned to as long as the task requires or permits it.</li>
+<li data-line="6" dir="auto"><strong>Tasks</strong>: Tools assigned to a task are only usable within the context of that specific task. This setup allows for a high degree of control, ensuring the task uses the most appropriate tools. It also enables different agents to use the same task without necessarily needing to have those tools themselves.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto">
+<p><strong>Control Over Execution</strong></p>
+<ul>
+<li data-line="9" dir="auto"><strong>Agents</strong>: When an agent has tools, it controls when and how those tools are used. This setup is suitable when you want an agent to be autonomous and make decisions on when to leverage its abilities. It’s ideal for agents with expertise or unique skills that require specific tools frequently.</li>
+<li data-line="10" dir="auto"><strong>Tasks</strong>: Assigning tools to tasks grants control over tool usage to the task definition itself. This method is beneficial when a task requires specific actions, such as querying a database or making an API call, that need precise tool usage. This setup allows different agents to perform the task while adhering to the tool requirements set by the task.</li>
+</ul>
+</li>
+<li data-line="12" dir="auto">
+<p><strong>Tool Management and Overlap</strong></p>
+<ul>
+<li data-line="13" dir="auto"><strong>Agents</strong>: If multiple agents have the same tool, each will manage its instance of that tool, potentially leading to redundant tool usage if not carefully planned. This situation requires mindful management to avoid inefficiencies.</li>
+<li data-line="14" dir="auto"><strong>Tasks</strong>: When tools are task-specific, the tools are only instantiated when the task is executed. This can lead to more streamlined usage and fewer conflicts, as tools are utilized only in the context where they are explicitly needed.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="5.2 Deterministic vs. Probabilistic Tool Usage" dir="auto" class="heading" id="5.2_Deterministic_vs._Probabilistic_Tool_Usage">5.2 Deterministic vs. Probabilistic Tool Usage</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Tools at the Task Level (Deterministic Usage)</strong>:
+<ul>
+<li data-line="1" dir="auto">When a tool is assigned directly to a task, it is guaranteed to be used whenever that task is executed, assuming the task’s logic calls for it. This deterministic nature means that the task’s execution path explicitly involves the tool, ensuring consistent and predictable behavior every time the task runs.</li>
+<li data-line="2" dir="auto">For example, if a task is designed to query a database, and it has a database connector tool assigned to it, the task will always invoke this tool as part of its execution flow. The tool’s usage is pre-defined and non-negotiable, ensuring the task’s requirements are consistently met.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">✦ <strong>Tools at the Agent Level (Probabilistic Usage)</strong>:
+<ul>
+<li data-line="4" dir="auto">Tools assigned to agents, on the other hand, operate more probabilistically. This means that even though an agent possesses a tool, it may choose to use it or not based on its internal logic, task requirements, or decision-making process during task execution.</li>
+<li data-line="5" dir="auto">An agent with a data analysis tool, for example, might not always use it for every task it handles. The agent’s behavior is influenced by factors like task descriptions, agent backstory, goals, or even prior outcomes, making tool usage more dynamic and less predictable.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="5.2.1 Why This Difference Matters" dir="auto" class="heading" id="5.2.1_Why_This_Difference_Matters">5.2.1 Why This Difference Matters</h3>
+<div class="heading-children">
+<div>
+<ol>
+<li data-line="0" dir="auto"><strong>Control and Predictability</strong>:
+<ul>
+<li data-line="1" dir="auto"><strong>Task-Level Tools</strong>: Provide control and predictability since you know exactly when and how the tools will be used. This is crucial for tasks where specific actions must always occur, ensuring reliable task completion.</li>
+<li data-line="2" dir="auto"><strong>Agent-Level Tools</strong>: Offer flexibility and adaptive behavior, but at the cost of less control. Agents decide when a tool is necessary, allowing for more creative problem-solving but also introducing variability.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto"><strong>Design Implications</strong>:
+<ul>
+<li data-line="4" dir="auto">If you need <strong>consistency</strong> in how a tool is used, place it at the task level. This approach is suitable for scenarios where specific tool operations are non-negotiable parts of the task.</li>
+<li data-line="5" dir="auto">If you prefer <strong>autonomy</strong> and want the agent to decide the best approach, assign tools at the agent level. This setup is ideal for roles requiring adaptive strategies and decision-making.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="5.2.2 Practical Scenario" dir="auto" class="heading" id="5.2.2_Practical_Scenario">5.2.2 Practical Scenario</h3>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Deterministic Example</strong>: A data extraction task that always requires accessing a specific API would have the API connector tool assigned to it. Every time the task runs, it will use this tool, ensuring the data is retrieved consistently.</li>
+<li data-line="1" dir="auto">✦ <strong>Probabilistic Example</strong>: An agent responsible for gathering insights from web data may or may not use a web scraper tool depending on the task’s demands, previous information gathered, or the agent’s strategy at that moment.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="5.3 Incorporating Third-Party Tools" dir="auto" class="heading" id="5.3_Incorporating_Third-Party_Tools">5.3 Incorporating Third-Party Tools</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">CrewAI's ability to support not only its native tools but also third-party tools from <a data-tooltip-position="top" aria-label="https://python.langchain.com/v0.2/docs/integrations/tools/" rel="noopener" class="external-link" href="https://python.langchain.com/v0.2/docs/integrations/tools/" target="_blank"><code>LangChain</code></a> and <a data-tooltip-position="top" aria-label="https://llamahub.ai/" rel="noopener" class="external-link" href="https://llamahub.ai/" target="_blank"><code>LlamaIndex</code></a> offers significant advantages.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ This flexibility allows users to leverage a broader range of functionalities and integrations, enhancing the overall versatility and capability of the platform.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ Developers are not confined to the tools provided by CrewAI alone; they can seamlessly integrate and utilize the best tools available in the market, tailored to their specific needs.</p>
+<div src="lib/media/img-20240907145346521.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240907145346521.png"></div>
+<div style="text-align: center; width: 50%; margin: auto;"><small style="color: grey;">Screenshot of a collection of LlamaIndex tools (integrations)</small></div>
+<br>In our <code>walkthrough</code> notebook, we have tried a more advanced example that uses <code>toolkits</code> (a suit of tools) from LangChain to create a tool that can manipulate and analyze tabular data by actually running Python code.
+<p></p>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ This tool uses the <code>pandas</code> library to manipulate the data and the <code>ChatOpenAI</code> agent to run the code.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ While the example is a bit more complex, but we think it's worth to include it because the simplier examples (using a single <code>tool</code> from LangChain) are already well documented in CrewAI's documentation.</p>
+</li>
+<li data-line="8" dir="auto">
+<p>✦ The <code>toolkits</code> are usually much more powerful and can be used to achieve more complex tasks, but we have yet to come across a comprehensive documentation on how to incorporate them into CrewAI's agents.</p>
+</li>
+</ul>
+<pre class="d2l-code"><code class="language-python">from langchain.agents import Tool
+from langchain.agents.agent_types import AgentType
+from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
+
+from langchain_openai import ChatOpenAI
+import pandas as pd
+
+df = pd.read_csv("https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv")
+
+pandas_tool_agent = create_pandas_dataframe_agent(
+	llm=ChatOpenAI(temperature=0, model='gpt-4o-mini'),
+	df=df,
+	agent_type=AgentType.OPENAI_FUNCTIONS,
+	allow_dangerous_code=True # &amp;lt;-- This is an "acknowledgement" that this can run potentially dangerous code
+)
+
+# Create the tool
+pandas_tool = Tool(
+	name="Manipulate and Analyze tabular data with Code",
+	func=pandas_tool_agent.invoke, # &amp;lt;-- This is the function that will be called when the tool is run. Note that there is no `()` at the end
+	description="Useful for search-based queries",
+)</code></pre>
+</div>
+<div></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+														<circle cx="12" cy="12" r="10"></circle>
+														<path d="M12 16v-4"></path>
+														<path d="M12 8h.01"></path>
+													</svg></div>
+<div class="callout-title-inner">For more info on <strong>how to use</strong>:</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ <code>LangChain</code> tools in CrewAI, see <a rel="noopener" class="external-link" href="https://docs.crewai.com/core-concepts/Using-LangChain-Tools/" target="_blank">https://docs.crewai.com/core-concepts/Using-LangChain-Tools/</a></li>
+<li data-line="4" dir="auto">✦ <code>LlamaIndex</code> tools in CrewAI, see <a rel="noopener" class="external-link" href="https://docs.crewai.com/core-concepts/Using-LlamaIndex-Tools" target="_blank">https://docs.crewai.com/core-concepts/Using-LlamaIndex-Tools</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<blockquote dir="auto">
+<p>for more info about <code>Tools</code>, such as <em>the list of tools</em> or <em>how to create your own tool</em>, see <a rel="noopener" class="external-link" href="https://docs.crewai.com/core-concepts/Tools/#introduction" target="_blank">https://docs.crewai.com/core-concepts/Tools/#introduction</a></p>
+</blockquote>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

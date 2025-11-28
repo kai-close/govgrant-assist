@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span></p>
+</div>
+<ol start="3">
+<li dir="auto" class="page-title heading fix-heading" id="Title: Multi-action within a Prompt">Title: Multi-action within a Prompt</li>
+</ol>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">LLMs Do Not Have Memory</li>
+<li class="step step-success" data-content="📒" dir="auto">Prompting Techniques for Better Reasoning</li>
+<li class="step step-success" data-content="🔧" dir="auto">Multi-action within a Prompt</li>
+<li class="step" data-content="🔧" dir="auto">Prompt Chaining</li>
+<li class="step" data-content="🔧" dir="auto">Exception Handling</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240807095945719.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240807095945719.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Technique 1: Chaining Actions within the Prompt" href="#Technique_1:_Chaining_Actions_within_the_Prompt" class="internal-link" target="_self" rel="noopener">Technique 1: Chaining Actions within the Prompt</a></li>
+<li dir="auto"><a data-href="#Technique 2: More Structured Step-by-Step Instructions (A.K.A Inner Monologue)" href="#Technique_2:_More_Structured_Step-by-Step_Instructions_(A.K.A_Inner_Monologue)" class="internal-link" target="_self" rel="noopener">Technique 2: More Structured Step-by-Step Instructions (A.K.A Inner Monologue)</a></li>
+<li dir="auto"><a data-href="#Technique 3: Generated Knowledge" href="#Technique_3:_Generated_Knowledge" class="internal-link" target="_self" rel="noopener">Technique 3: Generated Knowledge</a></li>
+<li dir="auto"><a data-href="#Potential Limitations &amp; Risk on Multi-actions within a Single Chain" href="#Potential_Limitations_&amp;_Risk_on_Multi-actions_within_a_Single_Chain" class="internal-link" target="_self" rel="noopener">Potential Limitations &amp; Risk on Multi-actions within a Single Chain</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Technique 1: Chaining Actions within the Prompt" dir="auto" class="heading" id="Technique_1:_Chaining_Actions_within_the_Prompt">Technique 1: Chaining Actions within the Prompt</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Chaining actions involve giving the LLM <strong>a prompt that contains a sequence of tasks to be completed one after the other</strong>.
+<ul>
+<li data-line="1" dir="auto">Each action in the chain builds upon the previous one, allowing for the creation of a multi-step process that the model follows to generate a final output.</li>
+<li data-line="2" dir="auto">This technique can enhance the utility and flexibility of LLMs in processing and generating information.</li>
+<li data-line="3" dir="auto"><strong>How Does it Work?</strong>
+<ul>
+<li data-line="4" dir="auto"><strong>Sequential Instructions</strong>: The prompt is structured to include a list of actions that the LLM needs to perform. These actions are ordered logically, ensuring that the output of one action serves as the input or foundation for the next.</li>
+<li data-line="5" dir="auto"><strong>Clear Delimitation</strong>: Each action is clearly delineated within the prompt, often numbered or separated by clear markers. This helps the model understand the sequence of steps it needs to follow.</li>
+<li data-line="6" dir="auto"><strong>Building Complexity</strong>: The initial tasks are usually simpler, with complexity building as the model progresses through the chain. This gradual increase in complexity helps the model maintain focus and apply the information it has processed in earlier steps.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><iframe width="100%" height="792.125" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/a83530bed3f24bebbd1a56eddf80f138?height=792.125" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Technique 2: More Structured Step-by-Step Instructions (A.K.A Inner Monologue)" dir="auto" class="heading" id="Technique_2:_More_Structured_Step-by-Step_Instructions_(A.K.A_Inner_Monologue)">Technique 2: More Structured Step-by-Step Instructions (A.K.A Inner Monologue)</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ One key benefit of this prompting tactic is that we can extract the relevant part to display to the end-user, while keeping the others part as the "intermediate outputs".
+<ul>
+<li data-line="1" dir="auto">Similar to&nbsp;<strong>Chain-of-Thought</strong>&nbsp;prompting, LLMs can perform better at reasoning and logic problems if you ask them to break the problem down into smaller steps.</li>
+<li data-line="2" dir="auto">The "intermediate output" is also known as the&nbsp;<strong>inner monologue</strong>&nbsp;of the LLM when it is reasoning through the problems.</li>
+<li data-line="3" dir="auto">These "intermediate outputs" can be used to verify if the reasoning applied by the LLM is correct or as intended.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><iframe width="100%" height="787.75" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/92a2da3a95314d52a36281fc2cfb8a91?height=787.75" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><iframe width="100%" height="241.1875" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/31fef4fb55ec426e9c64903bd6e17e4d?height=241.1875" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Technique 3: Generated Knowledge" dir="auto" class="heading" id="Technique_3:_Generated_Knowledge">Technique 3: Generated Knowledge</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">The idea behind the generated knowledge approach is to ask the LLM to generate potentially useful information about a given question/prompt before generating a final response.</p>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/generated-knowledge.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<p dir="auto">Reference: <a data-tooltip-position="top" aria-label="https://arxiv.org/pdf/2110.08387.pdf" rel="noopener" class="external-link" href="https://arxiv.org/pdf/2110.08387.pdf" target="_blank">Generated Knowledge Prompting for Commonsense Reasoning</a></p>
+</div>
+<div><iframe width="100%" height="604.5625" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/5da055bbf22b49ab8ca61055573f201b/0e7c840d09dd4cb091b8dd33a06a0f3b?height=604.5625" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Potential Limitations &amp; Risk on Multi-actions within a Single Chain" dir="auto" class="heading" id="Potential_Limitations_&amp;_Risk_on_Multi-actions_within_a_Single_Chain">Potential Limitations &amp; Risk on Multi-actions within a Single Chain</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240807095945790.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240807095945790.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p><strong>Complexity Management</strong>:</p>
+<ul>
+<li data-line="1" dir="auto">As the chain of actions grows, the prompt can become complex. It's essential to structure the prompt clearly to avoid confusing the model.</li>
+<li data-line="2" dir="auto">The effectiveness of complex prompt heavily relies on the skill of prompt engineering, but may still not guarantee consistent and desired output from the LLMs.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Error Propagation</strong>:</p>
+<ul>
+<li data-line="5" dir="auto">Mistakes in early steps can propagate through the chain, affecting the final output. Careful prompt design and error checking are crucial.</li>
+<li data-line="6" dir="auto">There is no way to explicitly check the intermediate outputs and use explicit logic (like an if-else statement) to change the flow.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto">
+<p><strong>Context Dilution</strong></p>
+<ul>
+<li data-line="9" dir="auto">As the instructions grows and become more complex, the attention on some instructions may become diluted and may not be followed through by the LLMs.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">However, for simpler instructions like those we have seen in the examples above, chaining multiple actions within a prompt will still work relatively well, while offering better speed for the application. This is because making one request to the LLM is generally faster than multiple sequential requests. It also helps to maintains a logical flow of information, ensuring that the output is coherent and contextually relevant across all steps.</p>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="example" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                          <line x1="8" y1="6" x2="21" y2="6"></line>
+                          <line x1="8" y1="12" x2="21" y2="12"></line>
+                          <line x1="8" y1="18" x2="21" y2="18"></line>
+                          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        </svg></div>
+<div class="callout-title-inner">Try out the practical examples in Weekly Tasks - Week <strong>03</strong></div>
+</div>
+</div>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

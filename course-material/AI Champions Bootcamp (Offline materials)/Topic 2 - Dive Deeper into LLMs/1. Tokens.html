@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="
+          color: rgb(32, 33, 34);
+          font-family: verdana, sans-serif;
+          font-size: 12px;
+        " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebookTabs</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebookTabs" data-icon="LiNotebookTabs" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 6h4"></path>
+                  <path d="M2 10h4"></path>
+                  <path d="M2 14h4"></path>
+                  <path d="M2 18h4"></path>
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <path d="M15 2v20"></path>
+                  <path d="M15 7h5"></path>
+                  <path d="M15 12h5"></path>
+                  <path d="M15 17h5"></path>
+                </svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Tokens</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Tokens"></h1>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Tokens</li>
+<li class="step" data-content="📒" dir="auto">Key Parameters for LLM</li>
+<li class="step" data-content="📒" dir="auto">LLMs and Hallucination</li>
+<li class="step" data-content="🔧" dir="auto">Prompting Techniques for Builders</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/photo-1597392582469-a697322d5c16.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#What's Token" href="#What's_Token" class="internal-link" target="_self" rel="noopener">What's Token</a></li>
+<li dir="auto"><a data-href="#LLMs have Token Limits" href="#LLMs_have_Token_Limits" class="internal-link" target="_self" rel="noopener">LLMs have Token Limits</a></li>
+<li dir="auto"><a data-href="#Tokenizer Widget for OpenAI Models" href="#Tokenizer_Widget_for_OpenAI_Models" class="internal-link" target="_self" rel="noopener">Tokenizer Widget for OpenAI Models</a></li>
+<li dir="auto"><a data-href="#Tokens &amp; Cost" href="#Tokens_&amp;_Cost" class="internal-link" target="_self" rel="noopener">Tokens &amp; Cost</a></li>
+<li dir="auto"><a data-href="#Estimate Token Counts in Code" href="#Estimate_Token_Counts_in_Code" class="internal-link" target="_self" rel="noopener">Estimate Token Counts in Code</a></li>
+<li dir="auto"><a data-href="#References" href="#References" class="internal-link" target="_self" rel="noopener">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="What's Token" dir="auto" class="heading" id="What's_Token">What's Token</h1>
+<div class="heading-children">
+<div><hr></div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ For every Large Language Models (LLMs), "tokens" play a crucial role. They are the&nbsp;<strong>smallest units of text that the model can understand and manipulate</strong>.&nbsp;</p>
+<ul>
+<li data-line="2" dir="auto">Think of tokens as the building blocks of a sentence.</li>
+<li data-line="3" dir="auto">They can represent a word, a part of a word, or even a punctuation mark.
+<ul>
+<li data-line="4" dir="auto">For instance, in the sentence "She loves ice-cream", there would be five tokens: "She", "loves", "ice", "-", and "cream".</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">The models learn to understand the statistical relationships between these tokens and produce the next token in a sequence of tokens.
+<ul>
+<li data-line="7" dir="auto">Different models use different tokenization processes.</li>
+<li data-line="8" dir="auto">For example, OpenAI's <code>GPT-4</code> likely uses a different tokenization process compared to <code>Gemini</code> from Google.&nbsp;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="hint" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                        </path>
+                      </svg></div>
+<div class="callout-title-inner">Hint</div>
+</div>
+<div class="callout-content">
+<p dir="auto">A helpful rule of thumb is that one token generally corresponds to ~4 characters of text for common English text. This translates to roughly ¾ of a word (so 100 tokens =~ 75 words). Note that this is useful for a rough estimation. There are tools from each model provider that can be used to more accurately count the number of tokens.</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="LLMs have Token Limits" dir="auto" class="heading" id="LLMs_have_Token_Limits">LLMs have Token Limits</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ In the early days of Language Learning Models (LLMs), it sounds like a long time ago although it was just early 2023, counting tokens was critical due to the limitations of these models in handling large numbers of tokens.</li>
+<li data-line="2" dir="auto">✦ However, with the release of newer models, such as <code>gpt-4-turbo</code>, <code>gpt-4o</code>, and <code>gemini 1.5 pro</code> onwards, many newer models can now process a significantly larger number of tokens, reducing the criticality for strict token counting.</li>
+<li data-line="4" dir="auto">✦ Below are some of the latest models, at the time of writing, and the number of tokens.<br>- The concept of the maximum tokens that the models can handle is <strong>also often known as "Context Window"</strong>.<br>- Note that the "Context Window" for the table below <strong>includes both the input and output tokens.</strong></li>
+</ul>
+</div>
+<div dir="ltr" style="overflow-x: auto;">
+<table style="width: 100%; height: 725.422px;">
+<thead>
+<tr style="height: 55.375px;">
+<th dir="ltr" style="width: 15.0235%;">MODEL</th>
+<th dir="ltr" style="width: 67.4491%;">Description (by the respective companies)</th>
+<th dir="ltr" style="width: 17.5274%;">CONTEXT WINDOW</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height: 34.5781px;">
+<td dir="auto" style="width: 15.0235%;"></td>
+<td dir="ltr" style="width: 67.4491%;"><strong>OpenAI Models</strong> <a data-tooltip-position="top" aria-label="https://platform.openai.com/docs/models/overview" rel="noopener" class="external-link" href="https://platform.openai.com/docs/models/overview" target="_blank">overview of models</a></td>
+<td dir="auto" style="width: 17.5274%;"></td>
+</tr>
+<tr style="height: 76.1719px;">
+<td dir="ltr" style="width: 15.0235%;">gpt-4-0125-preview</td>
+<td dir="ltr" style="width: 67.4491%;">The latest GPT-4 model. Returns a maximum of 4,096 output tokens.</td>
+<td dir="ltr" style="width: 17.5274%;">128,000 tokens</td>
+</tr>
+<tr style="height: 76.1719px;">
+<td dir="ltr" style="width: 15.0235%;">gpt-3.5-turbo-0125</td>
+<td dir="ltr" style="width: 67.4491%;">The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats. Returns a maximum of 4,096 output tokens</td>
+<td dir="ltr" style="width: 17.5274%;">128,000 tokens</td>
+</tr>
+<tr style="height: 13.7812px;">
+<td dir="auto" style="width: 15.0235%;"></td>
+<td dir="auto" style="width: 67.4491%;"></td>
+<td dir="auto" style="width: 17.5274%;"></td>
+</tr>
+<tr style="height: 34.5781px;">
+<td dir="auto" style="width: 15.0235%;"></td>
+<td dir="ltr" style="width: 67.4491%;"><strong>Claude Models</strong> <a data-tooltip-position="top" aria-label="https://docs.anthropic.com/en/docs/about-claude/models" rel="noopener" class="external-link" href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank">models overview</a></td>
+<td dir="auto" style="width: 17.5274%;"></td>
+</tr>
+<tr style="height: 55.375px;">
+<td dir="ltr" style="width: 15.0235%;">claude-3-5-sonnet</td>
+<td dir="ltr" style="width: 67.4491%;">Highest level of intelligence and capability (among Claude Modes). Returns a maximum of 8,192 output tokens</td>
+<td dir="ltr" style="width: 17.5274%;">200,000 tokens</td>
+</tr>
+<tr style="height: 76.1719px;">
+<td dir="ltr" style="width: 15.0235%;">claude-3-opus</td>
+<td dir="ltr" style="width: 67.4491%;">Powerful model for highly complex tasks. Top-level performance, intelligence, fluency, and understanding. Returns a maximum of 4,096 output tokens.</td>
+<td dir="ltr" style="width: 17.5274%;">200,000 tokens</td>
+</tr>
+<tr style="height: 13.7812px;">
+<td dir="auto" style="width: 15.0235%;"></td>
+<td dir="auto" style="width: 67.4491%;"></td>
+<td dir="auto" style="width: 17.5274%;"></td>
+</tr>
+<tr style="height: 34.5781px;">
+<td dir="auto" style="width: 15.0235%;"></td>
+<td dir="ltr" style="width: 67.4491%;"><strong>Google Gemini</strong> <a data-tooltip-position="top" aria-label="https://deepmind.google/technologies/gemini/" rel="noopener" class="external-link" href="https://deepmind.google/technologies/gemini/" target="_blank">models overview</a></td>
+<td dir="auto" style="width: 17.5274%;"></td>
+</tr>
+<tr style="height: 55.375px;">
+<td dir="ltr" style="width: 15.0235%;">gemini 1.5 flash</td>
+<td dir="ltr" style="width: 67.4491%;">Gemini 1.5 Flash is a fast and versatile multimodal model for scaling across diverse tasks.</td>
+<td dir="ltr" style="width: 17.5274%;">1,000,000 tokens</td>
+</tr>
+<tr style="height: 76.1719px;">
+<td dir="ltr" style="width: 15.0235%;">gemini 1.5 pro</td>
+<td dir="ltr" style="width: 67.4491%;">Gemini 1.5 Pro is a mid-size multimodal model that is optimized for a wide-range of reasoning tasks. 1.5 Pro can process large amounts of data at once</td>
+<td dir="ltr" style="width: 17.5274%;">2,000,000 tokens</td>
+</tr>
+<tr style="height: 19.5781px;">
+<td dir="auto" style="width: 15.0235%;"></td>
+<td dir="auto" style="width: 67.4491%;"></td>
+<td dir="auto" style="width: 17.5274%;"></td>
+</tr>
+<tr style="height: 34.5781px;">
+<td dir="auto" style="width: 15.0235%;"></td>
+<td dir="ltr" style="width: 67.4491%;"><strong>Grok</strong> <a data-tooltip-position="top" aria-label="https://console.x.ai/team/77555b9f-edae-405a-80b7-2184352965d2/models" rel="noopener" class="external-link" href="https://console.x.ai/team/77555b9f-edae-405a-80b7-2184352965d2/models" target="_blank">models overview</a></td>
+<td dir="auto" style="width: 17.5274%;"></td>
+</tr>
+<tr style="height: 34.5781px;">
+<td dir="ltr" style="width: 15.0235%;">grok-3-beta</td>
+<td dir="ltr" style="width: 67.4491%;">Excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in finance, healthcare, law, and science.</td>
+<td dir="ltr" style="width: 17.5274%;">131,072 tokens</td>
+</tr>
+<tr style="height: 34.5781px;">
+<td dir="ltr" style="width: 15.0235%;">grok-3-mini-beta</td>
+<td dir="ltr" style="width: 67.4491%;">A lightweight model that thinks before responding. Fast, smart, and great for logic-based tasks that do not require deep domain knowledge. The raw thinking traces are accessible.</td>
+<td dir="ltr" style="width: 17.5274%;">131,072 tokens</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto;"><small> Please refer to the model providers' official websites for the latest information, as the context window for the same models may get updated over time (e.g., gemini 1.5) </small></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ It’s important to note that <strong>some models may have different token limits for input and output.</strong>
+<ul>
+<li data-line="1" dir="auto">This means that while a model might be able to accept a large number of tokens as input, it might only be able to generate a smaller number of tokens as output.</li>
+<li data-line="2" dir="auto">Therefore, understanding the token limits of a specific model is still crucial.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">✦ Furthermore, for open-source models, especially smaller ones that prioritize speed, token counts remain very important.
+<ul>
+<li data-line="5" dir="auto">These models often have stricter token limits due to their focus on efficiency and speed.</li>
+<li data-line="6" dir="auto">Therefore, efficient token management is still a key consideration when working with these models.</li>
+<li data-line="7" dir="auto">It helps ensure that the models operate within their capacity and deliver results quickly.</li>
+<li data-line="8" dir="auto">Besides counting the token programmatically with code, which we will be using in our practical tasks, we can also use the web-based tool on&nbsp;<a rel="noopener" class="external-link" href="https://platform.openai.com/tokenizer" target="_blank">https://platform.openai.com/tokenizer</a></li>
+<li data-line="9" dir="auto">You can also <strong>try out the tool directly from below, by entering your sample prompt into the text box.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Tokenizer Widget for OpenAI Models" dir="auto" class="heading" id="Tokenizer_Widget_for_OpenAI_Models">Tokenizer Widget for OpenAI Models</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">You can use the tool <a href="https://platform.openai.com/tokenizer">here</a> to understand how a piece of text might be tokenized by a language model, and the total count of tokens in that piece of text.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Tokens &amp; Cost" dir="auto" class="heading" id="Tokens_&amp;_Cost">Tokens &amp; Cost</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ For many of the LLMs, the pricing is based on the number of tokens processed.</p>
+<ul>
+<li data-line="1" dir="auto">By understanding tokens, you can better manage your usage of the model, optimizing costs and ensuring efficient use of resources.</li>
+<li data-line="2" dir="auto">Below are some pricing tables for the different models from <code>OpenAI</code>.
+<ul>
+<li data-line="3" dir="auto">Prices&nbsp;are typically viewed in units of either units of “per 1M tokens” or “per 1K tokens”.</li>
+<li data-line="4" dir="auto">You can think of tokens as pieces of words, where 1,000 tokens is about 750 words. For example, this paragraph is about 35 tokens.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ Below are the pricing table for OpenAI's GPT models for reference:</p>
+</li>
+</ul>
+</div>
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">Model</th>
+<th dir="ltr">Pricing for Input Tokens</th>
+<th dir="ltr">Pricing for Output Tokens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">gpt-4o</td>
+<td dir="ltr">$5.00 / 1M input tokens</td>
+<td dir="ltr">$15.00 / 1M output tokens</td>
+</tr>
+<tr>
+<td dir="ltr">gpt-4o-mini</td>
+<td dir="ltr">$0.150 / 1M input tokens</td>
+<td dir="ltr">$0.600 / 1M output tokens</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                        <path d="m15 5 4 4"></path>
+                      </svg></div>
+<div class="callout-title-inner"><code>gpt-4o-mini</code> and <code>gpt-4o-mini-2024-07-18</code> ??</div>
+</div>
+<div class="callout-content">
+<p dir="auto">The name&nbsp;<code>gpt-4o-mini</code>&nbsp;serves as a generic reference to the latest model in this class. <code>gpt-4o-mini-2024-07-18</code>&nbsp;is the fully declared name of the specific version released on July 18, 2024.&nbsp;</p>
+<p dir="auto">This naming convention helps distinguish between different versions and updates of the model, ensuring clarity and precision when referring to a particular release.</p>
+<p dir="auto">For the training content in this Bootcamp, we can safely use the generic name <code>gpt-4o-mini</code> which points to the latest model in our notebooks. For more info, visit <a data-tooltip-position="top" aria-label="https://platform.openai.com/docs/models/gpt-4o" rel="noopener" class="external-link" href="https://platform.openai.com/docs/models/gpt-4o" target="_blank">Models - OpenAI API</a></p>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">Please always refer to official page for the latest pricing</div>
+</div>
+<div class="callout-content">
+<p dir="auto">The price is accurate at the time of writing.<br>Official Pricing Page: <a rel="noopener" class="external-link" href="https://openai.com/pricing" target="_blank">https://openai.com/pricing</a></p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Estimate Token Counts in Code" dir="auto" class="heading" id="Estimate_Token_Counts_in_Code">Estimate Token Counts in Code</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">We can use the code below to estimate the token counts in the prompt that we will send to LLM.</p>
+<pre class="d2l-code"><code class="language-python"># This a simplifedfunction is for calculating the tokens given the "text"
+# ⚠️ This is simplified implementation that should only be used for a rough estimation
+
+import tiktoken
+
+def count_tokens(text):
+    encoding = tiktoken.encoding_for_model('gpt-4o-mini')
+    return len(encoding.encode(text))&amp;gt;)</code></pre>
+</div>
+<div><hr></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">While his function can be used to calculate the tokens in the prompt and output, it <strong>DOES NOT</strong> automatically count the tokens in the output generated by the LLM.</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ To calculate the token counts for the output generated, the generated text need to be passed to this function as a separate function call.</li>
+<li data-line="2" dir="auto">✦ For controlling the length of the output, see the 'max_tokens' parameter explained in <a class="internal-link" data-href="2. Key Parameters for LLMs.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-2-deeper-dive-into-llms/2.-key-parameters-for-llms.html" target="_self" rel="noopener">2. Key Parameters for LLMs</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ While the above code is sufficient for approximating the token counts, if you need more accurate token counts on the prompt, please refer the code below:</p>
+<ul>
+<li data-line="2" dir="auto">
+<p>We recommend to use this function for calculating the tokens in actual projects</p>
+<ul>
+<li data-line="3" dir="auto">This is especially useful if the API calls involve lengthy multi-turns chat between the LLM and the users</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>Don't worry about understand this function line-by-line, it's a utility tool</p>
+<ul>
+<li data-line="6" dir="auto">The core function is really boiled down to this:&nbsp;<code>encoding.encode(value)</code>&nbsp;in the last few lines of the code</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="d2l-code"><code class="language-python">import tiktoken
+
+def num_tokens_from_messages(messages, model="gpt-3.5-turbo"):
+    """Return the number of tokens used by a list of messages."""
+    try:
+        encoding = tiktoken.encoding_for_model(model)
+    except KeyError:
+        print("Warning: model not found. Using cl100k_base encoding.")
+        encoding = tiktoken.get_encoding("cl100k_base")
+
+	tokens_per_message = 3
+	tokens_per_name = 1
+   
+    num_tokens = 0
+    for message in messages:
+        num_tokens += tokens_per_message
+        for key, value in message.items():
+            num_tokens += len(encoding.encode(value))
+            if key == "name":
+                num_tokens += tokens_per_name
+    num_tokens += 3  # every reply is primed with &amp;lt;|start|&amp;gt;assistant&amp;lt;|message|&amp;gt;
+    return num_tokens
+
+# For more details, See https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="-" data-callout="info" class="callout is-collapsible is-collapsed drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">[OPTIONAL] Read below to understand 🤔 why <code>tokens_per_message = 3</code> and <code>tokens_per_name = 1</code></div>
+</div>
+<div class="callout-content">
+<p dir="auto">The variable <code>tokens_per_message</code> is set to 3 for certain models (including “gpt-3.5-turbo-0613”, “gpt-3.5-turbo-16k-0613”, “gpt-4-0314”, “gpt-4-32k-0314”, “gpt-4-0613”, “gpt-4-32k-0613”) because <strong>each message in these models is encoded with three special tokens</strong>: start, role, and end.<br>Here’s a breakdown:</p>
+<ul>
+<li data-line="3" dir="auto"><strong>start:</strong> This token indicates the beginning of a message.</li>
+<li data-line="4" dir="auto"><strong>role:</strong> This token represents the role of the message sender, such as assistant or user.</li>
+<li data-line="5" dir="auto"><strong>end:</strong> This token signifies the end of a message.</li>
+</ul>
+<p dir="auto">The variable tokens_per_name is set to 1 because when a name is present in the message, it is encoded as a single token.<br>For <code>tokens_per_name</code>, a name is an optional field in the message dictionary that represents the name of the sender of the message. If a name is provided, it is included in the encoding of the message and takes up one token.</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="References" dir="auto" class="heading" id="References">References</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="%5Bdeveloper.tech.gov.sg/products/collections/data-science-and-artificial-intelligence/playbooks/prompt-engineering-playbook-beta-v3.pdf%5D(https://www.developer.tech.gov.sg/products/collections/data-science-and-artificial-intelligence/playbooks/prompt-engineering-playbook-beta-v3.pdf)" rel="noopener" class="external-link" href="https://abc-notes.data.tech.gov.sg/notes/%5Bdeveloper.tech.gov.sg/products/collections/data-science-and-artificial-intelligence/playbooks/prompt-engineering-playbook-beta-v3.pdf%5D(https://www.developer.tech.gov.sg/products/collections/data-science-and-artificial-intelligence/playbooks/prompt-engineering-playbook-beta-v3.pdf)" target="_blank">GovTech Prompt Engineering Playbook</a></li>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://platform.openai.com/docs/models/overview" rel="noopener" class="external-link" href="https://platform.openai.com/docs/models/overview" target="_blank">OpenAI Models</a></li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://platform.openai.com/tokenizer" rel="noopener" class="external-link" href="https://platform.openai.com/tokenizer" target="_blank">OpenAI Tokenizer</a></li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 737.5px; top: 303px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

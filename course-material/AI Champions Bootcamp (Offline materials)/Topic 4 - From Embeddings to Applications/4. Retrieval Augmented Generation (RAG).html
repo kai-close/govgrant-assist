@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span></p>
+</div>
+<ol start="4">
+<li dir="auto" class="page-title heading fix-heading" id="Title: Retrieval Augmented Generation (RAG)">Title: Retrieval Augmented Generation (RAG)</li>
+</ol>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Embeddings</li>
+<li class="step step-success" data-content="📒" dir="auto">Handling Embeddings</li>
+<li class="step step-success" data-content="🔧" dir="auto">Applying Embeddings</li>
+<li class="step step-success" data-content="🔧" dir="auto">Retrieval Augmented Generation (RAG)</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421131745129.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421131745129.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Why Context Augmentation?" href="#Why_Context_Augmentation?" class="internal-link" target="_self" rel="noopener">Why Context Augmentation?</a></li>
+<li dir="auto"><a data-href="#Using Langchain for RAG" href="#Using_Langchain_for_RAG" class="internal-link" target="_self" rel="noopener">Using Langchain for RAG</a></li>
+<li dir="auto"><a data-href="#Overview of Steps in RAG" href="#Overview_of_Steps_in_RAG" class="internal-link" target="_self" rel="noopener">Overview of Steps in RAG</a></li>
+<li dir="auto"><a data-href="#1. Document Loading" href="#1._Document_Loading" class="internal-link" target="_self" rel="noopener"> Document Loading </a></li>
+<li dir="auto"><a data-href="#2. Splits" href="#2._Splits" class="internal-link" target="_self" rel="noopener"> Splits </a></li>
+<li dir="auto"><a data-href="#3. Storage" href="#3._Storage" class="internal-link" target="_self" rel="noopener"> Storage </a></li>
+<li dir="auto"><a data-href="#4. Retrieval" href="#4._Retrieval" class="internal-link" target="_self" rel="noopener"> Retrieval </a>
+<ul>
+<li dir="auto"><a data-href="#Method 1: Basic Retrieval Using Vector Store directly" href="#Method_1:_Basic_Retrieval_Using_Vector_Store_directly" class="internal-link" target="_self" rel="noopener">Method 1: Basic Retrieval Using Vector Store directly</a></li>
+<li dir="auto"><a data-href="#Method 2: Using the `retriever` object" href="#Method_2:_Using_the_%60retriever%60_object" class="internal-link" target="_self" rel="noopener">Method 2: Using the retriever object</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#5. Output" href="#5._Output" class="internal-link" target="_self" rel="noopener"> Output </a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div>
+<p dir="auto">Now that we understand how embeddings can be used to retrieve semantically related texts, it's time to explore probably the most popular and pragmatic application of embeddings: Retrieval Augmented Generation (RAG).</p>
+</div>
+<div>
+<p dir="auto">A Retrieval-Augmented Generation (RAG) system is a framework that enhances the accuracy and reliability of generative AI models by incorporating information from external sources.</p>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Why Context Augmentation?" dir="auto" class="heading" id="Why_Context_Augmentation?">Why Context Augmentation?</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>LLMs offer a natural language interface between humans and data.</strong> Widely available models come pre-trained on vast amounts of publicly available data, such as Wikipedia, mailing lists, textbooks, source code, and more.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ <strong>However, while LLMs are trained on a vast amount of data, they are not trained on your data, which may be private or specific to the problem you’re trying to solve.</strong> This data could be behind APIs, in SQL databases, or trapped in PDFs and slide decks.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ <strong>You might choose to fine-tune an LLM with your data, but:</strong></p>
+<ul>
+<li data-line="5" dir="auto">Training an LLM is <strong>expensive</strong>.</li>
+<li data-line="6" dir="auto">Due to the cost of training, it's <strong>difficult to update an LLM with the latest information</strong>.</li>
+<li data-line="7" dir="auto"><strong>Observability is lacking.</strong> When you ask an LLM a question, it's not clear how the LLM arrived at its answer.</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">
+<p>✦ Instead of fine-tuning, you can use a context augmentation pattern called Retrieval-Augmented Generation (RAG) to obtain more accurate text generation relevant to your specific data.</p>
+<ul>
+<li data-line="10" dir="auto">RAG involves the following high-level steps:
+<ol>
+<li data-line="11" dir="auto">Retrieve information from your data sources first.</li>
+<li data-line="12" dir="auto">Add it to your question as context.</li>
+<li data-line="13" dir="auto">Ask the LLM to answer based on the enriched prompt.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li data-line="15" dir="auto">
+<p>✦ <strong>By doing so, RAG overcomes all three weaknesses of the fine-tuning approach:</strong></p>
+<ul>
+<li data-line="16" dir="auto">There's no training involved, so it's inexpensive.</li>
+<li data-line="17" dir="auto">Data is fetched only when you request it, ensuring it's always up-to-date.</li>
+<li data-line="18" dir="auto">It's more explainable, as most RAG frameworks allow you to display the retrieved documents, making it more trustworthy.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Using Langchain for RAG" dir="auto" class="heading" id="Using_Langchain_for_RAG">Using Langchain for RAG</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421141425684.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421141425684.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.langchain.com/langchain" rel="noopener" class="external-link" href="https://www.langchain.com/langchain" target="_blank"><strong>LangChain</strong></a> provides a robust framework for building LLM applications. The framework includes many components to support common LLM operations such as prompt chaining, chat memory management, and, of course, RAG.</p>
+</div>
+<div>
+<p dir="auto">We recommend using <code>LangChain</code> or equivalent frameworks for implementing RAG, instead of writing your code from scratch. These frameworks often offer the following benefits:</p>
+</div>
+<div>
+<p dir="auto"><strong>Ready-to-use Components</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <code>Components</code> are various modules/functions that we can use to handle many of the common operations in RAG, without having to write the code from scratch.
+<ul>
+<li data-line="1" dir="auto">For example, Langchain provides components for us to easily read PDF files or PowerPoint files, connect to databases, or get the transcript of a YouTube video.</li>
+</ul>
+</li>
+<li data-line="2" dir="auto">✦ Many of these components are based on contributions from large communities and research works that have proven to work effectively.
+<ul>
+<li data-line="3" dir="auto">For example, Langchain has a rich set of advanced techniques for retrieving relevant documents, such as <code>Contextual Compression</code>, <code>Self Query</code>, and <code>Parent Document</code> – techniques that otherwise someone would have to understand from research papers or code repositories and then translate into Python code.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">✦ Using a framework like Langchain allows us to focus on the business and application logic, so we can efficiently build and evaluate our proof-of-concept prototypes.</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><strong>Community Support</strong>:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ These popular frameworks like Langchain have active communities, providing tutorials, examples, and documentation.</li>
+<li data-line="1" dir="auto">✦ Whether you're a beginner or an experienced developer, you'll find resources to guide you.</li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<p dir="auto">However, packages like LangChain are not without their shortcomings:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Expect a learning curve to get familiar with the framework</strong></p>
+<ul>
+<li data-line="1" dir="auto">While Langchain provides powerful tools for RAG, it does require some initial learning. Developers need to understand the components, syntax, and best practices.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">
+<p>✦ <strong>They are still in active development and may break your code</strong></p>
+<ul>
+<li data-line="4" dir="auto">Updates may introduce changes, deprecate features, or even cause backward compatibility issues.</li>
+<li data-line="5" dir="auto">There are also chances where the documentation lags behind updates, or the available tutorials are based on older versions of the framework.</li>
+<li data-line="6" dir="auto">The suggestion is to avoid changing the version of the installed package unless it's necessary and you're ready to fix any broken code.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto">
+<p>✦ <strong>Less flexibility compared to writing your own code</strong></p>
+<ul>
+<li data-line="9" dir="auto">While Langchain streamlines RAG pipelines, it imposes certain constraints.</li>
+<li data-line="10" dir="auto">Customization beyond the provided components may be limited or challenging.</li>
+<li data-line="11" dir="auto">However, unless we are building something very unique, the components still serve as very useful building blocks for many common operations in LLMs.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Overview of Steps in RAG" dir="auto" class="heading" id="Overview_of_Steps_in_RAG">Overview of Steps in RAG</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">There are 5 main steps in a typical RAG pipeline:</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421132947558.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421132947558.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<ol>
+<li data-line="0" dir="auto"><strong>Document Loading</strong></li>
+</ol>
+<ul>
+<li data-line="1" dir="auto">In this initial step, relevant documents are ingested and prepared for further processing.</li>
+</ul>
+</li>
+<li data-line="2" dir="auto">
+<ol start="2">
+<li data-line="2" dir="auto"><strong>Splitting &amp; Chunking</strong></li>
+</ol>
+<ul>
+<li data-line="3" dir="auto">The text from the documents is split into smaller chunks or segments.</li>
+<li data-line="4" dir="auto">These chunks serve as the building blocks for subsequent stages.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<ol start="3">
+<li data-line="5" dir="auto"><strong>Storage</strong></li>
+</ol>
+<ul>
+<li data-line="6" dir="auto">The embeddings (vector representations) of these chunks are created and stored in a vector store.</li>
+<li data-line="7" dir="auto">These embeddings capture the semantic meaning of the text.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto">
+<ol start="4">
+<li data-line="8" dir="auto"><strong>Retrieval</strong></li>
+</ol>
+<ul>
+<li data-line="9" dir="auto">When an online query arrives, the system retrieves relevant chunks from the vector store based on the query.</li>
+<li data-line="10" dir="auto">This retrieval step ensures that the system identifies the most pertinent information.</li>
+</ul>
+</li>
+<li data-line="11" dir="auto">
+<ol start="5">
+<li data-line="11" dir="auto"><strong>Output</strong></li>
+</ol>
+<ul>
+<li data-line="12" dir="auto">Finally, the retrieved chunks are used to generate a coherent response.</li>
+<li data-line="13" dir="auto">This output can be in the form of natural language text, summaries, or other relevant content.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+<div class="heading-wrapper">
+<h2 data-heading="1. Document Loading" dir="auto" class="heading" id="1._Document_Loading">1. Document Loading</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Use <code>document loaders</code> to load data from a source as Document's.</p>
+<ul>
+<li data-line="1" dir="auto">A Document is a piece of text and associated metadata.</li>
+<li data-line="2" dir="auto">For example, there are document loaders for loading a simple .txt file, for loading the text contents of any web page, or even for loading a transcript of a YouTube video.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ See&nbsp;<a data-tooltip-position="top" aria-label="https://python.langchain.com/docs/modules/data_connection/document_loaders" rel="noopener" class="external-link" href="https://python.langchain.com/docs/modules/data_connection/document_loaders" target="_blank">official documentation on LangChain's Document Loaders</a>&nbsp;for different kinds of loaders for different sources.</p>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ In this particular example, we are using one of the <code>PDF loader</code> from <code>LangChain</code> to load the Prompt Engineering Playbook.</p>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain.document_loaders import PyPDFLoader
+
+loader = PyPDFLoader("https://www.developer.tech.gov.sg/products/collections/data-science-and-artificial-intelligence/playbooks/prompt-engineering-playbook-beta-v3.pdf")
+pages = loader.load()</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ The loader load each page of the PDF file as a separate <code>Document</code> object. The code below shows the first page of the PDF, by using index 0.</p>
+</li>
+</ul>
+</div>
+<div><iframe width="100%" height="157.375" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/09c089a94a584b8896128156c5a79c86/306518e5f7434f3d9ac55ce3cf564f0c?height=157.375" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="2. Splits" dir="auto" class="heading" id="2._Splits">2. Splits</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Once we loaded documents, we'll often want to transform them to better suit our application.</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240816213020656.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240816213020656.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ The simplest example is you may want to split a long document into smaller chunks that can fit into your model's context window.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ LangChain has a number of built-in document transformers that make it easy to split, combine, filter, and otherwise manipulate documents.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ At a high level, text splitters work as following:</p>
+<ol>
+<li data-line="5" dir="auto">Split the text up into small, semantically meaningful chunks (often sentences).</li>
+<li data-line="6" dir="auto">Start combining these small chunks into a larger chunk until you reach a certain size (as measured by some function).</li>
+<li data-line="7" dir="auto">Once you reach that size, make that chunk its own piece of text and then start creating a new chunk of text with some overlap (to keep context between chunks).</li>
+</ol>
+</li>
+<li data-line="9" dir="auto">
+<p>✦ In the example, we are using the&nbsp;<strong>RecursiveCharacterTextSplitter</strong>&nbsp;from Langchain to split the given&nbsp;<code>some_text</code>&nbsp;into chunks. The resulting segments will have a <strong>maximum size of 26 characters</strong>, with an <strong>overlap of 4 characters between adjacent chunks</strong>.</p>
+</li>
+</ul>
+</div>
+<div><iframe width="100%" height="880.3125" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/09c089a94a584b8896128156c5a79c86/efc27166f6db4e4fa866a4c2b51cce49?height=880.3125" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<p dir="auto">The key parameters that we often see in <code>splitter</code> are the following:</p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto"><strong><code>chunk_size</code></strong>:
+<ul>
+<li data-line="1" dir="auto">The&nbsp;<code>chunk_size</code>&nbsp;parameter determines the maximum length (in characters) of each chunk or segment into which the document is split.</li>
+<li data-line="2" dir="auto">A smaller&nbsp;<code>chunk_size</code>&nbsp;results in more fine-grained segments, while a larger value creates larger chunks.</li>
+<li data-line="3" dir="auto">Adjusting this parameter affects the granularity of the split text.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto"><strong><code>chunk_overlap</code></strong>:
+<ul>
+<li data-line="5" dir="auto">The&nbsp;<code>chunk_overlap</code>&nbsp;parameter specifies the number of characters that overlap between adjacent chunks.</li>
+<li data-line="6" dir="auto">It controls how much context is shared between neighboring segments.</li>
+<li data-line="7" dir="auto">A higher&nbsp;<code>chunk_overlap</code>&nbsp;value increases the overlap, allowing for smoother transitions between chunks.</li>
+<li data-line="8" dir="auto">Conversely, a lower value reduces overlap, potentially leading to more distinct segments.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3. Storage" dir="auto" class="heading" id="3._Storage">3. Storage</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Underlying the hood, there are two operations that happen at this step.</li>
+</ul>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">Get the embeddings of the text</li>
+<li data-line="1" dir="auto">Store the embeddings into a storage (a <strong>Vector store</strong> or a <strong>Vector Database</strong>)</li>
+</ol>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ However, in frameworks such as LangChain, these two operations are often completed by a single <code>method</code>.<br>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421143642415.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421143642415.png"></div>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain_community.document_loaders import TextLoader
+from langchain_text_splitters import CharacterTextSplitter
+from langchain_community.vectorstores import Chroma
+
+from langchain_openai import OpenAIEmbeddings
+
+Copy
+embeddings_model = OpenAIEmbeddings(model='text-embedding-3-small')
+
+
+db = Chroma.from_documents(splitted_documents, embeddings_model, persist_directory="./chroma_db")</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The last line creates a&nbsp;<strong>Chroma database</strong>&nbsp;from a collection of&nbsp;<strong>splitted documents</strong>.
+<ul>
+<li data-line="1" dir="auto">The database is built using the specified&nbsp;<strong>embeddings model</strong>&nbsp;and is stored in the directory <code>“./chroma_db”</code>.</li>
+<li data-line="2" dir="auto"><strong>Chroma</strong>: Chroma is a library or tool designed for efficient similarity search and indexing of such as text embeddings.</li>
+<li data-line="3" dir="auto"><strong>from_documents</strong>: This method constructs a database from a list of <code>Documents objects</code> (LangChain's object).</li>
+<li data-line="4" dir="auto"><strong>persist_directory</strong>: Specifies the directory where the database will be stored for future use.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="seealso" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+                              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                              <path d="m15 5 4 4"></path>
+                            </svg></div>
+<div class="callout-title-inner">Differences between <strong>Vector Store</strong> and <strong>Vector Database</strong></div>
+</div>
+<div class="callout-content"><hr>
+<p dir="auto"><strong>Vector Store:</strong></p>
+<ul>
+<li data-line="5" dir="auto">✦ A Vector Store is a simple data structure or storage system designed specifically to hold vectors (n-dimensional numerical representations of data points).</li>
+<li data-line="6" dir="auto">✦ It focuses on efficient storage and retrieval of vectors without additional features.</li>
+<li data-line="7" dir="auto">✦ Purpose: Primarily used for vector indexing and retrieval, especially in scenarios where the primary goal is similarity search.</li>
+</ul>
+<hr>
+<p dir="auto"><strong>Vector Database:</strong></p>
+<ul>
+<li data-line="11" dir="auto">✦ A Vector Database is a more sophisticated system that not only stores vectors but also provides additional functionalities and optimizations.</li>
+<li data-line="12" dir="auto">✦ It is purpose-built for handling high-dimensional vectors efficiently.</li>
+<li data-line="13" dir="auto">✦ Features:
+<ul>
+<li data-line="14" dir="auto">Indexing: Vector databases create indexes to speed up similarity searches.</li>
+<li data-line="15" dir="auto">Scalability: They can handle large-scale vector data.</li>
+<li data-line="16" dir="auto">Query Optimization: Vector databases optimize queries for similarity search.</li>
+<li data-line="17" dir="auto">Machine Learning Integration: Some vector databases integrate with ML frameworks for training and inference.</li>
+</ul>
+</li>
+<li data-line="18" dir="auto">✦ Examples: Pinecone, Milvus, and Weaviate are popular vector databases.</li>
+</ul>
+<p dir="auto">In short, while a Vector Store is minimalistic and focused on storage, a Vector Database provides additional features and optimizations for efficient vector handling, making it suitable for applications like semantic search, recommendation systems, and retrieval-augmented generation (RAG).</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="4. Retrieval" dir="auto" class="heading" id="4._Retrieval">4. Retrieval</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">For the <strong>Retrieval</strong> stage, LangChain provides a variety of <code>retrievers</code>, each of which is an interface that returns documents given an unstructured query.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Retrievers are more general than vector stores.</li>
+<li data-line="1" dir="auto">✦ A retriever does not need to be able to store documents, only to return (or retrieve) them.</li>
+<li data-line="2" dir="auto">✦ Vector stores can be used as the backbone of a retriever, but there are other types of retrievers as well.</li>
+<li data-line="3" dir="auto">✦ Retrievers accept a string query as input and return a list of <code>Document</code> objects as output.</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421144737934.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421144737934.png"></div>
+<p dir="auto"></p>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="Method 1: Basic Retrieval Using Vector Store directly" dir="auto" class="heading" id="Method_1:_Basic_Retrieval_Using_Vector_Store_directly">Method 1: Basic Retrieval Using Vector Store directly</h3>
+<div class="heading-children">
+<div>
+<p dir="auto">This is a <code>low-level implementation</code> that is useful if you want to have more flexibility in customizable or developing your own retriever.</p>
+</div>
+<div>
+<p dir="auto">For example, if you want to only retrieve the documents of which the <code>relevant_score</code> is above a specific threshold value, this method allow you to access such values, therefore you can write your own code to do the filtering or other computations before getting the final list of documents to retrieve.</p>
+</div>
+<div><iframe src="https://3fae6444-eaf6-4996-a48e-7fb34e5677d3.outputs.deepnoteworkspace.com/index.html?isDarkMode=false&amp;cache=true#5368ef83b2b1456b96b5f33a9bc6dfb8:0" data-cy="output-iframe" sandbox="allow-same-origin allow-scripts allow-downloads allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox" title="Cell output" class="css-v3c2oc" style="height: 101.656px; max-height: none; overflow-y: auto;"></iframe></div>
+<div><iframe src="https://f12807ee-3e57-493a-9591-c139b674d4ac.outputs.deepnoteworkspace.com/index.html?isDarkMode=false&amp;cache=true#b92d5f2e5ef649c3bf872c8a0e851a16:0" data-cy="output-iframe" sandbox="allow-same-origin allow-scripts allow-downloads allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox" title="Cell output" class="css-v3c2oc" style="height: 159.25px; max-height: none; overflow-y: auto;"></iframe></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="Method 2: Using the `retriever` object" dir="auto" class="heading" id="Method_2:_Using_the_`retriever`_object">Method 2: Using the <code>retriever</code> object</h3>
+<div class="heading-children">
+<div>
+<p dir="auto">This is a much more common approach, where we rely on the <code>retriever</code> component from Langchain to retrieve the relevant documents.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python"># This is a very basic retriever that return a maximum of 10 most relevant documents
+retriever_basic = vectorstore.as_retriever(search_kwargs={"k": 10})</code></pre>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="5. Output" dir="auto" class="heading" id="5._Output">5. Output</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421150029496.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421150029496.png"></div>
+</div>
+<div>
+<pre class="language-python" tabindex="0"></pre>
+<pre class="d2l-code"><code class="language-python">from langchain.chains import RetrievalQA
+
+
+qa_chain = RetrievalQA.from_chain_type(
+    AzureChatOpenAI(model='gpt-3.5-turbo'),
+    retriever=retriever_basic
+)
+
+qa_chain.invoke("Why LLM hallucinate?")</code></pre>
+</div>
+<div><iframe width="100%" height="117.375" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/09c089a94a584b8896128156c5a79c86/ffa17c4237a44a6fb2219b4f1a9b2a91?height=117.375" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<p dir="auto">or we can also easily write our custom Q&amp;A prompt for generating the answer</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain.prompts import PromptTemplate
+
+  
+# Build prompt
+
+template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer.
+
+{context}
+Question: {question}
+Helpful Answer:"""
+
+
+QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
+
+
+# Run chain
+qa_chain = RetrievalQA.from_chain_type(
+    AzureChatOpenAI(model='gpt-3.5-turbo'),
+    retriever=retriever_basic,
+    return_source_documents=True, # Make inspection of document possible
+    chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
+)</code></pre>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

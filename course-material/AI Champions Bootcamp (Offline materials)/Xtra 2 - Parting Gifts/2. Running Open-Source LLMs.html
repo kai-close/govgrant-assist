@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html><head>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<div class="markdown-preview-sizer markdown-preview-section">
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading">Title: Running Open-Source LLMs</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Running Open-Source LLMs"></h1>
+<div class="el-h1 heading-wrapper">
+<div class="heading-children">
+<div class="el-pre">
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Why bother about Open-Source Models?" href="#1_Why_bother_about_Open-Source_Models?" class="internal-link" target="_self" rel="noopener nofollow">1 Why bother about Open-Source Models?</a></li>
+<li dir="auto"><a data-href="#2 Different Ways to Run Open-Source Models" href="#2_Different_Ways_to_Run_Open-Source_Models" class="internal-link" target="_self" rel="noopener nofollow">2 Different Ways to Run Open-Source Models</a></li>
+<li dir="auto"><a data-href="#3 Why Running LLM on a Single Machine can be Super Challenging" href="#3_Why_Running_LLM_on_a_Single_Machine_can_be_Super_Challenging" class="internal-link" target="_self" rel="noopener nofollow">3 Why Running LLM on a Single Machine can be Super Challenging</a></li>
+<li dir="auto"><a data-href="#4 Ollama" href="#4_Ollama" class="internal-link" target="_self" rel="noopener nofollow">4 Ollama</a></li>
+<li dir="auto"><a data-href="#5 Getting Started with Ollma" href="#5_Getting_Started_with_Ollma" class="internal-link" target="_self" rel="noopener nofollow">5 Getting Started with Ollma</a>
+<ul>
+<li dir="auto"><a data-href="#5.1 Download and Install Ollama" href="#5.1_Download_and_Install_Ollama" class="internal-link" target="_self" rel="noopener nofollow">5.1 Download and Install Ollama</a>
+<ul>
+<li dir="auto"><a data-href="#5.1.1 Step 1: Download &amp; Install Ollama" href="#5.1.1_Step_1:_Download_&amp;_Install_Ollama" class="internal-link" target="_self" rel="noopener nofollow">5.1.1 Step 1: Download &amp; Install Ollama</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#5.2 Downloading and Running the Model Locally" href="#5.2_Downloading_and_Running_the_Model_Locally" class="internal-link" target="_self" rel="noopener nofollow">5.2 Downloading and Running the Model Locally</a>
+<ul>
+<li dir="auto"><a data-href="#5.2.1 Step 1: Start the Model" href="#5.2.1_Step_1:_Start_the_Model" class="internal-link" target="_self" rel="noopener nofollow">5.2.1 Step 1: Start the Model</a></li>
+<li dir="auto"><a data-href="#5.2.2 Step 2: Monitor Model Status" href="#5.2.2_Step_2:_Monitor_Model_Status" class="internal-link" target="_self" rel="noopener nofollow">5.2.2 Step 2: Monitor Model Status</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#5.3 Interacting with the Model" href="#5.3_Interacting_with_the_Model" class="internal-link" target="_self" rel="noopener nofollow">5.3 Interacting with the Model</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#6 Caveat" href="#6_Caveat" class="internal-link" target="_self" rel="noopener nofollow">6 Caveat</a></li>
+<li dir="auto"><a data-href="#7 Additional Resources" href="#7_Additional_Resources" class="internal-link" target="_self" rel="noopener nofollow">7 Additional Resources</a></li>
+<li dir="auto"><a data-href="#8 Reference" href="#8_Reference" class="internal-link" target="_self" rel="noopener nofollow">8 Reference</a></li>
+</ul>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="1 Why bother about Open-Source Models?" dir="auto" class="heading" id="1_Why_bother_about_Open-Source_Models?">1 Why bother about Open-Source Models?</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Open-source models are crucial for anyone interested in artificial intelligence, from practitioners, citizen data scientists to enthusiastic developers who build proof-of-concept prototypes. These models are freely available, meaning we can download, use, and modify them without worrying about licensing fees or restrictions. This accessibility allows we to experiment and innovate without needing a large budget or special permissions, making it easier to bring our ideas to life and test new concepts quickly.</p>
+</div>
+<div class="el-p">
+<p dir="auto"><strong>Transparency &amp; Possibility for Fine-tuning</strong>. Using open-source models also means you can find out how they work. This transparency is important because it allows you to understand the model's strengths and weaknesses, helping you make informed decisions about how to use them effectively. For some models, we can fine-tune the models to better fit our specific needs, whether we are working on a small project or developing a new application. This flexibility is particularly valuable for developers who need to adapt models to different scenarios or improve them based on real-world feedback.</p>
+</div>
+<div class="el-p">
+<p dir="auto"><strong>Confidentiality.</strong> Another significant advantage of open-source models is confidentiality. When we run these models locally, our data remains on the hosting server or local machine, meaning we don’t have to send sensitive information to external servers. This is especially important for projects that involve personal or proprietary data, as it helps protect privacy and maintain compliance with data protection regulations.</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="2 Different Ways to Run Open-Source Models" dir="auto" class="heading" id="2_Different_Ways_to_Run_Open-Source_Models">2 Different Ways to Run Open-Source Models</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">There are various frameworks out there that we can use to run open-source models locally or on a server environment. Table below features three popular frameworks.</p>
+</div>
+<div class="el-table" dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">Feature / Framework</th>
+<th dir="ltr"><strong>Ollama</strong></th>
+<th dir="ltr"><strong>HuggingFace TGI</strong></th>
+<th dir="ltr"><strong>llama.cpp</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><strong>Ease of Installation</strong></td>
+<td dir="ltr">Simple installation via downloadable packages for macOS, Linux, and WSL2 (Windows). User-friendly CLI; also can run as a Docker Image.</td>
+<td dir="ltr">Requires setting up Python environments and dependencies. More involved setup.</td>
+<td dir="ltr">Requires compilation from source; Run as Docker Image.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Supported Models</strong></td>
+<td dir="ltr">Supports a variety of open-source LLMs with seamless integration; require compatible variants of models (i.e., quantized).</td>
+<td dir="ltr">Extensive model support via HuggingFace Hub, including proprietary models.</td>
+<td dir="ltr">Primarily optimized for Meta’s LLaMA models and compatible variants.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Performance Optimization</strong></td>
+<td dir="ltr">Optimized for both CPU and GPU usage with options for memory allocation and quantization.</td>
+<td dir="ltr">Leverages HuggingFace’s optimizations; supports GPU acceleration with proper setup.</td>
+<td dir="ltr">Highly optimized for CPU performance, even on lower-end hardware. GPU support is experimental.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Scalability</strong></td>
+<td dir="ltr">Suitable for both local and server deployments with easy scaling options.</td>
+<td dir="ltr">Designed for scalable deployments, including multi-instance setups and cloud integration.</td>
+<td dir="ltr">Best suited for single-instance deployments; limited scalability features.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Customization &amp; Extensibility</strong></td>
+<td dir="ltr">Supports model customization and easy switching between different LLMs. Support commons customization.</td>
+<td dir="ltr">Highly customizable with access to a wide range of tools and integrations via HuggingFace ecosystem.</td>
+<td dir="ltr">Focuses on performance and efficiency for specific models. Tends to require more complex configuration for the customization.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="el-p">
+<p dir="auto">While every framework has their strengths and shortcomings, we will go with "ollama" as the framework to through this tutorial. It provide good balance between ease-of-use on a local machine and can be scale to more serious usage, as the starting point for us who want to explore open-source models. However, beyond this initial phase of trying open-source models, we encourage you to delve deeper into the capabilities of Ollama and other frameworks as you become more comfortable.</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="3 Why Running LLM on a Single Machine can be Super Challenging" dir="auto" class="heading" id="3_Why_Running_LLM_on_a_Single_Machine_can_be_Super_Challenging">3 Why Running LLM on a Single Machine can be Super Challenging</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Running large language models locally used to be a hassle, with lots of instance and GPU management eating up resources. For example, the smallest Llama2 model is 13 GB, which means most models with more than 7 billion parameters can't fit on a typical laptop GPU.In comparison, models with capabilities similar to GPT-4 often have few hundred billion of parameters. For instance, the high-capable variant of Llama 3.2 has 405 billion parameters, thus known as Llama-3.2 405B.</p>
+</div>
+<div class="el-p">
+<p dir="auto">This is where quantization comes in. By reducing the model weights to 4-bits, the Llama2–7b chat model shrinks to just 3.8 GB, making it possible to run on a regular laptop. Quantization is like compressing a large file to make it smaller without losing much of its original quality. Quantization reduces the size of the model by simplifying the numbers it uses to make calculations. Instead of using very precise numbers, it uses simpler, smaller ones. This makes the model much lighter and easier to run on devices with limited resources, like a laptop, without significantly affecting its performance.</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="4 Ollama" dir="auto" class="heading" id="4_Ollama">4 Ollama</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Ollama has its name from when they began supporting Llama2, but now has expanded to include models like Mistral and Phi-2. Ollama makes it easy to get started with running LLMs on our own hardware in very little setup time.</p>
+</div>
+<div class="el-p">
+<p dir="auto">Ollama provides a list of models (all in GGUF, because underlying Ollama is llama.cpp) that has been cleaned up and made ready to use by Ollama at&nbsp;<a rel="noopener nofollow" class="external-link" href="https://ollama.com/library" target="_blank">https://ollama.com/library</a>. The list is well maintained and has clear and clean descriptions of the models and various quantization and sizes of the same model.</p>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                                                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                                                </path>
+                                            </svg></div>
+<div class="callout-title-inner">Hardware Requirements</div>
+</div>
+<div class="callout-content">
+<p dir="auto">As for hardware, because Ollama upports quantization (4-bit as a default), generally the hardware requirements are relatively low, making it ideal to run on end-user devices like our laptops. As a rule of thumb, Ollama suggests that our device should have at least 8GB of RAM to run the 7B models, 16GB of RAM to run the 13B models and 32GB of RAM to run the 33B models. We can extrapolate the numbers accordingly.</p>
+</div>
+</div>
+</div>
+<div class="el-p">
+<p dir="auto">Ollama also offers an OpenAI-compliant API server, which means you can use it with little to no changes to your existing code (see the code example in <a class="internal-link" data-href="#5.3 Interacting with the Model" href="#5.3_Interacting_with_the_Model" target="_self" rel="noopener nofollow">5.3 Interacting with the Model</a>)</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="5 Getting Started with Ollma" dir="auto" class="heading" id="5_Getting_Started_with_Ollma">5 Getting Started with Ollama</h1>
+<div class="heading-children">
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="5.1 Download and Install Ollama" dir="auto" class="heading" id="5.1_Download_and_Install_Ollama">5.1 Download and Install Ollama</h2>
+<div class="heading-children">
+<div class="el-h3 heading-wrapper">
+<h3 data-heading="5.1.1 Step 1: Download &amp; Install Ollama" dir="auto" class="heading" id="5.1.1_Step_1:_Download_&amp;_Install_Ollama">5.1.1 Step 1: Download &amp; Install Ollama</h3>
+<div class="heading-children">
+<div class="el-ol">
+<ol>
+<li data-line="0" dir="auto"><strong>Visit the Official Website</strong>: Navigate to&nbsp;<a data-tooltip-position="top" aria-label="https://ollama.com/" rel="noopener nofollow" class="external-link" href="https://ollama.com/" target="_blank">ollama.com</a>&nbsp;to download the latest version.</li>
+<li data-line="2" dir="auto"><strong>Select Your OS</strong>: Choose the appropriate installer for your operating system (macOS, Linux, Windows).</li>
+<li data-line="3" dir="auto"><strong>Complete the installation</strong>: By following the instructions provided by the installer.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="5.2 Downloading and Running the Model Locally" dir="auto" class="heading" id="5.2_Downloading_and_Running_the_Model_Locally">5.2 Downloading and Running the Model Locally</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">With Ollama and the model set up, you can now run the LLM locally.<br>Please refer to the list here for models that are directly supported by Ollama <a rel="noopener nofollow" class="external-link" href="https://ollama.com/library" target="_blank">https://ollama.com/library</a> .</p>
+</div>
+<div class="el-p">
+<p dir="auto">In this tutorial, we will use <code>gemma 2</code> , a family of lightweight open models built from the same research and methodology used to create the Gemini models. Find out more about <code>gemma 2</code> models from <a data-tooltip-position="top" aria-label="https://ai.google.dev/gemma" rel="noopener nofollow" class="external-link" href="https://ai.google.dev/gemma" target="_blank">here.</a></p>
+</div>
+<div class="el-h3 heading-wrapper">
+<h3 data-heading="5.2.1 Step 1: Start the Model" dir="auto" class="heading" id="5.2.1_Step_1:_Start_the_Model">5.2.1 Step 1: Start the Model</h3>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Use the following command to start the model. The exact command may vary; consult Ollama's documentation. This command will pull and run the model, since this model has not already been downloaded.</p>
+</div>
+<div class="el-p">
+<p dir="auto"><code>ollama run gemma2</code></p>
+</div>
+</div>
+</div>
+<div class="el-h3 heading-wrapper">
+<h3 data-heading="5.2.2 Step 2: Monitor Model Status" dir="auto" class="heading" id="5.2.2_Step_2:_Monitor_Model_Status">5.2.2 Step 2: Monitor Model Status</h3>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">To check if the model is running:</p>
+</div>
+<div class="el-p">
+<p dir="auto"><code>ollama status</code></p>
+</div>
+<div class="el-p">
+<p dir="auto">This command should display the running status of your models.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<h2 data-heading="5.3 Interacting with the Model" dir="auto" class="heading" id="5.3_Interacting_with_the_Model">5.3 Interacting with the Model</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">Ollama offers an API interface to interact with the model programmatically.</p>
+</div>
+<div class="el-pre">
+<pre class="d2l-code"><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    base_url = 'http://localhost:11434/v1',
+    api_key='ollama', # required, but unused
+)
+
+response = client.chat.completions.create(
+  model="gemma2",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Who won the world series in 2020?"},
+    {"role": "assistant", "content": "The LA Dodgers won in 2020."},
+    {"role": "user", "content": "Where was it played?"}
+  ]
+)
+print(response.choices[0].message.content)</code></pre>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="6 Caveat" dir="auto" class="heading" id="6_Caveat">6 Caveat</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">While many LLMs available for download are often described as open source, the reality is more nuanced. Some LLMs may have their source code readily accessible, while others do not. Some provide their weights for free, and others do not. Additionally, some offer datasets and explain how the LLM was trained, whereas others do not provide this information. Generally, most allow free use of the LLM, but with certain conditions, such as restricting usage to research purposes only. Following Sau Sheong's definition in this <a data-tooltip-position="top" aria-label="https://sausheong.com/programming-with-ai-open-llms-28091f77a088" rel="noopener nofollow" class="external-link" href="https://sausheong.com/programming-with-ai-open-llms-28091f77a088" target="_blank">Medium article</a>, we use the term <em>open LLM</em> to refer to any model that is not a fully closed-source LLM, like GPT-4 or Gemini.</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="7 Additional Resources" dir="auto" class="heading" id="7_Additional_Resources">7 Additional Resources</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">To further enhance your experience and troubleshoot more complex issues, refer to the following resources:</p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto"><strong>Ollama GitHub Repository</strong>:&nbsp;[https://github.com/ollama/ollama](<a rel="noopener nofollow" class="external-link" href="https://github.com/ollama/ollam" target="_blank">https://github.com/ollama/ollam</a></li>
+<li data-line="1" dir="auto"><strong>Hugging Face Models Hub</strong>:&nbsp;[https://huggingface.co/models](<a rel="noopener nofollow" class="external-link" href="https://huggingface.co/models" target="_blank">https://huggingface.co/models</a></li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="8 Reference" dir="auto" class="heading" id="8_Reference">8 Reference</h1>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto"><a rel="noopener nofollow" class="external-link" href="https://ollama.com/blog/openai-compatibility#:~:text=Ollama%20now%20has%20built-in%20compatibility%20with%20the%20OpenAI,use%20more%20tooling%20and%20applications%20with%20Ollama%20locally" target="_blank">https://ollama.com/blog/openai-compatibility#:~:text=Ollama%20now%20has%20built-in%20compatibility%20with%20the%20OpenAI,use%20more%20tooling%20and%20applications%20with%20Ollama%20locally</a>.</li>
+<li data-line="1" dir="auto"><a rel="noopener nofollow" class="external-link" href="https://hackernoon.com/how-to-use-ollama-hands-on-with-local-llms-and-building-a-chatbot" target="_blank">https://hackernoon.com/how-to-use-ollama-hands-on-with-local-llms-and-building-a-chatbot</a></li>
+</ul>
+</div>
+<div class="mod-footer mod-ui"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

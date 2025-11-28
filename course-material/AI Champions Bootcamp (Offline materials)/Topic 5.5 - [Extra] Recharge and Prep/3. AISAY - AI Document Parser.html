@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> RiMeteorLine</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<ol start="3">
+<li dir="auto" class="page-title heading fix-heading">Title: AISAY - AI Document Parser</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: AISAY - AI Document Parser"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827154952114.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827154952114.png"></div>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Overview" href="#Overview" class="internal-link" target="_self" rel="noopener">Overview</a></li>
+<li dir="auto"><a data-href="#Key Features" href="#Key_Features" class="internal-link" target="_self" rel="noopener">Key Features</a>
+<ul>
+<li dir="auto"><a data-href="#Ability to detect, scan and comprehend a variety of documents" href="#Ability_to_detect,_scan_and_comprehend_a_variety_of_documents" class="internal-link" target="_self" rel="noopener">Ability to detect, scan and comprehend a variety of documents</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#How it Works" href="#How_it_Works" class="internal-link" target="_self" rel="noopener">How it Works</a></li>
+<li dir="auto"><a data-href="#Code for Getting Started" href="#Code_for_Getting_Started" class="internal-link" target="_self" rel="noopener">Code for Getting Started</a></li>
+<li dir="auto"><a data-href="#Web App for AISAY" href="#Web_App_for_AISAY" class="internal-link" target="_self" rel="noopener">Web App for AISAY</a></li>
+<li dir="auto"><a data-href="#Contact" href="#Contact" class="internal-link" target="_self" rel="noopener">Contact</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Overview" dir="auto" class="heading" id="Overview">Overview</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">AISAY is an AI-powered document reader that can provide structured responses, extract, and integrate information from various documents into existing systems. It can automatically detect, scan, and comprehend a variety of documents. This includes handwritten notes, printed articles, multilingual text, and structured/unstructured documents.</p>
+</div>
+<div>
+<p dir="auto">Unlike traditional Optical Character Recognition (OCR) systems, AISAY can provide structured responses for documents such as images (JPEG, PNG, TFIF) and PDF files. For documents issued by local entities (businesses, governments, and institutions), AISAY can even fine-tune the documents prior to processing.</p>
+</div>
+<div>
+<p dir="auto">You can find out more about AISAY from the info deck below.</p>
+</div>
+<div><iframe allowfullscreen="allowfullscreen" frameborder="0" height="550" width="100%" src="https://app.box.com/embed/s/py8hbhypbnqw1ufvgtk01htb79x42k0i?sortColumn=date" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Key Features" dir="auto" class="heading" id="Key_Features">Key Features</h1>
+<div class="heading-children">
+<div class="heading-wrapper">
+<h2 data-heading="Ability to detect, scan and comprehend a variety of documents" dir="auto" class="heading" id="Ability_to_detect,_scan_and_comprehend_a_variety_of_documents">Ability to detect, scan and comprehend a variety of documents</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">AISAY can process documents such as handwritten notes, printed articles, multilingual text, and structured/unstructured documents. Unlike traditional Optical Character Recognition (OCR) systems, AISAY can provide structured responses for documents such as images (JPEG, PNG, TFIF) and PDF files. For documents issued by local entities (businesses, governments, and institutions), AISAY can even fine-tune the documents prior to processing.</p>
+</div>
+<div>
+<p dir="auto">AISAY supports the following document types, but other document types can be supported on request.</p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">ID Documents such as NRIC/employment pass/S pass/work permit/dependent pass/long-term visit pass/student pass/driver’s license/11B or passports (machine-readable)</li>
+<li data-line="1" dir="auto">Agreements and contracts</li>
+<li data-line="2" dir="auto">Invoices/receipts/delivery orders</li>
+<li data-line="3" dir="auto">Bank statements</li>
+</ol>
+</div>
+<div>
+<blockquote dir="auto">
+<p>For latest features, please refer to <a data-tooltip-position="top" aria-label="https://www.developer.tech.gov.sg/products/categories/productivity-tools/aisay/features" rel="noopener" class="external-link" href="https://www.developer.tech.gov.sg/products/categories/productivity-tools/aisay/features" target="_blank">this page</a>.</p>
+</blockquote>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="How it Works" dir="auto" class="heading" id="How_it_Works">How it Works</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">AISAY accepts image files (JPEG, PNG, TIFF) or PDF documents and generates structured JSON responses with extracted data.</p>
+</div>
+<div>
+<p dir="auto">Using Optical Character Recognition (OCR), Document Question-Answering (DQA) techniques, and a Large-Language Model (LLM), AISAY analyses text position and content within documents to provide context and answer queries accurately. AISAY conducts thorough pre-processing and post-processing of documents to ensure precise results.</p>
+</div>
+<div>
+<p dir="auto">AISAY scales effectively with options for synchronous and asynchronous invocation, facilitating the handling of large file sizes. It assigns a confidence score to each task to assess the need for further assistance. Tasks with higher confidence levels can proceed with minimal human intervention, while those with lower confidence may require human review or additional verification.</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Code for Getting Started" dir="auto" class="heading" id="Code_for_Getting_Started">Code for Getting Started</h1>
+<div class="heading-children">
+<div>
+<div>
+<div class="card bg-base-100 shadow-xl">
+<figure style="width: 90%; height: 100%;"><img class="rounded-xl" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/bookmark-google-colab.png" style="width: 100%; height: 100%;" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center">
+<div class="card-actions"><a href="https://colab.research.google.com/gist/nick-dsaid/603da3f01b39fcabcdd9658b9b6165f2/aisay.ipynb" target="_blank" rel="noopener"> </a><a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=646723&amp;type=content&amp;rcode=927FAFEA-F39E-47A2-A004-9FE5405E0231-4543123" target="_blank" rel="noopener"><button class="btn btn-primary">Download Notebook (.ipynb)</button></a></div>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="abstract" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-clipboard-list">
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <path d="M12 11h4"></path>
+                        <path d="M12 16h4"></path>
+                        <path d="M8 11h.01"></path>
+                        <path d="M8 16h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">The documentation of the API is available <a data-tooltip-position="top" aria-label="https://app.swaggerhub.com/apis-docs/NickTan/aisay-doc-extraction-api/1.0.11" rel="noopener" class="external-link" href="https://app.swaggerhub.com/apis-docs/NickTan/aisay-doc-extraction-api/1.0.11" target="_blank">here</a>.</div>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Web App for AISAY" dir="auto" class="heading" id="Web_App_for_AISAY">Web App for AISAY</h1>
+<div class="heading-children">
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">From a GSIB laptop or equivalent, you can also access the Graphical User Interface (GUI) for AISAY from <a rel="noopener" class="external-link" href="https://launchpad.gov.sg/" target="_blank">https://launchpad.gov.sg</a></div>
+</div>
+</div>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827162341114.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827162341114.png"></div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Contact" dir="auto" class="heading" id="Contact">Contact</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="https://form.gov.sg/665978af9040a6be24d3978b?665982626cae0284c464a22a=AISAY" rel="noopener" class="external-link" href="https://form.gov.sg/665978af9040a6be24d3978b?665982626cae0284c464a22a=AISAY" target="_blank">Connect with Product teams through Developer Portal | FormSG</a></li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

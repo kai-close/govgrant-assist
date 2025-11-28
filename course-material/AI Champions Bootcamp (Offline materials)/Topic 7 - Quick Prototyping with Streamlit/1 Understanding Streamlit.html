@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebook</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebook" data-icon="LiNotebook" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 6h4"></path>
+                  <path d="M2 10h4"></path>
+                  <path d="M2 14h4"></path>
+                  <path d="M2 18h4"></path>
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <path d="M16 2v20"></path>
+                </svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Understanding Streamlit</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Understanding Streamlit"></h1>
+<div class="el-h1 heading-wrapper">
+<div class="heading-children">
+<div class="el-ul">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Understanding Streamlit</li>
+<li class="step" data-content="🔧" dir="auto">Setting up Streamlit Project with pip and venv</li>
+<li class="step" data-content="🔧" dir="auto">Working with Streamlit</li>
+<li class="step" data-content="🔧" dir="auto">Debugging Streamlit Apps in VS Code</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Overview" dir="auto" class="heading" id="Overview">Overview</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509102028524.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509102028524.png"></div>
+<p dir="auto"></p>
+</div>
+<div class="el-p">
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://streamlit.io/" rel="noopener nofollow" class="external-link" href="https://streamlit.io/" target="_blank">Streamlit</a> is a Python library that makes it a breeze for us to create and share web applications. <code>Streamlit</code> is gaining traction among developers working with large language models (LLMs) for its ability to streamline web application development.</p>
+</div>
+<div class="el-p">
+<p dir="auto">It's perfect for data scientists and developers eager to display their work, from data visualizations to interactive tools, without diving deep into the complexities of web development. The beauty of Streamlit is its simplicity in transforming data scripts into fully functional web apps with just a few lines of code, making it a go-to for quick project prototyping.</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Why Streamlit?" dir="auto" class="heading" id="Why_Streamlit?">Why Streamlit?</h1>
+<div class="heading-children">✦ <strong>Simplicity in Coding:</strong>
+<ul>
+<li data-line="3" dir="auto">Streamlit's syntax is user-friendly. You can craft interactive elements like sliders, buttons, and charts effortlessly.</li>
+</ul>
+</div>
+<div class="heading-children">✦ <strong>Speedy Development:</strong>
+<ul>
+<li data-line="4" dir="auto">It cuts down on development time by eliminating the need to handle backend logic, design the frontend, or manage their integration.</li>
+</ul>
+</div>
+<div class="heading-children">✦ <strong>Versatility:</strong>
+<ul>
+<li data-line="5" dir="auto">Sharing Streamlit apps is straightforward, whether it's deploying them on servers or incorporating them into existing Python projects.</li>
+<li data-line="6" dir="auto">It's compatible with a wide range of data visualization libraries, including Matplotlib, Plotly, and Altair.</li>
+</ul>
+</div>
+<div class="heading-children">✦ <strong>Built-in Interactivity:</strong>
+<ul>
+<li data-line="8" dir="auto">Streamlit apps are inherently interactive, offering a more dynamic and insightful way to present data analyses compared to static displays.</li>
+</ul>
+</div>
+<div class="el-p">
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509102212257.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509102212257.png"></div>
+<p dir="auto"></p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Tons of Resources for Building LLM Applications" dir="auto" class="heading" id="Tons_of_Resources_for_Building_LLM_Applications">Tons of Resources for Building LLM Applications</h1>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">Tens of thousands of developers use <code>Streamlit</code> as their go-to platform to experiment and build generative AI apps.</li>
+</ul>
+</div>
+There is a big community of developers and online resources.
+<ul>
+<li data-line="2" dir="auto">Running into issues? Likely somebody else has also faced the same issues before.</li>
+<li data-line="3" dir="auto">Just search your issue online and you will likely find a solutions/workarounds to solve your problem.</li>
+</ul>
+You can visit this page <a data-tooltip-position="top" aria-label="https://streamlit.io/generative-ai" rel="noopener nofollow" class="external-link" href="https://streamlit.io/generative-ai" target="_blank">Streamlit • A faster way to build and share data apps</a> to see the various "Getting Started" guides on building different types of LLM applications.</div>
+<div class="el-p">
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509111759456.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509111759456.png"></div>
+<p dir="auto"></p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-p">
+<p dir="auto">You can visit the gallery here to get a sensing of the application that you can build using Streamlit.<br><a data-tooltip-position="top" aria-label="https://streamlit.io/gallery" rel="noopener nofollow" class="external-link" href="https://streamlit.io/gallery" target="_blank">App Gallery • Streamlit</a></p>
+</div>
+<div class="el-p">
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509111534510.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240509111534510.png"></div>
+<p dir="auto"></p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="mod-footer mod-ui"></div>
+</div>
+</div>
+</div>
+</div></body></html>

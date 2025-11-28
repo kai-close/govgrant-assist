@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebookTabs</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebookTabs" data-icon="LiNotebookTabs" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 6h4"></path>
+                      <path d="M2 10h4"></path>
+                      <path d="M2 14h4"></path>
+                      <path d="M2 18h4"></path>
+                      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                      <path d="M15 2v20"></path>
+                      <path d="M15 7h5"></path>
+                      <path d="M15 12h5"></path>
+                      <path d="M15 17h5"></path></svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading" id="Title: LLMs Do Not Have Memory">Title: LLMs Do Not Have Memory</li>
+</ol>
+<h1 class="page-title heading inline-title" id=" Title: LLMs Do Not Have Memory "></h1>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">LLMs Do Not Have Memory</li>
+<li class="step" data-content="📒" dir="auto">Prompting Techniques for Better Reasoning</li>
+<li class="step" data-content="🔧" dir="auto">Multi-action within a Prompt</li>
+<li class="step" data-content="🔧" dir="auto">Prompt Chaining</li>
+<li class="step" data-content="🔧" dir="auto">Exception Handling</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421125835551.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421125835551.png"></div>
+<p dir="auto"></p>
+</div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="LLMs are Stateless" dir="auto" class="heading" id="LLMs_are_Stateless">LLMs are Stateless</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ By default, LLMs are stateless — meaning each incoming query (i.e., each time the LLM is triggered to generate the text response) is processed independently of other interactions. The only thing that matters is the <strong>current input, nothing else</strong>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ There are many applications where remembering previous interactions is very important, such as chatbots. Here, we will find out how we can enable conversations with LLMs <strong>as if the LLM remembers the previous conversation</strong>.</p>
+<pre><code>- Notice that in the example below, when the second input is sent to the LLM, the output is not relevant to the previous interaction(e.g., running&nbsp;`get_completion()`)
+</code></pre>
+<p><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/Week-03-LLM-Stateless-01.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="6" dir="auto">
+<ul>
+<li data-line="7" dir="auto">To make the LLM to engage in a "conversation", we <strong>need to send over all the previous</strong>&nbsp;<code>prompt</code>&nbsp;<strong>and</strong>&nbsp;<code>response</code> (i.e., those components highlighted in the BLUE region in the image below).</li>
+<li data-line="8" dir="auto">In the example below, the input &amp; output of the first interaction is sent together with the second prompt (i.e., "Which are healthy?")</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/Week-03-LLM-Stateless-02.png" referrerpolicy="no-referrer"></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Implementation in Python" dir="auto" class="heading" id="Implementation_in_Python">Implementation in Python</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Below is the&nbsp;<code>helper function</code>&nbsp;that we have been using.
+<ul>
+<li data-line="1" dir="auto">Pay attention to the&nbsp;<code>messages</code>&nbsp;object in the function.</li>
+<li data-line="2" dir="auto">That's the key for implementing the conversational-like interaction with the LLM.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">def get_completion(prompt, model="gpt-3.5-turbo"):
+    messages = [{"role": "user", "content": prompt}]
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        temperature=0, # this is the degree of randomness of the model's output
+    )
+    return response.choices[0].message.content</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<ul>
+<li data-line="1" dir="auto"><code>messages</code>&nbsp;is a list object where each item is a message.</li>
+<li data-line="3" dir="auto">A <code>message</code> object can be <strong>either of the three types</strong>:
+<ul>
+<li data-line="4" dir="auto">A. prompt from users</li>
+<li data-line="5" dir="auto">B. response from LLM (aka. AI assistant)</li>
+<li data-line="6" dir="auto">C. 🆕 system message:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M12 16v-4"></path>
+                          <path d="M12 8h.01"></path>
+                        </svg></div>
+<div class="callout-title-inner">What is "System Message"</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">
+<p>The system message helps set the behavior of the assistant.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>For example, you can modify the personality of the assistant or provide specific instructions about how it should behave throughout the conversation.</p>
+<ul>
+<li data-line="3" dir="auto">The instructions in the system message can guide the model’s tone, style, and content of the responses.</li>
+<li data-line="4" dir="auto">However, note that the system message is optional and the model’s behavior without a system message is likely to be similar to using a generic message such as "<em>You are a helpful assistant.</em>"</li>
+</ul>
+<hr>
+<ul>
+<li data-line="7" dir="auto"><strong>It’s also important to note that the system message is considered as a ‘soft’ instruction, meaning the model will try to follow it but it’s not a strict rule.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<p dir="auto">An example of messages with all these keys is shown below:</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "List some Fun Activities"},
+    {"role": "assistant", "content": "Spa, Hiking, Surfing, and Gaming"},
+    {"role": "user", "content": "Which are healthy?"}
+]</code></pre>
+</div>
+<div>
+<p dir="auto">Another example</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Who won the world series in 2020?"},
+    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+    {"role": "user", "content": "Where was it played?"}
+]</code></pre>
+</div>
+<div>
+<p dir="auto">Below is the illustration on the flow of the messages between different "roles"</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240810103844695.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240810103844695.png"></div>
+<p dir="auto"></p>
+</div>
+<div><hr></div>
+<div>
+<ul>
+<li data-line="0" dir="auto">💡By exposing the <code>messages</code> as one of the helper function's parameter, now we have a more flexible function&nbsp;<code>get_completion_from_message</code>, where you can compose the <code>messages</code> object, instead of just passing in the "user prompt".</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">def get_completion_by_messages(messages, model="gpt-3.5-turbo", temperature=0, top_p=1.0, max_tokens=1024, n=1):
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=temperature,
+        top_p=top_p,
+        max_tokens=max_tokens,
+        n=1
+    )
+    return response.choices[0].message.content</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="example" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                          <line x1="8" y1="6" x2="21" y2="6"></line>
+                          <line x1="8" y1="12" x2="21" y2="12"></line>
+                          <line x1="8" y1="18" x2="21" y2="18"></line>
+                          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        </svg></div>
+<div class="callout-title-inner">Try out the practical examples in Weekly Tasks - Week 03</div>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Potential Implications of Bigger `Messages`" dir="auto" class="heading" id="Potential_Implications_of_Bigger_`Messages`">Potential Implications of Bigger <code>Messages</code></h1>
+<div class="heading-children">
+<div>
+<p dir="auto">You probably would have guessed what the implications are of continuously stacking messages in the&nbsp;messages&nbsp;parameter for subsequent API calls. While it unlocks more contextually aware and engaging interactions, there's a trade-off to consider concerning resource utilization and performance. Let's delve into three key areas where these trade-offs become apparent:</p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">
+<p><strong>Increased Token Consumption</strong>:</p>
+<ul>
+<li data-line="1" dir="auto">
+<p><strong>Longer Context:</strong> Each message you add to the messages list contributes to a longer conversation history that the model needs to process. This directly increases the number of tokens consumed in each API call.</p>
+</li>
+<li data-line="3" dir="auto">
+<p><strong>Token Billing:</strong> Most LLMs' pricing model is based on token usage. As your message history grows, so does the cost of each API call. For lengthy conversations or applications with frequent interactions, this can become a considerable factor.</p>
+</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p><strong>Context Window Limits</strong>:</p>
+<ul>
+<li data-line="6" dir="auto">
+<p><strong>Finite Capacity:</strong> Language models have a limited "context window", meaning they can only hold and process a certain number of tokens at once.</p>
+</li>
+<li data-line="8" dir="auto">
+<p><strong>Truncation Risk:</strong> If the total number of tokens in your messages list exceeds the model's context window, the earliest messages will be truncated. This can lead to a loss of crucial context and affect the model's ability to provide accurate and coherent responses.</p>
+</li>
+</ul>
+</li>
+<li data-line="10" dir="auto">
+<p><strong>Potential for Increase Latency</strong>:</p>
+<ul>
+<li data-line="11" dir="auto"><strong>Processing Overhead:</strong> As the message history grows, the model requires more time to process and understand the accumulated context. This can lead to a noticeable increase in response latency, especially for models with larger context windows or when dealing with computationally intensive tasks.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div><hr></div>
+<div>
+<p dir="auto"><strong>Mitigation Strategies:</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ It's crucial to implement strategies to manage conversation history effectively. This could involve:</p>
+<ul>
+<li data-line="2" dir="auto">
+<p><strong>Summarization:</strong> Summarize previous messages to condense information while preserving key context.</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Selective Retention:</strong> Retain only the most relevant messages, discarding less important ones.</p>
+</li>
+<li data-line="6" dir="auto">
+<p><strong>Session Segmentation:</strong> Divide long conversations into logical segments and clear the context window periodically.</p>
+</li>
+<li data-line="8" dir="auto">
+<p><strong>Token-Efficient Models:</strong> Consider using models specifically designed for handling longer contexts, as they may offer a larger context window or more efficient token usage.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

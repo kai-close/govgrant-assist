@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg></span></p>
+</div>
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading">Title: Setting Up Streamlit Project with pip and venv</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title:_Setting_Up_Streamlit_Project_with_pip_and_venv"></h1>
+<div class="el-h1 heading-wrapper">
+<div class="heading-children">
+<div class="el-ul">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Understanding Streamlit</li>
+<li class="step step-success" data-content="🔧" dir="auto">Setting up Streamlit Project with pip and venv</li>
+<li class="step" data-content="🔧" dir="auto">Working with Streamlit</li>
+<li class="step" data-content="🔧" dir="auto">Debugging Streamlit Apps in VS Code</li>
+</ul>
+</div>
+<div class="el-pre">
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Why `pip` and `venv` are Essential for Your Streamlit App (Python Projects)" href="#Why_%60pip%60_and_%60venv%60_are_Essential_for_Your_Streamlit_App_(Python_Projects)" class="internal-link" target="_self" rel="noopener nofollow">Why&nbsp;pip&nbsp;and&nbsp;venv&nbsp;are Essential for Your Streamlit App (Python Projects)</a></li>
+<li dir="auto"><a data-href="#pip" href="#pip" class="internal-link" target="_self" rel="noopener nofollow">pip</a>
+<ul>
+<li dir="auto"><a data-href="#Why Use `pip`?" href="#Why_Use_%60pip%60?" class="internal-link" target="_self" rel="noopener nofollow">Why Use&nbsp;pip?</a></li>
+<li dir="auto"><a data-href="#Basic `pip` Commands" href="#Basic_%60pip%60_Commands" class="internal-link" target="_self" rel="noopener nofollow">Basic&nbsp;pip&nbsp;Commands</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#venv" href="#venv" class="internal-link" target="_self" rel="noopener nofollow">venv</a>
+<ul>
+<li dir="auto"><a data-href="#Why Use `venv`?" href="#Why_Use_%60venv%60?" class="internal-link" target="_self" rel="noopener nofollow">Why Use&nbsp;venv?</a></li>
+<li dir="auto"><a data-href="#Creating a Virtual Environment" href="#Creating_a_Virtual_Environment" class="internal-link" target="_self" rel="noopener nofollow">Creating a Virtual Environment</a></li>
+<li dir="auto"><a data-href="#Activating the Virtual Environment" href="#Activating_the_Virtual_Environment" class="internal-link" target="_self" rel="noopener nofollow">Activating the Virtual Environment</a></li>
+<li dir="auto"><a data-href="#Managing Packages Within a Virtual Environment" href="#Managing_Packages_Within_a_Virtual_Environment" class="internal-link" target="_self" rel="noopener nofollow">Managing Packages Within a Virtual Environment</a></li>
+<li dir="auto"><a data-href="#Deactivating the Virtual Environment" href="#Deactivating_the_Virtual_Environment" class="internal-link" target="_self" rel="noopener nofollow">Deactivating the Virtual Environment</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Walkthrough on Setting up the Environment for Streamlit Project" href="#Walkthrough_on_Setting_up_the_Environment_for_Streamlit_Project" class="internal-link" target="_self" rel="noopener nofollow">Walkthrough on Setting up the Environment for Streamlit Project</a></li>
+</ul>
+</div>
+</div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                        </path>
+                      </svg></div>
+<div class="callout-title-inner">The virtual environment described in this note is applicable to other Python projects as well, not just limited to Streamlit application development.</div>
+</div>
+</div>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Why `pip` and `venv` are Essential for Your Streamlit App (Python Projects)" dir="auto" class="heading" id="Why_`pip`_and_`venv`_are_Essential_for_Your_Streamlit_App_(Python_Projects)">Why <code>pip</code> and <code>venv</code> are Essential for Your Streamlit App (Python Projects)</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto"><code>pip</code> and <code>venv</code> are tools essential practices for setting up your Streamlit app project.</p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ They ensure that your development process is smooth, your app is portable, and your project environment is reproducible.</p>
+</li>
+<li data-line="1" dir="auto">
+<p>✦ Being able to understand and able to apply these tools means taking a significant step towards building robust, shareable web applications.</p>
+</li>
+<li data-line="3" dir="auto">
+<p>✦ <strong>Dependency Management with&nbsp;<code>pip</code></strong>:</p>
+<ul>
+<li data-line="4" dir="auto">Streamlit apps, like any other Python-based project, rely on specific packages and frameworks
+<ul>
+<li data-line="5" dir="auto">We use packages such as <code>LangChain</code>, <code>OpenAI</code>, <code>ragas</code> and many others</li>
+</ul>
+</li>
+<li data-line="6" dir="auto"><code>pip</code>&nbsp;allows you to manage these dependencies efficiently.
+<ul>
+<li data-line="7" dir="auto">By using&nbsp;<code>pip</code>&nbsp;to install and manage necessary packages, you ensure that your app has all the right tools to run smoothly.</li>
+<li data-line="8" dir="auto">🔥Moreover,&nbsp;<code>pip</code>&nbsp;helps in <strong>specifying the exact versions of these packages</strong>, <strong>preventing potential conflicts that might arise from updates or incompatibilities</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="10" dir="auto">
+<p>✦ <strong>Isolated Environments with&nbsp;<code>venv</code></strong>:</p>
+<ul>
+<li data-line="11" dir="auto">Developing your Streamlit app within a virtual environment created by&nbsp;<code>venv</code>&nbsp;is a best practice that offers several benefits.</li>
+<li data-line="12" dir="auto">It <strong>isolates your project's dependencies</strong> from the global Python environment, ensuring that your app doesn't interfere with or get affected by other Python projects on the same system.</li>
+<li data-line="13" dir="auto">This isolation is particularly important when you're working on multiple projects with differing requirements.</li>
+<li data-line="14" dir="auto">It also <strong>simplifies the process of sharing your app with others or deploying it</strong>, as you can easily specify the environment's requirements.</li>
+</ul>
+</li>
+<li data-line="16" dir="auto">
+<p>✦ <strong>Reproducibility and Collaboration</strong>:</p>
+<ul>
+<li data-line="17" dir="auto">When working on a Streamlit app, especially in a team or for public release, reproducibility becomes paramount.</li>
+<li data-line="18" dir="auto">By using&nbsp;<code>venv</code>&nbsp;and&nbsp;<code>pip</code>&nbsp;together, you can create a&nbsp;<code>requirements.txt</code>&nbsp;file that lists all your project's dependencies.</li>
+<li data-line="19" dir="auto">This file ensures that anyone who wants to run your app can set up an identical environment with ease, making collaboration and sharing straightforward.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="pip" dir="auto" class="heading" id="pip">pip</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto"><code>pip</code>&nbsp;is the package installer for Python.</p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ You can use it to install packages from the Python Package Index (PyPI) and other indexes.</li>
+<li data-line="1" dir="auto">✦ It allows you to install, update, and remove Python packages. Using&nbsp;<code>pip</code>&nbsp;ensures that you can easily share and manage dependencies for your projects.</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Why Use `pip`?" dir="auto" class="heading" id="Why_Use_`pip`?">Why Use <code>pip</code>?</h2>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Dependency Management</strong>: Easily manage project dependencies.</li>
+<li data-line="1" dir="auto">✦ <strong>Consistency</strong>: Ensure that you're using the same package versions across different environments.</li>
+<li data-line="2" dir="auto">✦ <strong>Ease of Use</strong>: Simplify the installation process for Python packages.</li>
+</ul>
+</div>
+<div class="el-p">
+<p dir="auto"><code>pip</code>&nbsp;is included by default with Python versions 3.4 and later. You can check if&nbsp;<code>pip</code>&nbsp;is installed by running: <code>pip --version</code></p>
+</div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Basic `pip` Commands" dir="auto" class="heading" id="Basic_`pip`_Commands">Basic&nbsp;<code>pip</code>&nbsp;Commands</h2>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Installing Packages</strong>:&nbsp;<code>pip install package_name</code></li>
+<li data-line="1" dir="auto">✦ <strong>Uninstalling Packages</strong>:&nbsp;<code>pip uninstall package_name</code></li>
+<li data-line="2" dir="auto">✦ <strong>Listing Installed Packages</strong>:&nbsp;<code>pip list</code></li>
+<li data-line="3" dir="auto">✦ <strong>Searching Packages</strong>:&nbsp;<code>pip search package_name</code></li>
+<li data-line="4" dir="auto">✦ <strong>Upgrading Packages</strong>:&nbsp;<code>pip install --upgrade package_name</code></li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+<div class="el-br"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="venv" dir="auto" class="heading" id="venv">venv</h1>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto"><code>venv</code>&nbsp;is a module that comes pre-installed with Python 3.3 and later versions, used to create isolated Python environments. Each environment has its own installation directories and doesn’t share libraries with other environments.</p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Why Use `venv`?" dir="auto" class="heading" id="Why_Use_`venv`?">Why Use&nbsp;<code>venv</code>?</h2>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Isolation</strong>: Keep dependencies required by different projects separate.</li>
+<li data-line="1" dir="auto">✦ <strong>Control</strong>: Have control over your environment and dependencies.</li>
+<li data-line="2" dir="auto">✦ <strong>Testing</strong>: Test your projects in clean environments to ensure compatibility.</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Creating a Virtual Environment" dir="auto" class="heading" id="Creating_a_Virtual_Environment">Creating a Virtual Environment</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">To create a virtual environment, you can use the following command:</p>
+</div>
+<div class="el-p">
+<p dir="auto"><code>python -m venv myenv</code></p>
+</div>
+<div class="el-p">
+<p dir="auto">This command creates a directory called&nbsp;<code>myenv</code>&nbsp;in your current directory, containing a fresh, isolated Python environment.</p>
+</div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Activating the Virtual Environment" dir="auto" class="heading" id="Activating_the_Virtual_Environment">Activating the Virtual Environment</h2>
+<div class="heading-children">
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ <strong>On Windows</strong>:&nbsp;
+<ul>
+<li data-line="1" dir="auto"><code>myenv\Scripts\activate.bat</code></li>
+</ul>
+</li>
+<li data-line="2" dir="auto">✦ <strong>On Unix or MacOS</strong>:&nbsp;
+<ul>
+<li data-line="3" dir="auto"><code>source myenv/bin/activate</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Managing Packages Within a Virtual Environment" dir="auto" class="heading" id="Managing_Packages_Within_a_Virtual_Environment">Managing Packages Within a Virtual Environment</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">While the virtual environment is activated, you can use&nbsp;<code>pip</code>&nbsp;to install, update, or remove packages. These operations will only affect the current virtual environment.</p>
+</div>
+<div class="el-p">
+<p dir="auto"><strong>How it works</strong></p>
+</div>
+<div class="el-ul">
+<ul>
+<li data-line="0" dir="auto">✦ Once you activate a virtual environment created by&nbsp;<code>venv</code>, it essentially sets up a secluded sandbox for your Python project.</li>
+<li data-line="1" dir="auto">✦ In this isolated environment, any commands you execute using Python or&nbsp;<code>pip</code>&nbsp;are confined to this sandbox.</li>
+<li data-line="2" dir="auto">✦ This means that if you install, update, or remove Python packages using&nbsp;<code>pip</code>, these actions will only affect the virtual environment and <strong>not the global Python installation on your system</strong>.</li>
+<li data-line="3" dir="auto">✦ Similarly, running Python scripts will use the Python interpreter and any dependencies within this environment, ensuring that your project runs under the conditions you've explicitly set up.</li>
+<li data-line="4" dir="auto">✦ This isolation is crucial for managing project-specific dependencies without risking conflicts with other projects or the system-wide Python setup, thereby providing a consistent and controlled development and execution environment.</li>
+</ul>
+</div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+<div class="el-h2 heading-wrapper">
+<div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div>
+<h2 data-heading="Deactivating the Virtual Environment" dir="auto" class="heading" id="Deactivating_the_Virtual_Environment">Deactivating the Virtual Environment</h2>
+<div class="heading-children">
+<div class="el-p">
+<p dir="auto">To deactivate the virtual environment and use your global Python environment again, simply run:<br><code>deactivate</code></p>
+</div>
+<div class="el-hr"><hr></div>
+<div class="el-hr"><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="el-h1 heading-wrapper">
+<h1 data-heading="Walkthrough on Setting up the Environment for Streamlit Project" dir="auto" class="heading" id="Walkthrough_on_Setting_up_the_Environment_for_Streamlit_Project">Walkthrough on Setting up the Environment for Streamlit Project</h1>
+<div class="heading-children">
+<div class="el-iframe"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube.com/embed/wNNe701P9DU" height="420" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div class="el-div">
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">Major Timeline</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=0s" rel="noopener nofollow" class="external-link" href="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=0s" target="_blank">00:00</a> - Setting up the Virtual Environment (using venv)</li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=355s" rel="noopener nofollow" class="external-link" href="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=355s" target="_blank">05:55</a> - Activate the Virtual Environment</li>
+<li data-line="3" dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=491s" rel="noopener nofollow" class="external-link" href="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=491s" target="_blank">08:11</a> - Install packages within the newly created Virtual Environment (using pip)</li>
+<li data-line="4" dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=700s" rel="noopener nofollow" class="external-link" href="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=700s" target="_blank">11:40</a> - Export the "versions numbers" of the installed packages (using pip)</li>
+<li data-line="5" dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=887s" rel="noopener nofollow" class="external-link" href="https://www.youtube.com/watch?v=wNNe701P9DU&amp;t=887s" target="_blank">14:47</a> - Install packages from a requirements.txt (using pip)</li>
+</ul>
+<hr>
+<p dir="auto"><small>Suggest to watch @ 1.25x speed and watch it directly on YouTube if you want to able to resize the video windows.</small></p>
+</div>
+</div>
+</div>
+<div class="el-blockquote">
+<blockquote dir="auto">
+<p><strong>Here is some common packages that give a good starting point for the virtual environment</strong></p>
+</blockquote>
+</div>
+<div class="el-pre">
+<pre class="d2l-code"><code class="language-bash">pip install streamlit openai tiktoken python-dotenv langchain langchain-openai langchain-experimental pandas</code></pre>
+</div>
+<div class="el-blockquote">
+<blockquote dir="auto">
+<p><strong>Alternatively, you can use this <a data-tooltip-position="top" aria-label="https://abc-notes.data.tech.gov.sg/resources/data/topic-7/requirements.txt" rel="noopener nofollow" class="external-link" href="https://abc-notes.data.tech.gov.sg/resources/data/topic-7/requirements.txt" target="_blank">requirements.txt</a> as the starting point.</strong></p>
+</blockquote>
+</div>
+<div class="mod-footer mod-ui"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 819px; top: 618px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

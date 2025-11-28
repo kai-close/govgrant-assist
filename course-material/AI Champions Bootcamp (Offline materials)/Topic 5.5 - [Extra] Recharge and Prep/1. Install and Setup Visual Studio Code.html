@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html><head>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+	<link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="RiMeteorLine" data-icon="RiMeteorLine" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"></svg> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Extra - Install and Setup Visual Studio Code (VS Code)</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Extra - Install and Setup Visual Studio Code (VS Code)"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+												<circle cx="12" cy="12" r="10"></circle>
+												<path d="M12 16v-4"></path>
+												<path d="M12 8h.01"></path>
+											</svg></div>
+<div class="callout-title-inner">Info</div>
+</div>
+<div class="callout-content">
+<p dir="auto">If you already have VS Code set up for Python development and are familiar with the IDE, feel free to skip this section. The materials in the Bootcamp are tested on <code>Python 3.12</code>. It's recommended to have <code>Python 3.9</code> or newer. Anaconda Python can be used if you're familiar with it.</p>
+</div>
+</div>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827140239353.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827140239353.png"></div>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Quick Guide for Setting Up VS Code for Python" href="#Quick_Guide_for_Setting_Up_VS_Code_for_Python" class="internal-link" target="_self" rel="noopener">Quick Guide for Setting Up VS Code for Python</a>
+<ul>
+<li dir="auto"><a data-href="#Step 1: Install Visual Studio Code" href="#Step_1:_Install_Visual_Studio_Code" class="internal-link" target="_self" rel="noopener">Step 1: Install Visual Studio Code</a></li>
+<li dir="auto"><a data-href="#Step 2: Install Python" href="#Step_2:_Install_Python" class="internal-link" target="_self" rel="noopener">Step 2: Install Python</a></li>
+<li dir="auto"><a data-href="#Step 3: Install Python Extension in Visual Studio Code" href="#Step_3:_Install_Python_Extension_in_Visual_Studio_Code" class="internal-link" target="_self" rel="noopener">Step 3: Install Python Extension in Visual Studio Code</a></li>
+<li dir="auto"><a data-href="#Step 5: Test your Setup" href="#Step_5:_Test_your_Setup" class="internal-link" target="_self" rel="noopener">Step 5: Test your Setup</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Good Intros to Visual Studio (VS) Code for Python (from Official Visual Studio's Channel)" href="#Good_Intros_to_Visual_Studio_(VS)_Code_for_Python_(from_Official_Visual_Studio's_Channel)" class="internal-link" target="_self" rel="noopener">Good Intros to Visual Studio (VS) Code for Python (from Official Visual Studio's Channel)</a>
+<ul>
+<li dir="auto"><a data-href="#Video #1: Getting Started with VS Code" href="#Video_#1:_Getting_Started_with_VS_Code" class="internal-link" target="_self" rel="noopener">Video &gt; 1: Getting Started with VS Code</a></li>
+<li dir="auto"><a data-href="#Video #2: Setting up VS Code for Python" href="#Video_#2:_Setting_up_VS_Code_for_Python" class="internal-link" target="_self" rel="noopener">Video &gt; 2: Setting up VS Code for Python</a></li>
+<li dir="auto"><a data-href="#Video #3: Python Extension in VS Code" href="#Video_#3:_Python_Extension_in_VS_Code" class="internal-link" target="_self" rel="noopener">Video &gt; 3: Python Extension in VS Code</a></li>
+<li dir="auto"><a data-href="#Video #4: Jupyter Notebooks in VS Code" href="#Video_#4:_Jupyter_Notebooks_in_VS_Code" class="internal-link" target="_self" rel="noopener">Video &gt; 4: Jupyter Notebooks in VS Code</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+												<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+												<path d="m15 5 4 4"></path>
+											</svg></div>
+<div class="callout-title-inner">Video Guide is Available</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">If you prefer a video that rather than text to guide you through the entire process of installing and setting up Visual Studio Code, please refer to the 🎥 Video #2 in the later part of this page.</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Quick Guide for Setting Up VS Code for Python" dir="auto" class="heading" id="Quick_Guide_for_Setting_Up_VS_Code_for_Python">Quick Guide for Setting Up VS Code for Python</h1>
+<div class="heading-children">
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="Step 1: Install Visual Studio Code" dir="auto" class="heading" id="Step_1:_Install_Visual_Studio_Code">Step 1: Install Visual Studio Code</h2>
+<div class="heading-children">
+<div>
+<ol>
+<li data-line="0" dir="auto">
+<p>Visit the&nbsp;<strong>official Visual Studio Code website</strong>&nbsp;here ➡️&nbsp;<a data-tooltip-position="top" aria-label="https://code.visualstudio.com/" rel="noopener" class="external-link" href="https://code.visualstudio.com/" target="_blank">Visual Studio Code.</a></p>
+</li>
+<li data-line="2" dir="auto">
+<p>Click on the <strong>download button</strong> and select the appropriate version for your operating system</p>
+</li>
+<li data-line="3" dir="auto">
+<p>Once the installer is downloaded, run it. This will only take a minute.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>Install:</p>
+<ul>
+<li data-line="5" dir="auto"><strong>Windows:</strong>&nbsp;Run the downloaded .exe file and follow the installation prompts. Make sure to select "Add to PATH" during installation.</li>
+<li data-line="6" dir="auto"><strong>macOS:</strong>&nbsp;Open the downloaded .zip file, and drag the Visual Studio Code app to the Applications folder.</li>
+<li data-line="7" dir="auto"><strong>Linux</strong>: Depending on your distribution, you might download a .deb or .rpm file (for Debian/Ubuntu or Fedora/SUSE respectively). Install it using your package manager (e.g., <code>dpkg -i for .deb or rpm -i for .rpm files</code>).</li>
+</ul>
+</li>
+</ol>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Step 2: Install Python" dir="auto" class="heading" id="Step_2:_Install_Python">Step 2: Install Python</h2>
+<div class="heading-children">
+<div>
+<ol>
+<li data-line="0" dir="auto"><strong>Download Python</strong>: Go to the&nbsp;<a data-tooltip-position="top" aria-label="https://www.python.org/downloads/" rel="noopener" class="external-link" href="https://www.python.org/downloads/" target="_blank">official Python website</a>&nbsp;and download the latest version for your operating system.</li>
+<li data-line="1" dir="auto"><strong>Install Python</strong>:
+<ul>
+<li data-line="2" dir="auto"><strong>Windows/Linux</strong>: Run the downloaded installer.&nbsp;Ensure you check the box that says "Add Python X.X to PATH"&nbsp;before clicking "Install Now."</li>
+<li data-line="3" dir="auto"><strong>macOS</strong>:
+<ul>
+<li data-line="4" dir="auto">Open the&nbsp;<code>.pkg</code>&nbsp;file and follow the installation instructions.</li>
+<li data-line="5" dir="auto">Alternatively, install Python via <code>brew</code>. Refer to this <a data-tooltip-position="top" aria-label="https://formulae.brew.sh/formula/python@3.12" rel="noopener" class="external-link" href="https://formulae.brew.sh/formula/python@3.12" target="_blank">guide</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Step 3: Install Python Extension in Visual Studio Code" dir="auto" class="heading" id="Step_3:_Install_Python_Extension_in_Visual_Studio_Code">Step 3: Install Python Extension in Visual Studio Code</h2>
+<div class="heading-children">
+<div>
+<ol>
+<li data-line="0" dir="auto">Open Visual Studio Code.</li>
+<li data-line="1" dir="auto">Access Extensions: Click on the&nbsp;<strong>square icon on the sidebar</strong>&nbsp;or press&nbsp;<strong>Ctrl+Shift+X</strong>&nbsp;to open the Extensions view.
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827135923330.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827135923330.png"></div>
+</li>
+<li data-line="2" dir="auto">Search and Install: Type "<strong>Python</strong>" in the search bar, find the&nbsp;<strong>Python extension by Microsoft</strong>&nbsp;(usually the first result), and click "Install."<br>
+<div src="lib/media/img-20240827140134745.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827140134745.png"></div>
+</li>
+</ol>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Step 5: Test your Setup" dir="auto" class="heading" id="Step_5:_Test_your_Setup">Step 5: Test your Setup</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto"><strong>Click on the first icon on the left panel &nbsp;📄</strong>
+<ul>
+<li data-line="1" dir="auto">Select a folder. Then, "right-click" &gt; "new file".</li>
+</ul>
+</li>
+<li data-line="2" dir="auto"><strong>Create a new file with a call "hello.py".</strong>
+<ul>
+<li data-line="3" dir="auto">Write some Python code. For example: print("Hello World").</li>
+</ul>
+</li>
+<li data-line="4" dir="auto"><strong>Select Python Interpreter</strong>:
+<ul>
+<li data-line="5" dir="auto">Click on the "Select Python Interpreter" in the status bar at the bottom (see number 3 in the screenshot below),</li>
+<li data-line="6" dir="auto">or open the command palette (Ctrl+Shift+P or Cmd+Shift+P on macOS) and type "Python: Select Interpreter."&nbsp;</li>
+<li data-line="7" dir="auto">Choose the Python interpreter you installed in Step 2 from the dropdown menu (see number 4 in the screenshot below).</li>
+</ul>
+</li>
+<li data-line="8" dir="auto"><strong>To run the code</strong>, right-click anywhere in the file and select “Run Python File in Terminal”.</li>
+</ul>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827143702131.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240827143702131.png"></div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Good Intros to Visual Studio (VS) Code for Python (from Official Visual Studio's Channel)" dir="auto" class="heading" id="Good_Intros_to_Visual_Studio_(VS)_Code_for_Python_(from_Official_Visual_Studio's_Channel)">Good Intros to Visual Studio (VS) Code for Python (from Official Visual Studio's Channel)</h1>
+<div class="heading-children">
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th align="center" dir="ltr">Profile</th>
+<th align="center" dir="ltr">Recommended Videos to Watch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" dir="ltr">- I'm entirely new to Visual Studio Code.<br>- I have not been using any Integrated Development Environment (IDE).</td>
+<td align="center" dir="ltr">All videos</td>
+</tr>
+<tr>
+<td align="center" dir="ltr">- I have been using Visual Studio Code for other programming language(s) other than Python</td>
+<td align="center" dir="ltr">Video #2 and onwards</td>
+</tr>
+<tr>
+<td align="center" dir="ltr">- I have been using Visual Studio Code for Python scripts, but have yet to try out writing and running Jupyter Notebook on Visual Studio Code</td>
+<td align="center" dir="ltr">Video #4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="Video #1: Getting Started with VS Code" dir="auto" class="heading" id="Video_#1:_Getting_Started_with_VS_Code">Video #1: Getting Started with VS Code</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><iframe class="external-embed mod-receives-events" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals allow-popups" allow="fullscreen" frameborder="0" src="https://www.youtube.com/embed/B-s71n0dHUk" loading="lazy"></iframe></p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Video #2: Setting up VS Code for Python" dir="auto" class="heading" id="Video_#2:_Setting_up_VS_Code_for_Python">Video #2: Setting up VS Code for Python</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><iframe class="external-embed mod-receives-events" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals allow-popups" allow="fullscreen" frameborder="0" src="https://www.youtube.com/embed/7FltByLPnrg" loading="lazy"></iframe></p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Video #3: Python Extension in VS Code" dir="auto" class="heading" id="Video_#3:_Python_Extension_in_VS_Code">Video #3: Python Extension in VS Code</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><iframe class="external-embed mod-receives-events" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals allow-popups" allow="fullscreen" frameborder="0" src="https://www.youtube.com/embed/-udPvjv8jyI" loading="lazy"></iframe></p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Video #4: Jupyter Notebooks in VS Code" dir="auto" class="heading" id="Video_#4:_Jupyter_Notebooks_in_VS_Code">Video #4: Jupyter Notebooks in VS Code</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><iframe class="external-embed mod-receives-events" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals allow-popups" allow="fullscreen" frameborder="0" src="https://www.youtube.com/embed/DA6ZAHBPF1U" loading="lazy"></iframe></p>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

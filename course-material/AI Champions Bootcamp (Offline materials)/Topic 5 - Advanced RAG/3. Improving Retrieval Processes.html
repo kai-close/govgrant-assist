@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html><head>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+	<link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+									<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+									</path>
+								</svg></span></p>
+</div>
+<ol start="3">
+<li dir="auto" class="page-title heading fix-heading">Title: Improving Retrieval Processes</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Improving Retrieval Processes"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Deep Dive into RAG</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Pre-Retrieval Processe</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Retrieval Processed</li>
+<li class="step" data-content="🔧" dir="auto">Improving Post-Retrieval Processed</li>
+<li class="step" data-content="🔧" dir="auto">RAG Evaluation</li>
+<li class="step" data-content="🔧" dir="auto">Further Reading: WOG RAG Playbook</li>
+</ul>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Overview" href="#1_Overview" class="internal-link" target="_self" rel="noopener">1 Overview</a></li>
+<li dir="auto"><a data-href="#2 Parent - Child Index Retrieval" href="#2_Parent_-_Child_Index_Retrieval" class="internal-link" target="_self" rel="noopener">2 Parent - Child Index Retrieval</a></li>
+<li dir="auto"><a data-href="#3 Hierarchical Summary Index Retrieval" href="#3_Hierarchical_Summary_Index_Retrieval" class="internal-link" target="_self" rel="noopener">3 Hierarchical Summary Index Retrieval</a></li>
+<li dir="auto"><a data-href="#3 Self-Query Retriever" href="#3_Self-Query_Retriever" class="internal-link" target="_self" rel="noopener">3 Self-Query Retriever</a>
+<ul>
+<li dir="auto"><a data-href="#3.1 **Query Constructor**" href="#3.1_**Query_Constructor**" class="internal-link" target="_self" rel="noopener">3.1 Query Constructor</a></li>
+<li dir="auto"><a data-href="#3.2 **Query Translater**" href="#3.2_**Query_Translater**" class="internal-link" target="_self" rel="noopener">3.2 Query Translater</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#4 Reference &amp; Further Readings" href="#4_Reference_&amp;_Further_Readings" class="internal-link" target="_self" rel="noopener">4 Reference &amp; Further Readings</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 Overview" dir="auto" class="heading" id="1_Overview">1 Overview</h1>
+<div class="heading-children">
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235075.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235075.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ The “<em>Retrieval</em>” step is key since it directly improves the context that the LLM has when generating a response.</p>
+<ul>
+<li data-line="1" dir="auto">It is the process whereby we are retrieve relevant context for a given query from the vector store or other databases.</li>
+<li data-line="2" dir="auto">Instead of using normal document chunk index retrieval we can use some modified methods which can be more efficient and give better contextual retrieval.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ The methods we will cover below are:</p>
+<ul>
+<li data-line="6" dir="auto">**Parent-Child Index Retrieval</li>
+<li data-line="7" dir="auto"><strong>Hierarchical Summary Index Retrieval</strong></li>
+<li data-line="8" dir="auto"><strong>Self-Query Retriever</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 Parent - Child Index Retrieval" dir="auto" class="heading" id="2_Parent_-_Child_Index_Retrieval">2 Parent - Child Index Retrieval</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Consider that we've developed a RAG system designed to identify potential diseases based on the symptoms entered during a consultation. If we're working with a Naive RAG, it's possible that it might only identify diseases sharing one or two symptoms, which could somewhat show that our application is not useful or even unusable.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ This scenario is perfectly suited for employing the <strong>Parent-Child Index Retrieval</strong> method.</p>
+<ul>
+<li data-line="3" dir="auto">This approach involves dividing large segments (referred to as the parent chunk) into smaller segments (known as the child chunk).</li>
+<li data-line="4" dir="auto">The advantage of creating smaller segments is that the information within them becomes more concentrated, ensuring that its value is not lost across extensive text passages.</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ However, there's a minor issue with this approach:</p>
+<ul>
+<li data-line="7" dir="auto">To accurately locate the most pertinent documents, it's necessary to segment our documents into smaller pieces.</li>
+<li data-line="8" dir="auto">Conversely, it's crucial to supply the Large Language Model (LLM) with adequate context, which is best achieved by using larger segments.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">The above points are illustrated in the subsequent image:</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235113.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235113.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ The dilemma seems inescapable:</p>
+<ul>
+<li data-line="1" dir="auto">Embedding a shorter context allows the RAG to focus on more specific meaning but forgoes the broader context in the surrounding text. Embedding longer text, such as the entire body of text focuses on the overall meaning but may dilute the significance of individual sentences or phrases.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">
+<p>✦ This is where the <strong>Parent-child index retrieval method</strong> comes into play, promising to improve our approach.</p>
+<ul>
+<li data-line="4" dir="auto">The core concept involves subdividing the larger segments (Parent chunks/documents) into smaller ones (Child Chunks/documents).</li>
+<li data-line="5" dir="auto">After this subdivision, the process entails searching for the most relevant top K documents using the child chunks, then retrieving the parent chunks associated with these top K child documents.</li>
+</ul>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ To bring this concept into practical application, a step-by-step explanation is most effective:</p>
+<ol>
+<li data-line="8" dir="auto">Collect the documents and segment them into larger chunks (Parent chunks).</li>
+<li data-line="9" dir="auto">Divide each parent chunk to generate smaller, child chunks.</li>
+<li data-line="10" dir="auto">Store the child chunks (in their Vector Representation) within the Vector Store.</li>
+<li data-line="11" dir="auto">Keep the parent chunks stored in memory (Vector representation for these is not necessary).</li>
+</ol>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">The process described is visually represented in the following image:</p>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235423.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235423.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ To better understand this method, consider the following image that illustrates how it operates:</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235476.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235476.png"></div>
+✦ Implementing this might sound daunting due to the need to establish a new database for the smaller chunks, maintain the parent chunks in memory, and track the relationship between parent and child chunks. Fortunately, <code>LangChain</code> simplifies this process significantly, making it straightforward to set up.</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain.retrievers import ParentDocumentRetriever  
+from langchain.storage import InMemoryStore  
+from langchain_text_splitters import RecursiveCharacterTextSplitter  
+from langchain_openai import OpenAIEmbeddings  
+from langchain_chroma import Chroma
+  
+ 
+# Some code for loading the documents are obmitted
+# ...
+
+parent_docs = documents  
+  
+# Embedding Model  
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")  
+  
+  
+# Splitters  
+child_splitter = RecursiveCharacterTextSplitter(chunk_size=200)  
+parent_splitter = RecursiveCharacterTextSplitter(chunk_size=800)  
+  
+# Stores  
+store = InMemoryStore()  
+vectorstore = Chroma(embedding_function=embeddings, collection_name="fullDoc", persist_directory="./JohnWick_db_parentsRD")  
+  
+  
+parent_document_retriever = ParentDocumentRetriever(  
+	vectorstore=vectorstore,  
+	docstore=store,  
+	child_splitter=child_splitter,  
+	parent_splitter =parent_splitter  
+)</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Do note that the&nbsp;<strong>number of chunks in the vector store (number of child chunks) should be much higher than the number of documents stored in memory (parent chunks)</strong>. With the following code we can if this is true:</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">print(f"Number of parent chunks is: {len(list(store.yield_keys()))}")  
+  
+print(f"Number of child chunks is: {len(parent_document_retriever.vectorstore.get()['ids'])}")  
+  
+'''  
+Number of parent chunks is: 75  
+Number of child chunks is: 3701  
+'''</code></pre>
+</div>
+<div>
+<p dir="auto">Once we have our&nbsp;<strong>Parent Document Retriever</strong>, we just need to create our RAG based on this retriever and that would be it.</p>
+</div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-javascript">setup_and_retrieval = RunnableParallel({"question": RunnablePassthrough(), "context": parent_document_retriever })  
+
+output_parser = StrOutputParser()  
+  
+  
+parent_retrieval_chain = setup_and_retrieval | rag_prompt | chat_model | output_parser</code></pre>
+</div>
+<div>
+<p dir="auto"><code>LangChain</code> Documentation: <a data-tooltip-position="top" aria-label="https://python.langchain.com/v0.2/docs/how_to/parent_document_retriever/#retrieving-larger-chunks" rel="noopener" class="external-link" href="https://python.langchain.com/v0.2/docs/how_to/parent_document_retriever/#retrieving-larger-chunks" target="_blank">Parent Document Retriever | 🦜️🔗 LangChain</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 Hierarchical Summary Index Retrieval" dir="auto" class="heading" id="3_Hierarchical_Summary_Index_Retrieval">3 Hierarchical Summary Index Retrieval</h1>
+<div class="heading-children">
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235604.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235604.png"></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ This approach can be understood as the reversal of Parent-Child Index Retrieval that we just discussed above. It is also a more intelligent method as it takes into consideration the "semantic meaning of the child chunks" and groups semantically-similar child chunks together.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ RAPTOR is one of the hierarchical approach introduced by <strong>Stanford researchers</strong>.</p>
+<ul>
+<li data-line="3" dir="auto"><strong>RAPTOR</strong>&nbsp;introduces a novel approach to retrieval-augmented language models by constructing a recursive tree structure from documents</li>
+<li data-line="4" dir="auto">This allows for more efficient and context-aware information retrieval across large texts, addressing common limitations in traditional language models</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ Based on user query, the summary document is retrieved and then relevant chunks are retrieved from that document.</p>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python"># Intallation
+!git clone https://github.com/parthsarthi03/raptor.git
+!cd raptor
+!pip install -r requirements.txt
+
+# Setting Up
+import os
+os.environ["OPENAI_API_KEY"] = "your-openai-api-key"
+
+from raptor import RetrievalAugmentation
+
+RA = RetrievalAugmentation()
+
+# Adding Documents
+with open('sample.txt', 'r') as file:
+    text = file.read()
+RA.add_documents(text)</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ For detailed methodologies and implementations, refer to the original paper or the GitHub repo:
+<ul>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2401.18059" rel="noopener" class="external-link" href="https://arxiv.org/abs/2401.18059" target="_blank">[2401.18059] RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval (arxiv.org)</a></li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://github.com/parthsarthi03/raptor" rel="noopener" class="external-link" href="https://github.com/parthsarthi03/raptor" target="_blank">parthsarthi03/raptor: The official implementation of RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval (github.com)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 Self-Query Retriever" dir="auto" class="heading" id="3_Self-Query_Retriever">3 Self-Query Retriever</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Its main feature is that it is capable of performing searches in the vector store, applying filters based on the metadata. This approach is allegedly one of the most optimal methods to improve the efficiency of the retriever.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ We know that when we apply a “<strong>Naive retrieval</strong>”, we are calculating the similarity of all the chunks of the vector database with the query.</p>
+<ul>
+<li data-line="3" dir="auto">The more chunks the vector store has, the more similarity calculations will have to be done.</li>
+<li data-line="4" dir="auto">Now, imagine being able to do a prior&nbsp;<strong>filter based on the metadata</strong>, and only after selecting the chunks that meet the conditions imposed in relation to the metadata, we calculate similarity scores based on the filtered chunks.&nbsp;</li>
+<li data-line="5" dir="auto"><strong>This can drastically reduce computational and time cost.</strong></li>
+</ul>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ Let’s look at a use case to fully understand when to apply this type of retreival.</p>
+<ul>
+<li data-line="8" dir="auto">Let’s imagine that we have stored in our vector database a large number of experiences and leisure offers.
+<ul>
+<li data-line="9" dir="auto">The description of the experience is what we have encoded, using our embedding model.</li>
+<li data-line="10" dir="auto">Each offer has 3 key values or metadata:
+<ul>
+<li data-line="11" dir="auto">Date</li>
+<li data-line="12" dir="auto">price</li>
+<li data-line="13" dir="auto">place.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="14" dir="auto">Let’s imagine that a user is looking for an experience below:
+<ul>
+<li data-line="15" dir="auto">An experience close to nature that is safe and family-friendly.</li>
+<li data-line="16" dir="auto">Furthermore, the price must be less than $50 and the place must be in California.</li>
+</ul>
+</li>
+<li data-line="17" dir="auto">Therefore, it does not make sense to calculate similarities with chunks/experiences that do not comply with the metadata filter (which is based on the requirements by the user).</li>
+</ul>
+</li>
+<li data-line="19" dir="auto">
+<p>✦ This case is ideal for applying&nbsp;<strong><em>Self Query Retriever</em></strong>.</p>
+<ul>
+<li data-line="20" dir="auto">What this type of retriever allows us to do is perform a first filter through the metadata</li>
+<li data-line="21" dir="auto">Only then do we perform the similarity calculation between the chunks that meet the metadata requirements and the user input.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">This technique can be summarized in two very specific steps:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto"><strong>Query Constructor</strong></li>
+<li data-line="1" dir="auto"><strong>Query Translater</strong></li>
+</ul>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="3.1 **Query Constructor**" dir="auto" class="heading" id="3.1_**Query_Constructor**">3.1 <strong>Query Constructor</strong></h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ The objective of the step called “<strong><em>Query Constructor</em></strong>” is&nbsp;<strong>to create the appropriate query and filters according to the user input.</strong></p>
+</li>
+<li data-line="1" dir="auto">
+<p>✦ Who is in charge of applying the corresponding filters and how do you know what they are? For this we are going to use an LLM.</p>
+<ul>
+<li data-line="2" dir="auto">This LLM will have to be able to decide which filters to apply and when.</li>
+<li data-line="3" dir="auto">We will also have to explain beforehand what the metadata is and what each of them means.</li>
+<li data-line="4" dir="auto">In short, the prompt must contain 3 key points:
+<ul>
+<li data-line="5" dir="auto"><strong>Context</strong>: Personality, how you should act, output format, etc.</li>
+<li data-line="6" dir="auto"><strong>Metadata</strong>: Information about available metadata.</li>
+<li data-line="7" dir="auto"><strong>Query</strong>: The user’s query/input/question.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">
+<p>✦ The output generated by the LLM cannot be directly entered into the database.</p>
+<ul>
+<li data-line="10" dir="auto">Therefore, the so-called “<strong><em>Query Translater</em></strong>” is needed.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3.2 **Query Translater**" dir="auto" class="heading" id="3.2_**Query_Translater**">3.2 <strong>Query Translater</strong></h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ This is a module in charge of&nbsp;<strong>translating the output of the LLM (Query Constructor) into the appropriate format to perform the query.</strong>&nbsp;
+<ul>
+<li data-line="1" dir="auto">Depending on the vector database you use, you may have to use different types of query translators.</li>
+<li data-line="2" dir="auto">As usual, we will use&nbsp;<strong>Chroma db</strong>, therefore, we need a translator built specifically for this database. <code>LangChain</code> has specific database translators for almost all of the databases.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235547.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240427225235547.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ From the previous image, we see that everything begins with the user’s query.</p>
+<ul>
+<li data-line="1" dir="auto">We create the prompt that contains the 3 key fields and is introduced to the LLM that generates a response with two key fields: “<strong><em>Query</em></strong>” and “<strong><em>Filter</em></strong>”.</li>
+<li data-line="2" dir="auto">This is fed into the query translator which translates these two fields into the correct format needed by&nbsp;<strong><em>Chroma DB.</em></strong>&nbsp;</li>
+<li data-line="3" dir="auto">Performs the query and returns the most relevant documents based on the user’s initial question.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ It is <strong>very important to provide the LLM with a detailed description of the metadata available in the vector store.</strong> This is shown through the following piece of code:</p>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain_chroma import Chroma  
+from langchain_core.documents import Document  
+from langchain_openai import OpenAIEmbeddings  
+  
+docs = [  
+	Document(  
+		page_content="A bunch of scientists bring back dinosaurs and mayhem breaks loose",  
+		metadata={"year": 1993, "rating": 7.7, "genre": "science fiction"},  
+		),  
+	Document(  
+		page_content="Leo DiCaprio gets lost in a dream within a dream within a dream within a ...",  
+		metadata={"year": 2010, "director": "Christopher Nolan", "rating": 8.2},  
+	),  
+	Document(  
+		page_content="A psychologist / detective gets lost in a series of dreams within dreams within dreams and Inception reused the idea",  
+		metadata={"year": 2006, "director": "Satoshi Kon", "rating": 8.6},  
+	),  
+	Document(  
+		page_content="A bunch of normal-sized women are supremely wholesome and some men pine after them",  
+		metadata={"year": 2019, "director": "Greta Gerwig", "rating": 8.3},  
+	),  
+	Document(  
+		page_content="Toys come alive and have a blast doing so",  
+		metadata={"year": 1995, "genre": "animated"},  
+		),  
+	Document(  
+		page_content="Three men walk into the Zone, three men walk out of the Zone",  
+		metadata={  
+			"year": 1979,  
+			"director": "Andrei Tarkovsky",  
+			"genre": "thriller",  
+			"rating": 9.9,  
+			},  
+	),  
+]  
+vectorstore = Chroma.from_documents(docs, OpenAIEmbeddings())</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Now we can instantiate our retriever.
+<ul>
+<li data-line="1" dir="auto">To do this we’ll need to provide some information upfront about the metadata fields that our documents support and a short description of the document contents.</li>
+<li data-line="2" dir="auto">Besides, we need define our retriever to include the following information:
+<ul>
+<li data-line="3" dir="auto">The <strong>LLM</strong> to use</li>
+<li data-line="4" dir="auto">The <strong>embedding model</strong> to be used</li>
+<li data-line="5" dir="auto">The <strong>vectorstore</strong> to be accessed</li>
+<li data-line="6" dir="auto">A <strong>description of the information in the documents</strong> of this vector base.</li>
+<li data-line="7" dir="auto">The <strong>metadata description</strong></li>
+<li data-line="8" dir="auto">The <strong>Query translator you</strong> want to use</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain.chains.query_constructor.base import AttributeInfo  
+from langchain.retrievers.self_query.base import SelfQueryRetriever  
+from langchain.retrievers.self_query.chroma import ChromaTranslator
+from langchain_openai import ChatOpenAI
+  
+metadata_field_info = [  
+	AttributeInfo(  
+		name="genre",  
+		description="The genre of the movie. One of ['science fiction', 'comedy', 'drama', 'thriller', 'romance', 'action', 'animated']",  
+		type="string",  
+	),  
+	AttributeInfo(  
+		name="year",  
+		description="The year the movie was released",  
+		type="integer",  
+	),  
+	AttributeInfo(  
+		name="director",  
+		description="The name of the movie director",  
+		type="string",  
+	),  
+	AttributeInfo(  
+		name="rating", description="A 1-10 rating for the movie", type="float"  
+	),  
+]  
+
+document_content_description = "Brief summary of a movie"  
+
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")  
+chat_model = ChatOpenAI()  
+  
+self_query_retriever = SelfQueryRetriever.from_llm(  
+	llm=ChatOpenAI(temperature=0),  
+	vectorstore =vectordb,  
+	document_contents = document_content_desription,  
+	metadata_field_info =metadata_field_info,  
+	verbose = True,  
+	structured_query_translator = ChromaTranslator()  
+	)</code></pre>
+</div>
+<div>
+<p dir="auto">LangChain Documentation: <a data-tooltip-position="top" aria-label="https://python.langchain.com/v0.2/docs/how_to/self_query/" rel="noopener" class="external-link" href="https://python.langchain.com/v0.2/docs/how_to/self_query/" target="_blank">Self-querying | 🦜️🔗 LangChain</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">&nbsp;														<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z">
+														</path>
+														<path d="M12 9v4"></path>
+														<path d="M12 17h.01"></path>
+													</svg></div>
+<div class="callout-title-inner">Warning</div>
+</div>
+<div class="callout-content">
+<p dir="auto">This note is not intended to exhaustively cover all techniques or methods available for improving Retrieval-Augmented Generation (RAG) processes.</p>
+<ul>
+<li data-line="2" dir="auto">RAG is a field under active research and progresses rapidly.</li>
+<li data-line="3" dir="auto">Readers are encouraged to stay informed about other techniques and methods in the field to gain a comprehensive understanding of the advancements and innovations that continue to emerge.</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 Reference &amp; Further Readings" dir="auto" class="heading" id="4_Reference_&amp;_Further_Readings">4 Reference &amp; Further Readings</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://chatgen.ai/blog/the-ultimate-guide-on-retrieval-strategies-rag-part-4/" rel="noopener" class="external-link" href="https://chatgen.ai/blog/the-ultimate-guide-on-retrieval-strategies-rag-part-4/" target="_blank">The Ultimate Guide on Retrieval Strategies - RAG (part-4) - ChatGen</a></p>
+</li>
+<li data-line="2" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4" rel="noopener" class="external-link" href="https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4" target="_blank">Advanced RAG 01: Small-to-Big Retrieval</a></p>
+</li>
+<li data-line="4" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://medium.com/@florian_algo/advanced-rag-06-exploring-query-rewriting-23997297f2d1" rel="noopener" class="external-link" href="https://medium.com/@florian_algo/advanced-rag-06-exploring-query-rewriting-23997297f2d1" target="_blank">Advanced RAG 06: Exploring Query Rewriting</a></p>
+</li>
+<li data-line="6" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://pub.towardsai.net/advanced-rag-04-re-ranking-85f6ae8170b1" rel="noopener" class="external-link" href="https://pub.towardsai.net/advanced-rag-04-re-ranking-85f6ae8170b1" target="_blank">Advanced RAG 04: Re-ranking. From Principles to Two Mainstream… | by Florian June | Towards AI</a></p>
+</li>
+<li data-line="8" dir="auto">
+<p><a data-tooltip-position="top" aria-label="https://github.com/langchain-ai/langchain/blob/master/cookbook/rewrite.ipynb?ref=blog.langchain.dev" rel="noopener" class="external-link" href="https://github.com/langchain-ai/langchain/blob/master/cookbook/rewrite.ipynb?ref=blog.langchain.dev" target="_blank">langchain/cookbook/rewrite.ipynb at master · langchain-ai/langchain (github.com)</a></p>
+</li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

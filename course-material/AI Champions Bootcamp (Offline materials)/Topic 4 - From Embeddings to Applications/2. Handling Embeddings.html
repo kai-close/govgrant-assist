@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebook</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebook" data-icon="LiNotebook" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 6h4"></path>
+                    <path d="M2 10h4"></path>
+                    <path d="M2 14h4"></path>
+                    <path d="M2 18h4"></path>
+                    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                    <path d="M16 2v20"></path></svg></span></p>
+</div>
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading" id="Title: Applying Embeddings">Title: Applying Embeddings</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Applying Embeddings"></h1>
+<div class="heading-wrapper">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Embeddings</li>
+<li class="step step-success" data-content="📒" dir="auto">Handling Embeddings</li>
+<li class="step" data-content="🔧" dir="auto">Applying Embeddings</li>
+<li class="step" data-content="🔧" dir="auto">Retrieval Augmented Generation (RAG)</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240420173944281.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240420173944281.png"></div>
+<p dir="auto"></p>
+</div>
+</div>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Getting Embeddings" href="#Getting_Embeddings" class="internal-link" target="_self" rel="noopener">Getting Embeddings</a></li>
+<li dir="auto"><a data-href="#OpenAI's Note on &quot;Reducing Embedding Dimensions&quot;" href="#OpenAI's_Note_on_&quot;Reducing_Embedding_Dimensions&quot;" class="internal-link" target="_self" rel="noopener">OpenAI's Note on "Reducing Embedding Dimensions"</a></li>
+<li dir="auto"><a data-href="#Visualizing Embeddings" href="#Visualizing_Embeddings" class="internal-link" target="_self" rel="noopener">Visualizing Embeddings</a>
+<ul>
+<li dir="auto"><a data-href="#Understanding UMAP" href="#Understanding_UMAP" class="internal-link" target="_self" rel="noopener">Understanding UMAP</a></li>
+<li dir="auto"><a data-href="#How Does UMAP Work?" href="#How_Does_UMAP_Work?" class="internal-link" target="_self" rel="noopener">How Does UMAP Work?</a></li>
+<li dir="auto"><a data-href="#Why Use UMAP?" href="#Why_Use_UMAP?" class="internal-link" target="_self" rel="noopener">Why Use UMAP?</a></li>
+<li dir="auto"><a data-href="#Using UMAP in Python" href="#Using_UMAP_in_Python" class="internal-link" target="_self" rel="noopener">Using UMAP in Python</a></li>
+<li dir="auto"><a data-href="#Compare and contrast UMAP with PCA" href="#Compare_and_contrast_UMAP_with_PCA" class="internal-link" target="_self" rel="noopener">Compare and contrast UMAP with PCA</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Understand Distance between Embeddings" href="#Understand_Distance_between_Embeddings" class="internal-link" target="_self" rel="noopener">Understand Distance between Embeddings</a>
+<ul>
+<li dir="auto"><a data-href="#Cosine Similarity" href="#Cosine_Similarity" class="internal-link" target="_self" rel="noopener">Cosine Similarity</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#The Perils of Embeddings: Protecting Sensitive Information" href="#The_Perils_of_Embeddings:_Protecting_Sensitive_Information" class="internal-link" target="_self" rel="noopener">The Perils of Embeddings: Protecting Sensitive Information</a>
+<ul>
+<li dir="auto"><a data-href="#Risk of Disclosing Embeddings" href="#Risk_of_Disclosing_Embeddings" class="internal-link" target="_self" rel="noopener">Risk of Disclosing Embeddings</a></li>
+<li dir="auto"><a data-href="#Handling Embeddings with Care:" href="#Handling_Embeddings_with_Care:" class="internal-link" target="_self" rel="noopener">Handling Embeddings with Care:</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Reference" href="#Reference" class="internal-link" target="_self" rel="noopener">Reference</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Getting Embeddings" dir="auto" class="heading" id="Getting_Embeddings">Getting Embeddings</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">This is our new helper function to get embeddings by <strong>passing in a list of text</strong> to the function.</p>
+<pre class="line-numbers d2l-code"><code class="language-javascript">def get_embedding(input, model='text-embedding-3-small', dimensions=None):
+    response = client.embeddings.create(
+        input=input,
+        model=model,
+        dimensions=dimensions
+    )
+    return [x.embedding for x in response.data]</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The function can take in two different model
+<ul>
+<li data-line="1" dir="auto"><code>text-embedding-3-small</code>that produces embeddings with 1536 dimension</li>
+<li data-line="2" dir="auto"><code>text-embedding-3-large</code> that produces embeddings with 3072 dimensions</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">Usage is priced per input token. Below is an example of how many pages of text that can be processed per US dollar (assuming ~800 tokens per page):</p>
+</div>
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">MODEL</th>
+<th dir="ltr">~ PAGES PER USD DOLLAR</th>
+<th dir="ltr">PERFORMANCE ON&nbsp;<a data-tooltip-position="top" aria-label="https://github.com/embeddings-benchmark/mteb" rel="noopener" class="external-link" href="https://github.com/embeddings-benchmark/mteb" target="_blank">MTEB</a>&nbsp;EVAL</th>
+<th dir="ltr">MAX INPUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">text-embedding-3-small</td>
+<td dir="auto">62,500</td>
+<td dir="auto">62.3%</td>
+<td dir="auto">8191</td>
+</tr>
+<tr>
+<td dir="ltr">text-embedding-3-large</td>
+<td dir="auto">9,615</td>
+<td dir="auto">64.6%</td>
+<td dir="auto">8191</td>
+</tr>
+<tr>
+<td dir="ltr">text-embedding-ada-002</td>
+<td dir="auto">12,500</td>
+<td dir="auto">61.0%</td>
+<td dir="auto">8191</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto;"><small>Reference: <a href="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings" target="_blank" rel="noopener">Open AI Embeddings Guide</a></small></div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="OpenAI's Note on &quot;Reducing Embedding Dimensions&quot;" dir="auto" class="heading" id="OpenAI's_Note_on_&quot;Reducing_Embedding_Dimensions&quot;">OpenAI's Note on "Reducing Embedding Dimensions"</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Using <strong>larger embeddings</strong>, for example storing them in a vector store for retrieval, generally <strong>costs more and consumes more compute, memory and storage</strong> than using smaller embeddings.</p>
+</div>
+<div>
+<p dir="auto">With OpenAI's new embedding models, both <code>text-embedding-3-large</code> and <code>text-embedding-3-small</code> allows builders to trade-off performance and cost of using embeddings.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Specifically, builders <strong>can shorten embeddings</strong> (i.e. remove some numbers from the end of the sequence) <strong>without the embedding losing its concept-representing properties</strong> by passing in the&nbsp;<a data-tooltip-position="top" aria-label="https://platform.openai.com/docs/api-reference/embeddings/create#embeddings-create-dimensions" rel="noopener" class="external-link" href="https://platform.openai.com/docs/api-reference/embeddings/create#embeddings-create-dimensions" target="_blank"><code>dimensions</code>&nbsp;API parameter</a>.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ For example, on the MTEB benchmark, a&nbsp;<code>text-embedding-3-large</code>&nbsp;embedding can be shortened to a size of 256 while still outperforming an unshortened&nbsp;<code>text-embedding-ada-002</code> (One of OpenAI's older embedding models)&nbsp;embedding with a size of 1,536.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ In general, using the&nbsp;<code>dimensions</code>&nbsp;parameter when creating the embedding is the suggested approach. Code below shows how the helper function is called with the dimensions specified as 512.</p>
+</li>
+</ul>
+</div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-javascript"># Helper Function for Getting Embeddings
+def get_embedding(input, model='text-embedding-3-small', dimensions=None):
+    response = client.embeddings.create(
+        input=input,
+        model=model,
+        dimensions=dimensions
+    )
+    return [x.embedding for x in response.data]
+
+# Calling the function
+text = "Python developers prefer snake_case for variable naming"
+embeddings = get_embedding(text, dimensions=512)</code></pre>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Visualizing Embeddings" dir="auto" class="heading" id="Visualizing_Embeddings">Visualizing Embeddings</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Visualizing data beyond three dimensions is inherently difficult due to our limited spatial intuition.
+<ul>
+<li data-line="1" dir="auto">When working with complex embeddings, such as Large Language Models (LLMs) or other high-dimensional representations, it becomes practically impossible to directly visualize them in their original form.</li>
+<li data-line="2" dir="auto">One effective approach to make these embeddings more interpretable for humans is dimensionality reduction.</li>
+<li data-line="3" dir="auto">Techniques like <em>Principal Component Analysis (PCA)</em> and <em>Uniform Manifold Approximation and Projection (UMAP)</em> allow us to compress the data into a lower-dimensional space, typically two dimensions, while preserving its intrinsic structure.</li>
+<li data-line="4" dir="auto">By doing so, we <strong>can create scatter plots or heatmaps that reveal patterns, clusters, and relationships, making it easier for us to grasp the underlying information</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="Understanding UMAP" dir="auto" class="heading" id="Understanding_UMAP">Understanding UMAP</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Uniform Manifold Approximation and Projection (UMAP) is a powerful <strong>dimensionality reduction technique</strong> that can be used to <strong>compress and visualize high-dimensional data in a lower-dimensional space</strong>.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Unlike other dimensionality reduction techniques, UMAP <strong>preserves both the local and global structure of the data</strong>, making it an excellent tool for exploratory data analysis.</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="How Does UMAP Work?" dir="auto" class="heading" id="How_Does_UMAP_Work?">How Does UMAP Work?</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>UMAP operates in two main steps:</strong></p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">In the first step, UMAP constructs a high-dimensional graph of the data.
+<ul>
+<li data-line="1" dir="auto">It does this by considering each data point and its nearest neighbors in the high-dimensional space.</li>
+<li data-line="2" dir="auto">The distance between each point and its neighbors is calculated using a distance metric (such as Euclidean distance), and these distances are used to construct a weighted graph.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">In the second step, UMAP optimizes a low-dimensional graph to be as structurally similar as possible to the high-dimensional graph.
+<ul>
+<li data-line="5" dir="auto">It uses a force-directed graph layout algorithm to optimize the positions of the points in the low-dimensional space.</li>
+<li data-line="6" dir="auto">The goal is to <strong>minimize the difference between the high-dimensional and low-dimensional representations</strong> of the data.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Why Use UMAP?" dir="auto" class="heading" id="Why_Use_UMAP?">Why Use UMAP?</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">UMAP has several <strong>advantages over other dimensionality reduction techniques</strong>:</p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">
+<p><strong>Preservation of Structure</strong>: UMAP preserves both the local and global structure of the data. This means that both clusters of similar data points and the broader relationships between these clusters are maintained in the lower-dimensional space.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><strong>Scalability</strong>: UMAP is highly scalable and can handle large datasets efficiently.</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Flexibility</strong>: UMAP is not limited to just visualization. It can also be used for general non-linear dimension reduction tasks, making it a versatile tool for many data analysis tasks.</p>
+</li>
+</ol>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Using UMAP in Python" dir="auto" class="heading" id="Using_UMAP_in_Python">Using UMAP in Python</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">The UMAP algorithm is implemented in the <code>umap-learn</code> package in Python. Here's a simple example of how to use it:</p>
+<pre class="line-numbers d2l-code"><code class="language-javascript">import umap
+import numpy as np
+
+# Assume embeddings is your high-dimensional data
+embeddings = np.random.rand(100, 50)
+
+reducer = umap.UMAP()
+umap_embeddings = reducer.fit_transform(embeddings)</code></pre>
+</div>
+<div>
+<p dir="auto">In this example, <code>umap.UMAP()</code> creates a UMAP object, and <code>fit_transform()</code> fits the model to the data and then transforms the data to a lower-dimensional representation. The result, <code>umap_embeddings</code>, is a 2D array of the lower-dimensional embeddings of your data.</p>
+</div>
+<div>
+<p dir="auto">In conclusion, UMAP is a powerful tool for data analysts dealing with high-dimensional data. It offers a way to visualize and understand the structure of the data, making it an invaluable tool in the data analyst's toolkit.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Compare and contrast UMAP with PCA" dir="auto" class="heading" id="Compare_and_contrast_UMAP_with_PCA">Compare and contrast UMAP with PCA</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">You may have learnt about Principal Component Analysis (PCA) in Data Champions Bootcamp or other machine learning or statistical analysis courses. Here we try to understand why the UMAP is a superior technique compared to PCA, especially when it comes to complex data.</p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto">
+<p><strong>Linearity vs Non-linearity</strong>: PCA is a linear dimension reduction technique. It works well when the data lies along a linear subspace, but it may not capture complex structures in the data. On the other hand, UMAP is a non-linear dimension reduction technique. It can capture more complex structures in the data, making it more suitable for high-dimensional data where the structure is not linear.</p>
+</li>
+<li data-line="2" dir="auto">
+<p><strong>Preservation of Structure</strong>: PCA aims to preserve the variance in the data. It projects the data onto the directions (principal components) where the variance is maximized. However, it does not preserve the distances between data points. UMAP, on the other hand, aims to preserve both the local and global structure of the data. It tries to maintain the distances between nearby points in the high-dimensional space in the lower-dimensional projection.</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Scalability</strong>: PCA scales well with the number of features, but not with the number of samples. UMAP, however, scales well with both the number of features and the number of samples, making it more suitable for large datasets.</p>
+</li>
+<li data-line="6" dir="auto">
+<p><strong>Interpretability</strong>: The principal components in PCA are combinations of the original features, which can be interpreted in terms of the original features. This is not the case with UMAP, as it uses a more complex algorithm to reduce dimensionality, which might not be as easily interpretable.</p>
+</li>
+</ol>
+</div>
+<div>
+<p dir="auto">In summary, while PCA is a good choice for linear data and when interpretability is important, UMAP is more suitable for complex, high-dimensional data where preserving the structure of the data is crucial.</p>
+<pre class="line-numbers d2l-code"><code class="language-javascript">import numpy as np
+import pandas as pd
+import umap # For compressing high-dimensional data (many columns) into lower-dimensional data (e.g. 2 columns) 
+import matplotlib.pyplot as plt
+import seaborn as sns # For data visualization
+
+# New Helper Function
+def get_projected_embeddings(embeddings, random_state=0):
+    reducer = umap.UMAP(random_state=random_state).fit(embeddings)
+    embeddings_2d_array = reducer.transform(embeddings)
+    return pd.DataFrame(embeddings_2d_array, columns=['x', 'y'])</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                              <circle cx="12" cy="12" r="10"></circle>
+                              <path d="M12 16v-4"></path>
+                              <path d="M12 8h.01"></path>
+                            </svg></div>
+<div class="callout-title-inner"><strong>💡 Explanation:</strong></div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto"><code>def get_projected_embeddings(embeddings,
+                                random_state=0):</code>&nbsp;
+<ul>
+<li data-line="2" dir="auto">This line defines the function and its parameters.</li>
+<li data-line="3" dir="auto">The function takes in two arguments: embeddings (your high-dimensional data) and random_state (a seed for the random number generator, which ensures that the results are reproducible).</li>
+</ul>
+</li>
+<li data-line="4" dir="auto"><code>reducer =
+                                umap.UMAP(random_state=random_state).fit(embeddings)</code>&nbsp;
+<ul>
+<li data-line="5" dir="auto">This line creates a UMAP object and fits it to your data.</li>
+<li data-line="6" dir="auto">The fit method learns the structure of the data.</li>
+</ul>
+</li>
+<li data-line="7" dir="auto"><code>embeddings_2d_array =
+                                reducer.transform(embeddings)</code>&nbsp;
+<ul>
+<li data-line="8" dir="auto">This line transforms the high-dimensional data into a lower-dimensional space.</li>
+<li data-line="9" dir="auto">The transformed data is stored in embeddings_2d_array.</li>
+</ul>
+</li>
+<li data-line="10" dir="auto"><code>return pd.DataFrame(embeddings_2d_array,
+                                columns=['x', 'y'])</code>&nbsp;
+<ul>
+<li data-line="11" dir="auto">This line converts the lower-dimensional data into a pandas DataFrame for easier manipulation and returns it.</li>
+<li data-line="12" dir="auto">The DataFrame has two columns, 'x' and 'y', which represent the two dimensions of the reduced data.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div></div>
+<div>
+<p dir="auto">Below is the example of using the new help function and then visualize its output using a scatterplot:</p>
+</div>
+<div><iframe width="100%" height="581.75" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/09c089a94a584b8896128156c5a79c86/4cf6c40e6e1f4dadae75e9f1f885f192?height=581.75" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><iframe width="100%" height="691" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/09c089a94a584b8896128156c5a79c86/ca5dbcfc34d74cfcbe8cdb80bf5a1d42?height=691" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Understand Distance between Embeddings" dir="auto" class="heading" id="Understand_Distance_between_Embeddings">Understand Distance between Embeddings</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Since embeddings capture semantic information, they allow us to compare a pair of texts based on their vector representations.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ One very common way to compare the distance between a pair of embeddings.</p>
+<ul>
+<li data-line="1" dir="auto">The&nbsp;distance between two vectors measures their <strong>relatedness</strong>.</li>
+<li data-line="2" dir="auto"><strong>Small distances</strong> suggest <strong>high relatedness</strong></li>
+<li data-line="3" dir="auto"><strong>Large distances</strong> suggest <strong>low relatedness</strong>.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ With the distance between a pair of embeddings, we can then apply the distance in many other use cases such as:</p>
+<ul>
+<li data-line="6" dir="auto"><strong>Identify texts that semantically close to a target text,</strong> by identifying the texts that have short distance (i.e., closer) to the target text.</li>
+<li data-line="7" dir="auto"><strong>identify outliers</strong>, by identifying the datapoints that furthest away from the rest of typical datapoints</li>
+<li data-line="8" dir="auto"><strong>identify clusters</strong>, by grouping those datapoints that are located close to each other into distinct groups.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="Cosine Similarity" dir="auto" class="heading" id="Cosine_Similarity">Cosine Similarity</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>Cosine similarity</strong>&nbsp;is one of the most common and often the default method used in calculating the distance between a pair of embeddings.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ It measures the cosine of the angle between two vectors.
+<ul>
+<li data-line="1" dir="auto">If the vectors are identical, the angle is 0 and the cosine similarity is 1.</li>
+<li data-line="2" dir="auto">If the vectors are orthogonal, the angle is 90 degrees and the cosine similarity is 0, indicating no similarity.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">✦ It quantifies <strong>how similar or aligned two vectors are in a high-dimensional space</strong></li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="-" data-callout="note" class="callout is-collapsible is-collapsed drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+                              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                              <path d="m15 5 4 4"></path>
+                            </svg></div>
+<div class="callout-title-inner">Extra: Cosine Similarity Calculation</div>
+<div class="callout-fold is-collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+                              <path d="m6 9 6 6 6-6"></path>
+                            </svg></div>
+</div>
+<div class="callout-content" style="display: none;">
+<ul>
+<li data-line="1" dir="auto">Mathematically, cosine similarity is calculated as the dot product of the two vectors, divided by the product of their magnitudes.</li>
+<li data-line="2" dir="auto">Given two vectors&nbsp;<strong>A</strong>&nbsp;and&nbsp;<strong>B</strong>, the cosine similarity is calculated as:<br><span class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mtext class="mjx-n"><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6E"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c5F"></mjx-c><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6C"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c72"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c79"></mjx-c><mjx-c class="mjx-c28"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c2C"></mjx-c><mjx-c class="mjx-c20"></mjx-c><mjx-c class="mjx-c42"></mjx-c><mjx-c class="mjx-c29"></mjx-c></mjx-mtext><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math></mjx-container></span></li>
+<li data-line="4" dir="auto">The implementation of the calculation in Python is as the following:</li>
+</ul>
+<pre class="language-python" tabindex="0"><code class="language-python is-loaded"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span class="token comment"># Define two vectors A and B</span>
+A <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># Example vector A</span>
+B <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># Example vector B</span>
+
+<span class="token comment"># Define a function to calculate cosine similarity</span>
+<span class="token keyword">def</span> <span class="token function">cosine_similarity</span><span class="token punctuation">(</span>vector_a<span class="token punctuation">,</span> vector_b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token comment"># Calculate the dot product of A and B</span>
+  dot_product <span class="token operator">=</span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>vector_a<span class="token punctuation">,</span> vector_b<span class="token punctuation">)</span>
+  
+  <span class="token comment"># Calculate the L2 norm (magnitude) of A and B</span>
+  <span class="token comment"># **L2 norm** (also known as the **Euclidean norm**) of a vector is the square root of the sum of the squares of its components.</span>
+  <span class="token comment"># - The Euclidean norm provides a straightforward measure of the magnitude of a vector.</span>
+  <span class="token comment"># - It captures how “big” or “long” a vector is, regardless of its direction.</span>
+  norm_a <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>norm<span class="token punctuation">(</span>vector_a<span class="token punctuation">)</span>
+  norm_b <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>norm<span class="token punctuation">(</span>vector_b<span class="token punctuation">)</span>
+  
+  <span class="token comment"># Calculate cosine similarity</span>
+  cosine_sim <span class="token operator">=</span> dot_product <span class="token operator">/</span> <span class="token punctuation">(</span>norm_a <span class="token operator">*</span> norm_b<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> cosine_sim
+  
+<span class="token comment"># Calculate and print the cosine similarity between A and B</span>
+cos_sim <span class="token operator">=</span> cosine_similarity<span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The cosine similarity between A and B is: </span><span class="token interpolation"><span class="token punctuation">{</span>cos_sim<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code></pre>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ In Python, you can use the&nbsp;<code>cosine_similarity</code>&nbsp;function from the&nbsp;<code>sklearn.metrics.pairwise</code>&nbsp;module to calculate cosine similarity.</p>
+<ul>
+<li data-line="1" dir="auto">In the context of LLMs, we would often rely on LLM frameworks such as <code>Langchain</code> that handles the low-level operations such as calculating the distance behind the scene, while we can focus on the logics of our applications.</li>
+<li data-line="2" dir="auto">It's rare that we will need to write the python code for calculating <code>consine similarity</code> on our own.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ Cosine similarity is particularly useful for LLM embeddings because it effectively captures the semantic similarity between text documents.</p>
+<ul>
+<li data-line="5" dir="auto">It's robust to the high dimensionality of LLM embeddings and is relatively efficient to compute, making it a popular choice for measuring the distance between LLM embeddings.</li>
+</ul>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ For production-level retriever that requires searching over many vectors quickly, it is generally suggested to use a vector database.</p>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="The Perils of Embeddings: Protecting Sensitive Information" dir="auto" class="heading" id="The_Perils_of_Embeddings:_Protecting_Sensitive_Information">The Perils of Embeddings: Protecting Sensitive Information</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">While embeddings offer significant advantages in various applications, they also pose substantial risks to privacy and data security.</p>
+</div>
+<div>
+<p dir="auto">Embeddings are essentially numerical representations of text data, and despite their seemingly abstract nature, they can encode sensitive information about individuals or organizations.</p>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="Risk of Disclosing Embeddings" dir="auto" class="heading" id="Risk_of_Disclosing_Embeddings">Risk of Disclosing Embeddings</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Embeddings Contain Sensitive Information:</strong></p>
+<ul>
+<li data-line="1" dir="auto">Embeddings derived from sensitive data are equally sensitive.</li>
+<li data-line="2" dir="auto">Despite their appearance as cryptic numbers, embeddings encode private details.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ <strong>Inversion Attacks:</strong></p>
+<ul>
+<li data-line="5" dir="auto">Researchers have demonstrated the ability to reverse-engineer embeddings back into their original text form through embedding inversion attacks.</li>
+<li data-line="6" dir="auto">Attackers can exploit this technique to recover sensitive information from seemingly harmless numerical representations.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Handling Embeddings with Care:" dir="auto" class="heading" id="Handling_Embeddings_with_Care:">Handling Embeddings with Care:</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Privacy Implications:</strong></p>
+<ul>
+<li data-line="1" dir="auto">Organizations must acknowledge that embeddings are susceptible to privacy risks.</li>
+<li data-line="2" dir="auto">Protecting embeddings is crucial, especially when they represent confidential information.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ <strong>Balancing Utility and Privacy:</strong></p>
+<ul>
+<li data-line="5" dir="auto">While embeddings enhance AI capabilities, it is essential to find a balance between utility and privacy.</li>
+<li data-line="6" dir="auto">Robust security measures and awareness are necessary to prevent accidental information leakage.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Reference" dir="auto" class="heading" id="Reference">Reference</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings" rel="noopener" class="external-link" href="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings" target="_blank">Embeddings - OpenAI API</a></li>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://ironcorelabs.com/blog/2024/text-embedding-privacy-risks/" rel="noopener" class="external-link" href="https://ironcorelabs.com/blog/2024/text-embedding-privacy-risks/" target="_blank">There and Back Again: An Embedding Attack Journey | IronCore Labs</a></li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://pair-code.github.io/understanding-umap/" rel="noopener" class="external-link" href="https://pair-code.github.io/understanding-umap/" target="_blank">Understanding UMAP (pair-code.github.io)</a></li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

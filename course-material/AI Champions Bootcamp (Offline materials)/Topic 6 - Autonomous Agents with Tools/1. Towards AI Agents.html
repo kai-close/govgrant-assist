@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebook</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebook" data-icon="LiNotebook" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 6h4"></path>
+                  <path d="M2 10h4"></path>
+                  <path d="M2 14h4"></path>
+                  <path d="M2 18h4"></path>
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <path d="M16 2v20"></path>
+                </svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Towards AI Agents</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Towards AI Agents"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Towards AI Agents</li>
+<li class="step" data-content="🔧" dir="auto">More Secure way to Store Credentials</li>
+<li class="step" data-content="🔧" dir="auto">Writing &amp; Running Python Scripts</li>
+<li class="step" data-content="👨🏻‍💻" dir="auto">Hands-on Walkthrough and Tasks</li>
+<li class="step" data-content="📒" dir="auto">Create Multi-Agent Systems with CrewAI</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905151933131.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905151933131.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Overview" href="#1_Overview" class="internal-link" target="_self" rel="noopener">1 Overview</a>
+<ul>
+<li dir="auto"><a data-href="#1.1 Limitations of LLMs" href="#1.1_Limitations_of_LLMs" class="internal-link" target="_self" rel="noopener">1.1 Limitations of LLMs</a></li>
+<li dir="auto"><a data-href="#1.2 The Rise of Multi-Agent Systems" href="#1.2_The_Rise_of_Multi-Agent_Systems" class="internal-link" target="_self" rel="noopener">1.2 The Rise of Multi-Agent Systems</a></li>
+<li dir="auto"><a data-href="#1.3 Why do we need AI Agent, when we have LLM &amp; RAG?" href="#1.3_Why_do_we_need_AI_Agent,_when_we_have_LLM_&amp;_RAG?" class="internal-link" target="_self" rel="noopener">1.3 Why do we need AI Agent, when we have LLM &amp; RAG?</a></li>
+<li dir="auto"><a data-href="#1.4 Understand the differences between LLM, RAG &amp; AI Agent" href="#1.4_Understand_the_differences_between_LLM,_RAG_&amp;_AI_Agent" class="internal-link" target="_self" rel="noopener">1.4 Understand the differences between LLM, RAG &amp; AI Agent</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#2 Overview of the Key Components of an AI Agent" href="#2_Overview_of_the_Key_Components_of_an_AI_Agent" class="internal-link" target="_self" rel="noopener">2 Overview of the Key Components of an AI Agent</a></li>
+<li dir="auto"><a data-href="#3 Pitfalls &amp; Challenges of Multi-Agent Systems" href="#3_Pitfalls_&amp;_Challenges_of_Multi-Agent_Systems" class="internal-link" target="_self" rel="noopener">3 Pitfalls &amp; Challenges of Multi-Agent Systems</a>
+<ul>
+<li dir="auto"><a data-href="#3.1 High Token Usage" href="#3.1_High_Token_Usage" class="internal-link" target="_self" rel="noopener">3.1 High Token Usage</a></li>
+<li dir="auto"><a data-href="#3.2 Non-Deterministic" href="#3.2_Non-Deterministic" class="internal-link" target="_self" rel="noopener">3.2 Non-Deterministic</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#4 Do You Actually Need An Agent?" href="#4_Do_You_Actually_Need_An_Agent?" class="internal-link" target="_self" rel="noopener">4 Do You Actually Need An Agent?</a></li>
+<li dir="auto"><a data-href="#5 Common Frameworks or Tools for Building Multi-Agent System" href="#5_Common_Frameworks_or_Tools_for_Building_Multi-Agent_System" class="internal-link" target="_self" rel="noopener">5 Common Frameworks or Tools for Building Multi-Agent System</a>
+<ul>
+<li dir="auto"><a data-href="#5.1 Autogen" href="#5.1_Autogen" class="internal-link" target="_self" rel="noopener">5.1 Autogen</a></li>
+<li dir="auto"><a data-href="#5.2 CrewAI" href="#5.2_CrewAI" class="internal-link" target="_self" rel="noopener">5.2 CrewAI</a></li>
+<li dir="auto"><a data-href="#5.3 LangGraph" href="#5.3_LangGraph" class="internal-link" target="_self" rel="noopener">5.3 LangGraph</a></li>
+<li dir="auto"><a data-href="#5.4 Comparing the Three Frameworks" href="#5.4_Comparing_the_Three_Frameworks" class="internal-link" target="_self" rel="noopener">5.4 Comparing the Three Frameworks</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#6 Agentic System and the Future" href="#6_Agentic_System_and_the_Future" class="internal-link" target="_self" rel="noopener">6 Agentic System and the Future</a></li>
+<li dir="auto"><a data-href="#7 Reference &amp; Further Readings" href="#7_Reference_&amp;_Further_Readings" class="internal-link" target="_self" rel="noopener">7 Reference &amp; Further Readings</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 Overview" dir="auto" class="heading" id="1_Overview">1 Overview</h1>
+<div class="heading-children">
+<div><hr></div>
+<div></div>
+<div class="heading-wrapper">
+<h2 data-heading="1.1 Limitations of LLMs" dir="auto" class="heading" id="1.1_Limitations_of_LLMs">1.1 Limitations of LLMs</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Many users of ChatGPT quickly realize that the default workflow for large language models (LLMs) has its limitations, especially as task complexity increases. Even when employing optimal prompt engineering strategies, prompts can become excessively lengthy, leading to a higher likelihood that the LLM will misinterpret or overlook critical instructions.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ A common workaround is to iteratively refine the chatbot's responses through additional prompting; however, this method can be labor-intensive and may cause the LLM to become trapped by previous inaccuracies within the chat context.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ Moreover, real-world applications often necessitate the integration of various tools, such as internet searches, access to relevant internal documents through Retrieval Augmented Generation (RAG), mathematical computations, coding capabilities, and safety measures to protect sensitive data.</p>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.2 The Rise of Multi-Agent Systems" dir="auto" class="heading" id="1.2_The_Rise_of_Multi-Agent_Systems">1.2 The Rise of Multi-Agent Systems</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">The shift towards agents is about creating AI systems that can truly understand, learn, and solve problems in the real world.</p>
+</div>
+<div>
+<p dir="auto">While LLMs and RAG models have pushed the boundaries of what’s possible with language generation, the development of AI agents represents a step towards more intelligent, autonomous, and multi-capable systems that can work alongside humans in a wider variety of scenarios.</p>
+</div>
+<div>
+<p dir="auto">Multi-agent system also often known as <em>agentic system.</em></p>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905151933262.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905151933262.png"></div>
+</div>
+<div>
+<p dir="auto">Figure below gives a good illustration into the differences between a typical LLM workflow and agentic workflow.</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905153120229.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905153120229.png"></div>
+</div>
+<div>
+<p dir="auto">Many believe that the AI Agents is going to be the future of AI.</p>
+</div>
+<div>
+<blockquote dir="auto">
+<p>What I'm seeing with AI agents which I think is the exciting Trend that I think everyone building an AI should pay attention.<br><em>Andrew Ng (Creator of Google Brain)</em></p>
+</blockquote>
+</div>
+<div>
+<blockquote dir="auto">
+<p>AI field is headed towards self contained autonomous agents &amp; it won't be single agent, it will be many agents working together<br><em>Andrej Karpathy (co-founder of Open AI)</em></p>
+</blockquote>
+</div>
+<div>
+<blockquote dir="auto">
+<p>Developer becomes the user and so we're evolving toward any user being able to create its own autonomous agent. I'm pretty sure that in 5 years from now this will be like something that you learn to do at school<br><em>Arthur Mensch (CEO Mistral AI)</em></p>
+</blockquote>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.3 Why do we need AI Agent, when we have LLM &amp; RAG?" dir="auto" class="heading" id="1.3_Why_do_we_need_AI_Agent,_when_we_have_LLM_&amp;_RAG?">1.3 Why do we need AI Agent, when we have LLM &amp; RAG?</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>“So this is just GPT-4 with RAG?”</strong>&nbsp;or&nbsp;<strong>“Isn’t this the same as chaining together a couple of prompts?”</strong></p>
+</div>
+<div>
+<p dir="auto">There are several key reasons why AI Agents perform better than one LLM:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Goal-oriented behavior:</strong></p>
+<ul>
+<li data-line="1" dir="auto">LLMs and RAG models are primarily focused on generating human-like text based on patterns in their training data.</li>
+<li data-line="2" dir="auto">However, they lack the ability to set and pursue specific goals in a flexible, intelligent manner.&nbsp;</li>
+<li data-line="3" dir="auto">AI agents, on the other hand, can be designed to have explicit goals and to plan and take actions to achieve those goals.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ <strong>Interaction with the environment:</strong></p>
+<ul>
+<li data-line="6" dir="auto">LLMs operate solely in the text domain, without any direct interaction with the physical world.</li>
+<li data-line="7" dir="auto">AI agents can perceive and act upon their environment, whether that is the digital world, robotic systems, or even the physical world through sensors and actuators.</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">
+<p>✦ <strong>Memory and state tracking:</strong></p>
+<ul>
+<li data-line="10" dir="auto">Most current language models have no persistent memory or state tracking capabilities. Each input is processed independently.</li>
+<li data-line="11" dir="auto">AI agents can maintain an internal state, accumulating knowledge over time and using that state to inform future decisions and actions.</li>
+</ul>
+</li>
+<li data-line="13" dir="auto">
+<p>✦ <strong>Multi-task capability:</strong></p>
+<ul>
+<li data-line="14" dir="auto">LLMs are typically specialized for particular language tasks.</li>
+<li data-line="15" dir="auto">AI agents can be designed as general, multi-task systems capable of fluidly combining various skills like language, reasoning, perception, and control to tackle complex, multi-faceted problems.</li>
+</ul>
+</li>
+<li data-line="17" dir="auto">
+<p>✦ <strong>Improved Accuracy</strong></p>
+<ul>
+<li data-line="18" dir="auto">Last but a strong reason is that using multiple agents can greatly improve the performance of the LLMs.</li>
+<li data-line="19" dir="auto">In one of his <a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=sal78ACtGTc" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=sal78ACtGTc" target="_blank">lecture</a>, Andrew Ng highlighted that an agentic workflow utilizing "simpler" models, such as GPT-3.5, can significantly outperform zero-shot prompting with more advanced models like GPT-4.</li>
+<li data-line="20" dir="auto">"<em>GPT-3.5 (zero shot) was 48.1% correct. GPT-4 (zero shot) does better at 67.0%. However, the improvement from GPT-3.5 to GPT-4 is dwarfed by incorporating an iterative agent workflow. Indeed, wrapped in an agent loop, GPT-3.5 achieves up to 95.1%.</em> "</li>
+<li data-line="21" dir="auto">Improved accuracy arises from iterations that give agents an opportunity to&nbsp;<strong><em>“fact-check”</em></strong>&nbsp;and&nbsp;<strong><em>“review”</em></strong>&nbsp;their answers which leads to&nbsp;<strong>less hallucinations</strong>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="1.4 Understand the differences between LLM, RAG &amp; AI Agent" dir="auto" class="heading" id="1.4_Understand_the_differences_between_LLM,_RAG_&amp;_AI_Agent">1.4 Understand the differences between LLM, RAG &amp; AI Agent</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Imagine you need to book a complex trip:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>LLM:</strong>&nbsp;Could explain different places to visit or give general travel tips.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ <strong>RAG:</strong>&nbsp;Could find relevant blogs and articles about destinations</p>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ <strong>AI Agent:</strong>&nbsp;Could do all that, PLUS:</p>
+<ul>
+<li data-line="5" dir="auto">Search for flights and hotels based on your budget</li>
+<li data-line="6" dir="auto">Actually make the bookings</li>
+<li data-line="7" dir="auto">Add everything to your calendar</li>
+<li data-line="8" dir="auto">Send pre-departure reminders with relevant information</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">Now let's see what are the key differences based on this simple example:</p>
+</div>
+<div>
+<p dir="auto"><strong>1. Task Orientation vs. General Knowledge</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>LLMs:</strong>&nbsp;
+<ul>
+<li data-line="1" dir="auto">Excel at broad language understanding and generation.</li>
+<li data-line="2" dir="auto">They’re like massive libraries of information.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto">✦ <strong>RAG:</strong>&nbsp;
+<ul>
+<li data-line="4" dir="auto">Improves LLMs by finding relevant information. Still, the focus is on knowledge and text generation.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">✦ <strong>AI Agents:</strong>&nbsp;
+<ul>
+<li data-line="6" dir="auto">Are built with specific goals in mind. They bridge the gap between understanding language and taking action in the real world or within digital systems.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<p dir="auto"><strong>2. Multi-Step Reasoning</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>LLMs &amp; RAG:</strong>&nbsp;
+<ul>
+<li data-line="1" dir="auto">Primarily work on single inputs and provide responses based on that.</li>
+</ul>
+</li>
+<li data-line="2" dir="auto">✦ <strong>AI Agents:</strong>&nbsp;
+<ul>
+<li data-line="3" dir="auto">Can chain together multiple steps:
+<ul>
+<li data-line="4" dir="auto">Retrieve information (like RAG)</li>
+<li data-line="5" dir="auto">Process the information to make decisions</li>
+<li data-line="6" dir="auto">Take actions like:
+<ul>
+<li data-line="7" dir="auto">Sending an email</li>
+<li data-line="8" dir="auto">Booking an appointment</li>
+<li data-line="9" dir="auto">Controlling smart home devices</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<p dir="auto"><strong>3. Proactivity</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>LLMs &amp; RAG:</strong>&nbsp;Usually respond to direct prompts.</li>
+<li data-line="1" dir="auto">✦ <strong>AI Agents:</strong>&nbsp;
+<ul>
+<li data-line="2" dir="auto">Can be proactive. They can:
+<ul>
+<li data-line="3" dir="auto">Monitor data streams and alert you to critical changes</li>
+<li data-line="4" dir="auto">Initiate actions based on your preferences</li>
+<li data-line="5" dir="auto">Adapt their behavior over time as they learn about you</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<p dir="auto"><strong>4. Integration with Existing Systems</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>LLMs &amp; RAG:</strong>&nbsp;
+<ul>
+<li data-line="1" dir="auto">Tend to operate within their own environment.</li>
+</ul>
+</li>
+<li data-line="2" dir="auto">✦ <strong>AI Agents:</strong>&nbsp;
+<ul>
+<li data-line="3" dir="auto">Are designed to interface with various systems and APIs:</li>
+<li data-line="4" dir="auto">Access your email or calendar</li>
+<li data-line="5" dir="auto">Interact with databases</li>
+<li data-line="6" dir="auto">Control other software or devices</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="important" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                            </path>
+                          </svg></div>
+<div class="callout-title-inner">Difference between Agents and Prompt Chaining</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ The core idea of agents is to use a language model to choose a sequence of actions to take.</li>
+<li data-line="2" dir="auto">✦ In chains or pipeline, a sequence of actions (or prompts) is hardcoded (in code).</li>
+<li data-line="3" dir="auto">✦ In agents, a language model is used as a reasoning engine to determine which actions to take and in which order.</li>
+</ul>
+<blockquote dir="auto">
+<p>We have discussed <code>Prompt Chaining</code> in <a class="internal-link" data-href="Topic 3 - Building System with Advanced Prompting and Chaining/4. Prompts Chaining - Chaining Together Multiple Prompts.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-3-building-system-with-advanced-prompting-and-chaining/4.-prompts-chaining-chaining-together-multiple-prompts.html" target="_self" rel="noopener">4. Prompts Chaining - Chaining Together Multiple Prompts</a></p>
+</blockquote>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 Overview of the Key Components of an AI Agent" dir="auto" class="heading" id="2_Overview_of_the_Key_Components_of_an_AI_Agent">2 Overview of the Key Components of an AI Agent</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>A single AI agent’s architecture encompasses the essential components that empower it to think, plan, and act within its environment.</strong>&nbsp;This sophisticated design typically includes:</p>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905151933402.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240905151933402.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<p dir="auto"><strong>Tools</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The agent learns to call external APIs or tools for extra information/context or capability that might be missing in the model weights (often hard to change after pre-training).</li>
+<li data-line="1" dir="auto">✦ This includes things like current information, mathematical engines, code execution capability, access to proprietary information sources, and many more.</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><strong>Memory</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Short-term memory:</strong>&nbsp;
+<ul>
+<li data-line="1" dir="auto">In-context learning (See&nbsp;<a data-tooltip-position="top" aria-label="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/" rel="noopener" class="external-link" href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/" target="_blank">Prompt Engineering</a>) can be thought of as utilizing short-term memory of the model to operate on a given problem. The context length window can be thought of as Short-term memory.</li>
+</ul>
+</li>
+<li data-line="2" dir="auto">✦ <strong>Long-term memory:</strong>&nbsp;
+<ul>
+<li data-line="3" dir="auto">Providing the agent with the capability to retain and recall (infinite) information over extended periods, often by leveraging an external vector store and fast retrieval. The Retrieval part in RAG can be thought of as Long-term memory.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto"><strong>Planning</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Subgoal &amp; task decomposition:</strong>&nbsp;
+<ul>
+<li data-line="1" dir="auto">The agent breaks down larger tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.</li>
+</ul>
+</li>
+<li data-line="2" dir="auto">✦ <strong>Reflection and refinement:</strong>&nbsp;
+<ul>
+<li data-line="3" dir="auto">The agent can do self-criticism (though doubtful in certain ways) and self-reflection over past actions, learn from mistakes, and refine them for future steps, thus improving the final results.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">Together, these elements create an intelligent system that can autonomously solve problems. An AI agent can analyze an issue, devise a step-by-step plan, and confidently execute it, making it a transformative force in the world of artificial intelligence. Below is one example of a more detailed architecture of an AI Agent system.</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 Pitfalls &amp; Challenges of Multi-Agent Systems" dir="auto" class="heading" id="3_Pitfalls_&amp;_Challenges_of_Multi-Agent_Systems">3 Pitfalls &amp; Challenges of Multi-Agent Systems</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">However, the development and implementation of multi-agent systems come with their own set of challenges and risks.</p>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="3.1 High Token Usage" dir="auto" class="heading" id="3.1_High_Token_Usage">3.1 High Token Usage</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Notably, the increased complexity of Agentic systems often results in longer response times and higher API costs, which could be a significant drawback for various applications.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ An agentic system often <strong>makes a large number of calls to answer a single/simple question, accumulating tokens for each query made to LLM.</strong></li>
+<li data-line="1" dir="auto">✦ Not only is this costly, it introduces latency.</li>
+<li data-line="2" dir="auto">✦ Token generation is still a relatively slow process, most (not all) of the latency in LLM-based applications comes from generating output tokens.</li>
+<li data-line="3" dir="auto">✦ Calling an LLM repeatedly and asking it to provide thoughts/observations, we end up generating a lot of output tokens (cost) resulting in high latency (degraded user experience).</li>
+</ul>
+</div>
+<div>
+<p dir="auto">Fortunately, there are promising advancements on the horizon aimed at mitigating these issues. These include the emergence of smaller, specialized, and faster models, reduced API costs per token, and innovative hardware solutions like language processing units (LPUs) from companies such as Groq, which offer remarkable improvements in inference speed. As the field continues to evolve, it will be interesting to see what additional hardware advancements emerge to address these challenges.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3.2 Non-Deterministic" dir="auto" class="heading" id="3.2_Non-Deterministic">3.2 Non-Deterministic</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>A more significant problem with AI agents is that LLMs are non-deterministic.</strong></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ While beneficial for idea generation, this poses a serious challenge in scenarios requiring predictability.</li>
+<li data-line="1" dir="auto">✦ For instance, if we’re writing an LLM-backed chat application to make SQL queries (Text2SQL), we want high predictability</li>
+</ul>
+</div>
+<div>
+<p dir="auto">To address this challenge, we can create a process to iteratively reflect and refine the execution plan based on past actions and observations. The goal is to correct and improve on past mistakes which helps to improve the quality of final results.</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 Do You Actually Need An Agent?" dir="auto" class="heading" id="4_Do_You_Actually_Need_An_Agent?">4 Do You Actually Need An Agent?</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Here are three criteria to determine whether you might need an agent:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Does your application follow an iterative flow based on incoming data?</strong></p>
+<ul>
+<li data-line="1" dir="auto">If your application processes data in a cyclical manner, where each iteration builds upon the previous one, it may be a strong candidate for an agent-based approach.</li>
+<li data-line="2" dir="auto">Agents can effectively manage and respond to new information as it arrives, allowing for continuous improvement and refinement of outputs.</li>
+<li data-line="3" dir="auto">This is particularly useful in scenarios like data analysis, where insights evolve as more data is processed.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ <strong>Does your application need to adapt and follow different flows based on previously taken actions or feedback along the way?</strong></p>
+<ul>
+<li data-line="6" dir="auto">Applications that require dynamic decision-making based on past interactions or user feedback can greatly benefit from agents.</li>
+<li data-line="7" dir="auto">An agent can track the history of actions and outcomes, enabling it to adjust its strategy in real-time.</li>
+<li data-line="8" dir="auto">This adaptability is crucial in environments where user preferences or external conditions change frequently</li>
+</ul>
+</li>
+<li data-line="10" dir="auto">
+<p>✦ <strong>Is there a state space of actions that can be taken?</strong></p>
+<ul>
+<li data-line="11" dir="auto">If your application involves a complex set of possible actions that can be executed in various sequences, rather than a simple linear pathway, it may require an agent to navigate this state space effectively.</li>
+<li data-line="12" dir="auto">Agents can explore multiple pathways and make decisions based on the current state, optimizing for the best outcomes.</li>
+<li data-line="13" dir="auto">This is particularly relevant in scenarios like game development, robotics, or any system where multiple strategies can lead to different results.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="5 Common Frameworks or Tools for Building Multi-Agent System" dir="auto" class="heading" id="5_Common_Frameworks_or_Tools_for_Building_Multi-Agent_System">5 Common Frameworks or Tools for Building Multi-Agent System</h1>
+<div class="heading-children">
+<div class="heading-wrapper">
+<h2 data-heading="5.1 Autogen" dir="auto" class="heading" id="5.1_Autogen">5.1 Autogen</h2>
+<div class="heading-children">
+<div><img src="https://microsoft.github.io/autogen/stable/_images/assistant-agent.svg"></div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://microsoft.github.io/autogen/" rel="noopener" class="external-link" href="https://microsoft.github.io/autogen/" target="_blank"><strong>AutoGen</strong></a>&nbsp;is an open-source framework developed by Microsoft, designed to facilitate multi-agent collaboration through conversational agents. It excels in enabling agents to work together on complex tasks by leveraging large language models (LLMs).</p>
+</div>
+<div>
+<p dir="auto">It supports <strong>diverse conversation patterns</strong> with conversable agents that integrate large language models (LLMs), tools, and human inputs. It provides a collection of working systems with different complexities. These systems span a&nbsp;<a data-tooltip-position="top" aria-label="https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat#diverse-applications-implemented-with-autogen" rel="noopener" class="external-link" href="https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat#diverse-applications-implemented-with-autogen" target="_blank">wide range of applications</a>&nbsp;from various domains and complexities. This demonstrates how AutoGen can easily support diverse conversation patterns.</p>
+</div>
+<div>
+<p dir="auto">AutoGen’s flexibility allows for the creation of complex workflows and problem-solving scenarios, making it particularly attractive for developers and researchers looking to push the boundaries of AI agent capabilities.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="5.2 CrewAI" dir="auto" class="heading" id="5.2_CrewAI">5.2 CrewAI</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/crewAI-mindmap.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.crewai.com/" rel="noopener" class="external-link" href="https://www.crewai.com/" target="_blank"><strong>CrewAI</strong></a>&nbsp;is another open-source framework that emphasizes structured workflows and role-based task automation within a collaborative environment.</p>
+</div>
+<div>
+<p dir="auto">CrewAI adopts a different strategy by providing a structured platform for the creation and management of AI agents. This framework enables users to define agents with specific roles, objectives, and narratives, promoting a role-playing approach to task automation.</p>
+</div>
+<div>
+<p dir="auto">Built on LangChain, CrewAI takes advantage of a comprehensive ecosystem of tools and integrations, making it accessible to a wider audience, including business users who may lack extensive technical knowledge.</p>
+</div>
+<div>
+<p dir="auto">CrewAI takes a more accessible approach, offering a user-friendly interface that reduces the need for extensive coding.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="5.3 LangGraph" dir="auto" class="heading" id="5.3_LangGraph">5.3 LangGraph</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/667c93d559216bb904fe85a8_gif7 (1).gif" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.langchain.com/langgraph" rel="noopener" class="external-link" href="https://www.langchain.com/langgraph" target="_blank"><strong>LangGraph</strong></a>&nbsp;is a framework that focuses on creating graph-based multi-agent systems. It is designed to handle complex interactions and dependencies between agents.</p>
+</div>
+<div>
+<p dir="auto">LangGraph utilizes a graph structure to manage agent interactions and dependencies. The framework focuses on scalability, allowing it to efficiently handles large-scale multi-agent systems.</p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="5.4 Comparing the Three Frameworks" dir="auto" class="heading" id="5.4_Comparing_the_Three_Frameworks">5.4 Comparing the Three Frameworks</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>Core Focus</strong>: AutoGen emphasizes multi-agent conversations and LLM inference, CrewAI focuses on structured workflows and role-based task automation, while LangGraph leverages a graph-based architecture for managing complex interactions.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ <strong>Customization</strong>: AutoGen offers extensive customization options for developers, CrewAI provides a user-friendly approach accessible to those with limited technical expertise, and LangGraph allows for highly specialized agent creation.</p>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ <strong>Scalability</strong>: LangGraph excels in handling large-scale systems, while AutoGen and CrewAI are more suited for smaller to medium-sized applications.</p>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">This Bootcamp will use CrewAI as the framework for developing Multi-agent Systems</div>
+</div>
+<div class="callout-content">
+<ol>
+<li data-line="1" dir="auto"><strong>User-friendly and Quick Experimentation</strong>: CrewAI offers an intuitive interface that allows users to easily experiment with multi-agent systems without requiring extensive technical knowledge.</li>
+<li data-line="2" dir="auto"><strong>Support for a Variety of Tools</strong>: CrewAI is compatible with a wide range of tools, including both <code>LangChain</code> and <code>Llama Index</code> tools. This flexibility means that we are not limited to the tools that CrewAI comes with, but can also leverage a diverse array of tools from other packages.</li>
+<li data-line="3" dir="auto"><strong>Structured Workflows and Role-based Task Automation</strong>: CrewAI facilitates the creation of structured workflows and enables role-based task automation, which seemingly more relevant to wide variety of use cases.</li>
+</ol>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="6 Agentic System and the Future" dir="auto" class="heading" id="6_Agentic_System_and_the_Future">6 Agentic System and the Future</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">McKinsey’s&nbsp;<a data-tooltip-position="top" aria-label="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" rel="noopener" class="external-link" href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank">most recent “State of AI” survey</a>&nbsp;found that more than 72 percent of companies surveyed are deploying AI solutions, with a growing interest in GenAI. Given that activity, it would not be surprising to see companies begin to incorporate frontier technologies such as agents into their planning processes and future AI road maps. Agent-driven automation remains an exciting proposition, with the potential to revolutionize whole industries, bringing a new speed of action to work. That said, the technology is still in its early stages, and there is much development required before its full capabilities can be realized.</p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="7 Reference &amp; Further Readings" dir="auto" class="heading" id="7_Reference_&amp;_Further_Readings">7 Reference &amp; Further Readings</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai" rel="noopener" class="external-link" href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai" target="_blank">Why agents are the next frontier of generative AI | McKinsey</a></li>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://skimai.com/how-to-choose-between-autogen-vs-crewai-for-creating-ai-agents/" rel="noopener" class="external-link" href="https://skimai.com/how-to-choose-between-autogen-vs-crewai-for-creating-ai-agents/" target="_blank">How to choose between AutoGen vs crewAI for Creating AI Agents - Skim AI</a></li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

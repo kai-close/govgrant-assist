@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="
+          color: rgb(32, 33, 34);
+          font-family: verdana, sans-serif;
+          font-size: 12px;
+        " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebookTabs</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebookTabs" data-icon="LiNotebookTabs" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 6h4"></path>
+                  <path d="M2 10h4"></path>
+                  <path d="M2 14h4"></path>
+                  <path d="M2 18h4"></path>
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <path d="M15 2v20"></path>
+                  <path d="M15 7h5"></path>
+                  <path d="M15 12h5"></path>
+                  <path d="M15 17h5"></path>
+                </svg></span></p>
+</div>
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading">Title: Key Parameters for LLMs</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Key Parameters for LLMs"></h1>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Tokens</li>
+<li class="step step-success" data-content="📒" dir="auto">Key Parameters for LLM</li>
+<li class="step" data-content="📒" dir="auto">LLMs and Hallucination</li>
+<li class="step" data-content="🔧" dir="auto">Prompting Techniques for Builders</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/photo-1543617080-0db79d35e926.png" referrerpolicy="no-referrer"></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Key Parameters for LLMs" dir="auto" class="heading" id="Key_Parameters_for_LLMs">Key Parameters for LLMs</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ For our <code>Helper Function</code> in the notebook, we only pass in three arguments to the <code>create()</code> method.</li>
+</ul>
+<pre class="d2l-code"><code class="language-python"># This is a function that send input (i.e., prompt) to LLM and receive the output from the LLM
+def get_completion(prompt, model="gpt-4o-mini"):
+    messages = [{"role": "user", "content": prompt}]
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=0, # this is the degree of randomness of the model's output
+    )</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ The method can accept more parameters than we are using here.</li>
+<li data-line="1" dir="auto">✦ There are three essential parameters here that can directly affect the behaviour of the LLMs. They are:<br><strong>- Temperature</strong><br><strong>- Top-P</strong><br><strong>- Top-K (not available on OpenAI models)</strong></li>
+<li data-line="5" dir="auto">✦ These parameters are common for other LLMs, including <strong>Open-Source Models</strong></li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">For more details on <code>client.chat.completion.create()</code> method,</div>
+</div>
+<div class="callout-content">
+<p dir="auto">visit the <a data-tooltip-position="top" aria-label="https://platform.openai.com/docs/api-reference/chat/create" rel="noopener" class="external-link" href="https://platform.openai.com/docs/api-reference/chat/create" target="_blank">offcial API reference here</a></p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="Temperature" dir="auto" class="heading" id="Temperature">Temperature</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/photo-1602096675810-9dce30949e80.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ In the context of Large Language Models (LLMs) like GPT3.5 or GPT-4o, “temperature” refers to a parameter that <strong>controls the randomness of the model’s predictions.</strong></p>
+<ul>
+<li data-line="1" dir="auto">When you set a high temperature, the model is more likely to produce varied and sometimes unexpected responses.</li>
+<li data-line="2" dir="auto">Conversely, a low temperature results in more predictable and conservative outputs. It’s akin to setting how “creative” or “safe” you want the model’s responses to be.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p><strong>✦ Technically, it adjusts the probability distribution of the next token</strong> being generated, influencing the diversity of the generated text</p>
+<ul>
+<li data-line="6" dir="auto"><code>Softmax function</code> is often used in machine learning models to convert raw scores (also known as logits) into probabilities.</li>
+<li data-line="7" dir="auto">In the context of language models, the softmax function is used to convert the scores assigned to each possible next word into probabilities. The word with the highest probability is often chosen as the prediction.
+<ul>
+<li data-line="8" dir="auto">So, if the softmax value for a word is high, it means that the model predicts that word to be the next word with high probability.</li>
+<li data-line="9" dir="auto">Conversely, a low softmax value for a word means that the word is unlikely to be the next word according to the model’s prediction.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="12" dir="auto">
+<p>✦ Table below shows candidates of word for completing the prompt <em>"Singapore has a lot of beautiful ..."</em>.</p>
+<ul>
+<li data-line="13" dir="auto">At a <strong>lower temperature</strong> makes the model’s <strong>predictions more deterministic</strong>, <strong>favoring the most likely next token</strong>.
+<ul>
+<li data-line="14" dir="auto">The resulting probability distribution where one element has a probability close to 1, and all others have probabilities close to 0.
+<ul>
+<li data-line="15" dir="auto">The differences between logits are amplified, making the highest logit much more likely to be selected by the <code>softmax function</code>.</li>
+</ul>
+</li>
+<li data-line="16" dir="auto">In other words, the differences between logits are amplified, making the highest logit much more likely to be selected by the <code>softmax function</code>.</li>
+</ul>
+</li>
+<li data-line="17" dir="auto">At <strong>higher temperatures*, the new values (i.e., <code>Softmax with Temperature</code>) are less extreme</strong>
+<ul>
+<li data-line="18" dir="auto">The resulting probabilities are more evenly distributed.</li>
+<li data-line="19" dir="auto">This leads to <strong>more randomness and creativity in the generated text</strong>, as the model is less likely to pick the most probable token and more likely to pick less probable ones.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="22" dir="auto">
+<p>✦ See the following for the illustration of the concept.</p>
+<ul>
+<li data-line="23" dir="auto">There are live examples that we will go through in our notebook</li>
+<li data-line="24" dir="auto">by adjusting the <code>temperature</code>, we can control the trade-off between diversity and confidence in the model’s predictions.</li>
+<li data-line="25" dir="auto">A lower theta will make the model more confident but less diverse, while a higher theta will make the model more diverse but less confident.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">Word</th>
+<th dir="ltr">Logits</th>
+<th dir="ltr">Softmax</th>
+<th dir="ltr">Softmax with LOW temperature</th>
+<th align="left" dir="ltr">Softmax with High tempetaure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">scenaries</td>
+<td dir="auto">20</td>
+<td dir="auto">0.881</td>
+<td dir="auto">1.000</td>
+<td align="left" dir="auto">0.8808</td>
+</tr>
+<tr>
+<td dir="ltr">buildings</td>
+<td dir="auto">18</td>
+<td dir="auto">0.119</td>
+<td dir="auto">0.000</td>
+<td align="left" dir="auto">0.1192</td>
+</tr>
+<tr>
+<td dir="ltr">people</td>
+<td dir="auto">5</td>
+<td dir="auto">0.000</td>
+<td dir="auto">0.000</td>
+<td align="left" dir="auto">0.000</td>
+</tr>
+<tr>
+<td dir="ltr">gardens</td>
+<td dir="auto">2</td>
+<td dir="auto">0.000</td>
+<td dir="auto">0.000</td>
+<td align="left" dir="auto">0.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/Pasted image 20240328125030.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner"><strong>[Extra]</strong> The equations below shows how the "temperature" being incorporated into the Softmax function.</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">
+<p>💡 You don't have to worry about understanding the equation or memorizing it.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>It's more for us to understand the intuition on where is the <code>temperature</code> being used</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Softmax</strong><br><span class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-msub><mjx-mtext class="mjx-n"><mjx-c class="mjx-c53"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c66"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c78"></mjx-c></mjx-mtext><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-texatom></mjx-script></mjx-msup></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-munderover limits="false"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.285em; margin-left: 0px;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-spacer style="margin-top: 0.284em;"></mjx-spacer><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-munderover><mjx-msup space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-texatom size="s" texclass="ORD"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-texatom></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math></mjx-container></span></p>
+</li>
+<li data-line="6" dir="auto">
+<p><strong>Softmax with Temperature <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span></strong><br><span class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-msub><mjx-mtext class="mjx-n"><mjx-c class="mjx-c53"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c66"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c78"></mjx-c></mjx-mtext><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-msub size="s"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.307em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-munderover limits="false"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.285em; margin-left: 0px;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-spacer style="margin-top: 0.284em;"></mjx-spacer><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-munderover><mjx-msup space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.359em;"><mjx-texatom size="s" texclass="ORD"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-msub size="s"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.307em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-texatom></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math></mjx-container></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                            <path d="M12 9v4"></path>
+                            <path d="M12 17h.01"></path>
+                          </svg></div>
+<div class="callout-title-inner">Calculations that are found on this page are for understanding the intuition behind the key parameters and do not represent the exact ways model providers code their algorithms</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ This applies to the calculations for temperature, top-K, and top-P</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="try-out-in-notebook-week-02" class="callout">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                            <path d="m15 5 4 4"></path>
+                          </svg></div>
+<div class="callout-title-inner">Try out in notebook week 02</div>
+</div>
+<div class="callout-content">
+<p dir="auto">The live calculation to show the intuition of the <code>Temperature</code> is included in the Notebook of this week. Try it out!</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Top-K" dir="auto" class="heading" id="Top-K">Top-K</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ After the probabilities are computed, the model applies the <code>Top-K sampling strategy</code>.</li>
+<li data-line="1" dir="auto">✦ It selects the K most probable next words and re-normalizes the probabilities among these K words only.</li>
+<li data-line="2" dir="auto">✦ Then it samples the next word from these K possibilities</li>
+<li data-line="3" dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/GYq0Cls.png" referrerpolicy="no-referrer"></li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="try-out-in-notebook-week-02" class="callout">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                        <path d="m15 5 4 4"></path>
+                      </svg></div>
+<div class="callout-title-inner">Try out in notebook week 02</div>
+</div>
+<div class="callout-content">
+<p dir="auto">The live calculation to show the intuition of the <code>Top-K</code> process is included in the Notebook of this week. Try it out!</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Top-P" dir="auto" class="heading" id="Top-P">Top-P</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Top-P is also known as nucleus sampling
+<ul>
+<li data-line="1" dir="auto">This is an alternative to Top-K sampling, which we will discuss next.</li>
+<li data-line="2" dir="auto">Instead of selecting the top K most probable words, it selects the smallest set of words whose cumulative probability exceeds a threshold P. Then it samples the next word from this set.</li>
+<li data-line="3" dir="auto">Top-P sampling gives us a subset of words whose cumulative probability exceeds a certain threshold (P), making it a useful method for narrowing down a list of candidates based on their probabilities.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                        </path>
+                      </svg></div>
+<div class="callout-title-inner">In practice, either <code>Top-K</code> or <code>Top-P</code> is used, but not both at the same time. They are different strategies for controlling the trade-off between diversity and confidence in the model’s predictions.</div>
+</div>
+</div>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/top-p.png" referrerpolicy="no-referrer"></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Max Tokens" dir="auto" class="heading" id="Max_Tokens">Max Tokens</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ parameter: <code>max_tokens</code></li>
+<li data-line="1" dir="auto">✦ The maximum number of tokens that can be generated in the chat completion.</li>
+<li data-line="2" dir="auto">✦The <strong>total length of input tokens and generated tokens is limited by the model's context length</strong>.</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="N" dir="auto" class="heading" id="N">N</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ parameter: <code>n</code></li>
+<li data-line="1" dir="auto">✦ Defaults to 1 (if no value passed to the method)</li>
+<li data-line="2" dir="auto">✦ This refer to <strong>how many chat completion choices to generate for each input message</strong>.
+<ul>
+<li data-line="3" dir="auto">Note that you will be charged based on the number of generated tokens across all of the choices.</li>
+<li data-line="4" dir="auto">Stick with the default, which is to use 1 so as to minimize costs.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Updated Helper Function" dir="auto" class="heading" id="Updated_Helper_Function">Updated Helper Function</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ With the additional parameters that we have introduced in this note, we can update the <code>helper function</code> that we use to call LLMs, like the one below:</li>
+</ul>
+<pre class="d2l-code"><code class="language-python"># These two lines only applicable in Jupyter Notebook
+!pip install tiktoken
+!pip install openai
+
+# This is the "Updated" helper function for calling LLM,
+# to expose the parameters that we have discussed
+def get_completion(prompt, model="gpt-3.5-turbo", temperature=0, top_p=1.0, max_tokens=1024, n=1):
+    messages = [{"role": "user", "content": prompt}]
+    response = openai.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=temperature,
+        top_p=top_p,
+        max_tokens=max_tokens,
+        n=1
+    )
+    return response.choices[0].message.content</code></pre>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+<div>
+<p dir="auto"></p>
+<div src="lib/media/img-20240411171552638.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240411171552638.png"></div>
+<p dir="auto"></p>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Extra: OpenAI Parameters" dir="auto" class="heading" id="Extra:_OpenAI_Parameters">Extra: OpenAI Parameters</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">On OpenAI's API reference, it is stated that <strong>we generally recommend altering <code>temperature</code> or <code>top_p</code> but not both.</strong></p>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="lib/media/img-20240411170749315.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240411170749315.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<p dir="auto">We suggest to stick with the official recommendation from OpenAI to only change the <code>temperature</code> as the primary way to change the "creativity" of the LLM output</p>
+</div>
+<div>
+<p dir="auto">For those who want to explore or experiment further with both the parameters, this table contains various combinations of the two parameters and a description of the different scenarios they will be potentially useful for. We caveat that is not officially recommended by OpenAI and should be used with caution.</p>
+</div>
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">Use Case</th>
+<th dir="ltr">Temperature</th>
+<th dir="ltr">Top_p</th>
+<th dir="ltr">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">Code Generation</td>
+<td dir="auto">0.2</td>
+<td dir="auto">0.1</td>
+<td dir="ltr">Generates code that adheres to established patterns and conventions. Output is more deterministic and focused. Useful for generating syntactically correct code.</td>
+</tr>
+<tr>
+<td dir="ltr">Creative Writing</td>
+<td dir="auto">0.7</td>
+<td dir="auto">0.8</td>
+<td dir="ltr">Generates creative and diverse text for storytelling. Output is more exploratory and less constrained by patterns.</td>
+</tr>
+<tr>
+<td dir="ltr">Chatbot Responses</td>
+<td dir="auto">0.5</td>
+<td dir="auto">0.5</td>
+<td dir="ltr">Generates conversational responses that balance coherence and diversity. Output is more natural and engaging.</td>
+</tr>
+<tr>
+<td dir="ltr">Code Comment Generation</td>
+<td dir="auto">0.3</td>
+<td dir="auto">0.2</td>
+<td dir="ltr">Generates code comments that are more likely to be concise and relevant. Output is more deterministic and adheres to conventions.</td>
+</tr>
+<tr>
+<td dir="ltr">Data Analysis Scripting</td>
+<td dir="auto">0.2</td>
+<td dir="auto">0.1</td>
+<td dir="ltr">Generates data analysis scripts that are more likely to be correct and efficient. Output is more deterministic and focused.</td>
+</tr>
+<tr>
+<td dir="ltr">Exploratory Code Writing</td>
+<td dir="auto">0.6</td>
+<td dir="auto">0.7</td>
+<td dir="ltr">Generates code that explores alternative solutions and creative approaches. Output is less constrained by established patterns.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div><small><a href="https://abc-notes.data.tech.gov.sg/notes/[https://arxiv.org/abs/2307.06435](https://community.openai.com/t/cheat-sheet-mastering-temperature-and-top-p-in-chatgpt-api/172683)" target="_blank" rel="noopener">source: OpenAI Community Forum - Temperature and top-p in ChatGPT.</a></small></div>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 737.5px; top: 303px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

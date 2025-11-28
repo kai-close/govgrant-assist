@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html><head>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebook</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebook" data-icon="LiNotebook" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 6h4"></path>
+                                    <path d="M2 10h4"></path>
+                                    <path d="M2 14h4"></path>
+                                    <path d="M2 18h4"></path>
+                                    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                                    <path d="M16 2v20"></path>
+                                </svg></span></p>
+</div>
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading">Title: Deploy App on Container Stack (CStack) by GovTech</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Deploy App on Container Stack (CStack) by GovTech"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Understanding Container</li>
+<li class="step step-success" data-content="🔧" dir="auto">Deploy App on Container Stack (CStack)</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211017651.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240919211017651.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#What's Container Stack (CStack)" href="#What's_Container_Stack_(CStack)" class="internal-link" target="_self" rel="noopener">What's Container Stack (CStack)</a></li>
+<li dir="auto"><a data-href="#Video Walkthrough on Deploying Streamlit App on *CStack Cloud*" href="#Video_Walkthrough_on_Deploying_Streamlit_App_on_*CStack_Cloud*" class="internal-link" target="_self" rel="noopener">Video Walkthrough on Deploying Streamlit App on CStack Cloud</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="What's Container Stack (CStack)" dir="auto" class="heading" id="What's_Container_Stack_(CStack)">What's Container Stack (CStack)</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><strong>Container Stack (CStack)</strong>&nbsp;is a tool provided by the Singapore Government to help developers create and manage applications more easily. It is part of the Singapore Government Tech Stack (SGTS) and is hosted on the Government on Commercial Cloud (GCC).</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ <strong>What Does CStack Do?</strong></p>
+<ul>
+<li data-line="1" dir="auto"><strong>Centralized and Secure Platform:</strong>&nbsp;
+<ul>
+<li data-line="2" dir="auto">CStack offers a safe and managed environment for developing applications.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto"><strong>Works with Other Tools:</strong>&nbsp;
+<ul>
+<li data-line="4" dir="auto">It works together with SHIP-HATS and StackOps to provide a complete development platform, so you can focus on building your applications instead of worrying about setting up and managing tools.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ <strong>Why Use CStack?</strong></p>
+<ul>
+<li data-line="7" dir="auto"><strong>Simplifies Setup:</strong>&nbsp;
+<ul>
+<li data-line="8" dir="auto">Setting up secure development pipelines and runtime platforms for applications can be difficult.</li>
+<li data-line="9" dir="auto">CStack makes this easier by providing a ready-to-use infrastructure.</li>
+</ul>
+</li>
+<li data-line="10" dir="auto"><strong>Helps Modernize Applications:</strong>&nbsp;
+<ul>
+<li data-line="11" dir="auto">If you want to modernize your applications using containers and Kubernetes, CStack gives you a head start without needing to set up everything yourself.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="13" dir="auto">
+<p>✦ <strong>Key Benefits:</strong></p>
+<ul>
+<li data-line="14" dir="auto"><strong>Reduces Setup and Maintenance Work:</strong>&nbsp;
+<ul>
+<li data-line="15" dir="auto">CStack takes care of the complex setup and maintenance of the application infrastructure. This means you can start developing and deploying your applications from the first week without worrying about the underlying setup.</li>
+</ul>
+</li>
+<li data-line="16" dir="auto"><strong>Speeds Up Development:</strong>&nbsp;
+<ul>
+<li data-line="17" dir="auto">CStack helps you quickly adopt modern development practices like DevSecOps and agile development. It provides built-in tools for continuous integration (CI) and GitOps, which automate application deployments. This allows you to release updates frequently and improve your applications based on user feedback.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div>
+<blockquote dir="auto">
+<p>**In collaboration with the CStack team, a very user-friendly way of using CStack, called CStack Cloud has been developed for the participants in AI Champions Bootcamp.</p>
+<p>This new way of deploying application has simplify the process significantly and thus allow the participants to focus their time and effort on creating the AI applications.**</p>
+</blockquote>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Video Walkthrough on Deploying Streamlit App on *CStack Cloud*" dir="auto" class="heading" id="Video_Walkthrough_on_Deploying_Streamlit_App_on_*CStack_Cloud*">Video Walkthrough on Deploying Streamlit App on <em>CStack Cloud</em></h1>
+<div class="heading-children">
+<div>
+<blockquote dir="auto">
+<p>Click <a data-tooltip-position="top" aria-label="https://cstack.cloud/" rel="noopener" class="external-link" href="https://cstack.cloud/" target="_blank">here</a> or visit <code>cstack.cloud</code> on your browser to access CStack Cloud</p>
+</blockquote>
+</div>
+<div><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/BrZHY9E9aDo?si=UbjSS1VvGKEPTnVf" height="420" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="M12 16v-4"></path>
+                                                <path d="M12 8h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner">Major Timeline:</div>
+</div>
+<div class="callout-content">
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=0s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=0s" target="_blank">00:00</a> - Intro<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=105s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=105s" target="_blank">01:45</a> - Enter the info of the Streamlit App<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=170s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=170s" target="_blank">02:50</a> - Environment Variables and Secrets<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=407s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=407s" target="_blank">06:47</a> - Adding Member(s) to the Project<br><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=465s" rel="noopener" class="external-link" href="https://www.youtube.com/watch?v=BrZHY9E9aDo&amp;t=465s" target="_blank">07:45</a> - Open and test the deployed Streamlit App</p>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="caution" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+                                                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z">
+                                                </path>
+                                                <path d="M12 9v4"></path>
+                                                <path d="M12 17h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner"><strong>CStack Cloud Operating Hours</strong>: 8am - 11:59pm, daily</div>
+</div>
+<div class="callout-content">
+<ol>
+<li data-line="1" dir="auto">CStack Cloud is an environment offered by CStack team for AI Champions Bootcamp</li>
+<li data-line="2" dir="auto">To uphold the good practice of not wasting computing resources, users are to deploy their applications within the operating hours. This ensures optimal usage.</li>
+<li data-line="3" dir="auto">The deployed applications will be paused and unaccessible outside the operating hours.</li>
+</ol>
+</div>
+</div>
+</div>
+<div>
+<blockquote dir="auto">
+<p>📧 If you have any questions or feedback, you can reach out to the team via <a rel="noopener" class="external-link" href="https://go.gov.sg/cstack-contact" target="_blank">https://go.gov.sg/cstack-contact</a></p>
+</blockquote>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

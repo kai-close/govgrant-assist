@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebookTabs</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebookTabs" data-icon="LiNotebookTabs" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 6h4"></path>
+                    <path d="M2 10h4"></path>
+                    <path d="M2 14h4"></path>
+                    <path d="M2 18h4"></path>
+                    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                    <path d="M15 2v20"></path>
+                    <path d="M15 7h5"></path>
+                    <path d="M15 12h5"></path>
+                    <path d="M15 17h5"></path></svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Not So Typical Intro to LLMs</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Not So Typical Intro to LLMs"></h1>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Not So Typical Intro to LLMs</li>
+<li class="step" data-content="📒" dir="auto">Prompt Engineering</li>
+<li class="step" data-content="🔧" dir="auto">Formatting Prompt in Python</li>
+<li class="step" data-content="👨🏻‍💻" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&amp;w=2069&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Large Language Model(s)" href="#Large_Language_Model(s)" class="internal-link" target="_self" rel="noopener">Large Language Model(s)</a></li>
+<li dir="auto"><a data-href="#Open Source and Closed Source Models" href="#Open_Source_and_Closed_Source_Models" class="internal-link" target="_self" rel="noopener">Open Source and Closed Source Models</a></li>
+<li dir="auto"><a data-href="#A Bird's-eye View of the Differences" href="#A_Bird's-eye_View_of_the_Differences" class="internal-link" target="_self" rel="noopener">A Bird's-eye View of the Differences</a></li>
+<li dir="auto"><a data-href="#A Quick Peek into Self-Hosting Costs" href="#A_Quick_Peek_into_Self-Hosting_Costs" class="internal-link" target="_self" rel="noopener">A Quick Peek into Self-Hosting Costs</a></li>
+<li dir="auto"><a data-href="#References" href="#References" class="internal-link" target="_self" rel="noopener">References</a></li>
+<li dir="auto"><a data-href="#Further Readings (Optional)" href="#Further_Readings_(Optional)" class="internal-link" target="_self" rel="noopener">Further Readings (Optional)</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Large Language Model(s)" dir="auto" class="heading" id="Large_Language_Model(s)">Large Language Model(s)</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">We think you probably have already heard a thousand times about what an LLM is, so we won’t overload you with all the definitions again. If there is one key thing to understand about Large Language Models (LLMs), it is this: they are LARGE neural network models designed to&nbsp;<strong>predict the next token in a sequence based on the preceding tokens</strong>. That’s the essence of their functionality.</p>
+</div>
+<div>
+<p dir="auto">The popularity of LLMs is due to their versatility and effectiveness. They perfectly cope with tasks such as translation, summarisation, sentiment analysis, information extraction, etc. We will learn more about these use cases along the way.</p>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/LLM-size.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto;"><small> Comparison of the number of parameters of models.&nbsp;Just look at how big GPT-3 is.&nbsp;Nobody knows about GPT-4 since the details are not disclosed.</small></div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Open Source and Closed Source Models" dir="auto" class="heading" id="Open_Source_and_Closed_Source_Models">Open Source and Closed Source Models</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ <strong>Closed-source Large Language Models</strong>:&nbsp;
+<ul>
+<li data-line="1" dir="auto">These are developed and maintained by specific organisations and their source code is not publicly available.
+<ul>
+<li data-line="2" dir="auto">An example is GPT-4 by OpenAI, which is a powerful language model but its training code and model weights are not open source.</li>
+</ul>
+</li>
+<li data-line="3" dir="auto"><strong>Popular Closed Source models</strong>
+<ul>
+<li data-line="4" dir="auto"><a data-tooltip-position="top" aria-label="https://openai.com/gpt-4" rel="noopener" class="external-link" href="https://openai.com/gpt-4" target="_blank">GPT-4</a>&nbsp;by&nbsp;<strong>OpenAI</strong></li>
+<li data-line="5" dir="auto"><a data-tooltip-position="top" aria-label="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" rel="noopener" class="external-link" href="https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/" target="_blank">Gemini</a>by&nbsp;<strong>Google</strong><strong></strong></li>
+<li data-line="6" dir="auto"><a data-tooltip-position="top" aria-label="https://www.anthropic.com/" rel="noopener" class="external-link" href="https://www.anthropic.com/" target="_blank">Claude</a>&nbsp;by&nbsp;<strong>Anthropic</strong></li>
+<li data-line="6" dir="auto"><a data-tooltip-position="top" aria-label="https://x.ai/" rel="noopener" class="external-link" href="https://x.ai/" target="_blank">Grok</a>&nbsp;by&nbsp;<strong>xAI</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="7" dir="auto">✦ <strong>Open-source Large Language Models</strong>:
+<ul>
+<li data-line="8" dir="auto">These are developed in a collaborative public manner where the source code is freely available.
+<ul>
+<li data-line="9" dir="auto">You can host these models by yourself, usually on a server or powerful machine.</li>
+<li data-line="10" dir="auto">A great place is to find these model is&nbsp;<a data-tooltip-position="top" aria-label="https://huggingface.co/models" rel="noopener" class="external-link" href="https://huggingface.co/models" target="_blank"><strong>Hugging Face’s Hub</strong></a>, which provides thousands of pre-trained models in 100+ languages and deep learning frameworks like PyTorch and TensorFlow.</li>
+</ul>
+</li>
+<li data-line="11" dir="auto"><strong>Popular Open Source models</strong>
+<ul>
+<li data-line="12" dir="auto"><a data-tooltip-position="top" aria-label="https://llama.meta.com/llama3/" rel="noopener" class="external-link" href="https://llama.meta.com/llama3/" target="_blank">LLaMA-3</a>&nbsp;by&nbsp;<strong>Meta</strong></li>
+<li data-line="13" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.mistral.ai/getting-started/models/" rel="noopener" class="external-link" href="https://docs.mistral.ai/getting-started/models/" target="_blank">Mistral</a>&nbsp;by&nbsp;<strong>Mistral AI</strong></li>
+<li data-line="14" dir="auto"><a data-tooltip-position="top" aria-label="https://bigscience.huggingface.co/blog/bloom" rel="noopener" class="external-link" href="https://bigscience.huggingface.co/blog/bloom" target="_blank">BLOOM</a> by <strong>BigScience</strong></li>
+<li data-line="15" dir="auto"><a data-tooltip-position="top" aria-label="https://huggingface.co/tiiuae/falcon-7b" rel="noopener" class="external-link" href="https://huggingface.co/tiiuae/falcon-7b" target="_blank">Falcon</a>&nbsp;by&nbsp;<strong>Technology Innovation Institute in Abu Dhabi</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="A Bird's-eye View of the Differences" dir="auto" class="heading" id="A_Bird's-eye_View_of_the_Differences">A Bird's-eye View of the Differences</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">While there are quite a few differences between the Open Source vs Closed Source Models, there is no definitive answer as to which is better or worse. We highlight the following as some key considerations:</p>
+</div>
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">What you prioritize the most</th>
+<th dir="ltr">Which is generally preferred</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">Quick development and industrial-grade quality</td>
+<td dir="ltr">Closed Source Models</td>
+</tr>
+<tr>
+<td dir="ltr">Minimal infra setup and in-depth technical knowledge</td>
+<td dir="ltr">Closed Source Models</td>
+</tr>
+<tr>
+<td dir="ltr">Low Running Costs*</td>
+<td dir="ltr">Closed Source Models</td>
+</tr>
+<tr>
+<td dir="ltr">Avoid the continuous effort to update the models</td>
+<td dir="ltr">Closed Source Models</td>
+</tr>
+<tr>
+<td dir="ltr">Privacy: No Data can be sent out</td>
+<td dir="ltr">Open Source Models</td>
+</tr>
+<tr>
+<td dir="ltr">Need to adapt the architecture of the LLM</td>
+<td dir="ltr">Open Source Models</td>
+</tr>
+<tr>
+<td dir="ltr">No reliance on external vendors</td>
+<td dir="ltr">Open Source Models</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<p dir="auto">When it comes to <strong>quality</strong>, which most of us care the most about, the majority of open-source LLMs are still performing worse than GPT-3.5 and GPT-4. Both on standard benchmarks.</p>
+</div>
+<div>
+<blockquote dir="auto">
+<p>💡 Don't worry about understanding how to interpret the benchmarks table. These benchmarks are used to evaluate the capabilities of language models in understanding, reasoning, and problem-solving in various domains.</p>
+</blockquote>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/Pasted image 20240328102939.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto;"><small> Benchmarking of GPTs and other open-source models <a href="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/" target="_blank" rel="noopener">source</a></small></div>
+</div>
+<div>
+<p dir="auto">Here is the models' performance on various tasks:<br><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/Pasted image 20240328103147.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto;"><small> Task Categories Benchmarks on MT-bench <a href="https://arxiv.org/pdf/2306.05685.pdf" target="_blank" rel="noopener">source</a></small></div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="A Quick Peek into Self-Hosting Costs" dir="auto" class="heading" id="A_Quick_Peek_into_Self-Hosting_Costs">A Quick Peek into Self-Hosting Costs</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Ever since the start of LLM hype, you may have found a lot of discussions around “Fine-tune your Private LLaMA/Falcon/Another Popular LLM”, “Train Your Own Private ChatGPT”, “How to Create a Local LLM” and others.</p>
+</div>
+<div>
+<p dir="auto">However, very few people will tell you why you need it. Are you really sure you need your own self-hosted LLM?</p>
+</div>
+<div>
+<p dir="auto">To illustrate this further, let’s consider the cost of hosting a LLaMA-2–70B model on both AWS and GCP. It’s worth noting that most companies employ smaller model versions and fine-tune them according to their tasks. However, in this example we intentionally chose the largest version because it’s a model that can match the quality of GPT-3.5 (Yes, not GPT-4).<br><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/Pasted image 20240328101113.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto;"><small> Comparison of LLaMA-2–70B-chat deployment costs on two Cloud Service Providers (CSPs): Amazon Web Services (AWS) and Google Cloud Platform (GCP)</small></div>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Additionally, let’s include the following extra expenses to the server cost:
+<ul>
+<li data-line="1" dir="auto">Payment for DevOps specialists who will handle server setup, load balancing, and monitoring.</li>
+<li data-line="2" dir="auto">Payment for ML engineers responsible for model preparation, maintenance, and fine-tuning.</li>
+<li data-line="3" dir="auto">Optionally, one-time payment for dataset collection and annotation for fine-tuning.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<p dir="auto">It's estimated this to be <strong>approximately$40k — $60k per month</strong> on GCP for inference LLaMA-2–70B.</p>
+</div>
+<div>
+<p dir="auto">However, don't take us wrongly, it doesn't mean self-hosting is not resource feasible or reasonable. For lower usage in the realm of 10,000 to 50,000 requests per day, it might be cheaper to use <strong>managed services</strong> where the models are hosted by companies (e.g., OpenAI, Claude, or Gemini). But after a certain usage level, the cost for self-hosting LLMs would be lower than using managed services. See the image below.</p>
+</div>
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/msedge_6LjdGGzKsB.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto;"><small>Schematic comparison of OpenAI GPT-3.5 and self-hosted LLMs</small></div>
+</div>
+<div></div>
+<div>
+<p dir="auto">The LLM community believes that in the near future, we will witness a significant increase in the accuracy of new models, including the open-source models, thanks to the active involvement and support of the community.</p>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+                          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                          <path d="M12 9v4"></path>
+                          <path d="M12 17h.01"></path>
+                        </svg></div>
+<div class="callout-title-inner">Disclaimer:</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ The information provided above is intended for illustrative purposes only and is based on a set of assumptions that may not apply to all scenarios.
+<ul>
+<li data-line="2" dir="auto">The cost estimates for deploying <code>LLaMA-2–70B</code>, including server costs and additional expenses for DevOps and ML engineering support, are rough approximations and should be used as a guideline rather than a definitive forecast.</li>
+<li data-line="3" dir="auto">Actual costs can vary significantly based on a variety of factors such as specific cloud service provider rates, the scale of deployment, and the extent of usage.</li>
+<li data-line="4" dir="auto">We strongly advise anyone to conduct a detailed cost analysis based on their unique requirements and to consult with financial and technical experts to obtain a more accurate and personalized estimate before making any decisions regarding self-hosting Large Language Models (LLMs).</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="References" dir="auto" class="heading" id="References">References</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">• <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2307.06435" rel="noopener" class="external-link" href="https://arxiv.org/abs/2307.06435" target="_blank">[2307.06435] A Comprehensive Overview of Large Language Models (arxiv.org)</a></li>
+<li data-line="1" dir="auto">• <a data-tooltip-position="top" aria-label="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/" rel="noopener" class="external-link" href="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/" target="_blank">Benchmarking of LLMs</a></li>
+<li data-line="2" dir="auto">•<a data-tooltip-position="top" aria-label="https://betterprogramming.pub/you-dont-need-hosted-llms-do-you-1160b2520526" rel="noopener" class="external-link" href="https://betterprogramming.pub/you-dont-need-hosted-llms-do-you-1160b2520526" target="_blank">You don’t need hosted LLMs, do you? | by Sergei Savvov | Better Programming</a> (Paywall)</li>
+<li data-line="3" dir="auto">• <a data-tooltip-position="top" aria-label="https://cloud-gpus.com/" rel="noopener" class="external-link" href="https://cloud-gpus.com/" target="_blank">Cloud GPUs (cloud-gpus.com)</a></li>
+<li data-line="4" dir="auto">• <a data-tooltip-position="top" aria-label="https://www.promptingguide.ai/models/collection" rel="noopener" class="external-link" href="https://www.promptingguide.ai/models/collection" target="_blank">LLM Collection)</a></li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Further Readings (Optional)" dir="auto" class="heading" id="Further_Readings_(Optional)">Further Readings (Optional)</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><a class="internal-link" data-href="6. Further Readings.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-1-llm-&amp;-prompt-engineering/6.-further-readings.html" target="_self" rel="noopener">Base Language Models vs. Instruction Tuned Language Models</a></p>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

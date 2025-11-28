@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebookTabs</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebookTabs" data-icon="LiNotebookTabs" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 6h4"></path>
+                  <path d="M2 10h4"></path>
+                  <path d="M2 14h4"></path>
+                  <path d="M2 18h4"></path>
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <path d="M15 2v20"></path>
+                  <path d="M15 7h5"></path>
+                  <path d="M15 12h5"></path>
+                  <path d="M15 17h5"></path>
+                </svg></span></p>
+</div>
+<ol start="3">
+<li dir="auto" class="page-title heading fix-heading">Title: LLMs and Hallucinations</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: LLMs and Hallucinations"></h1>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Tokens</li>
+<li class="step step-success" data-content="📒" dir="auto">Key Parameters for LLM</li>
+<li class="step step-success" data-content="📒" dir="auto">LLMs and Hallucination</li>
+<li class="step" data-content="🔧" dir="auto">Prompting Techniques for Builders</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/photo-1534447677768-be436bb09401.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#LLMs &amp; Hallucinations" href="#LLMs_&amp;_Hallucinations" class="internal-link" target="_self" rel="noopener">LLMs &amp; Hallucinations</a></li>
+<li dir="auto"><a data-href="#Hallucinations &amp;  Common Risks" href="#Hallucinations_&amp;__Common_Risks" class="internal-link" target="_self" rel="noopener">Hallucinations &amp; Common Risks</a>
+<ul>
+<li dir="auto"><a data-href="#🔖 Citing Non-existance Sources" href="#%F0%9F%94%96_Citing_Non-existance_Sources" class="internal-link" target="_self" rel="noopener">🔖 Citing Non-existance Sources</a></li>
+<li dir="auto"><a data-href="#🧐 Bias" href="#%F0%9F%A7%90_Bias" class="internal-link" target="_self" rel="noopener">🧐 Bias</a></li>
+<li dir="auto"><a data-href="#🥴 Hallucinations" href="#%F0%9F%A5%B4_Hallucinations" class="internal-link" target="_self" rel="noopener">🥴 Hallucinations</a></li>
+<li dir="auto"><a data-href="#🔢 Math" href="#%F0%9F%94%A2_Math" class="internal-link" target="_self" rel="noopener">🔢 Math</a></li>
+<li dir="auto"><a data-href="#👺 Prompt Hacking" href="#%F0%9F%91%BA_Prompt_Hacking" class="internal-link" target="_self" rel="noopener">👺 Prompt Hacking</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="LLMs &amp; Hallucinations" dir="auto" class="heading" id="LLMs_&amp;_Hallucinations">LLMs &amp; Hallucinations</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ One important thing to take note of when using such AI powered by Large Language Models (LLMs) is that they often generate text that appears coherent and contextually relevant but is factually incorrect or misleading.</p>
+<ul>
+<li data-line="1" dir="auto">We call these <strong>hallucination problems</strong>. This issue arises due to the inherent nature of how LLMs are trained and their reliance on massive datasets.</li>
+<li data-line="2" dir="auto">While some of the models like ChatGPT go through a second phase in the training where humans try to improve the responses, there is generally no fact-checking mechanism that is built into these LLMs when you use them.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ There is no easy foolproof safeguard against hallucination, although some system prompt engineering can help mitigate this.</p>
+<ul>
+<li data-line="5" dir="auto">What makes hallucination by LLM worse is that the responses are surprisingly real, even if they are absolutely nonsensical.</li>
+<li data-line="6" dir="auto">Know that you must never take the responses as-is without fact-checking, and that you are ultimately responsible for the use of the output.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Hallucinations &amp;  Common Risks" dir="auto" class="heading" id="Hallucinations_&amp;__Common_Risks">Hallucinations &amp; Common Risks</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/photo-1624021097786-e621f5e3d52d.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Understanding these pitfalls is crucial for effectively using LLMs and mitigating potential issues. We will explore some of the common pitfalls of LLMs, including issues with:
+<ul>
+<li data-line="1" dir="auto">citing source</li>
+<li data-line="2" dir="auto">bias</li>
+<li data-line="3" dir="auto">hallucinations</li>
+<li data-line="4" dir="auto">math</li>
+<li data-line="5" dir="auto">prompt hacking</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="🔖 Citing Non-existance Sources" dir="auto" class="heading" id="🔖_Citing_Non-existance_Sources">🔖 Citing Non-existance Sources</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Citing Sources While LLMs can generate text that appears to cite sources, <strong>it's important to note that they cannot accurately cite sources.</strong>
+<ul>
+<li data-line="1" dir="auto">This is because they do not have access to the Internet and do not have the ability to remember where their training data came from.</li>
+<li data-line="2" dir="auto">As a result, <strong>they often generate sources that seem plausible but are entirely fabricated</strong>.</li>
+<li data-line="3" dir="auto">This is a significant limitation when using LLMs for tasks that require accurate source citation.</li>
+<li data-line="4" dir="auto">Note The issue of inaccurate source citation can be mitigated to some extent by using search augmented LLMs (i.e., RAG that we will be covering).
+<ul>
+<li data-line="5" dir="auto">These are LLMs that have the ability to search the Internet and other sources to provide more accurate information.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="🧐 Bias" dir="auto" class="heading" id="🧐_Bias">🧐 Bias</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ LLMs can exhibit biasness in their responses, often generating <strong>stereotypical or prejudiced content</strong>
+<ul>
+<li data-line="1" dir="auto">This is because they are trained on large datasets that may contain biased information.</li>
+<li data-line="2" dir="auto">Despite safeguards put in place to prevent this, LLMs can sometimes produce sexist, racist, or homophobic content.</li>
+<li data-line="3" dir="auto">This is a <strong>critical issue to be aware</strong> of when using LLMs in <strong>consumer-facing applications</strong> or in research, as it can l<strong>ead to the propagation of harmful stereotypes and biased results.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="🥴 Hallucinations" dir="auto" class="heading" id="🥴_Hallucinations">🥴 Hallucinations</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ LLMs can sometimes "hallucinate" or generate false information when asked a question they do not know the answer to.
+<ul>
+<li data-line="1" dir="auto">Instead of stating that they do not know the answer, they often generate a response that sounds confident but is incorrect.</li>
+<li data-line="2" dir="auto">This can lead to the dissemination of misinformation and should be taken into account when using LLMs for tasks that require accurate information.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="🔢 Math" dir="auto" class="heading" id="🔢_Math">🔢 Math</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Despite their advanced capabilities, <strong>Large Language Models (LLMs) often struggle with mathematical tasks and can provide incorrect answers (even as simple as multiplying two numbers).</strong>
+<ul>
+<li data-line="1" dir="auto">This is because they are trained on large volumes of text and while they have gained a good understanding of natural language patterns, they are not explicitly trained to do maths.</li>
+<li data-line="2" dir="auto">Note The issue with math can be somewhat alleviated by using a <strong>tool augmented LLM</strong>
+<ul>
+<li data-line="3" dir="auto">which combines the capabilities of an LLM with specialized tools for tasks like math or programming.</li>
+<li data-line="4" dir="auto">We will cover this in later part of the training.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="👺 Prompt Hacking" dir="auto" class="heading" id="👺_Prompt_Hacking">👺 Prompt Hacking</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ LLMs can be <strong>manipulated or "hacked" by users</strong> to generate specific content, and then use our LLM applications <strong>for malicious or unintended usages</strong>.
+<ul>
+<li data-line="1" dir="auto">This is known as prompt hacking and can be used to trick the LLM into generating inappropriate or harmful content.</li>
+<li data-line="2" dir="auto">It's important to be aware of this potential issue when using LLMs, especially in public-facing applications.</li>
+<li data-line="3" dir="auto">We will cover prompting techniques that can prevent some of of the prompt attacks/hacking techniques.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 737.5px; top: 303px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

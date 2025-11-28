@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html><head>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+  <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+  <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+  <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> RiCodeBoxLine</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="RiCodeBoxLine" data-icon="RiCodeBoxLine" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px">
+                  <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM4 5V19H20V5H4ZM20 12L16.4645 15.5355L15.0503 14.1213L17.1716 12L15.0503 9.87868L16.4645 8.46447L20 12ZM6.82843 12L8.94975 14.1213L7.53553 15.5355L4 12L7.53553 8.46447L8.94975 9.87868L6.82843 12ZM11.2443 17H9.11597L12.7557 7H14.884L11.2443 17Z">
+                  </path>
+                </svg></span></p>
+</div>
+<ol start="4">
+<li dir="auto" class="page-title heading fix-heading">Title: Hands-on Walkthrough and Tasks</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Hands-on Walkthrough and Tasks"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Towards AI Agents</li>
+<li class="step step-success" data-content="🔧" dir="auto">More Secure way to Store Credentials</li>
+<li class="step step-success" data-content="🔧" dir="auto">Writing &amp; Running Python Scripts</li>
+<li class="step step-success" data-content="👨🏻‍💻" dir="auto">Hands-on Walkthrough and Tasks</li>
+<li class="step" data-content="📒" dir="auto">Create Multi-Agent Systems with CrewAI</li>
+</ul>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Download the Notebook and Follow Along" href="#Download_the_Notebook_and_Follow_Along" class="internal-link" target="_self" rel="noopener">Download the Notebook and Follow Along</a></li>
+<li dir="auto"><a data-href="#Complete the `Part 2` of the Notebook with Your Own Code" href="#Complete_the_%60Part_2%60_of_the_Notebook_with_Your_Own_Code" class="internal-link" target="_self" rel="noopener">Complete the Part 2 of the Notebook with Your Own Code</a></li>
+<li dir="auto"><a data-href="#[ Optional ] Share Your Work and Get Feedback from the Community" href="#[_Optional_]_Share_Your_Work_and_Get_Feedback_from_the_Community" class="internal-link" target="_self" rel="noopener">[ Optional ] Share Your Work and Get Feedback from the Community</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">Different Approach</div>
+</div>
+<div class="callout-content">
+<p dir="auto">This week, we will take a slightly different approach.</p>
+<p dir="auto">Instead of overwhelming you with the concepts and intricate details of CrewAI, we will explore the walkthrough notebook titled "<strong>Getting Started with Multi-Agent Systems using CrewAI.</strong>"</p>
+<p dir="auto">We believe that by engaging with this hands-on experience first, you will be better equipped to appreciate and relate the theoretical concepts and details when you revisit them later.</p>
+<p dir="auto">However, please ensure you have completed <a class="internal-link" data-href="Topic 6 - AI Agents with Tools/2. A More Secure way to Store Credentials.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-6-ai-agents-with-tools/2.-a-more-secure-way-to-store-credentials.html" target="_self" rel="noopener">2. A More Secure way to Store Credentials</a> and <a class="internal-link" data-href="Topic 6 - AI Agents with Tools/3. Writing &amp; Running Python Scripts.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-6-ai-agents-with-tools/3.-writing-&amp;-running-python-scripts.html" target="_self" rel="noopener">3. Writing &amp; Running Python Scripts</a> first. This is especially true, if you are not familiar with these topics.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Download the Notebook and Follow Along" dir="auto" class="heading" id="Download_the_Notebook_and_Follow_Along">Download the Notebook and Follow Along</h1>
+<div class="heading-children">
+<div>
+<div data-callout-metadata="" data-callout-fold="-" data-callout="info" class="callout is-collapsible is-collapsed drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">How to use the "<em>Follow Along</em>" Notebook</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">
+<p>✦ This notebook contains pre-populated code for you to execute cell by cell.</p>
+<ul>
+<li data-line="2" dir="auto">Working through it will help you solidify key concepts and techniques covered in the previous sections of this current topic..</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ <strong>Here's how to use this notebook:</strong></p>
+<ol>
+<li data-line="6" dir="auto"><strong>Run each cell in order.</strong> Pay close attention to the code and the outputs it produces.</li>
+<li data-line="7" dir="auto"><strong>Compare the outputs to your understanding.</strong> Do the results align with what you learned from the conceptual topics and notes? If not, revisit the relevant material or ask clarifying questions.</li>
+<li data-line="8" dir="auto"><strong>Experiment!</strong> Once you've gone through the notebook once, don't stop there! Try these approaches to deepen your learning:
+<ul>
+<li data-line="9" dir="auto"><strong>Change the inputs:</strong> Modify the data, parameters, or prompts used in the code cells. How do these changes affect the outputs?</li>
+<li data-line="10" dir="auto"><strong>Tweak the code itself:</strong> Experiment with small modifications to the provided code. Can you make it more efficient, add new functionality, or adapt it to a slightly different task? Active experimentation is the best way to master these concepts.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="caution" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">Attention: Open and Run this Notebook from your Visual Studio Code (VS Code)</div>
+</div>
+</div>
+</div>
+<div>
+<div class="card bg-base-100 shadow-xl">
+<figure style="width: 90%; height: 100%;"><img class="rounded-xl" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/bookmark-google-colab.png" style="width: 100%; height: 100%;" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center">
+<div class="card-actions"><a href="https://abc-notes.data.tech.gov.sg/resources/data/week06-part01-getting-started.ipynb" target="_blank" rel="noopener"> </a><a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=646723&amp;type=content&amp;rcode=927FAFEA-F39E-47A2-A004-9FE5405E0231-4541534" target="_blank" rel="noopener"><button class="btn btn-primary">Download Notebook (.ipynb)</button></a></div>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="example" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                      </svg></div>
+<div class="callout-title-inner">Walkthrough Video: Part 1 - Loading and Running Jupyter Notebook in VS Code</div>
+</div>
+<div class="callout-content"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/GD3r7jdXnnQ?si=uE1MVN7XhZwADMrg" height="530" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe> <small>• Suggest to play at 1.25x speed or higher.</small></div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="-" data-callout="example" class="callout is-collapsible is-collapsed drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                      </svg></div>
+<div class="callout-title-inner">Walkthrough Video: Part 2 - More Secure Way to Store Credentials</div>
+</div>
+<div class="callout-content"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/Boq9Pp9l1Zk?si=rBbPrHM8WZgrUcmc" height="530" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe> <small>• Suggest to play at 1.25x speed or higher.</small></div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="-" data-callout="example" class="callout is-collapsible is-collapsed drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                      </svg></div>
+<div class="callout-title-inner">Walkthrough Video: Part 3 - Running Python Script in VS Code</div>
+</div>
+<div class="callout-content"><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/C6iyzANvOww?si=_tWfyxJAL-1b0Psg" height="530" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe> <small>• Suggest to play at 1.25x speed or higher.</small></div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Complete the `Part 2` of the Notebook with Your Own Code" dir="auto" class="heading" id="Complete_the_`Part_2`_of_the_Notebook_with_Your_Own_Code">Complete the&nbsp;<code>Part 2</code> of the Notebook with Your Own Code</h1>
+<div class="heading-children">
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="caution" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg></div>
+<div class="callout-title-inner">Attention: Open and Run this Notebook from your Visual Studio Code (VS Code)</div>
+</div>
+</div>
+</div>
+<div>
+<div class="card bg-base-100 shadow-xl">
+<figure style="width: 90%; height: 100%;"><img class="rounded-xl center center" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/bookmark-google-colab.png" style="width: 100%; height: 100%;" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center">
+<div class="card-actions"><a href="https://abc-notes.data.tech.gov.sg/resources/data/week06-part02.ipynb" target="_blank" rel="noopener"> </a><a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=646723&amp;type=content&amp;rcode=927FAFEA-F39E-47A2-A004-9FE5405E0231-4541535" target="_blank" rel="noopener"><button class="btn btn-primary">Download Notebook (.ipynb)</button></a></div>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="[ Optional ] Share Your Work and Get Feedback from the Community" dir="auto" class="heading" id="[_Optional_]_Share_Your_Work_and_Get_Feedback_from_the_Community">[ Optional ] Share Your Work and Get Feedback from the Community</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ While there is no submission required, we encourage you to share your solutions with your peers by pasting your link into the <strong>Sharing Board</strong>.</p>
+<ul>
+<li data-line="2" dir="auto">
+<p><strong>Feedback</strong>: By sharing your solutions, you can get insights, suggestions, and constructive criticism from your peers. This feedback can help you improve your approach and learn from others’ perspectives.</p>
+</li>
+<li data-line="4" dir="auto">
+<p><strong>Learning from Peers</strong>: Since everyone may have different ways of solving problems, participating in these sessions allows you to see various approaches. You can learn alternative methods, explore different techniques, and gain a deeper understanding of the challenges.</p>
+</li>
+</ul>
+</li>
+<li data-line="6" dir="auto">
+<p>✦ URL: <a rel="noopener" class="external-link" href="https://docs.google.com/spreadsheets/d/1i-pA-edrAg7-WaVW_o_fFQLOPfgF9Xr7oFLyGtoVviE/edit?usp=sharing" target="_blank">https://docs.google.com/spreadsheets/d/1i-pA-edrAg7-WaVW_o_fFQLOPfgF9Xr7oFLyGtoVviE/edit?usp=sharing</a></p>
+</li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

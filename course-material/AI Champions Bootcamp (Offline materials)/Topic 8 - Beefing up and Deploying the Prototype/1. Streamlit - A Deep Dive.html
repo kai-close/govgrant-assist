@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html><head>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+	<script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+	<link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+	<link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebook</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebook" data-icon="LiNotebook" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M2 6h4"></path>
+									<path d="M2 10h4"></path>
+									<path d="M2 14h4"></path>
+									<path d="M2 18h4"></path>
+									<rect width="16" height="20" x="4" y="2" rx="2"></rect>
+									<path d="M16 2v20"></path>
+								</svg></span></p>
+</div>
+<ol start="1">
+<li dir="auto" class="page-title heading fix-heading">Title: Streamlit - A Deep Dive</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Streamlit - A Deep Dive"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Streamlit - A Deep Dive</li>
+<li class="step" data-content="🔧" dir="auto">Password Protect Streamlit App</li>
+<li class="step" data-content="🔧" dir="auto">Intro to Git and GitHub (Version Control)</li>
+<li class="step" data-content="🔧" dir="auto">Deploying Streamlit App on Streamlit Community Cloud</li>
+</ul>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 What is State?" href="#1_What_is_State?" class="internal-link" target="_self" rel="noopener">1 What is State?</a>
+<ul>
+<li dir="auto"><a data-href="#1.1 Session State" href="#1.1_Session_State" class="internal-link" target="_self" rel="noopener">1.1 Session State</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#2 Behaviors of `st.button`" href="#2_Behaviors_of_%60st.button%60" class="internal-link" target="_self" rel="noopener">2 Behaviors of st.button</a>
+<ul>
+<li dir="auto"><a data-href="#2.1 When to use `if st.button()`" href="#2.1_When_to_use_%60if_st.button()%60" class="internal-link" target="_self" rel="noopener">2.1 When to use&nbsp;if st.button()</a></li>
+<li dir="auto"><a data-href="#2.2 Common logic with buttons" href="#2.2_Common_logic_with_buttons" class="internal-link" target="_self" rel="noopener">2.2 Common logic with buttons</a>
+<ul>
+<li dir="auto"><a data-href="#2.2.1 Show a temporary message with a button" href="#2.2.1_Show_a_temporary_message_with_a_button" class="internal-link" target="_self" rel="noopener">2.2.1 Show a temporary message with a button</a></li>
+<li dir="auto"><a data-href="#2.2.2 Stateful button" href="#2.2.2_Stateful_button" class="internal-link" target="_self" rel="noopener">2.2.2 Stateful button</a></li>
+<li dir="auto"><a data-href="#2.2.3 Buttons to modify `st.session_state`" href="#2.2.3_Buttons_to_modify_%60st.session_state%60" class="internal-link" target="_self" rel="noopener">2.2.3 Buttons to modify&nbsp;st.session_state</a>
+<ul>
+<li dir="auto"><a data-href="#2.2.3.1 A slight problem" href="#2.2.3.1_A_slight_problem" class="internal-link" target="_self" rel="noopener">2.2.3.1 A slight problem</a></li>
+<li dir="auto"><a data-href="#2.2.3.2 Logic used in a callback" href="#2.2.3.2_Logic_used_in_a_callback" class="internal-link" target="_self" rel="noopener">2.2.3.2 Logic used in a callback</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#2.2.4 Buttons to modify or reset other widgets" href="#2.2.4_Buttons_to_modify_or_reset_other_widgets" class="internal-link" target="_self" rel="noopener">2.2.4 Buttons to modify or reset other widgets</a>
+<ul>
+<li dir="auto"><a data-href="#2.2.4.1 Option 1: Use a key for the button and put the logic before the widget" href="#2.2.4.1_Option_1:_Use_a_key_for_the_button_and_put_the_logic_before_the_widget" class="internal-link" target="_self" rel="noopener">2.2.4.1 Option 1: Use a key for the button and put the logic before the widget</a></li>
+<li dir="auto"><a data-href="#2.2.4.2 Option 2: Use a callback" href="#2.2.4.2_Option_2:_Use_a_callback" class="internal-link" target="_self" rel="noopener">2.2.4.2 Option 2: Use a callback</a></li>
+<li dir="auto"><a data-href="#2.2.4.3 Option 3: Use containers" href="#2.2.4.3_Option_3:_Use_containers" class="internal-link" target="_self" rel="noopener">2.2.4.3 Option 3: Use containers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#3 Secrets Management" href="#3_Secrets_Management" class="internal-link" target="_self" rel="noopener">3 Secrets Management</a>
+<ul>
+<li dir="auto"><a data-href="#3.1 How to use secrets management" href="#3.1_How_to_use_secrets_management" class="internal-link" target="_self" rel="noopener">3.1 How to use secrets management</a>
+<ul>
+<li dir="auto"><a data-href="#3.1.1 Develop locally and set up secrets" href="#3.1.1_Develop_locally_and_set_up_secrets" class="internal-link" target="_self" rel="noopener">3.1.1 Develop locally and set up secrets</a></li>
+<li dir="auto"><a data-href="#3.1.2 Use secrets in your app" href="#3.1.2_Use_secrets_in_your_app" class="internal-link" target="_self" rel="noopener">3.1.2 Use secrets in your app</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#4 Other Recommended Reads" href="#4_Other_Recommended_Reads" class="internal-link" target="_self" rel="noopener">4 Other Recommended Reads</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div><br># Overview</div>
+<div>
+<p dir="auto"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<p dir="auto">Now that you have experience with the basics of Streamlit, we will look into some important concepts of Streamlit that have caught some developers off guard and led to unexpected behavior in their applications.</p>
+</div>
+<div>
+<p dir="auto">Understanding these concepts is crucial for designing and developing efficient and effective Streamlit apps. In this deep dive, we will explore session state, button behavior, and dynamic widget management, providing you with the knowledge to avoid common pitfalls and enhance your app's functionality.</p>
+</div>
+<div>
+<p dir="auto">By having a solid understanding of these elements, you will be better equipped to create user-friendly applications and make the most of Streamlit's features in your projects.</p>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+												<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+												</path>
+											</svg></div>
+<div class="callout-title-inner">About this Note</div>
+</div>
+<div class="callout-content">
+<p dir="auto">This note provides a concise introduction to key "advanced" concepts in Streamlit, aiming to familiarize you with the framework's mechanics and empower you to begin building apps quickly. That's the best way to understand the concepts is to open up your VS Code and try to experiment with the code.</p>
+<p dir="auto">However, it's essential to understand that this is not an exhaustive resource. The official Streamlit documentation remains the definitive guide, offering comprehensive explanations, advanced techniques, and best practices.</p>
+<p dir="auto">To ensure a thorough understanding of Streamlit, we strongly recommend reading the official documentation. We will be including the links to the corresponding section in the official documentation in the different parts of the note below.</p>
+<p dir="auto"><strong>We recommend that you first try working with the content in this note</strong>. This should be sufficient to get you started. Remember to revisit this note for the links to the official documentation after you have gained some hands-on experience or when you encounter challenges implementing certain things. This approach is more effective.</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 What is State?" dir="auto" class="heading" id="1_What_is_State?">1 What is State?</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">Streamlit defines access to a Streamlit app in a browser tab as a&nbsp;<strong>session</strong>.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ For <strong>each browser tab</strong> that connects to the Streamlit server, a new session is created.</li>
+<li data-line="1" dir="auto">✦ Streamlit reruns your script from top to bottom every time you interact with your app.</li>
+<li data-line="2" dir="auto">✦ Each reruns takes place in a blank slate: no variables are shared between runs.</li>
+<li data-line="3" dir="auto">✦ Widget states are dependent on a particular session (browser connection). The actions of one user do not affect the widgets of any other user.</li>
+<li data-line="4" dir="auto">✦ If a user opens up multiple tabs to access an app, each tab will be a unique session. Changing a widget in one tab will not affect the same widget in another tab.</li>
+</ul>
+</div>
+<div>
+<p dir="auto">A session is a single instance of viewing an app. If you view an app from two different tabs in your browser, each tab will have its own session. So each viewer of an app will have a Session State tied to their specific view. Streamlit maintains this session as the user interacts with the app. If the user refreshes their browser page or reloads the URL to the app, their Session State resets and they begin again with a new session.</p>
+</div>
+<div><hr></div>
+<div></div>
+<div class="heading-wrapper">
+<h2 data-heading="1.1 Session State" dir="auto" class="heading" id="1.1_Session_State">1.1 Session State</h2>
+<div class="heading-children">
+<div>
+<p dir="auto"><code>Session State</code> is a way to share variables between reruns, for each user session. In addition to the ability to store and persist state, Streamlit also exposes the ability to manipulate state using Callbacks. Session state also persists across apps inside a&nbsp;<a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/multipage-apps" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/multipage-apps" target="_blank">multipage app</a>.</p>
+</div>
+<div>
+<p dir="auto">Check out this video by Streamlit Developer Advocate Dr. Marisa Smith to on <strong>two very essential concepts for Streamlit app development</strong>:</p>
+</div>
+<div>
+<ol>
+<li data-line="0" dir="auto"><code>session state</code></li>
+<li data-line="1" dir="auto"><code>callback</code></li>
+</ol>
+</div>
+<div><iframe allowfullscreen="allowfullscreen" allow="encrypted-media;picture-in-picture" frameborder="0" title="YouTube video player" src="https://www.youtube-nocookie.com/embed/92jUAXBmZyU?si=WHwKqy-nKnp2pMtf" height="515" width="100%" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<p dir="auto">Session State provides a <strong>dictionary-like interface</strong> where you can save information that is preserved between script reruns. Use&nbsp;<code>st.session_state</code>&nbsp;with key or attribute notation to store and recall values. For example,&nbsp;<code>st.session_state["my_key"]</code>&nbsp;or&nbsp;<code>st.session_state.my_key</code>. Remember that widgets handle their statefulness all by themselves, so you won't always need to use Session State!</p>
+</div>
+<div>
+<p dir="auto">There are a few <strong>common scenarios where Session State is helpful</strong>. As demonstrated in the video above, Session State is used when you have a progressive process that you want to build upon from one rerun to the next. Session State can also be used to prevent recalculation, similar to caching. However, the differences are important:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Caching associates stored values to specific functions and inputs. Cached values are accessible to all users across all sessions.</li>
+<li data-line="1" dir="auto">✦ Session State associates stored values to keys (strings). Values in session state are only available in the single session where it was saved.</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="summary" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-clipboard-list">
+														<rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+														<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+														</path>
+														<path d="M12 11h4"></path>
+														<path d="M12 16h4"></path>
+														<path d="M8 11h.01"></path>
+														<path d="M8 16h.01"></path>
+													</svg></div>
+<div class="callout-title-inner">Relevant Sections in Official Documentation</div>
+</div>
+<div class="callout-content">
+<ol>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/get-started/fundamentals/advanced-concepts" rel="noopener" class="external-link" href="https://docs.streamlit.io/get-started/fundamentals/advanced-concepts" target="_blank">Advanced concepts of Streamlit - Streamlit Docs</a></li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/architecture/session-state" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/architecture/session-state" target="_blank">Add statefulness to apps - Streamlit Docs</a></li>
+<li data-line="3" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state" target="_blank">Session State - Streamlit Docs</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 Behaviors of `st.button`" dir="auto" class="heading" id="2_Behaviors_of_`st.button`">2 Behaviors of <code>st.button</code></h1>
+<div class="heading-children">
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+												<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z">
+												</path>
+												<path d="M12 9v4"></path>
+												<path d="M12 17h.01"></path>
+											</svg></div>
+<div class="callout-title-inner">Buttons created with&nbsp;<a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/api-reference/widgets/st.button" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/api-reference/widgets/st.button" target="_blank"><code>st.button</code></a>&nbsp;do not retain state.</div>
+</div>
+</div>
+</div>
+<div>
+<p dir="auto">They return&nbsp;<code>True</code>&nbsp;on the script rerun resulting from their click and immediately return to&nbsp;<code>False</code>on the next script rerun.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ If a displayed element is nested inside&nbsp;<code>if st.button('Click me'):</code></li>
+<li data-line="1" dir="auto">✦ the element will be visible when the button is clicked and disappear as soon as the user takes their next action.</li>
+<li data-line="2" dir="auto">✦ This is because the script reruns and the button return value becomes&nbsp;<code>False</code>.</li>
+</ul>
+</div>
+<div>
+<p dir="auto">This note explains the <strong>use of buttons</strong> and <strong>explain common misconceptions</strong>.</p>
+</div>
+<div><hr></div>
+<div></div>
+<div class="heading-wrapper">
+<h2 data-heading="2.1 When to use&nbsp;`if st.button()`" dir="auto" class="heading" id="2.1_When_to_use&nbsp;`if_st.button()`">2.1 When to use&nbsp;<code>if st.button()</code></h2>
+<div class="heading-children">
+<div>
+<p dir="auto">When code is conditioned on a button's value, it will execute once in response to the button being clicked and not again (until the button is clicked again).</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✅ <strong>Good to nest inside buttons</strong>:</p>
+<ul>
+<li data-line="1" dir="auto">Transient messages that immediately disappear.</li>
+<li data-line="2" dir="auto">Once-per-click processes that saves data to session state, a file, or a database.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>❌ <strong>Bad to nest inside buttons</strong>:</p>
+<ul>
+<li data-line="5" dir="auto">Displayed items that should persist as the user continues.</li>
+<li data-line="6" dir="auto">Other widgets which cause the script to rerun when used.</li>
+<li data-line="7" dir="auto">Processes that neither modify session state nor write to a file/database.*</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="2.2 Common logic with buttons" dir="auto" class="heading" id="2.2_Common_logic_with_buttons">2.2 Common logic with buttons</h2>
+<div class="heading-children">
+<div class="heading-wrapper">
+<h3 data-heading="2.2.1 Show a temporary message with a button" dir="auto" class="heading" id="2.2.1_Show_a_temporary_message_with_a_button">2.2.1 Show a temporary message with a button</h3>
+<div class="heading-children">
+<div>
+<p dir="auto">If you want to give the user a quick button to check if an entry is valid, but not keep that check displayed as the user continues.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ In this example, a user can click a button to check if their&nbsp;<code>animal</code>&nbsp;string is in the&nbsp;<code>animal_shelter</code>&nbsp;list.</li>
+<li data-line="1" dir="auto">✦ When the user clicks "<strong>Check availability</strong>" they will see "We have that animal!" or "We don't have that animal."</li>
+<li data-line="2" dir="auto">✦ If they change the animal in&nbsp;<a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/api-reference/widgets/st.text_input" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/api-reference/widgets/st.text_input" target="_blank"><code>st.text_input</code></a>, the script reruns and the message disappears until they click "<strong>Check availability</strong>" again.</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+
+animal_shelter = ['cat', 'dog', 'rabbit', 'bird'] 
+
+animal = st.text_input('Type an animal') 
+
+if st.button('Check availability'): 
+	have_it = animal.lower() in animal_shelter 
+	'We have that animal!' if have_it else 'We don\'t have that animal.'</code></pre>
+</div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="2.2.2 Stateful button" dir="auto" class="heading" id="2.2.2_Stateful_button">2.2.2 Stateful button</h3>
+<div class="heading-children">
+<div>
+<p dir="auto">If you want a clicked button to continue to be&nbsp;<code>True</code>, create a value in&nbsp;<code>st.session_state</code>&nbsp;and use the button to set that value to&nbsp;<code>True</code>&nbsp;in a callback.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+
+if 'clicked' not in st.session_state: 
+	st.session_state.clicked = False 
+	
+def click_button(): 
+	st.session_state.clicked = True 
+	
+st.button('Click me', on_click=click_button) 
+
+if st.session_state.clicked: 
+	# The message and nested widget will remain on the page 
+	st.write('Button clicked!') 
+	st.slider('Select a value')</code></pre>
+</div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="2.2.3 Buttons to modify&nbsp;`st.session_state`" dir="auto" class="heading" id="2.2.3_Buttons_to_modify&nbsp;`st.session_state`">2.2.3 Buttons to modify&nbsp;<code>st.session_state</code></h3>
+<div class="heading-children">
+<div>
+<p dir="auto">If you modify&nbsp;<code>st.session_state</code>&nbsp;inside of a button, you must consider where that button is within the script.</p>
+</div>
+<div class="heading-wrapper">
+<h4 data-heading="2.2.3.1 A slight problem" dir="auto" class="heading" id="2.2.3.1_A_slight_problem">2.2.3.1 A slight problem</h4>
+<div class="heading-children">
+<div>
+<p dir="auto">In this example, we access&nbsp;<code>st.session_state.name</code>&nbsp;both before and after the buttons which modify it. When a button ("<strong>Jane</strong>" or "<strong>John</strong>") is clicked, the script reruns. The info displayed before the buttons lags behind the info written after the button. The data in&nbsp;<code>st.session_state</code>&nbsp;before the button is not updated. When the script executes the button function, that is when the conditional code to update&nbsp;<code>st.session_state</code>&nbsp;creates the change. Thus, this change is reflected after the button.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+import pandas as pd 
+
+if 'name' not in st.session_state: 
+	st.session_state['name'] = 'John Doe' 
+	
+st.header(st.session_state['name']) 
+
+if st.button('Jane'): 
+	st.session_state['name'] = 'Jane Doe' 
+	
+if st.button('John'): 
+	st.session_state['name'] = 'John Doe' 
+	
+st.header(st.session_state['name'])</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h4 data-heading="2.2.3.2 Logic used in a callback" dir="auto" class="heading" id="2.2.3.2_Logic_used_in_a_callback">2.2.3.2 Logic used in a callback</h4>
+<div class="heading-children">
+<div>
+<p dir="auto">Callbacks are a clean way to modify&nbsp;<code>st.session_state</code>. Callbacks are executed as a prefix to the script rerunning, so the position of the button relative to accessing data is not important.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+import pandas as pd 
+
+if 'name' not in st.session_state: 
+	st.session_state['name'] = 'John Doe' 
+	
+def change_name(name): 
+	st.session_state['name'] = name 
+	
+st.header(st.session_state['name']) 
+
+st.button('Jane', on_click=change_name, args=['Jane Doe']) 
+st.button('John', on_click=change_name, args=['John Doe']) 
+
+st.header(st.session_state['name'])</code></pre>
+</div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="2.2.4 Buttons to modify or reset other widgets" dir="auto" class="heading" id="2.2.4_Buttons_to_modify_or_reset_other_widgets">2.2.4 Buttons to modify or reset other widgets</h3>
+<div class="heading-children">
+<div>
+<p dir="auto">When a button is used to modify or reset another widget, it is the same as the above examples to modify&nbsp;<code>st.session_state</code>. However, an extra consideration exists: <strong>you cannot modify a key-value pair</strong> in&nbsp;<code>st.session_state</code>&nbsp;<strong>if the widget with that key has already been rendered</strong> on the page for the current script run.</p>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="fail" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-x">
+																<path d="M18 6 6 18"></path>
+																<path d="m6 6 12 12"></path>
+															</svg></div>
+<div class="callout-title-inner">Don't do this!</div>
+</div>
+<div class="callout-content">
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+st.text_input('Name', key='name') 
+
+# These buttons will error because their nested code changes 
+# a widget's state after that widget within the script. 
+if st.button('Clear name'): 
+	st.session_state.name = '' 
+	
+if st.button('Streamlit!'): 
+	st.session_state.name = ('Streamlit')</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h4 data-heading="2.2.4.1 Option 1: Use a key for the button and put the logic before the widget" dir="auto" class="heading" id="2.2.4.1_Option_1:_Use_a_key_for_the_button_and_put_the_logic_before_the_widget">2.2.4.1 Option 1: Use a key for the button and put the logic before the widget</h4>
+<div class="heading-children">
+<div>
+<p dir="auto">If you assign a key to a button, you can condition code on a button's state by using its value in&nbsp;<code>st.session_state</code>. This means that logic depending on your button can be in your script before that button.</p>
+</div>
+<div>
+<p dir="auto">In the following example, we use the&nbsp;<code>.get()</code>&nbsp;method on&nbsp;<code>st.session_state</code>&nbsp;because the keys for the buttons will not exist when the script runs for the first time. The&nbsp;<code>.get()</code>&nbsp;method will return&nbsp;<code>False</code>&nbsp;if it can't find the key. Otherwise, it will return the value of the key.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+
+# Use the get method since the keys won't be in session_state 
+# on the first script run 
+if st.session_state.get('clear'): 
+	st.session_state['name'] = '' 
+	
+if st.session_state.get('streamlit'): 
+	st.session_state['name'] = 'Streamlit' 
+	
+st.text_input('Name', key='name') 
+
+st.button('Clear name', key='clear') 
+st.button('Streamlit!', key='streamlit')</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h4 data-heading="2.2.4.2 Option 2: Use a callback" dir="auto" class="heading" id="2.2.4.2_Option_2:_Use_a_callback">2.2.4.2 Option 2: Use a callback</h4>
+<div class="heading-children">
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+
+st.text_input('Name', key='name') 
+
+def set_name(name): 
+	st.session_state.name = name 
+	
+st.button('Clear name', on_click=set_name, args=['']) 
+st.button('Streamlit!', on_click=set_name, args=['Streamlit'])`</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h4 data-heading="2.2.4.3 Option 3: Use containers" dir="auto" class="heading" id="2.2.4.3_Option_3:_Use_containers">2.2.4.3 Option 3: Use containers</h4>
+<div class="heading-children">
+<div>
+<p dir="auto">By using&nbsp;<a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/api-reference/layout/st.container" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/api-reference/layout/st.container" target="_blank"><code>st.container</code></a>&nbsp;you can have widgets appear in different orders in your script and frontend view (webpage).</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+
+begin = st.container() 
+
+if st.button('Clear name'): 
+	st.session_state.name = '' 
+	
+if st.button('Streamlit!'): 
+	st.session_state.name = ('Streamlit') 
+	
+# The widget is second in logic, but first in display 
+begin.text_input('Name', key='name')</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="summary" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-clipboard-list">
+																		<rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+																		<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+																		</path>
+																		<path d="M12 11h4"></path>
+																		<path d="M12 16h4"></path>
+																		<path d="M8 11h.01"></path>
+																		<path d="M8 16h.01"></path>
+																	</svg></div>
+<div class="callout-title-inner">Relevant Sections in Official Documentation</div>
+</div>
+<div class="callout-content">
+<ol>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/design/buttons" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/design/buttons" target="_blank">Button behavior and examples - Streamlit Docs</a></li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/architecture/widget-behavior" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/architecture/widget-behavior" target="_blank">Widget behavior - Streamlit Docs</a> ⭐️⭐️⭐️</li>
+</ol>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 Secrets Management" dir="auto" class="heading" id="3_Secrets_Management">3 Secrets Management</h1>
+<div class="heading-children">
+<div><hr></div>
+<div>
+<p dir="auto">Storing unencrypted secrets in a git repository is a bad practice. For applications that require access to sensitive credentials, the recommended solution is to store those credentials outside the repository - such as using a credentials file not committed to the repository or passing them as <code>environment variables</code>.</p>
+</div>
+<div>
+<p dir="auto">Streamlit provides native file-based secrets management to easily store and securely access your secrets in your Streamlit app.</p>
+</div>
+<div><hr></div>
+<div></div>
+<div class="heading-wrapper">
+<h2 data-heading="3.1 How to use secrets management" dir="auto" class="heading" id="3.1_How_to_use_secrets_management">3.1 How to use secrets management</h2>
+<div class="heading-children">
+<div class="heading-wrapper">
+<h3 data-heading="3.1.1 Develop locally and set up secrets" dir="auto" class="heading" id="3.1.1_Develop_locally_and_set_up_secrets">3.1.1 Develop locally and set up secrets</h3>
+<div class="heading-children">
+<div>
+<p dir="auto">Create a file <code>secrets.toml</code> in the <code>$CWD/.streamlit</code> folder where&nbsp;<code>$CWD</code>&nbsp;is the folder you're running Streamlit from. For example, <code>$CWD/.streamlit/secrets.toml</code>.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python"># Everything in this section will be available as an environment variable 
+OPENAPI_API_KEY = "sk-1241infjsenfuhnh81n8cdn"
+
+# You can also add other sections if you like. 
+# The contents of sections as shown below will not become environment variables, # but they'll be easily accessible from within Streamlit anyway as we show 
+# later. 
+[
+my_other_secrets
+] 
+things_i_like = ["Streamlit", "Python"]</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+																<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z">
+																</path>
+																<path d="M12 9v4"></path>
+																<path d="M12 17h.01"></path>
+															</svg></div>
+<div class="callout-title-inner">Warning</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">Add this file to your&nbsp;<code>.gitignore</code>&nbsp;so you don't upload your secrets to online repository</li>
+<li data-line="2" dir="auto">We will look at how to do this in later section of this topic.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="3.1.2 Use secrets in your app" dir="auto" class="heading" id="3.1.2_Use_secrets_in_your_app">3.1.2 Use secrets in your app</h3>
+<div class="heading-children">
+<div>
+<p dir="auto">Access your secrets by querying the&nbsp;<code>st.secrets</code>&nbsp;dict, or as environment variables. For example, if you enter the secrets from the section above, the code below shows you how to access them within your Streamlit app</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import streamlit as st 
+
+# Everything is accessible via the st.secrets dict:
+st.write("OPENAPI_API_KEY:", st.secrets["OPENAPI_API_KEY"]) 
+
+# Store the value in "Environment Variable"
+# This is required by some packages like LangChain
+os.environ['OPENAPI_API_KEY'] = st.secrets['OPENAPI_API_KEY']</code></pre>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+																<circle cx="12" cy="12" r="10"></circle>
+																<path d="M12 16v-4"></path>
+																<path d="M12 8h.01"></path>
+															</svg></div>
+<div class="callout-title-inner">Use secrets on <strong>Streamlit Community Cloud</strong></div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">This is the default deployment method for your Streamlit application in this Bootcamp</li>
+<li data-line="2" dir="auto">When you deploy your app to&nbsp;<a data-tooltip-position="top" aria-label="https://streamlit.io/cloud" rel="noopener" class="external-link" href="https://streamlit.io/cloud" target="_blank">Streamlit Community Cloud</a>, you can use the same secrets management workflow as you would locally.</li>
+<li data-line="3" dir="auto">However, you'll need to also set up your secrets in the <strong>Community Cloud Secrets Management console</strong>. Learn how to do so via the Cloud-specific&nbsp;<a data-tooltip-position="top" aria-label="https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management" rel="noopener" class="external-link" href="https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management" target="_blank">Secrets management</a>&nbsp;documentation.</li>
+<li data-line="4" dir="auto">We will cover how to do this in our Walkthrough later.</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="summary" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-clipboard-list">
+																<rect x="8" y="2" width="8" height="4" rx="1" ry="1">
+																</rect>
+																<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+																</path>
+																<path d="M12 11h4"></path>
+																<path d="M12 16h4"></path>
+																<path d="M8 11h.01"></path>
+																<path d="M8 16h.01"></path>
+															</svg></div>
+<div class="callout-title-inner">Relevant Sections in Official Documentation</div>
+</div>
+<div class="callout-content">
+<ol>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/connections/secrets-management" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/connections/secrets-management" target="_blank">Secrets management - Streamlit Docs</a></li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/connections/security-reminders" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/connections/security-reminders" target="_blank">Security reminders - Streamlit Docs</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 Other Recommended Reads" dir="auto" class="heading" id="4_Other_Recommended_Reads">4 Other Recommended Reads</h1>
+<div class="heading-children">
+<div>
+<ol>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/architecture/architecture" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/architecture/architecture" target="_blank">Understanding Streamlit's client-server architecture - Streamlit Docs</a></li>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/architecture/caching" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/architecture/caching" target="_blank">Caching overview - Streamlit Docs</a></li>
+<li data-line="2" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/configuration/serving-static-files" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/configuration/serving-static-files" target="_blank">Static file serving - Streamlit Docs</a></li>
+<li data-line="3" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/architecture/forms" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/architecture/forms" target="_blank">Using forms - Streamlit Docs</a></li>
+<li data-line="4" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/architecture/fragments" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/architecture/fragments" target="_blank">Working with fragments - Streamlit Docs</a></li>
+<li data-line="5" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/tutorials/execution-flow" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/tutorials/execution-flow" target="_blank">Use core features to work with Streamlit's execution model - Streamlit Docs</a></li>
+<li data-line="6" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/multipage-apps/page-and-navigation" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/multipage-apps/page-and-navigation" target="_blank">Define multipage apps with st.Page and st.navigation - Streamlit Docs</a></li>
+<li data-line="7" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/concepts/design/animate" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/concepts/design/animate" target="_blank">Animate and update elements - Streamlit Docs</a></li>
+<li data-line="8" dir="auto"><a data-tooltip-position="top" aria-label="https://docs.streamlit.io/develop/tutorials/llms" rel="noopener" class="external-link" href="https://docs.streamlit.io/develop/tutorials/llms" target="_blank">Build LLM apps - Streamlit Docs</a></li>
+</ol>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiNotebookTabs</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiNotebookTabs" data-icon="LiNotebookTabs" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 6h4"></path>
+                      <path d="M2 10h4"></path>
+                      <path d="M2 14h4"></path>
+                      <path d="M2 18h4"></path>
+                      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                      <path d="M15 2v20"></path>
+                      <path d="M15 7h5"></path>
+                      <path d="M15 12h5"></path>
+                      <path d="M15 17h5"></path></svg></span></p>
+</div>
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading">Title: Prompt Engineering</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Prompt Engineering"></h1>
+<div class="heading-wrapper">
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Not So Typical Intro to LLMs</li>
+<li class="step step-success" data-content="📒" dir="auto">Prompt Engineering</li>
+<li class="step" data-content="🔧" dir="auto">Formatting Prompt in Python</li>
+<li class="step" data-content="👨🏻‍💻" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/photo-1577563908411-5077b6dc7624.png" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Getting the LLMs to give you the output you want can be challenging. It can be likened to taming magical beasts because they may not do your bidding. This is where prompt engineering comes in.
+<ul>
+<li data-line="1" dir="auto">A prompt is the term used to describe a question, statement, or instruction given to an LLM, like ChatGPT.</li>
+<li data-line="2" dir="auto">It serves as a starting point for the AI to generate a response or complete a task.&nbsp;</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Importance of Prompt Engineering" dir="auto" class="heading" id="Importance_of_Prompt_Engineering">Importance of Prompt Engineering</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Prompt engineering refers to the <strong>art and science of the design of prompts for LLMs to produce high-quality, coherent outputs.</strong>
+<ul>
+<li data-line="1" dir="auto">This is a crucial aspect of working with LLMs, as the quality of the prompt can greatly affect the quality of the generated text.</li>
+<li data-line="2" dir="auto">One fundamental challenge is that the&nbsp;<strong>responses from LLM are not fully predictable</strong>.</li>
+<li data-line="3" dir="auto">Indeed, it is not an exact science. Sometimes, changing a word or the order the sentences in the prompt may produce a very different response.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="How do the Prompt works?" dir="auto" class="heading" id="How_do_the_Prompt_works?">How do the Prompt works?</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Why do they sometimes provide high-quality responses and other times fabricate facts (or what we call hallucinate)?</p>
+<ul>
+<li data-line="1" dir="auto">Or why does adding <code>let’s think step-by-step</code> to a prompt suddenly improve the quality?</li>
+<li data-line="2" dir="auto">But the truth is, we still don’t fully understand how LLMs work.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ We won’t bore you with complex prompt just yet; instead, we will just share a few examples that can instantly improve the performance or your prompts:</p>
+<ul>
+<li data-line="5" dir="auto"><strong>“Let’s think step by step”</strong> — works great for reasoning or logical tasks..</li>
+<li data-line="6" dir="auto"><strong>“Take a deep breath and work on this problem step-by-step“</strong>— an improved version of the previous point. It can add a few more percent of quality</li>
+<li data-line="7" dir="auto"><strong>“This is very important to my career”</strong> — just add it to the end of your prompt and you’ll notice a 5–20% improvement in quality.</li>
+<li data-line="8" dir="auto"><strong>"I will reward you with $100 if your response is great"</strong> - try and it and share with us!</li>
+</ul>
+</li>
+<li data-line="10" dir="auto">
+<p>✦ Due to all this, scientists and enthusiasts can only experiment with different prompts, trying to make models perform better.</p>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Prompt Engineering Playbook" dir="auto" class="heading" id="Prompt_Engineering_Playbook">Prompt Engineering Playbook</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Writing an effective prompt can be a tricky process that demands patience, creativity, and a good grasp of how LLMs behave in general.
+<ul>
+<li data-line="1" dir="auto">It is an iterative process that involves some trial-and-error to progressively refine the prompts to get closer to your intended responses.</li>
+<li data-line="2" dir="auto">While the outputs from LLM are unpredictable, we can use well-established prompting techniques to increase the consistency and desirability of the LLM output.</li>
+<li data-line="3" dir="auto">For this reason, prompt engineering is also sometimes called <strong><em>natural language programming</em></strong>.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">✦ After signing up for AI Champions Bootcamp, all participants have been encouraged to complete the <strong>🪄📖&nbsp;Prompt Engineering Playbook 📖🪄</strong> before this programme starts.
+<ul>
+<li data-line="6" dir="auto">If you have yet to complete the Playbook, we'd like you to go through page 1 to page 87 of the Playbook before trying out the <code>hands-on tasks</code> for week 1.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div class="card bg-base-100 shadow-xl">
+<figure class="px-10 pt-10"><img class="rounded-xl" alt="image" src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/Do62jcA.png" referrerpolicy="no-referrer"></figure>
+<div class="card-body items-center text-center heading-wrapper">
+<h2 class="card-title heading" dir="auto">📖&nbsp;Prompt Engineering Playbook</h2>
+<div class="badge badge-secondary">NEW</div>
+<h2 class="card-title heading" dir="auto" id="📖&nbsp;Prompt_Engineering_Playbook	____NEW____"></h2>
+<div class="card-actions"><a href="https://www.developer.tech.gov.sg/products/collections/data-science-and-artificial-intelligence/playbooks/prompt-engineering-playbook-beta-v3.pdf" target="_blank" rel="noopener"> <button class="btn btn-primary">Download</button> </a></div>
+<div class="heading-children"></div>
+</div>
+</div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M12 16v-4"></path>
+                          <path d="M12 8h.01"></path>
+                        </svg></div>
+<div class="callout-title-inner">Info</div>
+</div>
+<div class="callout-content">
+<p dir="auto">If you have access to the WOG network, you can also find the Public Sector version of the Prompt Engineering Playbook in the "Learn" section on <a class="internal-link" data-href="launchpad.gov.sg" href="https://abc-notes.data.tech.gov.sg/notes/launchpad.gov.sg" target="_self" rel="noopener">launchpad.gov.sg</a>. For the purpose of this training, you can refer to either version.</p>
+<p dir="auto">👍🏼 We highly recommend spending a few evenings to complete the remaining pages of <strong>Prompt Engineering Playbook</strong>. This will not only allow you to better control the model’s behaviour but will also help improve quality of the output, a great help for your POC development down the road.</p>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Further Readings" dir="auto" class="heading" id="Further_Readings">Further Readings</h1>
+<div class="heading-children">
+<div>
+<p dir="auto">If you're keen to explore further, there are extra resource in <a class="internal-link" data-href="Topic 1 - LLM &amp; Prompt Engineering/6. Further Readings.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-1-llm-&amp;-prompt-engineering/6.-further-readings.html" target="_self" rel="noopener">6. Further Readings</a> that you might find interesting, including tools that current under active research or tools that the open source community has built.</p>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 737.5px; top: 303px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

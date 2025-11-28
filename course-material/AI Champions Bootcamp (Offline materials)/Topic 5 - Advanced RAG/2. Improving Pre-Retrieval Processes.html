@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html><head>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js" async="" id="webpage-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js" type="module" async="" id="graph-view-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js" async="" id="graph-wasm-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js" async="" id="graph-render-worker-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js" async="" id="graph-data-script" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)" loaded="true"></script>
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;" class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg></span></p>
+</div>
+<ol start="2">
+<li dir="auto" class="page-title heading fix-heading">Title: Improving Pre-Retrieval Processes</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Improving Pre-Retrieval Processes"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Deep Dive into RAG</li>
+<li class="step step-success" data-content="🔧" dir="auto">Improving Pre-Retrieval Processe</li>
+<li class="step" data-content="🔧" dir="auto">Improving Retrieval Processed</li>
+<li class="step" data-content="🔧" dir="auto">Improving Post-Retrieval Processed</li>
+<li class="step" data-content="🔧" dir="auto">RAG Evaluation</li>
+<li class="step" data-content="🔧" dir="auto">Further Reading: WOG RAG Playbook</li>
+</ul>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#1 Overview" href="#1_Overview" class="internal-link" target="_self" rel="noopener">1 Overview</a></li>
+<li dir="auto"><a data-href="#2 Better Splitting &amp; Chunking of Document" href="#2_Better_Splitting_&amp;_Chunking_of_Document" class="internal-link" target="_self" rel="noopener">2 Better Splitting &amp; Chunking of Document</a>
+<ul>
+<li dir="auto"><a data-href="#2.1 Recursive Split For Specific File Types" href="#2.1_Recursive_Split_For_Specific_File_Types" class="internal-link" target="_self" rel="noopener">2.1 Recursive Split For Specific File Types</a></li>
+<li dir="auto"><a data-href="#2.2 Semantic Chunking" href="#2.2_Semantic_Chunking" class="internal-link" target="_self" rel="noopener">2.2 Semantic Chunking</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#3 Query Transformation" href="#3_Query_Transformation" class="internal-link" target="_self" rel="noopener">3 Query Transformation</a>
+<ul>
+<li dir="auto"><a data-href="#3.1 Query Rewriting" href="#3.1_Query_Rewriting" class="internal-link" target="_self" rel="noopener">3.1 Query Rewriting</a></li>
+<li dir="auto"><a data-href="#3.2 Multi Query Retrieval / Sub Query Decomposition" href="#3.2_Multi_Query_Retrieval_/_Sub_Query_Decomposition" class="internal-link" target="_self" rel="noopener">3.2 Multi Query Retrieval / Sub Query Decomposition</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#4 [Extra] Query Routing" href="#4_[Extra]_Query_Routing" class="internal-link" target="_self" rel="noopener">4 [Extra] Query Routing</a></li>
+<li dir="auto"><a data-href="#5 References &amp; Further Readings" href="#5_References_&amp;_Further_Readings" class="internal-link" target="_self" rel="noopener">5 References &amp; Further Readings</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="1 Overview" dir="auto" class="heading" id="1_Overview">1 Overview</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ As name suggest this contains optimizations which are <strong>done before retrieval process</strong> to <strong>enhance quality retrieval of context</strong>.</li>
+<li data-line="1" dir="auto">✦ It includes:
+<ul>
+<li data-line="2" dir="auto">Better Splitting &amp; Chunking of Document,</li>
+<li data-line="3" dir="auto">query transformation*,</li>
+<li data-line="4" dir="auto">query routing*.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421132947558.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421132947558.png"></div>
+<br><small style="color: grey;">*While the diagram shows the query in "retrieval" phrase, we will be discussing the improving RAG with query in the <code>Pre-Retrieval Processes</code> because the "construction" or "enhancement" of the query are somethings that happen before the retrieval process.</small></div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="2 Better Splitting &amp; Chunking of Document" dir="auto" class="heading" id="2_Better_Splitting_&amp;_Chunking_of_Document">2 Better Splitting &amp; Chunking of Document</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://images.unsplash.com/photo-1457694587812-e8bf29a43845?q=80&amp;w=2071&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ As we have already seen in Naive RAG that chunks are nothing but the small parts of whole document and indexing is vector representation of these chunks which we store in Vector DB.</p>
+<ul>
+<li data-line="1" dir="auto">How we do splitting and chunking, and eventually embedding makes an impact on accurate retrieval which then improves generation quality and contextual confidence.</li>
+<li data-line="2" dir="auto">The simplest way for splitting and chunking is <strong>fixed size chunking like simple character splitter or word splitter</strong> but it is not as effective as it may not hold full context of specific subject which also known as <strong>context fragmentation</strong>.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ We quote a paragraph from <a data-tooltip-position="top" aria-label="https://playbooks.capdev.govtext.gov.sg/" rel="noopener" class="external-link" href="https://playbooks.capdev.govtext.gov.sg/" target="_blank">GovTech RAG Playbook</a> that perfectly sums up the challenges of finding the right balance between the chunk size and the accuracy of the RAG pipeline. We included the <em>RAG Playbook</em> under the "Further Readings" for Topic 5.</p>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                        <path d="M12 16v-4"></path>
+                                                        <path d="M12 8h.01"></path>
+                                                    </svg></div>
+<div class="callout-title-inner">Chunk and Overlap Size</div>
+</div>
+<div class="callout-content">
+<p dir="auto">While it is possible to obtain an embedding for a document as long as it fits into the embedding model’s context length, embedding an entire document is not always an optimal strategy. It is common to segment documents into chunks and to specify an overlap size between chunks.</p>
+<p dir="auto">Both of these parameters can help to facilitate the flow of context from one chunk to another, and the optimal chunk and overlap size to use is corpus specific. Embedding a single sentence focuses on its specific meaning but forgoes the broader context in the surrounding text. Embedding an entire body of text focuses on the overall meaning but may dilute the significance of individual sentences or phrases.</p>
+<p dir="auto">Generally, longer and more complex queries benefit from smaller chunk sizes while shorter and simpler queries may not require chunking.</p>
+<p dir="auto">Source: <em>GovTech RAG Playbook</em></p>
+</div>
+</div>
+</li>
+<li data-line="14" dir="auto">
+<p>✦ While fixed-size chunking offers a straightforward approach, it often leads to context fragmentation, hindering the retrieval of accurate information.</p>
+<ul>
+<li data-line="15" dir="auto">To expand the number of options you can consider when building your RAG pipeline, this note introduces more sophisticated chunking techniques.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="2.1 Recursive Split For Specific File Types" dir="auto" class="heading" id="2.1_Recursive_Split_For_Specific_File_Types">2.1 Recursive Split For Specific File Types</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Also known as <strong>recursive structure aware chunking</strong>, content based chunking which can keep the context and format of text or the specific file types, such as HTML, PDF, Markdown, JSON.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ Simply put, using the right or suitable document splitter method for the use case will help us to derive chunks that are tailored to the specific file formats that we are dealing with.</p>
+<ul>
+<li data-line="3" dir="auto">This choice significantly impacts the quality and relevance of derived text chunks, offering benefits such as format-specific processing, preservation of structural elements, enhanced context retention, and improved accuracy in downstream tasks.</li>
+<li data-line="4" dir="auto">For example, when dealing with HTML files, specialized loaders can retain important elements like headings (<code>&lt;h1&gt;</code>), paragraphs (<code>&lt;p&gt;</code>), and tables (<code>&lt;table&gt;</code>), enabling custom processing based on element types.</li>
+<li data-line="5" dir="auto">However, it's not a magical solution; simply applying the technique is not enough. In many cases, developers need to write custom functions to effectively process the retained structural elements and extract meaningful information. This additional step ensures that the preserved document structure is fully utilized to meet specific analytical requirements and maximize the value of the chunking process.</li>
+<li data-line="6" dir="auto">It is still a good start with a suitable splitter method(s), rather than the overly simple splitter, like <code>CharacterTextSplitter</code>.</li>
+</ul>
+</li>
+<li data-line="8" dir="auto">
+<p>✦ <code>Langchain</code> supports many of the commonly used file types. Refer to the table below:</p>
+<ul>
+<li data-line="9" dir="auto">The table below shows the different <code>text splitters</code> offered by Langchain.
+<ul>
+<li data-line="10" dir="auto"><strong>Name</strong>: Name of the text splitter</li>
+<li data-line="11" dir="auto"><strong>Splits On</strong>: How this text splitter splits text</li>
+<li data-line="12" dir="auto"><strong>Description</strong>: Description of the splitter, including recommendation on when to use it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div dir="ltr" style="overflow-x: auto;">
+<table>
+<thead>
+<tr>
+<th dir="ltr">Name</th>
+<th dir="ltr">Splits On</th>
+<th dir="ltr">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><strong>Recursive</strong></td>
+<td dir="ltr">A list of user defined characters</td>
+<td dir="ltr">Recursively splits text. Splitting text recursively serves the purpose of trying to keep related pieces of text next to each other. This is the recommended way to start splitting text.</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>HTML</strong></td>
+<td dir="ltr">HTML specific characters</td>
+<td dir="ltr">Splits text based on HTML-specific characters. Notably, this adds in relevant information about where that chunk came from (based on the HTML)</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Markdown</strong></td>
+<td dir="ltr">Markdown specific characters</td>
+<td dir="ltr">Splits text based on Markdown-specific characters. Notably, this adds in relevant information about where that chunk came from (based on the Markdown)</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Code</strong></td>
+<td dir="ltr">Code (Python, JS) specific characters</td>
+<td dir="ltr">Splits text based on characters specific to coding languages. 15 different languages are available to choose from.</td>
+</tr>
+<tr>
+<td dir="auto"></td>
+<td dir="auto"></td>
+<td dir="auto"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto; background: #f5f5f5;"><small>For latest splitters (including experimental new features), please always refer to the official LangChain documentation page: <a href="https://python.langchain.com/v0.2/api_reference/text_splitters/index.html" target="_blank" rel="noopener">Text Splitters</a></small></div>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                                                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z">
+                                                        </path>
+                                                    </svg></div>
+<div class="callout-title-inner">Evaluate Text Splitters with the <code>Chunkviz</code> utility.</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">Chunkviz is a great tool for visualizing how your text splitter is working.</li>
+<li data-line="2" dir="auto">It will show us how our text is being split up and help in tuning up the splitting parameters.</li>
+<li data-line="3" dir="auto">👆🏻 Access the tool from <a data-tooltip-position="top" aria-label="https://chunkviz.up.railway.app/" rel="noopener" class="external-link" href="https://chunkviz.up.railway.app/" target="_blank">https://chunkviz.up.railway.app/)</a><br>
+<div src="lib/media/img-20240425232519197.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240425232519197.png"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="2.2 Semantic Chunking" dir="auto" class="heading" id="2.2_Semantic_Chunking">2.2 Semantic Chunking</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Semantic chunking is one the more sophisticated chunking methods.</p>
+<ul>
+<li data-line="1" dir="auto">Semantic chunking relies heavily on embeddings, powerful tools for understanding text semantics.</li>
+<li data-line="2" dir="auto">Here’s <strong>how semantic chunking works</strong> in practice:
+<ul>
+<li data-line="3" dir="auto">Text segments with similar meanings are grouped together.</li>
+<li data-line="4" dir="auto">Leveraging embeddings, we analyze and group consecutive sentences within a specified window size.</li>
+<li data-line="5" dir="auto">Beginning with the initial sentence, we compare its embedding to the subsequent sentences, iterating through the text until a significant deviation is detected, indicating a potential break point.</li>
+<li data-line="6" dir="auto">Continuously computing embeddings within each sentence set allows for dynamic adjustments, refining the grouping process and enhancing our understanding of the text’s meaning.</li>
+<li data-line="7" dir="auto">Through this method, we identify coherent groups of sentences that form meaningful sections, aiding in analysis and comprehension.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="9" dir="auto">
+<p>✦ The easiest way to take advantage of this cutting-edge chunking approach is to use Langchain's experimental module:</p>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">!pip install --quiet langchain_experimental langchain_openai
+
+# Load Example Data
+# This is a long document we can split up.  
+with open("../../state_of_the_union.txt") as f:  
+state_of_the_union = f.read()
+
+# Create Text Splitter
+from langchain_experimental.text_splitter import SemanticChunker  
+from langchain_openai.embeddings import OpenAIEmbeddings
+
+# That's it. It is this simple.
+text_splitter = SemanticChunker(OpenAIEmbeddings())
+
+# Spit Text
+docs = text_splitter.create_documents([state_of_the_union])  
+print(docs[0].page_content)</code></pre>
+</div>
+<div>
+<div style="text-align: center; width: 50%; margin: auto; background: #f5f5f5;"><small>This technique is tagged as an experimental feature in LangChain. As such, it may undergo significant changes or have compatibility issues. Please refer to the official LangChain documentation for the most up-to-date information:: <a href="https://python.langchain.com/v0.1/docs/modules/data_connection/document_transformers/semantic-chunker/" target="_blank" rel="noopener">Semantic-chunker documentation</a></small></div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="3 Query Transformation" dir="auto" class="heading" id="3_Query_Transformation">3 Query Transformation</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://images.unsplash.com/photo-1616593437252-0631aeb95590?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ Query transformation is a method of improving quality of user query by restructuring it to improve retrieval quality.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ It includes techniques like:</p>
+<ul>
+<li data-line="3" dir="auto"><strong>Query rewriting</strong></li>
+<li data-line="4" dir="auto"><strong>Decomposing main query into multiple sub queries</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="3.1 Query Rewriting" dir="auto" class="heading" id="3.1_Query_Rewriting">3.1 Query Rewriting</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ In the real world, a user's query may not be properly phrased or optimized to get quality retrieval. This will affect the end output.
+<ul>
+<li data-line="1" dir="auto">To overcome this issue, we can rewrite or rephrase the query so that it can optimally retrieve relevant context.</li>
+<li data-line="2" dir="auto">To help us to better understand the intuition behind query rewriting, see the code example below. We may modify the code to suit our use case (it doesn't have to be web search engine).</li>
+<li data-line="3" dir="auto">What we have to do is to use the "improved" query, instead of the original query for the RAG.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python"># The main part is a rewriter to rewrite the query
+prompt = """Provide a better search query for \
+web search engine to answer the given question. 
+
+Question: {user_query}
+"""</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ You can refer to the notebook here for the complete implementation of this technique <a data-tooltip-position="top" aria-label="https://github.com/langchain-ai/langchain/blob/master/cookbook/rewrite.ipynb?ref=blog.langchain.dev" rel="noopener" class="external-link" href="https://github.com/langchain-ai/langchain/blob/master/cookbook/rewrite.ipynb?ref=blog.langchain.dev" target="_blank">langchain/cookbook/rewrite.ipynb at master · langchain-ai/langchain (github.com)</a></li>
+</ul>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3.2 Multi Query Retrieval / Sub Query Decomposition" dir="auto" class="heading" id="3.2_Multi_Query_Retrieval_/_Sub_Query_Decomposition">3.2 Multi Query Retrieval / Sub Query Decomposition</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ If the query is complex and has multiple context then, retrieval with a single query may not be the good approach as it may fail to get the proper output you want.</p>
+<ul>
+<li data-line="1" dir="auto">In sub query decomposition,
+<ul>
+<li data-line="2" dir="auto">First, the user query is decomposed into multiple sub queries using LLM,</li>
+<li data-line="3" dir="auto">Then, retrievals using this sub queries are done in parallel and after that, these retrieved contexts are combined together as a single prompt for the final answer generation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ In LangChain, we can use <a data-tooltip-position="top" aria-label="https://python.langchain.com/docs/modules/data_connection/retrievers/MultiQueryRetriever?ref=blog.langchain.dev" rel="noopener" class="external-link" href="https://python.langchain.com/docs/modules/data_connection/retrievers/MultiQueryRetriever?ref=blog.langchain.dev" target="_blank">MultiQueryRetriever</a> for implementation of this technique. The&nbsp;<code>MultiQueryRetriever</code>&nbsp;automates the process of prompt tuning by using an LLM to generate multiple queries from different perspectives for a given user input query.</p>
+<ul>
+<li data-line="6" dir="auto">For each query, it retrieves a set of relevant documents and takes the unique union across all queries to get a larger set of potentially relevant documents.</li>
+<li data-line="7" dir="auto">By generating multiple perspectives on the same question, the&nbsp;<code>MultiQueryRetriever</code>&nbsp;might be able to overcome some of the limitations of the distance-based retrieval and get a richer set of results.</li>
+<li data-line="8" dir="auto">Below is a sample implementation using <code>MultiQueryRetriever</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from langchain_chroma import Chroma
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_openai import OpenAIEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+# Load blog post
+loader = WebBaseLoader("https://lilianweng.github.io/posts/2023-06-23-agent/")
+data = loader.load()
+
+# Split
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
+splits = text_splitter.split_documents(data)
+
+# VectorDB
+embedding = OpenAIEmbeddings()
+vectordb = Chroma.from_documents(documents=splits, embedding=embedding)
+
+# This is the Core Part of the Code
+from langchain.retrievers.multi_query import MultiQueryRetriever
+from langchain_openai import ChatOpenAI
+
+question = "What are the approaches to Task Decomposition?"
+llm = ChatOpenAI(temperature=0)
+retriever_from_llm = MultiQueryRetriever.from_llm(
+    retriever=vectordb.as_retriever(), llm=llm
+)</code></pre>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ To understand the intuition behind this method, we can think of it as when an original query is received, it is passed to an LLM to generate 5 different related queries. Then each of these queries is used to retrieve the relevant documents. Here is the prompt being used by LangChain:</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">template="""You are an AI language model assistant. Your task is to generate five  
+different versions of the given user question to retrieve relevant documents from a vector  
+database. By generating multiple perspectives on the user question, your goal is to help  
+the user overcome some of the limitations of the distance-based similarity search.  
+Provide these alternative questions separated by newlines.  
+Original question: {question}"""</code></pre>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="4 [Extra] Query Routing" dir="auto" class="heading" id="4_[Extra]_Query_Routing">4 [Extra] Query Routing</h1>
+<div class="heading-children">
+<div>
+<p dir="auto"><img src="https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" referrerpolicy="no-referrer"></p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ When we are having multiple vector stores / databases or various actions to perform on user query based on its context, then routing the user query in the right direction is very important for relevant retrieval and further generation.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ Using specific prompt and output parsers, we can use an LLM call to decide which action to perform or where to route the user query.</p>
+<ul>
+<li data-line="3" dir="auto">In fact, we have implemented this when we identified the types of the customer query and then directed the query to the correct departments in our Topic 3 notebook <a class="internal-link" data-href="../Topic 3 - Building System with Advanced Prompting and Chaining/Notebook for Reference - Part 2.md" href="https://abc-notes.data.tech.gov.sg/notes/topic-3-building-system-with-advanced-prompting-and-chaining/notebook-for-reference-part-2.html" target="_self" rel="noopener">Notebook for Reference - Part 2</a></li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ If you're keen to use any frameworks, you can use <strong>prompt chaining</strong> or custom <strong>Agents</strong> to implement query routing in <a data-tooltip-position="top" aria-label="https://python.langchain.com/docs/expression_language/how_to/routing" rel="noopener" class="external-link" href="https://python.langchain.com/docs/expression_language/how_to/routing" target="_blank">LangChain</a> or <a data-tooltip-position="top" aria-label="https://docs.llamaindex.ai/en/stable/module_guides/querying/router/" rel="noopener" class="external-link" href="https://docs.llamaindex.ai/en/stable/module_guides/querying/router/" target="_blank">LlamaIndex</a>.</p>
+<ul>
+<li data-line="6" dir="auto">Don't worry if you don't understand what is "<strong>Agents</strong>" at this stage. We may come to that later in this training.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">&nbsp;                                                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z">
+                                                </path>
+                                                <path d="M12 9v4"></path>
+                                                <path d="M12 17h.01"></path>
+                                            </svg></div>
+<div class="callout-title-inner">Warning</div>
+</div>
+<div class="callout-content">
+<p dir="auto">This note is not intended to exhaustively cover all techniques or methods available for improving Retrieval-Augmented Generation (RAG) processes.</p>
+<ul>
+<li data-line="2" dir="auto">RAG is a field under active research and progresses rapidly.</li>
+<li data-line="3" dir="auto">Readers are encouraged to stay informed about other techniques and methods in the field to gain a comprehensive understanding of the advancements and innovations that continue to emerge.</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="5 References &amp; Further Readings" dir="auto" class="heading" id="5_References_&amp;_Further_Readings">5 References &amp; Further Readings</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto"><a data-tooltip-position="top" aria-label="https://medium.com/gitconnected/advanced-rag-how-multiquery-retriever-work-3eaebc2b1feb" rel="noopener" class="external-link" href="https://medium.com/gitconnected/advanced-rag-how-multiquery-retriever-work-3eaebc2b1feb" target="_blank">Advanced RAG: How MultiQuery Retriever Work? | by Bytefer | Apr, 2024 | Level Up Coding (medium.com)</a></li>
+<li data-line="1" dir="auto"><a data-tooltip-position="top" aria-label="https://medium.com/the-ai-forum/semantic-chunking-for-rag-f4733025d5f5" rel="noopener" class="external-link" href="https://medium.com/the-ai-forum/semantic-chunking-for-rag-f4733025d5f5" target="_blank">Semantic Chunking for RAG. What is Chunking&nbsp;? | by Plaban Nayak | The AI Forum | Apr, 2024 | Medium</a></li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

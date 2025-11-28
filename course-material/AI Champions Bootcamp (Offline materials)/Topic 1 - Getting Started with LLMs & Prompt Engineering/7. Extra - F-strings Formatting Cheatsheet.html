@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> RiMeteorLine</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="RiMeteorLine" data-icon="RiMeteorLine" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px">
+                      <path d="M21 1V13C21 17.9706 16.9706 22 12 22C7.02944 22 3 17.9706 3 13C3 9.72064 4.75393 6.85093 7.37488 5.27777L14 1.453V4.223L21 1ZM19 4.122L12 7.34567V4.916L8.59717 6.88088C6.47212 8.06588 5.10056 10.2673 5.00531 12.7258L5 13C5 16.866 8.13401 20 12 20C15.7855 20 18.8691 16.9952 18.9959 13.2407L19 13V4.122ZM12 8C14.7614 8 17 10.2386 17 13C17 15.7614 14.7614 18 12 18C9.23858 18 7 15.7614 7 13C7 10.2386 9.23858 8 12 8ZM12 10C10.3431 10 9 11.3431 9 13C9 14.6569 10.3431 16 12 16C13.6569 16 15 14.6569 15 13C15 11.3431 13.6569 10 12 10Z"></path></svg></span></p>
+</div>
+<ol start="7">
+<li dir="auto" class="page-title heading fix-heading">Title: Extra - F-strings formatting Cheat Sheet</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Extra - F-strings formatting Cheat Sheet"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div class="heading-wrapper">
+<h2 data-heading="1. Expressions Inside Braces" dir="auto" class="heading" id="1._Expressions_Inside_Braces">1. Expressions Inside Braces</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">You can perform operations or call functions directly within the braces of an F-string.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">name = "Alice"  
+age = 30  
+print(f"{name} is {age + 1} years old next year.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="2. Calling Functions" dir="auto" class="heading" id="2._Calling_Functions">2. Calling Functions</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Call functions directly within the F-string braces for dynamic string formatting.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">def greet(name):  
+    return f"Hello, {name}!"  
+  
+print(f"{greet('Bob')}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="3. Format Specifiers" dir="auto" class="heading" id="3._Format_Specifiers">3. Format Specifiers</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Use format specifiers for controlling the format of the output, such as number of decimals.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">price = 49.99  
+print(f"The price is {price:.2f} dollars.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="4. Dictionary Values" dir="auto" class="heading" id="4._Dictionary_Values">4. Dictionary Values</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Access dictionary values directly in an F-string.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">person = {'name': 'Alice', 'age': 30}  
+print(f"{person['name']} is {person['age']} years old.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="5. Date Formatting" dir="auto" class="heading" id="5._Date_Formatting">5. Date Formatting</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Format dates using the&nbsp;<code>datetime</code>&nbsp;module directly within F-strings.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from datetime import datetime  
+now = datetime.now()  
+print(f"The current time is {now:%Y-%m-%d %H:%M}.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="6. Multiline F-strings" dir="auto" class="heading" id="6._Multiline_F-strings">6. Multiline F-strings</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Create multiline strings without losing the F-string functionality.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">name = "Alice"  
+profession = "developer"  
+bio = (f"Name: {name}\n"  
+       f"Profession: {profession}")  
+print(bio)</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="7. Conditional Expressions" dir="auto" class="heading" id="7._Conditional_Expressions">7. Conditional Expressions</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Embed conditional expressions within F-strings for dynamic content.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">age = 18  
+status = "adult" if age &amp;gt;= 18 else "minor"  
+print(f"You are an {status}.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="8. Nesting F-strings" dir="auto" class="heading" id="8._Nesting_F-strings">8. Nesting F-strings</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Nest F-strings for complex formatting scenarios.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from math import pi  
+precision = 2  
+print(f"Pi rounded to {precision} decimal places is {pi:.{precision}f}.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="9. Using Braces" dir="auto" class="heading" id="9._Using_Braces">9. Using Braces</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">To include literal braces in your string, double them.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">print(f"{Hello}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="10. Debugging with F-strings (Python 3.8+)" dir="auto" class="heading" id="10._Debugging_with_F-strings_(Python_3.8+)">10. Debugging with F-strings (Python 3.8+)</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Include the variable name with its value for easier debugging.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">name = "Alice"  
+print(f"{name=}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="11. Alignment and Padding" dir="auto" class="heading" id="11._Alignment_and_Padding">11. Alignment and Padding</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">You can align text and add padding directly within an F-string.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">name = "Alice"  
+# Right align with padding  
+print(f"{name:&amp;gt;10}")  
+# Left align with padding  
+print(f"{name:&amp;lt;10}")  
+# Center align with padding  
+print(f"{name:^10}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="12. Thousands Separator" dir="auto" class="heading" id="12._Thousands_Separator">12. Thousands Separator</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Format large numbers with commas as thousands separators for better readability.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">number = 1000000  
+print(f"{number:,}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="13. Dynamic Format Specifiers" dir="auto" class="heading" id="13._Dynamic_Format_Specifiers">13. Dynamic Format Specifiers</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Dynamically specify format options using variables.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">width = 10  
+precision = 4  
+number = 12.34567  
+print(f"result: {number:{width}.{precision}}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="14. Using Objects" dir="auto" class="heading" id="14._Using_Objects">14. Using Objects</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Directly access object attributes and methods.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">class Person:  
+    def __init__(self, name, age):  
+        self.name = name  
+        self.age = age  
+    def greet(self):  
+        return f"Hello, my name is {self.name}."  
+  
+person = Person("Alice", 30)  
+print(f"{person.greet()} I am {person.age} years old.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="15. Binary, Hexadecimal, and Octal Formatting" dir="auto" class="heading" id="15._Binary,_Hexadecimal,_and_Octal_Formatting">15. Binary, Hexadecimal, and Octal Formatting</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Convert numbers into binary, hexadecimal, or octal formats.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">number = 255  
+print(f"Binary: {number:b}, Hex: {number:x}, Octal: {number:o}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="16. Combining F-strings with Dictionaries for Data Unpacking" dir="auto" class="heading" id="16._Combining_F-strings_with_Dictionaries_for_Data_Unpacking">16. Combining F-strings with Dictionaries for Data Unpacking</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Unpack and format data from dictionaries elegantly.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">data = {"name": "Bob", "age": 25}  
+print(f"{data['name']} is {data['age']} years old.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="17. Multiline Expressions" dir="auto" class="heading" id="17._Multiline_Expressions">17. Multiline Expressions</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Use parentheses for longer expressions that span multiple lines.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">x = 10  
+y = 5  
+print(f"Sum: {(x + y)}\n"  
+      f"Difference: {(x - y)}\n"  
+      f"Product: {(x * y)}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="18. Using Lambdas" dir="auto" class="heading" id="18._Using_Lambdas">18. Using Lambdas</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Inline lambda functions for quick transformations or calculations.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">print(f"Square of 5: {(lambda x: x*x)(5)}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="19. Escaping Curly Braces" dir="auto" class="heading" id="19._Escaping_Curly_Braces">19. Escaping Curly Braces</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Use double curly braces to escape them in F-strings.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">print(f"{{{{double braces}}}} are used to escape in F-strings.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="20. Complex Numbers Formatting" dir="auto" class="heading" id="20._Complex_Numbers_Formatting">20. Complex Numbers Formatting</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Format complex numbers by accessing their real and imaginary parts.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">complex_number = 3 + 4j  
+print(f"The real part is {complex_number.real} and the imaginary part is {complex_number.imag}.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="21. Formatting with Percentages" dir="auto" class="heading" id="21._Formatting_with_Percentages">21. Formatting with Percentages</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Easily format numbers as percentages.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">completion = 0.756  
+print(f"Task completed: {completion:.2%}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="22. Safe String Interpolation with&nbsp;`str.format()`" dir="auto" class="heading" id="22._Safe_String_Interpolation_with&nbsp;`str.format()`">22. Safe String Interpolation with&nbsp;<code>str.format()</code></h2>
+<div class="heading-children">
+<div>
+<p dir="auto">While not a direct feature of F-strings, combining them with&nbsp;<code>str.format()</code>&nbsp;can offer a safer way to dynamically insert values that aren't known until runtime, thus avoiding code injection risks.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">user_input = "{name} is {age} years old."  
+# Safe interpolation  
+print(f"{user_input}".format(name="Alice", age=30))</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="23. Reusing Calculated Values in F-strings" dir="auto" class="heading" id="23._Reusing_Calculated_Values_in_F-strings">23. Reusing Calculated Values in F-strings</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">By using a lambda function, you can calculate values once and reuse them within the same F-string.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">result = (lambda x: (x, x**2))(3)  
+print(f"The number is {result[0]} and its square is {result[1]}.")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="24. Formatting Paths and Files" dir="auto" class="heading" id="24._Formatting_Paths_and_Files">24. Formatting Paths and Files</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">F-strings can be particularly useful for dynamically generating file paths or URLs.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">filename = "report"  
+date = "2023-01-01"  
+print(f"./data/{filename}_{date}.txt")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="25. Embedding Expressions for Object Instantiation" dir="auto" class="heading" id="25._Embedding_Expressions_for_Object_Instantiation">25. Embedding Expressions for Object Instantiation</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Instantiate objects directly within an F-string.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">class Point:  
+    def __init__(self, x, y):  
+        self.x = x  
+        self.y = y  
+    def __str__(self):  
+        return f"Point({self.x}, {self.y})"  
+  
+print(f"New point: {Point(1, 2)}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="26. Formatting Exceptions" dir="auto" class="heading" id="26._Formatting_Exceptions">26. Formatting Exceptions</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Use F-strings to format exception messages for clearer error reporting.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">try:  
+    # Potentially problematic code  
+    x = 1 / 0  
+except Exception as e:  
+    print(f"An error occurred: {e}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="27. Dynamic Padding with Variables" dir="auto" class="heading" id="27._Dynamic_Padding_with_Variables">27. Dynamic Padding with Variables</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Control padding dynamically by using variables within the format specifier.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">name = "Alice"  
+pad = 20  
+print(f"{name:&amp;gt;{pad}}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="28. Using F-strings with Maps and Filters" dir="auto" class="heading" id="28._Using_F-strings_with_Maps_and_Filters">28. Using F-strings with Maps and Filters</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">F-strings can be used inside&nbsp;<code>map()</code>&nbsp;and&nbsp;<code>filter()</code>&nbsp;for more readable code.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">names = ["Alice", "Bob", "Charlie"]  
+upper_names = map(lambda x: f"{x.upper()}", names)  
+print(list(upper_names))</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="29. Custom Object Formatting" dir="auto" class="heading" id="29._Custom_Object_Formatting">29. Custom Object Formatting</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Define how your custom objects should be formatted within F-strings by implementing the&nbsp;<code>__format__</code>&nbsp;method.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">class Person:  
+    def __init__(self, name):  
+        self.name = name  
+    def __format__(self, format_spec):  
+        if format_spec == 'upper':  
+            return self.name.upper()  
+        return self.name  
+  
+person = Person("Alice")  
+print(f"{person:upper}")</code></pre>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="30. Inline Comments" dir="auto" class="heading" id="30._Inline_Comments">30. Inline Comments</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">While not a feature of F-strings themselves, you can use comments to clarify complex expressions within them (though this requires breaking the expression into multiple steps).</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python"># Intended for readability, not direct execution within F-strings  
+number = 123456.789  
+# Format number with commas and 2 decimal places  
+formatted_number = f"{number:,.2f}"  # Comment: Format as a string with commas  
+print(formatted_number)</code></pre>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="loading-icon" style="left: 737.5px; top: 303px;">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div></body></html>

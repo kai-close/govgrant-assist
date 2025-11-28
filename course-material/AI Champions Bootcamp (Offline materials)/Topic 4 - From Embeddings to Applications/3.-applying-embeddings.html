@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html><head>
+    
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js" async="" id="tinycolor-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js" async="" id="pixi-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js" async="" id="minisearch-script"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    <script src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js" class="" style="transition: opacity 0.5s ease-in-out"></script>
+    
+    <link rel="alternate" href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml" type="application/rss+xml" title="RSS Feed">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css" type="text/css" class="" style="transition: opacity 0.5s ease-in-out">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css">
+    <link rel="stylesheet" href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css">
+  </head><body style="
+      color: rgb(32, 33, 34);
+      font-family: verdana, sans-serif;
+      font-size: 12px;
+    " class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"><div class="webpage-container workspace">
+<div class="document-container markdown-reading-view">
+<div class="markdown-preview-view markdown-rendered is-readable-line-width">
+<pre class="frontmatter language-yaml" style="display: none;" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> LiWrench</code><button class="copy-code-button">Copy</button></pre>
+<div class="markdown-preview-sizer markdown-preview-section">
+<div id="webpage-icon">
+<p dir="auto"><span class="cm-iconize-icon" aria-label="LiWrench" data-icon="LiWrench" aria-hidden="true" style="display: inline-flex; transform: translateY(13%);"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-wrench">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span></p>
+</div>
+<ol start="3">
+<li dir="auto" class="page-title heading fix-heading" id="Title: Applying Embeddings">Title: Applying Embeddings</li>
+</ol>
+<h1 class="page-title heading inline-title" id="Title: Applying Embeddings"></h1>
+<div class="heading-wrapper">
+<div class="heading-children">
+<div>
+<ul class="steps">
+<li class="step step-success" data-content="📒" dir="auto">Embeddings</li>
+<li class="step step-success" data-content="📒" dir="auto">Handling Embeddings</li>
+<li class="step step-success" data-content="🔧" dir="auto">Applying Embeddings</li>
+<li class="step" data-content="🔧" dir="auto">Retrieval Augmented Generation (RAG)</li>
+<li class="step" data-content="🔧" dir="auto">Hands-on Walkthrough and Tasks</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421130242417.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421130242417.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<div class="block-language-toc dynamic-toc">
+<h1 data-heading="Table of Contents" dir="auto" class="heading" id="Table_of_Contents">Table of Contents</h1>
+<ul>
+<li dir="auto"><a data-href="#Use Cases of Embeddings" href="#Use_Cases_of_Embeddings" class="internal-link" target="_self" rel="noopener">Use Cases of Embeddings</a>
+<ul>
+<li dir="auto"><a data-href="#Semantic Search" href="#Semantic_Search" class="internal-link" target="_self" rel="noopener">Semantic Search</a></li>
+<li dir="auto"><a data-href="#Visualizing Complex Data" href="#Visualizing_Complex_Data" class="internal-link" target="_self" rel="noopener">Visualizing Complex Data</a></li>
+<li dir="auto"><a data-href="#Embedding as a text feature encoder for ML algorithms" href="#Embedding_as_a_text_feature_encoder_for_ML_algorithms" class="internal-link" target="_self" rel="noopener">Embedding as a text feature encoder for ML algorithms</a>
+<ul>
+<li dir="auto"><a data-href="#A) Use Embeddings as Feature(s) in a Regression Model" href="#A)_Use_Embeddings_as_Feature(s)_in_a_Regression_Model" class="internal-link" target="_self" rel="noopener">A) Use Embeddings as Feature(s) in a Regression Model</a></li>
+<li dir="auto"><a data-href="#B) Use Embeddings as Feature(s) in a Classification Model" href="#B)_Use_Embeddings_as_Feature(s)_in_a_Classification_Model" class="internal-link" target="_self" rel="noopener">B) Use Embeddings as Feature(s) in a Classification Model</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Zero-Shot Classification" href="#Zero-Shot_Classification" class="internal-link" target="_self" rel="noopener">Zero-Shot Classification</a></li>
+<li dir="auto"><a data-href="#Clustering" href="#Clustering" class="internal-link" target="_self" rel="noopener">Clustering</a></li>
+<li dir="auto"><a data-href="#Recommendations" href="#Recommendations" class="internal-link" target="_self" rel="noopener">Recommendations</a></li>
+</ul>
+</li>
+<li dir="auto"><a data-href="#Why Can't  I just use GPT-4 directly?" href="#Why_Can't__I_just_use_GPT-4_directly?" class="internal-link" target="_self" rel="noopener">Why Can't I just use GPT-4 directly?</a></li>
+</ul>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Use Cases of Embeddings" dir="auto" class="heading" id="Use_Cases_of_Embeddings">Use Cases of Embeddings</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Embeddings are commonly used for (but not limited to):
+<ul>
+<li data-line="1" dir="auto"><strong>Search</strong>&nbsp;(where results are ranked by relevance to a query string)</li>
+<li data-line="2" dir="auto"><strong>Clustering</strong>&nbsp;(where text strings are grouped by similarity)</li>
+<li data-line="3" dir="auto"><strong>Recommendations</strong>&nbsp;(where items with related text strings are recommended)</li>
+<li data-line="4" dir="auto"><strong>Anomaly detection</strong>&nbsp;(where outliers with little relatedness are identified)</li>
+<li data-line="5" dir="auto"><strong>Diversity measurement</strong>&nbsp;(where similarity distributions are analyzed)</li>
+<li data-line="6" dir="auto"><strong>Classification</strong>&nbsp;(where text strings are classified by their most similar label)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow">
+<div class="callout-title" dir="auto">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M12 16v-4"></path>
+                          <path d="M12 8h.01"></path>
+                        </svg></div>
+<div class="callout-title-inner">This note is meant to provide an overview to the various use cases</div>
+</div>
+<div class="callout-content">
+<ul>
+<li data-line="1" dir="auto">✦ Therefore only the core part of the code is shown.</li>
+<li data-line="2" dir="auto">✦ We will go through the some of these use cases in detail in our Jupyter Notebook</li>
+<li data-line="3" dir="auto">✦ For use cases not covered in our Jupyter Notebook, you can find the <strong>detailed implementation by clicking on the links that are inserted at the end</strong> of each use cases below</li>
+<li data-line="4" dir="auto">✦ You <strong>don't need to understand the code in every use case below</strong>.
+<ul>
+<li data-line="5" dir="auto">The primary objective is for us to <strong>aware of what are the potential use cases of embeddings</strong></li>
+<li data-line="6" dir="auto">and have an intuition of how embeddings are used in such use cases</li>
+<li data-line="7" dir="auto">You can <strong>delve deep into the use cases that are potentially relevant to your project</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+<div>
+<p dir="auto">Here is the <strong>sample data</strong> used in the use cases below:</p>
+</div>
+<div><iframe width="100%" height="504" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/8c9e7dff9a034a86be6f09143477e45a/210ac39bf0d0490993074c50e6cb43aa?height=504" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h2 data-heading="Semantic Search" dir="auto" class="heading" id="Semantic_Search">Semantic Search</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">To retrieve the most relevant documents we use the cosine similarity between the embedding vectors of the query and each document, and return the highest scored documents.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from openai.embeddings_utils import get_embedding, cosine_similarity
+
+def search_reviews(df, product_description, n=3, pprint=True):
+   embedding = get_embedding(product_description, model='text-embedding-3-small')
+   df['similarities'] = df.ada_embedding.apply(lambda x: cosine_similarity(x, embedding))
+   res = df.sort_values('similarities', ascending=False).head(n)
+   return res
+
+res = search_reviews(df, 'delicious beans', n=3)</code></pre>
+</div>
+<div>
+<p dir="auto">🔗 <a data-tooltip-position="top" aria-label="https://cookbook.openai.com/examples/semantic_text_search_using_embeddings" rel="noopener" class="external-link" href="https://cookbook.openai.com/examples/semantic_text_search_using_embeddings" target="_blank">Detailed Implementation</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Visualizing Complex Data" dir="auto" class="heading" id="Visualizing_Complex_Data">Visualizing Complex Data</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">The size of the embeddings varies with the complexity of the underlying model. In order to visualize this high dimensional data we use the t-SNE algorithm to transform the data into two dimensions.</p>
+</div>
+<div>
+<p dir="auto">The individual reviews are coloured based on the star rating which the reviewer has given:</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">• 1-star: red</li>
+<li data-line="1" dir="auto">• 2-star: dark orange</li>
+<li data-line="2" dir="auto">• 3-star: gold</li>
+<li data-line="3" dir="auto">• 4-star: turquoise</li>
+<li data-line="4" dir="auto">• 5-star: dark green</li>
+</ul>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421130333465.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421130333465.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<p dir="auto">The visualization seems to have produced roughly 3 clusters, one of which has mostly negative reviews.</p>
+</div>
+<div>
+<p dir="auto">This code is a way to visualize the relationship between different Amazon reviews based on their embeddings and scores. The <code>t-SNE algorithm</code> is particularly good at preserving local structure in high-dimensional data, making it a popular choice for tasks like this.</p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import pandas as pd
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+import matplotlib
+
+df = pd.read_csv('output/embedded_1k_reviews.csv')
+matrix = df.ada_embedding.apply(eval).to_list()
+
+# Create a t-SNE model and transform the data
+tsne = TSNE(n_components=2, perplexity=15, random_state=42, init='random', learning_rate=200)
+vis_dims = tsne.fit_transform(matrix)
+
+colors = ["red", "darkorange", "gold", "turquiose", "darkgreen"]
+x = [x for x,y in vis_dims]
+y = [y for x,y in vis_dims]
+color_indices = df.Score.values - 1
+
+colormap = matplotlib.colors.ListedColormap(colors)
+plt.scatter(x, y, c=color_indices, cmap=colormap, alpha=0.3)
+plt.title("Amazon ratings visualized in language using t-SNE")</code></pre>
+</div>
+<div>
+<p dir="auto">🔗 <a data-tooltip-position="top" aria-label="https://cookbook.openai.com/examples/visualizing_embeddings_in_2d" rel="noopener" class="external-link" href="https://cookbook.openai.com/examples/visualizing_embeddings_in_2d" target="_blank">Detailed Implementation</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Embedding as a text feature encoder for ML algorithms" dir="auto" class="heading" id="Embedding_as_a_text_feature_encoder_for_ML_algorithms">Embedding as a text feature encoder for ML algorithms</h2>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ An embedding serves as a versatile free-text feature encoder within a machine learning model.</p>
+<ul>
+<li data-line="1" dir="auto">When dealing with free-text inputs, incorporating embeddings enhances the performance of any machine learning model.</li>
+<li data-line="2" dir="auto">Additionally, embeddings can be employed as categorical feature encoders, especially when dealing with numerous and meaningful categorical variable names (such as job titles).</li>
+<li data-line="3" dir="auto">Embeddings transform text into meaningful numerical representations that capture semantic relationships between words or phrases.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto">
+<p>✦ Advantages over Traditional Methods:</p>
+<ol>
+<li data-line="6" dir="auto"><strong>Superior to One-Hot Encoding:</strong>&nbsp;Imagine representing job titles like "Software Engineer" and "Data Scientist" with one-hot encoding. You'd end up with a sparse and high-dimensional vector space where these titles are treated as completely unrelated entities. Embeddings, however, can capture the inherent similarity between these roles, leading to better model performance.</li>
+<li data-line="7" dir="auto"><strong>Overcoming Challenges of Direct NLP Processing:</strong>&nbsp;Traditional NLP techniques often involve complex pipelines with tasks like tokenization, stemming, and part-of-speech tagging. These pipelines can be brittle and computationally expensive. Embeddings offer a more efficient and robust alternative by condensing textual information into dense vectors.</li>
+</ol>
+</li>
+<li data-line="9" dir="auto">
+<p>✦ The provided code segment splits the data into a training set and a testing set, which will be utilized for <strong>regression</strong> and <strong>classification</strong> use cases</p>
+<ul>
+<li data-line="10" dir="auto">The embeddings have been pre-calculated.</li>
+<li data-line="11" dir="auto">If you are interested, see the details in <a data-tooltip-position="top" aria-label="https://cookbook.openai.com/examples/Get_embeddings_from_dataset.ipynb" rel="noopener" class="external-link" href="https://cookbook.openai.com/examples/Get_embeddings_from_dataset.ipynb" target="_blank">Get_embeddings_from_dataset Notebook</a>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><iframe width="100%" height="422" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/8c9e7dff9a034a86be6f09143477e45a/19cd12ab69c944ab8b1a8cb810114aea?height=422" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div><hr></div>
+<div class="heading-wrapper">
+<h3 data-heading="A) Use Embeddings as Feature(s) in a Regression Model" dir="auto" class="heading" id="A)_Use_Embeddings_as_Feature(s)_in_a_Regression_Model">A) Use Embeddings as Feature(s) in a Regression Model</h3>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ Because the semantic information contained within embeddings is high, the prediction is likely to be decent even without large amounts of data.</li>
+<li data-line="2" dir="auto">✦ We assume that the score (the target variable) is a continuous variable between 1 and 5, and allow the algorithm to predict any floating point value.</li>
+</ul>
+</div>
+<div><iframe width="100%" height="327.1875" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/8c9e7dff9a034a86be6f09143477e45a/d09c6b313cd34254b4771fc84072d81b?height=327.1875" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy">
+                            [Detailed Implementation](https://cookbook.openai.com/examples/regression_using_embeddings)</iframe></div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h3 data-heading="B) Use Embeddings as Feature(s) in a Classification Model" dir="auto" class="heading" id="B)_Use_Embeddings_as_Feature(s)_in_a_Classification_Model">B) Use Embeddings as Feature(s) in a Classification Model</h3>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ This time, instead of having the algorithm predict a value anywhere between 1 and 5, we will attempt to classify the exact number of stars for a review into 5 buckets, ranging from 1 to 5 stars.</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ After the training, the model learns to predict 1 and 5-star reviews much better than the more nuanced reviews (2-4 stars), likely due to more extreme sentiment expression.</p>
+</li>
+</ul>
+</div>
+<div><iframe width="100%" height="621.25" src="https://embed.deepnote.com/e7d5fffe-d493-4149-a430-c6ef5c976269/8c9e7dff9a034a86be6f09143477e45a/f7de4cc028654b4d9fd5c5c2fb5c1a8f?height=621.25" title="Embedded cell output" sandbox="allow-forms allow-presentation allow-same-origin allow-scripts allow-modals" loading="lazy"></iframe></div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://cookbook.openai.com/examples/classification_using_embeddings" rel="noopener" class="external-link" href="https://cookbook.openai.com/examples/classification_using_embeddings" target="_blank">Detailed Implementation</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Zero-Shot Classification" dir="auto" class="heading" id="Zero-Shot_Classification">Zero-Shot Classification</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">We can use embeddings for zero shot classification without any labeled training data.</p>
+</div>
+<div>
+<ul>
+<li data-line="0" dir="auto">✦ For each class, we embed the class name or a short description of the class.</li>
+<li data-line="1" dir="auto">✦ To classify some new text in a zero-shot manner, we compare its embedding to all class embeddings and predict the class with the highest similarity.</li>
+</ul>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">from openai.embeddings_utils import cosine_similarity, get_embedding
+
+df= df[df.Score!=3]
+df['sentiment'] = df.Score.replace({1:'negative', 2:'negative', 4:'positive', 5:'positive'})
+
+labels = ['negative', 'positive']
+label_embeddings = [get_embedding(label, model=model) for label in labels]
+
+def label_score(review_embedding, label_embeddings):
+   return cosine_similarity(review_embedding, label_embeddings[1]) - cosine_similarity(review_embedding, label_embeddings[0])
+
+prediction = 'positive' if label_score('Sample Review', label_embeddings) &amp;gt; 0 else 'negative'</code></pre>
+</div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://cookbook.openai.com/examples/zero-shot_classification_with_embeddings" rel="noopener" class="external-link" href="https://cookbook.openai.com/examples/zero-shot_classification_with_embeddings" target="_blank">Detailed Implementation</a></p>
+</div>
+<div><hr></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Clustering" dir="auto" class="heading" id="Clustering">Clustering</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">Clustering is one way of making sense of a large volume of textual data. Embeddings are useful for this task, as they provide semantically meaningful vector representations of each text. Thus, in an unsupervised way, clustering will uncover hidden groupings in our dataset.</p>
+</div>
+<div>
+<p dir="auto">In this example, we discover four distinct clusters: one focusing on dog food, one on negative reviews, and two on positive reviews.</p>
+</div>
+<div>
+<p dir="auto"></p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421131240567.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421131240567.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">import numpy as np
+from sklearn.cluster import KMeans
+
+matrix = np.vstack(df.ada_embedding.values)
+n_clusters = 4
+
+kmeans = KMeans(n_clusters = n_clusters, init='k-means++', random_state=42)
+kmeans.fit(matrix)
+df['Cluster'] = kmeans.labels_</code></pre>
+</div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://cookbook.openai.com/examples/clustering" rel="noopener" class="external-link" href="https://cookbook.openai.com/examples/clustering" target="_blank">Detailed Implementation</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h2 data-heading="Recommendations" dir="auto" class="heading" id="Recommendations">Recommendations</h2>
+<div class="heading-children">
+<div>
+<p dir="auto">We can obtain a user embedding by averaging over all of their reviews. Similarly, we can obtain a product embedding by averaging over all the reviews about that product. In order to showcase the usefulness of this approach we use a subset of 50k reviews to cover more reviews per user and per product.</p>
+</div>
+<div>
+<p dir="auto">We evaluate the usefulness of these embeddings on a separate test set, where we plot similarity of the user and product embedding as a function of the rating. Interestingly, based on this approach, even before the user receives the product we can predict better than random whether they would like the product.</p>
+<div src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421131143188.png" class="internal-embed media-embed image-embed is-loaded"><img src="https://sp-soc-kh.github.io/ai-bootcamp-static/images/img-20240421131143188.png"></div>
+<p dir="auto"></p>
+</div>
+<div>
+<pre class="d2l-code"><code class="language-python">user_embeddings = df.groupby('UserId').ada_embedding.apply(np.mean)
+prod_embeddings = df.groupby('ProductId').ada_embedding.apply(np.mean)</code></pre>
+</div>
+<div>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://cookbook.openai.com/examples/user_and_product_embeddings" rel="noopener" class="external-link" href="https://cookbook.openai.com/examples/user_and_product_embeddings" target="_blank">Detailed Implementation</a></p>
+</div>
+<div><hr></div>
+<div><hr></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="heading-wrapper">
+<h1 data-heading="Why Can't  I just use GPT-4 directly?" dir="auto" class="heading" id="Why_Can't__I_just_use_GPT-4_directly?">Why Can't I just use GPT-4 directly?</h1>
+<div class="heading-children">
+<div>
+<ul>
+<li data-line="0" dir="auto">
+<p>✦ After seeing some of these example use cases, you might think, “why should I care about these text embedding things? Can’t I just make use GPT-4 to analyze the text for me?</p>
+</li>
+<li data-line="2" dir="auto">
+<p>✦ Techniques like Retrieval Augmented Generated (RAG) or Fine-tuning allow tailoring the LLMs to specific problem domains.&nbsp;</p>
+</li>
+<li data-line="4" dir="auto">
+<p>✦ However, it’s important to recognize that these systems are still in their early stages.&nbsp; - Building a robust LLM system presents challenges such as high computational costs, security risks associated with large language models, unpredictable responses, and even hallucinations.</p>
+</li>
+<li data-line="7" dir="auto">
+<p>✦ On the other hand, text embeddings have a long history, are lightweight, and deterministic.&nbsp;</p>
+<ul>
+<li data-line="8" dir="auto">
+<p><strong>Leveraging embeddings simplifies and reduces the cost of building LLM systems while retaining substantial value.</strong> By pre-computing text embeddings, you can significantly accelerate the training and inference process of LLMs. This leads to lower computational costs and faster development cycles. Additionally, embeddings capture semantic and syntactic information about text, providing a strong foundation for LLM performance.</p>
+</li>
+<li data-line="10" dir="auto">
+<p><strong>It should be another tool in the NLP toolkit, allowing for efficient similarity search, clustering, and other tasks.</strong> Embeddings excel at capturing semantic and syntactic relationships between texts. This makes them invaluable for tasks like finding similar documents, grouping related content, and understanding the overall structure of a text corpus. By combining embeddings with LLMs, you can create more powerful and versatile applications.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mod-footer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>
