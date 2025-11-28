@@ -5,11 +5,11 @@ Implements specifications from PRD Section 3.3
 """
 from typing import List, Optional, Tuple
 import pypdf
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain.schema import Document
+from langchain_core.documents import Document
 from config import Config
 
 

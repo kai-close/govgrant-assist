@@ -6,7 +6,7 @@ Implements prompt specifications from PRD Section 9
 from typing import List, Dict, Optional
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.schema import HumanMessage, SystemMessage, AIMessage
+from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 from config import Config
 from rag_engine import RAGEngine
 
