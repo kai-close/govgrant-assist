@@ -281,7 +281,7 @@ class AuditLog(Base):
     action: Mapped[str] = mapped_column(String(100), nullable=False)
     resourceType: Mapped[str] = mapped_column(String(100), nullable=False)
     resourceId: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
-    metadata: Mapped[Optional[dict]] = mapped_column(JSONB, nullable=True)
+    audit_metadata: Mapped[Optional[dict]] = mapped_column("metadata", JSONB, nullable=True)
     ipAddress: Mapped[Optional[str]] = mapped_column(String(45), nullable=True)
     userAgent: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     createdAt: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
